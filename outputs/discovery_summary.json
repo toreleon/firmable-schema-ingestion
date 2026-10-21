@@ -1,0 +1,15 @@
+{
+  "pool_size": 638,
+  "shortlist_size": 50,
+  "audit_seed": 20261021,
+  "false_positive_rate": 0.2,
+  "audit_status": "Reviewer-labelled sample; attribution and inconclusive cases retained in audit_summary.json",
+  "score_interpretation": "Ordinal, uncalibrated metadata score. No measured probability or precision claim.",
+  "false_positive_rate_denominator": 15,
+  "inconclusive_sample_items": 5,
+  "full_sample_false_positive_rate": null,
+  "full_sample_false_positive_rate_bounds": [
+    0.15,
+    0.4
+  ]
+}

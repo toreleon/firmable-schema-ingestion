@@ -1,0 +1,101 @@
+{
+  "input_records": 46465,
+  "proposed_links": 110,
+  "linked_entities": 85,
+  "unlinked_records": 46450,
+  "unlinked_reasons": {
+    "no_checksum_valid_identifier_name_alone_insufficient": 21261,
+    "identifier_not_observed_in_another_source": 24989,
+    "person_company_subject_mismatch": 12,
+    "missing_subject_name_corroboration": 1,
+    "raw_subject_names_disagree": 5,
+    "trustee_or_trust_capacity_mismatch": 2,
+    "record_quarantined_by_rejected_link_review": 2,
+    "no_remaining_link_after_review_quarantine": 2,
+    "no_fields_mapped_confidently_business_candidate_requires_review": 176
+  },
+  "threshold": 0.98,
+  "measured_precision": 1.0,
+  "precision_status": "Current matcher, 50-link submission audit; numerical precision requires all 50 explicit correctness labels.",
+  "audit_sample_size": 50,
+  "audit_seed": 20261021,
+  "matcher_version": "exact-identifiers-v2-subject-guards",
+  "confidence_note": "Rule scores are not measured precision; do not claim 99.5% precision from the score.",
+  "review_application": {
+    "policy": "Quarantine both endpoints of rejected links and any explicit alias evidence that depends on them; no claim about which source is wrong.",
+    "evaluated_proposals": 110,
+    "evaluated_population_sha256": "92e6550ee17dae54c82835954b8df784226ec2ea45efd063ab69e34fae52eeac",
+    "reviewed_false_links": 0,
+    "quarantined_records": 6,
+    "historical_rejected_reviews": 3,
+    "withheld_links": 3,
+    "profile_eligible_links": 107,
+    "profile_eligible_entities": 84,
+    "precision_note": "The review result belongs to the original frozen proposal sample. No precision claim is made for the filtered remainder."
+  },
+  "historical_review_precision": 0.94,
+  "version_evaluation": {
+    "matcher_version": "exact-identifiers-v2-subject-guards",
+    "current_proposals": 110,
+    "profile_eligible_links": 107,
+    "historical_sample_size": 50,
+    "development_regression": {
+      "previously_supported": 47,
+      "previously_rejected": 3,
+      "supported_pairs_retained": 44,
+      "rejected_pairs_still_proposed": 0,
+      "supported_pairs_profile_eligible": 44,
+      "scope": "Development regression only; v2 rules were informed by these v1 cases, so this is not new measured precision."
+    },
+    "fresh_review_pool_size": 47,
+    "fresh_sample_size": 47,
+    "fresh_sample_reviewed": 0,
+    "fresh_sample_precision": null,
+    "fresh_review_attribution": [],
+    "fresh_sample_human_reviewed": 47,
+    "fresh_sample_human_approved": 47,
+    "fresh_sample_binary_verdicts_recorded": 0,
+    "v2_release_approved": false,
+    "fresh_sample_path": "outputs/link_audit_v2.jsonl",
+    "seed": "exact-identifiers-v2-subject-guards:20261021",
+    "fresh_sample_disjoint_from_v1": true,
+    "fresh_sample_record_disjoint_from_v1": true,
+    "fresh_sample_known_entity_keys_disjoint_from_v1": true,
+    "fresh_sample_unique_entities": 44,
+    "sample_target": 50,
+    "sample_shortfall": 3,
+    "precision_claim": "Human review/approval and binary correctness verdicts are recorded separately; no new precision is claimed without explicit true/false verdicts."
+  },
+  "historical_audit_sample_size": 50,
+  "reviewer_kinds": {
+    "human": 47
+  },
+  "historical_reviewer_kinds": {
+    "human": 50
+  },
+  "submission_audit": {
+    "sample_size": 50,
+    "reviewed": 50,
+    "positive": 50,
+    "negative": 0,
+    "inconclusive": 0,
+    "assessed": 50,
+    "all_items_assessed": true,
+    "reviewer_kinds": {
+      "human": 50
+    },
+    "human_approved": 0,
+    "binary_verdicts_recorded": 50,
+    "available_sample_human_review_complete": true,
+    "independent_human_audit_complete": true,
+    "complete": true,
+    "precision": 1.0,
+    "false_positive_rate": null,
+    "scope": "Conclusive cases in frozen proposal sample; reviewer attribution is preserved. AI review is not independent human sign-off.",
+    "conclusive_precision": 1.0,
+    "threshold": [
+      0.98
+    ],
+    "sampling": "Retained identical raw pairs from the earlier human audit plus seeded additional current proposals; development/convenience sample, not independent population precision."
+  }
+}

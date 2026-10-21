@@ -1,0 +1,72 @@
+{
+  "entity_role": "supplier",
+  "parser": {
+    "format": "json",
+    "record_path": "result.records",
+    "encoding": "utf-8-sig"
+  },
+  "observed_at_field": null,
+  "mappings": [
+    {
+      "source_field": "Customer Name",
+      "canonical_field": "entity.legal_name",
+      "transforms": [
+        "strip"
+      ],
+      "confidence": 0.8,
+      "rationale": "Field holds the registered-style business name (e.g. 'PTY LTD' suffixes) for a company-type registrant; treated as legal name. Assumption: the register's customer name is the registered name, not a trading name; not verified against ASIC. Some values are sole-trader or individual-like, so confidence is at the threshold."
+    },
+    {
+      "source_field": "Business Number",
+      "canonical_field": "entity.acn",
+      "transforms": [
+        "strip",
+        {
+          "op": "regex",
+          "pattern": "ACN\\s*(\\d{9})",
+          "group": 1
+        },
+        "acn"
+      ],
+      "confidence": 0.85,
+      "rationale": "Labelled 'ACN' values in this column (5461 labelled ACN matches, 5404 checksum-valid) are mapped to entity.acn only after extracting the 9-digit ACN after the label and validating the checksum. Rows that are not ACN-labelled or fail checksum are rejected by the engine. Not inferred from any ABN."
+    }
+  ],
+  "unmapped_fields": [
+    {
+      "source_field": "Entity Type",
+      "reason": "Free-text values such as 'Corporation (Company)' and 'An individual or Sole trader' lack an explicit enum map in the supplied context; not guessed, left unmapped for a later reviewed enum map."
+    },
+    {
+      "source_field": "Location",
+      "reason": "Combined 'SUBURB, STATE, POSTCODE' string describes the operating/project location, not the registered business address; address fields not mapped to avoid conflating location with business address. Could be parsed later with a reviewed split pattern."
+    },
+    {
+      "source_field": "RSO Number",
+      "reason": "Register-internal reference number specific to the suitable operator register; not a canonical entity identifier. Numeric values also sometimes pass ACN checksum, so mapping it as ACN would be unsafe."
+    },
+    {
+      "source_field": "Registration Date",
+      "reason": "Date the suitable operator registration was made, not verified as entity date_registered (incorporation/registration with the registrar); left unmapped to avoid misclassification."
+    },
+    {
+      "source_field": "Registration Status",
+      "reason": "Refers to status on the suitable operator register ('Registered'), not the entity's corporate status; no explicit enum evidence, so not mapped to entity.status."
+    },
+    {
+      "source_field": "_id",
+      "reason": "Internal row sequence identifier from the datastore; usable only for source_record_id construction, not a canonical field."
+    }
+  ],
+  "minimum_field_confidence": 0.8,
+  "warnings": [
+    "observed_at_field is null: the only available time is a resource last-modified proxy, not a verified source statement time; registration dates are not statement times.",
+    "Business Number column is mostly ACN-labelled, not ABN; no ABN mapping was emitted because no labelled ABN evidence of supplier attribution was established at scale (only 203 labelled ABN matches, 199 valid, and the sample shows ACN). Review before adding an ABN mapping.",
+    "Customer Name may include individuals or sole traders; legal_name assumption flagged. Name-to-ACN pairing is row-wise, single-record, so no multi-business ambiguity.",
+    "Source reliability is an uncalibrated prior; not used for mapping confidence.",
+    "Labelled ACN checksum pass rate is high but 57 labelled ACNs fail checksum and will be rejected by the engine.",
+    "Numeric RSO Number values match ACN checksum for 233 rows; they must not be treated as ACNs.",
+    "Licence field is Creative Commons Attribution 4.0 per metadata; not a per-record field.",
+    "The resource URL timestamp in original_resource_url (2026-10-16) is a source document reference, not a verified statement time."
+  ]
+}

@@ -1,0 +1,293 @@
+{
+  "training": {
+    "record_count": 7000,
+    "fields": {
+      "ABN": {
+        "nonempty": 3886,
+        "types": {
+          "NoneType": 3114,
+          "str": 3886
+        },
+        "examples": [
+          "40 414 590 761",
+          "50 657 217 439",
+          "97 677 875 982"
+        ],
+        "identifier_checks": {
+          "checksum_valid_abn": 3851,
+          "checksum_valid_acn": 0
+        }
+      },
+      "ACN": {
+        "nonempty": 1667,
+        "types": {
+          "NoneType": 5333,
+          "str": 1667
+        },
+        "examples": [
+          "600 264 391",
+          "657 217 439",
+          "677 875 982"
+        ],
+        "identifier_checks": {
+          "checksum_valid_abn": 0,
+          "checksum_valid_acn": 1658
+        }
+      },
+      "Financial Category CODE": {
+        "nonempty": 7000,
+        "types": {
+          "str": 7000
+        },
+        "examples": [
+          "SC2",
+          "2",
+          "N/A"
+        ],
+        "identifier_checks": {
+          "checksum_valid_abn": 0,
+          "checksum_valid_acn": 0
+        }
+      },
+      "Financial Category DESC": {
+        "nonempty": 7000,
+        "types": {
+          "str": 7000
+        },
+        "examples": [
+          "Self Certification - Builder/Trade",
+          "Category 2",
+          "No Financials Required"
+        ],
+        "identifier_checks": {
+          "checksum_valid_abn": 0,
+          "checksum_valid_acn": 0
+        }
+      },
+      "Licence Class Type": {
+        "nonempty": 7000,
+        "types": {
+          "str": 7000
+        },
+        "examples": [
+          "Carpentry",
+          "Plumbing and Drainage",
+          "Gasfitting"
+        ],
+        "identifier_checks": {
+          "checksum_valid_abn": 0,
+          "checksum_valid_acn": 0
+        }
+      },
+      "Licence Grade": {
+        "nonempty": 7000,
+        "types": {
+          "str": 7000
+        },
+        "examples": [
+          "Trade Contractor Licence",
+          "Nominee Supervisor",
+          "Fire Occupational"
+        ],
+        "identifier_checks": {
+          "checksum_valid_abn": 0,
+          "checksum_valid_acn": 0
+        }
+      },
+      "Licence Number": {
+        "nonempty": 7000,
+        "types": {
+          "int": 7000
+        },
+        "examples": [
+          "721540",
+          "15014027",
+          "1301363"
+        ],
+        "identifier_checks": {
+          "checksum_valid_abn": 0,
+          "checksum_valid_acn": 0
+        }
+      },
+      "Licence Type CODE": {
+        "nonempty": 7000,
+        "types": {
+          "str": 7000
+        },
+        "examples": [
+          "I",
+          "C"
+        ],
+        "identifier_checks": {
+          "checksum_valid_abn": 0,
+          "checksum_valid_acn": 0
+        }
+      },
+      "Licence Type DESC": {
+        "nonempty": 7000,
+        "types": {
+          "str": 7000
+        },
+        "examples": [
+          "Individual",
+          "Company"
+        ],
+        "identifier_checks": {
+          "checksum_valid_abn": 0,
+          "checksum_valid_acn": 0
+        }
+      },
+      "Licensee Business Address": {
+        "nonempty": 7000,
+        "types": {
+          "str": 7000
+        },
+        "examples": [
+          "18 BARRA COURT Mount Louisa QLD 4814",
+          "15 Cary Rd Glenvale QLD 4350",
+          "1/44 Roderick street Moffat Beach QLD 4551"
+        ],
+        "identifier_checks": {
+          "checksum_valid_abn": 0,
+          "checksum_valid_acn": 0
+        }
+      },
+      "Licensee Name": {
+        "nonempty": 7000,
+        "types": {
+          "str": 7000
+        },
+        "examples": [
+          "BRENT STEPHEN ABBOTT",
+          "RAMS PLUMBING & GAS PTY LTD",
+          "BENJAMIN THOMAS SCARLETT"
+        ],
+        "identifier_checks": {
+          "checksum_valid_abn": 0,
+          "checksum_valid_acn": 0
+        }
+      },
+      "_full_text": {
+        "nonempty": 7000,
+        "types": {
+          "str": 7000
+        },
+        "examples": [
+          "'18':6 '4814':12 '5329':1 '721540':2 'abbott':5 'barra':7 'brent':3 'builder/trade':17 'carpentry':22 'certification':16 'contractor':20 'court':8 'i':14 'individual':13 'licence':21 'louisa':10 'mount':9 'qld':11 'sc2':18 'self':15 'stephen':4 'trade':19",
+          "'15':11 '15014027':2 '2':20,21 '264':9 '391':10 '4350':16 '600':8 '79042':1 'and':26 'c':18 'cary':12 'category':19 'company':17 'contractor':23 'drainage':27 'gas':5 'glenvale':14 'licence':24 'ltd':7 'plumbing':4,25 'pty':6 'qld':15 'rams':3 'rd':13 'trade':22",
+          "'1/44':6 '1301363':2 '194813':1 '4551':12 'beach':10 'benjamin':3 'financials':16 'gasfitting':21 'i':14 'individual':13 'moffat':9 'n/a':18 'no':15 'nominee':19 'qld':11 'required':17 'roderick':7 'scarlett':5 'street':8 'supervisor':20 'thomas':4"
+        ],
+        "identifier_checks": {
+          "checksum_valid_abn": 0,
+          "checksum_valid_acn": 0
+        }
+      },
+      "_id": {
+        "nonempty": 7000,
+        "types": {
+          "int": 7000
+        },
+        "examples": [
+          "5329",
+          "79042",
+          "194813"
+        ],
+        "identifier_checks": {
+          "checksum_valid_abn": 0,
+          "checksum_valid_acn": 0
+        }
+      },
+      "id": {
+        "nonempty": 7000,
+        "types": {
+          "int": 7000
+        },
+        "examples": [
+          "5329",
+          "79042",
+          "194813"
+        ],
+        "identifier_checks": {
+          "checksum_valid_abn": 0,
+          "checksum_valid_acn": 0
+        }
+      }
+    },
+    "sample": [
+      {
+        "_id": 5329,
+        "_full_text": "'18':6 '4814':12 '5329':1 '721540':2 'abbott':5 'barra':7 'brent':3 'builder/trade':17 'carpentry':22 'certification':16 'contractor':20 'court':8 'i':14 'individual':13 'licence':21 'louisa':10 'mount':9 'qld':11 'sc2':18 'self':15 'stephen':4 'trade':19",
+        "id": 5329,
+        "Licence Number": 721540,
+        "Licensee Name": "BRENT STEPHEN ABBOTT",
+        "ACN": null,
+        "ABN": null,
+        "Licensee Business Address": "18 BARRA COURT Mount Louisa QLD 4814",
+        "Licence Type DESC": "Individual",
+        "Licence Type CODE": "I",
+        "Financial Category DESC": "Self Certification - Builder/Trade",
+        "Financial Category CODE": "SC2",
+        "Licence Grade": "Trade Contractor Licence",
+        "Licence Class Type": "Carpentry"
+      },
+      {
+        "_id": 79042,
+        "_full_text": "'15':11 '15014027':2 '2':20,21 '264':9 '391':10 '4350':16 '600':8 '79042':1 'and':26 'c':18 'cary':12 'category':19 'company':17 'contractor':23 'drainage':27 'gas':5 'glenvale':14 'licence':24 'ltd':7 'plumbing':4,25 'pty':6 'qld':15 'rams':3 'rd':13 'trade':22",
+        "id": 79042,
+        "Licence Number": 15014027,
+        "Licensee Name": "RAMS PLUMBING & GAS PTY LTD",
+        "ACN": "600 264 391",
+        "ABN": null,
+        "Licensee Business Address": "15 Cary Rd Glenvale QLD 4350",
+        "Licence Type DESC": "Company",
+        "Licence Type CODE": "C",
+        "Financial Category DESC": "Category 2",
+        "Financial Category CODE": "2",
+        "Licence Grade": "Trade Contractor Licence",
+        "Licence Class Type": "Plumbing and Drainage"
+      },
+      {
+        "_id": 194813,
+        "_full_text": "'1/44':6 '1301363':2 '194813':1 '4551':12 'beach':10 'benjamin':3 'financials':16 'gasfitting':21 'i':14 'individual':13 'moffat':9 'n/a':18 'no':15 'nominee':19 'qld':11 'required':17 'roderick':7 'scarlett':5 'street':8 'supervisor':20 'thomas':4",
+        "id": 194813,
+        "Licence Number": 1301363,
+        "Licensee Name": "BENJAMIN THOMAS SCARLETT",
+        "ACN": null,
+        "ABN": null,
+        "Licensee Business Address": "1/44 Roderick street Moffat Beach QLD 4551",
+        "Licence Type DESC": "Individual",
+        "Licence Type CODE": "I",
+        "Financial Category DESC": "No Financials Required",
+        "Financial Category CODE": "N/A",
+        "Licence Grade": "Nominee Supervisor",
+        "Licence Class Type": "Gasfitting"
+      },
+      {
+        "_id": 115298,
+        "_full_text": "'-13':7 '11':6 '115298':1 '1199002':2 '4280':12 'and':27 'certification':16 'court':9 'daniel':3 'electrical':23 'emergency':29 'fire':19,21 'harrop':5 'i':14 'individual':13 'inspect':26 'joel':4 'lighting':30 'occupational':20,25 'protection':22 'qld':11 'robius':8 'sct1':18 'self':15 'stockleigh':10 'stream':24 'test':28 'trade':17",
+        "id": 115298,
+        "Licence Number": 1199002,
+        "Licensee Name": "DANIEL JOEL HARROP",
+        "ACN": null,
+        "ABN": null,
+        "Licensee Business Address": "11-13 Robius Court Stockleigh QLD 4280",
+        "Licence Type DESC": "Individual",
+        "Licence Type CODE": "I",
+        "Financial Category DESC": "Self Certification - Trade",
+        "Financial Category CODE": "SCT1",
+        "Licence Grade": "Fire Occupational",
+        "Licence Class Type": "Fire Protection - Electrical Stream Occupational - Inspect and Test - Emergency Lighting"
+      }
+    ]
+  },
+  "holdout_count": 3000,
+  "split": "first 70% training, final 30% holdout; document-head inspection only",
+  "training_rows": [
+    1,
+    7000
+  ],
+  "holdout_rows": [
+    7001,
+    10000
+  ]
+}

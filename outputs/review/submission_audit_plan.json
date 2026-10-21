@@ -1,0 +1,41 @@
+{
+  "sample_size": 50,
+  "retained_pair_labels": 44,
+  "remaining_links": [],
+  "unresolved_triage": [
+    {
+      "dataset_id": "14dcf3cf-87a4-4943-a815-8e749b3531f2",
+      "title": "P&SCO Projects, SCB Contract Disclosure Report 2025-26 Q3 Jan-March26"
+    },
+    {
+      "dataset_id": "f340d6e6-dcea-4073-a90d-e3fb93499582",
+      "title": "Home Building Compensation"
+    },
+    {
+      "dataset_id": "78b81d12-5d55-4c2b-9a1b-da00ac598086",
+      "title": "Register of Commercial Office Space for Lease"
+    },
+    {
+      "dataset_id": "657e5302-89e5-4224-93ad-b529305e9700",
+      "title": "P&SCO Projects, SCB Contract Disclosure Report 2025-26 Q2 Oct-Dec25"
+    },
+    {
+      "dataset_id": "d8b5847f-f81f-4aa8-a802-c730eff638b9",
+      "title": "P&SCO Projects, SCB Contract Disclosure Report 2025-26  Q1 July-Sept25"
+    }
+  ],
+  "threshold": 0.98,
+  "sampling": "All retained raw pairs from the prior human audit, regardless of their verdict, plus seeded remaining proposals; a development/convenience sample, not independent population precision.",
+  "completed_additional_reviews": 6,
+  "additional_reviewer_kind": "human",
+  "sampling_limit": "Development/convenience sample with all 50 verdicts human-verified; not independently sampled population precision.",
+  "final_reviewer_kinds": {
+    "human": 50
+  },
+  "human_verification_confirmation": "outputs/user_confirmations.json#submission_human_verification",
+  "prior_additional_assessment": {
+    "reviewer_kind": "ai",
+    "count": 6,
+    "retained_in": "Per-row review_history"
+  }
+}

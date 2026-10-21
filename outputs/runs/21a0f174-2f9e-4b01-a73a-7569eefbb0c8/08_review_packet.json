@@ -1,0 +1,559 @@
+{
+  "source": {
+    "source_id": "21a0f174-2f9e-4b01-a73a-7569eefbb0c8",
+    "dataset_id": "21a0f174-2f9e-4b01-a73a-7569eefbb0c8",
+    "title": "Department of Transport and Main Roads Contract Disclosure",
+    "resource_id": "95313d0f-5f76-46e5-9485-41266fb12bc6",
+    "resource_url": "https://www.data.qld.gov.au/datastore/dump/95313d0f-5f76-46e5-9485-41266fb12bc6?format=csv",
+    "original_resource_url": "https://www.data.qld.gov.au/dataset/21a0f174-2f9e-4b01-a73a-7569eefbb0c8/resource/95313d0f-5f76-46e5-9485-41266fb12bc6/download/20260728-ransport-and-main-roads_contract-disclosure-report-fy25-26.csv",
+    "acquisition_representation": "csv",
+    "original_format": "CSV",
+    "resource_sha256": "b7b6d1dd8e8a9850800ea3002005fa0123fe1aaa3a5756096cd8dfee0a581d16",
+    "local_path": "data/raw/21a0f174-2f9e-4b01-a73a-7569eefbb0c8",
+    "downloaded_at": "2026-10-21T07:50:11.321853+00:00",
+    "observed_at": "2026-09-21T23:26:36.816738",
+    "observed_at_basis": "resource_last_modified_proxy",
+    "licence": "Creative Commons Attribution 4.0",
+    "licence_url": "https://creativecommons.org/licenses/by/4.0/",
+    "publisher": "Transport and Main Roads",
+    "source_reliability": 0.8,
+    "source_reliability_basis": "Uncalibrated government-source prior; uniform, not claimed measured",
+    "description": "Queensland Procurement Policy requires budget sector agencies, large statutory bodies and special purpose vehicles (agencies) to publish certain information about contracts awarded over $10,000.",
+    "temporal_warning": "Resource/catalogue modification time is a publication proxy, not a verified record statement time",
+    "licence_warning": false,
+    "snapshot_path": "data/snapshots/21a0f174-2f9e-4b01-a73a-7569eefbb0c8.gz"
+  },
+  "config": {
+    "entity_role": "supplier",
+    "parser": {
+      "format": "csv",
+      "delimiter": ",",
+      "header_row": 1,
+      "encoding": "utf-8-sig"
+    },
+    "observed_at_field": null,
+    "mappings": [
+      {
+        "source_field": "Supplier name",
+        "canonical_field": "entity.legal_name",
+        "transforms": [
+          "strip"
+        ],
+        "confidence": 0.7,
+        "rationale": "Supplier name is a business name from a procurement disclosure. The source does not confirm it is the as-registered name, so this is a weak semantic mapping. Held-out values show trailing-punctuation and trust-style forms (e.g. 'A MARINOV & J.D MARINOV T/A'), which are not clean registered legal names. Confidence lowered below the minimum; the field is left for human decision."
+      },
+      {
+        "source_field": "Supplier ABN",
+        "canonical_field": "entity.abn",
+        "transforms": [
+          "strip",
+          "digits",
+          "abn"
+        ],
+        "confidence": 0.9,
+        "rationale": "Header explicitly names the supplier ABN and the abn transform enforces checksum. Held-out values include spaced forms ('49 096 776 895'), which the abn transform normalises. Coverage is sparse (4 of 300 held-out rows), which does not reduce mapping confidence; absent values emit nothing."
+      },
+      {
+        "source_field": "Supplier address",
+        "canonical_field": "address.postcode",
+        "transforms": [
+          "strip",
+          "postcode"
+        ],
+        "confidence": 0.85,
+        "rationale": "Values are 4-digit Australian postcodes. The 49 held-out errors all have a leading zero-width space (U+200B, mis-decoded as 'â€‹') before the postcode, plus one value 'Vari' that is not a postcode. Stripping the invisible prefix and enforcing the postcode transform is the fix; the 'Vari' row is a non-postcode value and will remain rejected."
+      }
+    ],
+    "unmapped_fields": [
+      {
+        "source_field": "_id",
+        "reason": "Internal row identifier, not an entity attribute."
+      },
+      {
+        "source_field": "Agency (Dept or Stat Body)",
+        "reason": "Buyer/agency identifier; must not be mapped as supplier identity."
+      },
+      {
+        "source_field": "Agency address",
+        "reason": "Buyer/agency address; must not be mapped to supplier address."
+      },
+      {
+        "source_field": "Award contract date",
+        "reason": "Award date of contract; not a registration date or source statement time."
+      },
+      {
+        "source_field": "Commence date",
+        "reason": "Contract commencement date; not a registration date. Sparse."
+      },
+      {
+        "source_field": "Finish date",
+        "reason": "Contract finish date; not an entity attribute."
+      },
+      {
+        "source_field": "Contract description/name",
+        "reason": "Contract/project description, not supplier identity."
+      },
+      {
+        "source_field": "Contract value",
+        "reason": "Contract value; must not be mapped to business identity or registration fields."
+      },
+      {
+        "source_field": "Contract reference number",
+        "reason": "Buyer-side contract reference, not a supplier identifier."
+      },
+      {
+        "source_field": "Parent contract number/SOA",
+        "reason": "Contract/SOA reference, not a supplier identifier."
+      },
+      {
+        "source_field": "Procurement method",
+        "reason": "Procurement process attribute; no entity.status or entity_type evidence."
+      },
+      {
+        "source_field": "Justification",
+        "reason": "Procurement justification free text."
+      },
+      {
+        "source_field": "Specific confidentiality provision used",
+        "reason": "Procurement attribute."
+      },
+      {
+        "source_field": "Variation",
+        "reason": "Contract variation flag; not an entity attribute."
+      },
+      {
+        "source_field": "Number of offers sought",
+        "reason": "Procurement attribute."
+      },
+      {
+        "source_field": "Evaluation criteria and weightings",
+        "reason": "Procurement attribute free text."
+      },
+      {
+        "source_field": "Deliverables",
+        "reason": "Contract deliverables free text."
+      },
+      {
+        "source_field": "Contract milestones",
+        "reason": "Contract milestones free text."
+      },
+      {
+        "source_field": "Contract performance management",
+        "reason": "Contract performance free text."
+      },
+      {
+        "source_field": "Form of contract",
+        "reason": "Contract form; not an entity attribute."
+      },
+      {
+        "source_field": "Contract category group",
+        "reason": "Contract category; not an ANZSIC industry code. Preserve as unmapped."
+      }
+    ],
+    "minimum_field_confidence": 0.8,
+    "warnings": [
+      "Supplier name mapping to entity.legal_name is unverified; confidence set to 0.7, below the 0.8 minimum, so it should be excluded from emission until a register check or human sign-off.",
+      "Supplier address postcode errors in held-out data are caused by a leading U+200B zero-width space (mis-decoded). Strip handles this only if the transform removes it; if the engine's strip does not remove zero-width characters, these 48 rows will keep failing and this must be verified.",
+      "One held-out value 'Vari' in Supplier address appears to be a mis-aligned value from the Variation column; the row is likely shifted or malformed and should be reviewed at source.",
+      "No observed_at field in source; observed_at is the resource last-modified proxy and must not be used as a statement time.",
+      "No ACN source column; ACN must not be inferred from ABN."
+    ],
+    "source_id": "21a0f174-2f9e-4b01-a73a-7569eefbb0c8",
+    "ontology_sha256": "f4b6b4941ec61dcc3fb07c6ee19edab927862aaaa8ae3df30b3023e047c9f9cd",
+    "generated_by": {
+      "kind": "multi_step_runtime_agent",
+      "model": "claude-haiku-5-5",
+      "run_identity": "d8a3184e1ca5a70c1e9bbb9ebcfe98116b7450b4ab051669c6efd47afb45272d"
+    },
+    "review": {
+      "status": "pending",
+      "reviewer": null,
+      "approved_config_sha256": null
+    }
+  },
+  "validation": {
+    "records": 1000,
+    "observation_count": 885,
+    "emitted_by_field": {
+      "address.postcode": 880,
+      "entity.abn": 5
+    },
+    "error_count": 120,
+    "errors": [
+      {
+        "source_record_id": "b7b6d1dd8e8a9850:9:da3c326e4e7ed363",
+        "source_field": "Supplier address",
+        "canonical_field": "address.postcode",
+        "raw_value": "Vari",
+        "reason": "Identifier contains non-numeric text"
+      },
+      {
+        "source_record_id": "b7b6d1dd8e8a9850:78:1ec044545c191ed9",
+        "source_field": "Supplier address",
+        "canonical_field": "address.postcode",
+        "raw_value": "â€‹4000",
+        "reason": "Identifier contains non-numeric text"
+      },
+      {
+        "source_record_id": "b7b6d1dd8e8a9850:79:1fe7fe94a9212c49",
+        "source_field": "Supplier address",
+        "canonical_field": "address.postcode",
+        "raw_value": "â€‹4019",
+        "reason": "Identifier contains non-numeric text"
+      },
+      {
+        "source_record_id": "b7b6d1dd8e8a9850:81:ef64ca3aa9a1c25e",
+        "source_field": "Supplier address",
+        "canonical_field": "address.postcode",
+        "raw_value": "â€‹4216",
+        "reason": "Identifier contains non-numeric text"
+      },
+      {
+        "source_record_id": "b7b6d1dd8e8a9850:90:8bafc357acb8948b",
+        "source_field": "Supplier address",
+        "canonical_field": "address.postcode",
+        "raw_value": "â€‹4163",
+        "reason": "Identifier contains non-numeric text"
+      },
+      {
+        "source_record_id": "b7b6d1dd8e8a9850:91:35dc70ecf935477b",
+        "source_field": "Supplier address",
+        "canonical_field": "address.postcode",
+        "raw_value": "â€‹4101",
+        "reason": "Identifier contains non-numeric text"
+      },
+      {
+        "source_record_id": "b7b6d1dd8e8a9850:92:a1849fdf55f94bc2",
+        "source_field": "Supplier address",
+        "canonical_field": "address.postcode",
+        "raw_value": "â€‹4101",
+        "reason": "Identifier contains non-numeric text"
+      },
+      {
+        "source_record_id": "b7b6d1dd8e8a9850:93:e70e1ece005b4d40",
+        "source_field": "Supplier address",
+        "canonical_field": "address.postcode",
+        "raw_value": "â€‹4006",
+        "reason": "Identifier contains non-numeric text"
+      },
+      {
+        "source_record_id": "b7b6d1dd8e8a9850:94:48b40dad23c6589d",
+        "source_field": "Supplier address",
+        "canonical_field": "address.postcode",
+        "raw_value": "â€‹4006",
+        "reason": "Identifier contains non-numeric text"
+      },
+      {
+        "source_record_id": "b7b6d1dd8e8a9850:103:13a83c53c4fdb685",
+        "source_field": "Supplier address",
+        "canonical_field": "address.postcode",
+        "raw_value": "â€‹4670",
+        "reason": "Identifier contains non-numeric text"
+      },
+      {
+        "source_record_id": "b7b6d1dd8e8a9850:104:458adb2f4687b1d5",
+        "source_field": "Supplier address",
+        "canonical_field": "address.postcode",
+        "raw_value": "â€‹Adaptalift Group 3171\n\nToyota Material Handling 2170",
+        "reason": "Identifier contains non-numeric text"
+      },
+      {
+        "source_record_id": "b7b6d1dd8e8a9850:105:25d7d84902f63daf",
+        "source_field": "Supplier address",
+        "canonical_field": "address.postcode",
+        "raw_value": "41001",
+        "reason": "Invalid postcode length"
+      },
+      {
+        "source_record_id": "b7b6d1dd8e8a9850:106:382a38dc4d3f75cf",
+        "source_field": "Supplier address",
+        "canonical_field": "address.postcode",
+        "raw_value": "â€‹4370",
+        "reason": "Identifier contains non-numeric text"
+      },
+      {
+        "source_record_id": "b7b6d1dd8e8a9850:107:7cde007d2b71784d",
+        "source_field": "Supplier address",
+        "canonical_field": "address.postcode",
+        "raw_value": "â€‹4818",
+        "reason": "Identifier contains non-numeric text"
+      },
+      {
+        "source_record_id": "b7b6d1dd8e8a9850:108:34eeabb06bb061b0",
+        "source_field": "Supplier address",
+        "canonical_field": "address.postcode",
+        "raw_value": "â€‹4000",
+        "reason": "Identifier contains non-numeric text"
+      },
+      {
+        "source_record_id": "b7b6d1dd8e8a9850:109:fc8ba6c133c81904",
+        "source_field": "Supplier address",
+        "canonical_field": "address.postcode",
+        "raw_value": "â€‹4740",
+        "reason": "Identifier contains non-numeric text"
+      },
+      {
+        "source_record_id": "b7b6d1dd8e8a9850:110:e1e1c05e1b023a9d",
+        "source_field": "Supplier address",
+        "canonical_field": "address.postcode",
+        "raw_value": "â€‹4000",
+        "reason": "Identifier contains non-numeric text"
+      },
+      {
+        "source_record_id": "b7b6d1dd8e8a9850:111:391333b07c7e9a36",
+        "source_field": "Supplier address",
+        "canonical_field": "address.postcode",
+        "raw_value": "â€‹4818",
+        "reason": "Identifier contains non-numeric text"
+      },
+      {
+        "source_record_id": "b7b6d1dd8e8a9850:112:01eeea6c9341375c",
+        "source_field": "Supplier address",
+        "canonical_field": "address.postcode",
+        "raw_value": "â€‹3000",
+        "reason": "Identifier contains non-numeric text"
+      },
+      {
+        "source_record_id": "b7b6d1dd8e8a9850:113:333d6a48f7860bcc",
+        "source_field": "Supplier address",
+        "canonical_field": "address.postcode",
+        "raw_value": "â€‹3000",
+        "reason": "Identifier contains non-numeric text"
+      }
+    ],
+    "error_reasons": {
+      "Identifier contains non-numeric text": 117,
+      "Invalid postcode length": 3
+    },
+    "example_observations": [
+      {
+        "source_id": "21a0f174-2f9e-4b01-a73a-7569eefbb0c8",
+        "source_record_id": "b7b6d1dd8e8a9850:1:60f64e361b092393",
+        "observed_at": "2026-09-21T23:26:36.816738",
+        "ingested_at": "2026-10-21T07:50:11.321853+00:00",
+        "licence": "Creative Commons Attribution 4.0",
+        "extractor_version": "0.1.0:f8f2373874a3718c767342b844a579c3d2b7b12fcbb080471f53fc3a61638fb0",
+        "observed_at_basis": "resource_last_modified_proxy",
+        "provenance": {
+          "resource_url": "https://www.data.qld.gov.au/datastore/dump/95313d0f-5f76-46e5-9485-41266fb12bc6?format=csv",
+          "resource_sha256": "b7b6d1dd8e8a9850800ea3002005fa0123fe1aaa3a5756096cd8dfee0a581d16",
+          "raw_record_sha256": "60f64e361b0923931a6d487bdbc3c8bf8775aee56d2cc2842d288fd82ee73766",
+          "row_number": 1,
+          "config_sha256": "f8f2373874a3718c767342b844a579c3d2b7b12fcbb080471f53fc3a61638fb0",
+          "source_field": "Supplier address"
+        },
+        "canonical_field": "address.postcode",
+        "address": {
+          "postcode": "4006"
+        },
+        "raw_value": "4006",
+        "confidence": {
+          "source_reliability": 0.8,
+          "field_confidence": 0.85
+        },
+        "derivation_level": "L1",
+        "observation_id": "237cf994bc99c06364f7e85b0325e1d2bea484527545da4edd14fe0029ece45f"
+      },
+      {
+        "source_id": "21a0f174-2f9e-4b01-a73a-7569eefbb0c8",
+        "source_record_id": "b7b6d1dd8e8a9850:2:5c25c421ae952175",
+        "observed_at": "2026-09-21T23:26:36.816738",
+        "ingested_at": "2026-10-21T07:50:11.321853+00:00",
+        "licence": "Creative Commons Attribution 4.0",
+        "extractor_version": "0.1.0:f8f2373874a3718c767342b844a579c3d2b7b12fcbb080471f53fc3a61638fb0",
+        "observed_at_basis": "resource_last_modified_proxy",
+        "provenance": {
+          "resource_url": "https://www.data.qld.gov.au/datastore/dump/95313d0f-5f76-46e5-9485-41266fb12bc6?format=csv",
+          "resource_sha256": "b7b6d1dd8e8a9850800ea3002005fa0123fe1aaa3a5756096cd8dfee0a581d16",
+          "raw_record_sha256": "5c25c421ae952175d9b038137a3a9bdf437546d3d25d0e3d3b321cfd8947a74b",
+          "row_number": 2,
+          "config_sha256": "f8f2373874a3718c767342b844a579c3d2b7b12fcbb080471f53fc3a61638fb0",
+          "source_field": "Supplier address"
+        },
+        "canonical_field": "address.postcode",
+        "address": {
+          "postcode": "3149"
+        },
+        "raw_value": "3149",
+        "confidence": {
+          "source_reliability": 0.8,
+          "field_confidence": 0.85
+        },
+        "derivation_level": "L1",
+        "observation_id": "59bc3b4995d675d014d1608abbda9d0bda5a60a8fed05a354460a71faad84538"
+      },
+      {
+        "source_id": "21a0f174-2f9e-4b01-a73a-7569eefbb0c8",
+        "source_record_id": "b7b6d1dd8e8a9850:3:123e89236c355305",
+        "observed_at": "2026-09-21T23:26:36.816738",
+        "ingested_at": "2026-10-21T07:50:11.321853+00:00",
+        "licence": "Creative Commons Attribution 4.0",
+        "extractor_version": "0.1.0:f8f2373874a3718c767342b844a579c3d2b7b12fcbb080471f53fc3a61638fb0",
+        "observed_at_basis": "resource_last_modified_proxy",
+        "provenance": {
+          "resource_url": "https://www.data.qld.gov.au/datastore/dump/95313d0f-5f76-46e5-9485-41266fb12bc6?format=csv",
+          "resource_sha256": "b7b6d1dd8e8a9850800ea3002005fa0123fe1aaa3a5756096cd8dfee0a581d16",
+          "raw_record_sha256": "123e89236c355305b2e6f7e63ecbd9063f4a76e05080dcc13c915e85f39e668e",
+          "row_number": 3,
+          "config_sha256": "f8f2373874a3718c767342b844a579c3d2b7b12fcbb080471f53fc3a61638fb0",
+          "source_field": "Supplier address"
+        },
+        "canonical_field": "address.postcode",
+        "address": {
+          "postcode": "4006"
+        },
+        "raw_value": "4006",
+        "confidence": {
+          "source_reliability": 0.8,
+          "field_confidence": 0.85
+        },
+        "derivation_level": "L1",
+        "observation_id": "67ebdb64dc42085663776d8ff27089a814db13424117dd6f83e50d28b6df6c50"
+      },
+      {
+        "source_id": "21a0f174-2f9e-4b01-a73a-7569eefbb0c8",
+        "source_record_id": "b7b6d1dd8e8a9850:4:25ddcb3cce4dd22a",
+        "observed_at": "2026-09-21T23:26:36.816738",
+        "ingested_at": "2026-10-21T07:50:11.321853+00:00",
+        "licence": "Creative Commons Attribution 4.0",
+        "extractor_version": "0.1.0:f8f2373874a3718c767342b844a579c3d2b7b12fcbb080471f53fc3a61638fb0",
+        "observed_at_basis": "resource_last_modified_proxy",
+        "provenance": {
+          "resource_url": "https://www.data.qld.gov.au/datastore/dump/95313d0f-5f76-46e5-9485-41266fb12bc6?format=csv",
+          "resource_sha256": "b7b6d1dd8e8a9850800ea3002005fa0123fe1aaa3a5756096cd8dfee0a581d16",
+          "raw_record_sha256": "25ddcb3cce4dd22a14c7c7c77e007be15c0d8801edaea8d77f6957adea380b38",
+          "row_number": 4,
+          "config_sha256": "f8f2373874a3718c767342b844a579c3d2b7b12fcbb080471f53fc3a61638fb0",
+          "source_field": "Supplier address"
+        },
+        "canonical_field": "address.postcode",
+        "address": {
+          "postcode": "4000"
+        },
+        "raw_value": "4000",
+        "confidence": {
+          "source_reliability": 0.8,
+          "field_confidence": 0.85
+        },
+        "derivation_level": "L1",
+        "observation_id": "dbc752d3bbd2ae6515225ed258d8f08bb14229b3266619f8db173649632eaf0e"
+      },
+      {
+        "source_id": "21a0f174-2f9e-4b01-a73a-7569eefbb0c8",
+        "source_record_id": "b7b6d1dd8e8a9850:5:16c795257fc3143a",
+        "observed_at": "2026-09-21T23:26:36.816738",
+        "ingested_at": "2026-10-21T07:50:11.321853+00:00",
+        "licence": "Creative Commons Attribution 4.0",
+        "extractor_version": "0.1.0:f8f2373874a3718c767342b844a579c3d2b7b12fcbb080471f53fc3a61638fb0",
+        "observed_at_basis": "resource_last_modified_proxy",
+        "provenance": {
+          "resource_url": "https://www.data.qld.gov.au/datastore/dump/95313d0f-5f76-46e5-9485-41266fb12bc6?format=csv",
+          "resource_sha256": "b7b6d1dd8e8a9850800ea3002005fa0123fe1aaa3a5756096cd8dfee0a581d16",
+          "raw_record_sha256": "16c795257fc3143a31268c58e2cbefe5b2a62c132d65cf68ba45298c2af59d8d",
+          "row_number": 5,
+          "config_sha256": "f8f2373874a3718c767342b844a579c3d2b7b12fcbb080471f53fc3a61638fb0",
+          "source_field": "Supplier address"
+        },
+        "canonical_field": "address.postcode",
+        "address": {
+          "postcode": "4550"
+        },
+        "raw_value": "4550",
+        "confidence": {
+          "source_reliability": 0.8,
+          "field_confidence": 0.85
+        },
+        "derivation_level": "L1",
+        "observation_id": "b500acf0cdf2ef39e91065421c00fe3f520eba696fae8c725a35e7b0df9b2b6e"
+      },
+      {
+        "source_id": "21a0f174-2f9e-4b01-a73a-7569eefbb0c8",
+        "source_record_id": "b7b6d1dd8e8a9850:6:17054c52676f746a",
+        "observed_at": "2026-09-21T23:26:36.816738",
+        "ingested_at": "2026-10-21T07:50:11.321853+00:00",
+        "licence": "Creative Commons Attribution 4.0",
+        "extractor_version": "0.1.0:f8f2373874a3718c767342b844a579c3d2b7b12fcbb080471f53fc3a61638fb0",
+        "observed_at_basis": "resource_last_modified_proxy",
+        "provenance": {
+          "resource_url": "https://www.data.qld.gov.au/datastore/dump/95313d0f-5f76-46e5-9485-41266fb12bc6?format=csv",
+          "resource_sha256": "b7b6d1dd8e8a9850800ea3002005fa0123fe1aaa3a5756096cd8dfee0a581d16",
+          "raw_record_sha256": "17054c52676f746af1081aab18e4d7167ccaed8057002b1a8f3d368e40342186",
+          "row_number": 6,
+          "config_sha256": "f8f2373874a3718c767342b844a579c3d2b7b12fcbb080471f53fc3a61638fb0",
+          "source_field": "Supplier address"
+        },
+        "canonical_field": "address.postcode",
+        "address": {
+          "postcode": "4006"
+        },
+        "raw_value": "4006",
+        "confidence": {
+          "source_reliability": 0.8,
+          "field_confidence": 0.85
+        },
+        "derivation_level": "L1",
+        "observation_id": "3595ddb23066613ecc404cb91d7d91db3e20bd4d3c0df44f78e49eae22962e27"
+      },
+      {
+        "source_id": "21a0f174-2f9e-4b01-a73a-7569eefbb0c8",
+        "source_record_id": "b7b6d1dd8e8a9850:7:ac70c0deacba0d7b",
+        "observed_at": "2026-09-21T23:26:36.816738",
+        "ingested_at": "2026-10-21T07:50:11.321853+00:00",
+        "licence": "Creative Commons Attribution 4.0",
+        "extractor_version": "0.1.0:f8f2373874a3718c767342b844a579c3d2b7b12fcbb080471f53fc3a61638fb0",
+        "observed_at_basis": "resource_last_modified_proxy",
+        "provenance": {
+          "resource_url": "https://www.data.qld.gov.au/datastore/dump/95313d0f-5f76-46e5-9485-41266fb12bc6?format=csv",
+          "resource_sha256": "b7b6d1dd8e8a9850800ea3002005fa0123fe1aaa3a5756096cd8dfee0a581d16",
+          "raw_record_sha256": "ac70c0deacba0d7b911b322395fa115610a000b9d143f26ba718acf3b3aa4606",
+          "row_number": 7,
+          "config_sha256": "f8f2373874a3718c767342b844a579c3d2b7b12fcbb080471f53fc3a61638fb0",
+          "source_field": "Supplier address"
+        },
+        "canonical_field": "address.postcode",
+        "address": {
+          "postcode": "4006"
+        },
+        "raw_value": "4006",
+        "confidence": {
+          "source_reliability": 0.8,
+          "field_confidence": 0.85
+        },
+        "derivation_level": "L1",
+        "observation_id": "28007a431669bbbdb9f8b7177fb83e05d9ea83a7a4504f90efbf4764bb58a07b"
+      },
+      {
+        "source_id": "21a0f174-2f9e-4b01-a73a-7569eefbb0c8",
+        "source_record_id": "b7b6d1dd8e8a9850:8:53137785e2c27f2f",
+        "observed_at": "2026-09-21T23:26:36.816738",
+        "ingested_at": "2026-10-21T07:50:11.321853+00:00",
+        "licence": "Creative Commons Attribution 4.0",
+        "extractor_version": "0.1.0:f8f2373874a3718c767342b844a579c3d2b7b12fcbb080471f53fc3a61638fb0",
+        "observed_at_basis": "resource_last_modified_proxy",
+        "provenance": {
+          "resource_url": "https://www.data.qld.gov.au/datastore/dump/95313d0f-5f76-46e5-9485-41266fb12bc6?format=csv",
+          "resource_sha256": "b7b6d1dd8e8a9850800ea3002005fa0123fe1aaa3a5756096cd8dfee0a581d16",
+          "raw_record_sha256": "53137785e2c27f2f26ebed7674984dbd2fc7dbe8f9b6887b731af70472a96259",
+          "row_number": 8,
+          "config_sha256": "f8f2373874a3718c767342b844a579c3d2b7b12fcbb080471f53fc3a61638fb0",
+          "source_field": "Supplier address"
+        },
+        "canonical_field": "address.postcode",
+        "address": {
+          "postcode": "4006"
+        },
+        "raw_value": "4006",
+        "confidence": {
+          "source_reliability": 0.8,
+          "field_confidence": 0.85
+        },
+        "derivation_level": "L1",
+        "observation_id": "17d4833b450f4ffeaf8fac10b553a7f485b61879e3c81b8ca556c5940ea25a95"
+      }
+    ],
+    "note": "Type/checksum validation does not prove semantic correctness; semantic review required."
+  },
+  "warnings": [],
+  "draft": true,
+  "review_instructions": "Inspect roles, source evidence, temporal proxy, field coverage, unmapped fields and samples. Approve the exact config hash or reject with reason."
+}

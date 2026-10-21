@@ -1,0 +1,15 @@
+{
+  "clean_checkout": true,
+  "fresh_virtual_environment": true,
+  "network_disabled_during_replay": true,
+  "snapshots_rehydrated": true,
+  "replay_seconds": 7.2355553639999926,
+  "outputs_match_original": {
+    "company_profiles.jsonl": "c139a37612d66d61c24c447c35017bfbc738d3d1c88a848dfd80c4f39dc6e5e5",
+    "proposed_links.jsonl": "043a446d0eaadc2bbbfbba375fd10f6071ad8e69e2e4921500b5fb942199537f",
+    "unlinked_queue.jsonl": "600e1994c0aef184363f35c119912a18f8d6bfee5a2aa8c70e0837cf40d05c06"
+  },
+  "observations": 77860,
+  "proposed_links": 136,
+  "profiles": 50
+}

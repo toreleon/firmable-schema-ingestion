@@ -1,0 +1,8 @@
+{
+  "at": "2026-10-21T07:55:35.288722+00:00",
+  "error": "HTTP Error 400: Bad Request",
+  "request_sha256": "cf0e1e258477b302272dfee9512f86fcf256f5a8602462b618c0f5890513849a",
+  "http_status": 400,
+  "wall_seconds": 0.30830067599981703,
+  "usage_unknown": true
+}

@@ -1,0 +1,170 @@
+{
+  "id": "msg_011CgF4YtE6gFhVJx5h8cnhD",
+  "usage": {
+    "prompt_tokens": 7721,
+    "completion_tokens": 1472,
+    "total_tokens": 9193,
+    "native": {
+      "input_tokens": 7721,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "cache_creation": {
+        "ephemeral_5m_input_tokens": 0,
+        "ephemeral_1h_input_tokens": 0
+      },
+      "output_tokens": 1472,
+      "output_tokens_details": {
+        "thinking_tokens": 0
+      },
+      "service_tier": "standard",
+      "inference_geo": "global",
+      "speed": "standard"
+    }
+  },
+  "native_response": {
+    "model": "claude-haiku-5-5",
+    "id": "msg_011CgF4YtE6gFhVJx5h8cnhD",
+    "type": "message",
+    "role": "assistant",
+    "content": [
+      {
+        "type": "tool_use",
+        "id": "toolu_01RMSU1wDzr361HRwKZiD8MS",
+        "name": "emit_result",
+        "input": {
+          "entity_role": "licensee",
+          "parser": {
+            "format": "json",
+            "record_path": "result.records",
+            "encoding": "utf-8-sig"
+          },
+          "observed_at_field": null,
+          "mappings": [
+            {
+              "source_field": "Licensee Name",
+              "canonical_field": "entity.legal_name",
+              "transforms": [
+                "strip"
+              ],
+              "confidence": 0.6,
+              "rationale": "Licensee Name is a person name for Individual licences and a company name for Company licences. Not confirmed as registered legal name for organisations; it is the register's licensee name. Below minimum confidence, so flagged for review and not expected to pass the 0.8 threshold."
+            },
+            {
+              "source_field": "ABN",
+              "canonical_field": "entity.abn",
+              "transforms": [
+                "strip",
+                "abn"
+              ],
+              "confidence": 0.95,
+              "rationale": "Column labelled ABN; training data shows 11,487 of 11,593 non-empty values pass ABN checksum. Validated by abn transform; invalid values will be rejected. Nulls are not mapped."
+            },
+            {
+              "source_field": "ACN",
+              "canonical_field": "entity.acn",
+              "transforms": [
+                "strip",
+                "acn"
+              ],
+              "confidence": 0.95,
+              "rationale": "Column labelled ACN; training shows 4,933 of 4,966 non-empty values pass ACN checksum. Validated by acn transform; not derived from ABN."
+            },
+            {
+              "source_field": "Licensee Business Address",
+              "canonical_field": "address.full",
+              "transforms": [
+                "strip"
+              ],
+              "confidence": 0.85,
+              "rationale": "Single labelled business address string for the licensee. Mapped as full address only; locality, state and postcode are not reliably separable without parsing, so left unmapped."
+            }
+          ],
+          "unmapped_fields": [
+            {
+              "source_field": "_id",
+              "reason": "Internal row identifier of the source dataset; not a supplier identifier. Retain as source_record_id reference only."
+            },
+            {
+              "source_field": "id",
+              "reason": "Duplicate of _id; internal identifier, not an entity identifier."
+            },
+            {
+              "source_field": "_full_text",
+              "reason": "Search index artefact derived from other fields; not a source statement."
+            },
+            {
+              "source_field": "Licence Number",
+              "reason": "QBCC licence number is a licence identifier, not an ABN, ACN or NZBN; no canonical field exists."
+            },
+            {
+              "source_field": "Licence Type CODE",
+              "reason": "Licence type code (I/C); no enum mapping supplied; entity_type not inferred from licence type to avoid guessing."
+            },
+            {
+              "source_field": "Licence Type DESC",
+              "reason": "Describes individual vs company licence holder. Could inform entity_type but no explicit enum map is provided; not guessed."
+            },
+            {
+              "source_field": "Financial Category CODE",
+              "reason": "Regulatory financial category; no canonical field."
+            },
+            {
+              "source_field": "Financial Category DESC",
+              "reason": "Regulatory financial category description; no canonical field."
+            },
+            {
+              "source_field": "Licence Grade",
+              "reason": "Licence grade, not industry code (ANZSIC); no canonical field."
+            },
+            {
+              "source_field": "Licence Class Type",
+              "reason": "Licence class (trade/occupational); not ANZSIC industry_code, so not mapped."
+            }
+          ],
+          "minimum_field_confidence": 0.8,
+          "warnings": [
+            "observed_at_field is null: the only time is resource_last_modified_proxy, which is a publication proxy, not a verified record statement time.",
+            "Licensee Name mapping confidence is 0.6, below the 0.8 minimum; it is listed as a mapping for review but will not meet threshold. Individuals' names must not be treated as businesses.",
+            "Licensee Name may be a person's name (Individual licence type); legal_name assumption is not established for individuals.",
+            "ABN and ACN are sparse and may be null; blank values are not mapped. ACN must not be inferred from ABN.",
+            "Address is unparsed and is not split into locality, state or postcode.",
+            "Licence number and QBCC identifiers are not supplier identifiers and are not mapped.",
+            "Source reliability is an uncalibrated prior; mapping confidence is independent of publisher reliability."
+          ]
+        },
+        "caller": {
+          "type": "direct"
+        }
+      }
+    ],
+    "container": null,
+    "stop_reason": "tool_use",
+    "stop_sequence": null,
+    "stop_details": null,
+    "usage": {
+      "input_tokens": 7721,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "cache_creation": {
+        "ephemeral_5m_input_tokens": 0,
+        "ephemeral_1h_input_tokens": 0
+      },
+      "output_tokens": 1472,
+      "output_tokens_details": {
+        "thinking_tokens": 0
+      },
+      "service_tier": "standard",
+      "inference_geo": "global",
+      "speed": "standard"
+    },
+    "diagnostics": null
+  },
+  "choices": [
+    {
+      "message": {
+        "content": "{\"entity_role\": \"licensee\", \"parser\": {\"format\": \"json\", \"record_path\": \"result.records\", \"encoding\": \"utf-8-sig\"}, \"observed_at_field\": null, \"mappings\": [{\"source_field\": \"Licensee Name\", \"canonical_field\": \"entity.legal_name\", \"transforms\": [\"strip\"], \"confidence\": 0.6, \"rationale\": \"Licensee Name is a person name for Individual licences and a company name for Company licences. Not confirmed as registered legal name for organisations; it is the register's licensee name. Below minimum confidence, so flagged for review and not expected to pass the 0.8 threshold.\"}, {\"source_field\": \"ABN\", \"canonical_field\": \"entity.abn\", \"transforms\": [\"strip\", \"abn\"], \"confidence\": 0.95, \"rationale\": \"Column labelled ABN; training data shows 11,487 of 11,593 non-empty values pass ABN checksum. Validated by abn transform; invalid values will be rejected. Nulls are not mapped.\"}, {\"source_field\": \"ACN\", \"canonical_field\": \"entity.acn\", \"transforms\": [\"strip\", \"acn\"], \"confidence\": 0.95, \"rationale\": \"Column labelled ACN; training shows 4,933 of 4,966 non-empty values pass ACN checksum. Validated by acn transform; not derived from ABN.\"}, {\"source_field\": \"Licensee Business Address\", \"canonical_field\": \"address.full\", \"transforms\": [\"strip\"], \"confidence\": 0.85, \"rationale\": \"Single labelled business address string for the licensee. Mapped as full address only; locality, state and postcode are not reliably separable without parsing, so left unmapped.\"}], \"unmapped_fields\": [{\"source_field\": \"_id\", \"reason\": \"Internal row identifier of the source dataset; not a supplier identifier. Retain as source_record_id reference only.\"}, {\"source_field\": \"id\", \"reason\": \"Duplicate of _id; internal identifier, not an entity identifier.\"}, {\"source_field\": \"_full_text\", \"reason\": \"Search index artefact derived from other fields; not a source statement.\"}, {\"source_field\": \"Licence Number\", \"reason\": \"QBCC licence number is a licence identifier, not an ABN, ACN or NZBN; no canonical field exists.\"}, {\"source_field\": \"Licence Type CODE\", \"reason\": \"Licence type code (I/C); no enum mapping supplied; entity_type not inferred from licence type to avoid guessing.\"}, {\"source_field\": \"Licence Type DESC\", \"reason\": \"Describes individual vs company licence holder. Could inform entity_type but no explicit enum map is provided; not guessed.\"}, {\"source_field\": \"Financial Category CODE\", \"reason\": \"Regulatory financial category; no canonical field.\"}, {\"source_field\": \"Financial Category DESC\", \"reason\": \"Regulatory financial category description; no canonical field.\"}, {\"source_field\": \"Licence Grade\", \"reason\": \"Licence grade, not industry code (ANZSIC); no canonical field.\"}, {\"source_field\": \"Licence Class Type\", \"reason\": \"Licence class (trade/occupational); not ANZSIC industry_code, so not mapped.\"}], \"minimum_field_confidence\": 0.8, \"warnings\": [\"observed_at_field is null: the only time is resource_last_modified_proxy, which is a publication proxy, not a verified record statement time.\", \"Licensee Name mapping confidence is 0.6, below the 0.8 minimum; it is listed as a mapping for review but will not meet threshold. Individuals' names must not be treated as businesses.\", \"Licensee Name may be a person's name (Individual licence type); legal_name assumption is not established for individuals.\", \"ABN and ACN are sparse and may be null; blank values are not mapped. ACN must not be inferred from ABN.\", \"Address is unparsed and is not split into locality, state or postcode.\", \"Licence number and QBCC identifiers are not supplier identifiers and are not mapped.\", \"Source reliability is an uncalibrated prior; mapping confidence is independent of publisher reliability.\"]}"
+      },
+      "finish_reason": "stop"
+    }
+  ]
+}

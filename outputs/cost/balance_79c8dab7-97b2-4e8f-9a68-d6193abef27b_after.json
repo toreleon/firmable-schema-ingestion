@@ -1,0 +1,14 @@
+{
+  "at": "2026-10-21T07:51:33.460683+00:00",
+  "response": {
+    "is_available": true,
+    "balance_infos": [
+      {
+        "currency": "USD",
+        "total_balance": "0.00",
+        "granted_balance": "0.01",
+        "topped_up_balance": "-0.00"
+      }
+    ]
+  }
+}

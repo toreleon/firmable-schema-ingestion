@@ -1,0 +1,237 @@
+{
+  "records": 84,
+  "observation_count": 84,
+  "emitted_by_field": {
+    "address.full": 84
+  },
+  "error_count": 0,
+  "errors": [],
+  "error_reasons": {},
+  "example_observations": [
+    {
+      "source_id": "8792a410-dea1-4fc9-b783-b97f0fefc208",
+      "source_record_id": "09cddf6b871e46b3:196:2cbf0839a461653c",
+      "observed_at": "2025-09-24T04:32:43.888174",
+      "ingested_at": "2026-10-21T07:50:11.136524+00:00",
+      "licence": "Creative Commons Attribution 3.0",
+      "extractor_version": "0.1.0:429aad218d14e24ea706e5d9da4facc4aa9e0483f52a1bd85f69789dd44c7cc2",
+      "observed_at_basis": "resource_last_modified_proxy",
+      "provenance": {
+        "resource_url": "https://www.data.qld.gov.au/datastore/dump/44c65b7e-03b7-40b3-b3cd-15d474dfb980?format=csv",
+        "resource_sha256": "09cddf6b871e46b333cc51448eefeb117856ab72954c855620704f15bc811dcf",
+        "raw_record_sha256": "2cbf0839a461653c75661bbaa5d553c29112023710f08e5ba54c7aa64a885233",
+        "row_number": 196,
+        "config_sha256": "429aad218d14e24ea706e5d9da4facc4aa9e0483f52a1bd85f69789dd44c7cc2",
+        "source_field": "Supplier address"
+      },
+      "canonical_field": "address.full",
+      "address": {
+        "full": "GPO BOX K975, Haymarket NSW 1240"
+      },
+      "raw_value": "GPO BOX K975, Haymarket NSW 1240",
+      "confidence": {
+        "source_reliability": 0.8,
+        "field_confidence": 0.85
+      },
+      "derivation_level": "L1",
+      "observation_id": "e4a896cb5357e94cdb5310eae99042cff6dd0b633662814c9f023b5525d325e4"
+    },
+    {
+      "source_id": "8792a410-dea1-4fc9-b783-b97f0fefc208",
+      "source_record_id": "09cddf6b871e46b3:197:394c08c5b809b70f",
+      "observed_at": "2025-09-24T04:32:43.888174",
+      "ingested_at": "2026-10-21T07:50:11.136524+00:00",
+      "licence": "Creative Commons Attribution 3.0",
+      "extractor_version": "0.1.0:429aad218d14e24ea706e5d9da4facc4aa9e0483f52a1bd85f69789dd44c7cc2",
+      "observed_at_basis": "resource_last_modified_proxy",
+      "provenance": {
+        "resource_url": "https://www.data.qld.gov.au/datastore/dump/44c65b7e-03b7-40b3-b3cd-15d474dfb980?format=csv",
+        "resource_sha256": "09cddf6b871e46b333cc51448eefeb117856ab72954c855620704f15bc811dcf",
+        "raw_record_sha256": "394c08c5b809b70fe1bcff967a0955f82d8c87488234745ba19cc2293410294f",
+        "row_number": 197,
+        "config_sha256": "429aad218d14e24ea706e5d9da4facc4aa9e0483f52a1bd85f69789dd44c7cc2",
+        "source_field": "Supplier address"
+      },
+      "canonical_field": "address.full",
+      "address": {
+        "full": "PO Box 3291 South Brisbane QLD 4101"
+      },
+      "raw_value": "PO Box 3291 South Brisbane QLD 4101",
+      "confidence": {
+        "source_reliability": 0.8,
+        "field_confidence": 0.85
+      },
+      "derivation_level": "L1",
+      "observation_id": "f22cd5b86a7f1e1d2ff44a3161d03b4f41e57089163514e7a784b72673c77208"
+    },
+    {
+      "source_id": "8792a410-dea1-4fc9-b783-b97f0fefc208",
+      "source_record_id": "09cddf6b871e46b3:198:720bc23a86d9fd39",
+      "observed_at": "2025-09-24T04:32:43.888174",
+      "ingested_at": "2026-10-21T07:50:11.136524+00:00",
+      "licence": "Creative Commons Attribution 3.0",
+      "extractor_version": "0.1.0:429aad218d14e24ea706e5d9da4facc4aa9e0483f52a1bd85f69789dd44c7cc2",
+      "observed_at_basis": "resource_last_modified_proxy",
+      "provenance": {
+        "resource_url": "https://www.data.qld.gov.au/datastore/dump/44c65b7e-03b7-40b3-b3cd-15d474dfb980?format=csv",
+        "resource_sha256": "09cddf6b871e46b333cc51448eefeb117856ab72954c855620704f15bc811dcf",
+        "raw_record_sha256": "720bc23a86d9fd396f4795f8f1e692d1edef8c062ea481d0ccb554131f4f824e",
+        "row_number": 198,
+        "config_sha256": "429aad218d14e24ea706e5d9da4facc4aa9e0483f52a1bd85f69789dd44c7cc2",
+        "source_field": "Supplier address"
+      },
+      "canonical_field": "address.full",
+      "address": {
+        "full": "Level 27, 1 Bligh Street, Sydney NSW 2000"
+      },
+      "raw_value": "Level 27, 1 Bligh Street, Sydney NSW 2000",
+      "confidence": {
+        "source_reliability": 0.8,
+        "field_confidence": 0.85
+      },
+      "derivation_level": "L1",
+      "observation_id": "603d767340d051608ebf12c07a154a3ab2a52f585fc5d6669ba0322293bd38db"
+    },
+    {
+      "source_id": "8792a410-dea1-4fc9-b783-b97f0fefc208",
+      "source_record_id": "09cddf6b871e46b3:199:e4e38b2daea7a213",
+      "observed_at": "2025-09-24T04:32:43.888174",
+      "ingested_at": "2026-10-21T07:50:11.136524+00:00",
+      "licence": "Creative Commons Attribution 3.0",
+      "extractor_version": "0.1.0:429aad218d14e24ea706e5d9da4facc4aa9e0483f52a1bd85f69789dd44c7cc2",
+      "observed_at_basis": "resource_last_modified_proxy",
+      "provenance": {
+        "resource_url": "https://www.data.qld.gov.au/datastore/dump/44c65b7e-03b7-40b3-b3cd-15d474dfb980?format=csv",
+        "resource_sha256": "09cddf6b871e46b333cc51448eefeb117856ab72954c855620704f15bc811dcf",
+        "raw_record_sha256": "e4e38b2daea7a2131cbbc908c2a22d834433f7766c17241d1d47bfa3e567992e",
+        "row_number": 199,
+        "config_sha256": "429aad218d14e24ea706e5d9da4facc4aa9e0483f52a1bd85f69789dd44c7cc2",
+        "source_field": "Supplier address"
+      },
+      "canonical_field": "address.full",
+      "address": {
+        "full": "Level 4, 123 Pitt Street, Sydney NSW 2000"
+      },
+      "raw_value": "Level 4, 123 Pitt Street, Sydney NSW 2000",
+      "confidence": {
+        "source_reliability": 0.8,
+        "field_confidence": 0.85
+      },
+      "derivation_level": "L1",
+      "observation_id": "3b90d69c91a16d52409c4ba7beeadcde440fa520a76f040a5c179cf92a5bf6fa"
+    },
+    {
+      "source_id": "8792a410-dea1-4fc9-b783-b97f0fefc208",
+      "source_record_id": "09cddf6b871e46b3:200:7bf54dda29baa16a",
+      "observed_at": "2025-09-24T04:32:43.888174",
+      "ingested_at": "2026-10-21T07:50:11.136524+00:00",
+      "licence": "Creative Commons Attribution 3.0",
+      "extractor_version": "0.1.0:429aad218d14e24ea706e5d9da4facc4aa9e0483f52a1bd85f69789dd44c7cc2",
+      "observed_at_basis": "resource_last_modified_proxy",
+      "provenance": {
+        "resource_url": "https://www.data.qld.gov.au/datastore/dump/44c65b7e-03b7-40b3-b3cd-15d474dfb980?format=csv",
+        "resource_sha256": "09cddf6b871e46b333cc51448eefeb117856ab72954c855620704f15bc811dcf",
+        "raw_record_sha256": "7bf54dda29baa16a9c3448098be6bdc952f6572b4653dae3be86c93e0beb30d2",
+        "row_number": 200,
+        "config_sha256": "429aad218d14e24ea706e5d9da4facc4aa9e0483f52a1bd85f69789dd44c7cc2",
+        "source_field": "Supplier address"
+      },
+      "canonical_field": "address.full",
+      "address": {
+        "full": "GPO Box 7844 Waterfront Place Brisbane QLD 4001"
+      },
+      "raw_value": "GPO Box 7844 Waterfront Place Brisbane QLD 4001",
+      "confidence": {
+        "source_reliability": 0.8,
+        "field_confidence": 0.85
+      },
+      "derivation_level": "L1",
+      "observation_id": "8ee5bc7e30a3fe7161feb9240f75831d3c7fa89c6a802327173f82e17b397b19"
+    },
+    {
+      "source_id": "8792a410-dea1-4fc9-b783-b97f0fefc208",
+      "source_record_id": "09cddf6b871e46b3:201:f26ec2d46a85756b",
+      "observed_at": "2025-09-24T04:32:43.888174",
+      "ingested_at": "2026-10-21T07:50:11.136524+00:00",
+      "licence": "Creative Commons Attribution 3.0",
+      "extractor_version": "0.1.0:429aad218d14e24ea706e5d9da4facc4aa9e0483f52a1bd85f69789dd44c7cc2",
+      "observed_at_basis": "resource_last_modified_proxy",
+      "provenance": {
+        "resource_url": "https://www.data.qld.gov.au/datastore/dump/44c65b7e-03b7-40b3-b3cd-15d474dfb980?format=csv",
+        "resource_sha256": "09cddf6b871e46b333cc51448eefeb117856ab72954c855620704f15bc811dcf",
+        "raw_record_sha256": "f26ec2d46a85756b5df0cc230b2f490577b0491eeb4ded3cf0fd6abcb2115c73",
+        "row_number": 201,
+        "config_sha256": "429aad218d14e24ea706e5d9da4facc4aa9e0483f52a1bd85f69789dd44c7cc2",
+        "source_field": "Supplier address"
+      },
+      "canonical_field": "address.full",
+      "address": {
+        "full": "Level 17, 123 Eagle Street Brisbane QLD 4000"
+      },
+      "raw_value": "Level 17, 123 Eagle Street Brisbane QLD 4000",
+      "confidence": {
+        "source_reliability": 0.8,
+        "field_confidence": 0.85
+      },
+      "derivation_level": "L1",
+      "observation_id": "1dbde4f794537e799274c6cc706dd11e9d205845a6bfb157cb91c2f473ee9887"
+    },
+    {
+      "source_id": "8792a410-dea1-4fc9-b783-b97f0fefc208",
+      "source_record_id": "09cddf6b871e46b3:202:4b2dd666b3756cd3",
+      "observed_at": "2025-09-24T04:32:43.888174",
+      "ingested_at": "2026-10-21T07:50:11.136524+00:00",
+      "licence": "Creative Commons Attribution 3.0",
+      "extractor_version": "0.1.0:429aad218d14e24ea706e5d9da4facc4aa9e0483f52a1bd85f69789dd44c7cc2",
+      "observed_at_basis": "resource_last_modified_proxy",
+      "provenance": {
+        "resource_url": "https://www.data.qld.gov.au/datastore/dump/44c65b7e-03b7-40b3-b3cd-15d474dfb980?format=csv",
+        "resource_sha256": "09cddf6b871e46b333cc51448eefeb117856ab72954c855620704f15bc811dcf",
+        "raw_record_sha256": "4b2dd666b3756cd39c3fda6f86232c72fa314a986c6df97bcad408062ae98bba",
+        "row_number": 202,
+        "config_sha256": "429aad218d14e24ea706e5d9da4facc4aa9e0483f52a1bd85f69789dd44c7cc2",
+        "source_field": "Supplier address"
+      },
+      "canonical_field": "address.full",
+      "address": {
+        "full": "Level 13, 140 Creek Street Brisbane QLD 4000"
+      },
+      "raw_value": "Level 13, 140 Creek Street Brisbane QLD 4000",
+      "confidence": {
+        "source_reliability": 0.8,
+        "field_confidence": 0.85
+      },
+      "derivation_level": "L1",
+      "observation_id": "21eacfbd8aaf7312248edd13b89145fb65a0e5f709d6757ba5880af72a5ce181"
+    },
+    {
+      "source_id": "8792a410-dea1-4fc9-b783-b97f0fefc208",
+      "source_record_id": "09cddf6b871e46b3:203:39b532417315324e",
+      "observed_at": "2025-09-24T04:32:43.888174",
+      "ingested_at": "2026-10-21T07:50:11.136524+00:00",
+      "licence": "Creative Commons Attribution 3.0",
+      "extractor_version": "0.1.0:429aad218d14e24ea706e5d9da4facc4aa9e0483f52a1bd85f69789dd44c7cc2",
+      "observed_at_basis": "resource_last_modified_proxy",
+      "provenance": {
+        "resource_url": "https://www.data.qld.gov.au/datastore/dump/44c65b7e-03b7-40b3-b3cd-15d474dfb980?format=csv",
+        "resource_sha256": "09cddf6b871e46b333cc51448eefeb117856ab72954c855620704f15bc811dcf",
+        "raw_record_sha256": "39b532417315324e0f57150e5f61a10223b5ed9231065c212cde2bfa1e9cce3d",
+        "row_number": 203,
+        "config_sha256": "429aad218d14e24ea706e5d9da4facc4aa9e0483f52a1bd85f69789dd44c7cc2",
+        "source_field": "Supplier address"
+      },
+      "canonical_field": "address.full",
+      "address": {
+        "full": "12/259 Queen Street, Brisbane QLD 4000"
+      },
+      "raw_value": "12/259 Queen Street, Brisbane QLD 4000",
+      "confidence": {
+        "source_reliability": 0.8,
+        "field_confidence": 0.85
+      },
+      "derivation_level": "L1",
+      "observation_id": "ad08e9187996c3c541841aaecde7941430a15a659e9c93dab25f5fcedf170e4f"
+    }
+  ],
+  "note": "Type/checksum validation does not prove semantic correctness; semantic review required."
+}

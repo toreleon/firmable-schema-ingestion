@@ -1,0 +1,41 @@
+# Firmable canonical ontology — assignment subset v0.1 (provided by user)
+version: 0.1
+entity:
+  legal_name: {type: string, notes: 'As registered. Not the trading name.'}
+  trading_name: {type: string, notes: 'May be multiple. Emit one observation each.'}
+  abn: {type: string, pattern: '^\d{11}$', notes: 'Australian Business Number; validate checksum.'}
+  acn: {type: string, pattern: '^\d{9}$', notes: 'Australian Company Number; validate checksum. Never assume an ABN suffix is an ACN.'}
+  nzbn: {type: string, pattern: '^\d{13}$'}
+  entity_type:
+    type: enum
+    values: [company, sole_trader, partnership, trust, incorporated_association, government, other, unknown]
+    notes: Default to unknown; do not guess.
+  status: {type: enum, values: [active, deregistered, in_liquidation, suspended, unknown]}
+  website: {type: string}
+  industry_code: {type: string, notes: 'ANZSIC where available. Preserve raw source value.'}
+  date_registered: {type: date}
+address:
+  full: {type: string}
+  locality: {type: string}
+  state: {type: enum, values: [NSW, VIC, QLD, WA, SA, TAS, ACT, NT, NZ, OTHER]}
+  postcode: {type: string}
+  country: {type: string, default: AU}
+observation:
+  source_id: {type: string, required: true}
+  source_record_id: {type: string, required: true, notes: 'Traceable to exact raw record; deterministic constructed keys must be documented.'}
+  observed_at: {type: datetime, required: true, notes: 'When the source stated it, not when it was read.'}
+  ingested_at: {type: datetime, required: true, notes: 'When it was read.'}
+  valid_from: {type: date}
+  valid_to: {type: date, notes: 'Null means current as far as the source knows.'}
+  licence: {type: string, required: true, notes: 'Use unknown and flag if unclear.'}
+  extractor_version: {type: string, required: true}
+confidence:
+  source_reliability: {type: float, range: [0, 1]}
+  field_confidence: {type: float, range: [0, 1]}
+  link_confidence: {type: float, range: [0, 1], notes: 'Only on links.'}
+derivation_level:
+  L0: A source stated it directly.
+  L1: We computed it deterministically from L0.
+  L2: We derived it statistically.
+  L3: A model inferred it.
+  L4: Inference on top of inference.

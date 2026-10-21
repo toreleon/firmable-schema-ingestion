@@ -1,0 +1,23 @@
+{
+  "source_id": "2b977e4d-c765-4ce5-8088-65210a744add",
+  "started_at": "2026-10-21T07:51:24.630856+00:00",
+  "steps": [
+    "01_inspect",
+    "02_parser",
+    "03_profile",
+    "04_proposal",
+    "05_holdout_validation",
+    "06_critique_revision",
+    "07_revalidation",
+    "08_review_packet"
+  ],
+  "identity": "c763174f1d4217827e2dd803ed84fcea357784369b5a20baa9a320b6dfa31db6",
+  "status": "awaiting_human_approval",
+  "last_checkpoint_at": "2026-10-21T08:12:11.292075+00:00",
+  "elapsed_seconds_this_invocation": 17.856282602999954,
+  "record_count": 202,
+  "observation_count": 151,
+  "config_sha256": "7ffd2193cae35fbb46baf75ae48d3e1d0b9e637720741caa5b3922e0d79592b7",
+  "step_count": 8,
+  "weakest_step": "semantic inference; checksum/type validation cannot establish field meaning"
+}

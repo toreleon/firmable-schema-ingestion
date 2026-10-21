@@ -1,0 +1,14 @@
+{
+  "recorded_at": "2026-10-21T08:54:34.660053+00:00",
+  "source": "User reply confirming aggregate review counts; per-item attribution retained from the provided CSV",
+  "link": {
+    "true": 47,
+    "false": 3
+  },
+  "triage": {
+    "true": 12,
+    "false": 3,
+    "inconclusive": 5
+  },
+  "independent_human_signoff_claimed": false
+}

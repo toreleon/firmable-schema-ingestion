@@ -1,0 +1,6 @@
+{
+  "fatal_error": "'str' object has no attribute 'get'",
+  "records": 3000,
+  "observation_count": 0,
+  "error_count": 0
+}

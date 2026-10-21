@@ -1,0 +1,28 @@
+{
+  "model": "claude-haiku-5-5",
+  "provider_id": "msg_011CgF3a2ueZvQn8EYx1yDt2",
+  "usage": {
+    "prompt_tokens": 8908,
+    "completion_tokens": 1721,
+    "total_tokens": 10629,
+    "native": {
+      "input_tokens": 8908,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "cache_creation": {
+        "ephemeral_5m_input_tokens": 0,
+        "ephemeral_1h_input_tokens": 0
+      },
+      "output_tokens": 1721,
+      "output_tokens_details": {
+        "thinking_tokens": 0
+      },
+      "service_tier": "standard",
+      "inference_geo": "global",
+      "speed": "standard"
+    }
+  },
+  "step": "04_proposal",
+  "at": "2026-10-21T08:12:00.785719+00:00",
+  "wall_seconds": 7.319316074999961
+}

@@ -1,0 +1,103 @@
+{
+  "parser": {
+    "format": "json",
+    "record_path": "result.records",
+    "encoding": "utf-8-sig"
+  },
+  "observed_at_field": null,
+  "entity_role": "licensee",
+  "minimum_field_confidence": 0.8,
+  "mappings": [
+    {
+      "source_field": "ABN",
+      "canonical_field": "entity.abn",
+      "transforms": [
+        "strip",
+        "digits",
+        "abn"
+      ],
+      "confidence": 0.85,
+      "rationale": "Held-out profile shows 11-digit ABN strings with spaces (e.g. '59 283 578 741'); the abn transform validates checksum and formatting. Ownership is not established by the source (may be individual's ABN), so confidence is kept below the prior 0.9 and flagged. Not a buyer or agency identifier. Rows with failing checksums should be rejected, not coerced."
+    },
+    {
+      "source_field": "ACN",
+      "canonical_field": "entity.acn",
+      "transforms": [
+        "strip",
+        "digits",
+        "acn"
+      ],
+      "confidence": 0.8,
+      "rationale": "Held-out values are 9-digit ACN strings with spaces (e.g. '105 317 682'); acn transform validates checksum. Sparse (36 of 3000 non-empty), so coverage is poor; retained at threshold only with checksum validation. Not derived from ABN."
+    },
+    {
+      "source_field": "Licensee Business Address",
+      "canonical_field": "address.full",
+      "transforms": [
+        "strip"
+      ],
+      "confidence": 0.85,
+      "rationale": "Single-line free-text address labelled as business address; maps to full address only. Locality, state and postcode are embedded and not split, to avoid unreliable parsing. Address may be residential or c/- mailing address."
+    }
+  ],
+  "unmapped_fields": [
+    {
+      "source_field": "Licensee Name",
+      "reason": "Previous mapping to entity.legal_name at confidence 0.6 is below the 0.8 minimum and is not supported as a registered legal name: most rows are individual persons (Licence Type DESC = Individual). Removed from mappings; no defensible legal_name evidence. Could be considered for a person-level entity role in future."
+    },
+    {
+      "source_field": "_id",
+      "reason": "Row index/system identifier, not an entity attribute."
+    },
+    {
+      "source_field": "id",
+      "reason": "Row identifier, not an entity attribute."
+    },
+    {
+      "source_field": "Licence Number",
+      "reason": "QBCC regulator licence identifier; no canonical target."
+    },
+    {
+      "source_field": "Financial Category CODE",
+      "reason": "Regulatory financial category; no canonical target."
+    },
+    {
+      "source_field": "Financial Category DESC",
+      "reason": "Regulatory financial category; no canonical target."
+    },
+    {
+      "source_field": "Licence Type CODE",
+      "reason": "Licence type, not legal entity type; no defensible enum mapping."
+    },
+    {
+      "source_field": "Licence Type DESC",
+      "reason": "Individual/Company licence type is ambiguous for entity_type; defaults to unknown, so not mapped."
+    },
+    {
+      "source_field": "Licence Grade",
+      "reason": "Describes licence class held, not industry_code or status."
+    },
+    {
+      "source_field": "Licence Class Type",
+      "reason": "Licence class description, not an ANZSIC code."
+    }
+  ],
+  "warnings": [
+    "Holdout validation failed with fatal error \"'str' object has no attribute 'get'\" and produced 0 observations; the mapping was not executed successfully and remains unverified against execution results.",
+    "observed_at_field is null; the resource modification time is a publication proxy only, not a source statement time.",
+    "Rows are per licence, so the same licensee appears multiple times; no deduplication at ingest.",
+    "Source has no trading_name, website, status, date_registered, nzbn, or industry_code fields."
+  ],
+  "source_id": "980b6499-c0b4-491b-ba9c-1c7506368a50",
+  "ontology_sha256": "f4b6b4941ec61dcc3fb07c6ee19edab927862aaaa8ae3df30b3023e047c9f9cd",
+  "generated_by": {
+    "kind": "multi_step_runtime_agent",
+    "model": "claude-haiku-5-5",
+    "run_identity": "7eb5c931372fbba3c3c401fc47e8d0c30fc66e59d0b0f9c40fc714ce05548b05"
+  },
+  "review": {
+    "status": "pending",
+    "reviewer": null,
+    "approved_config_sha256": null
+  }
+}

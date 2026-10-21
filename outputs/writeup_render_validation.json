@@ -1,0 +1,11 @@
+{
+  "rendered_at": "2026-10-21T17:55:49.761509+07:00",
+  "page_count": 2,
+  "paper": "A4",
+  "body_font_pt": 10.5,
+  "source_sha256": "d8d0a6ab710906d8f7f5840f9aeb34c4fd272514c7d1fd09b9956139fd8e4af3",
+  "pdf_sha256": "b60e642611e27234e387f2dc3d158e0f06f7da16c7ff0ac724694c00e7458339",
+  "renderer": "WeasyPrint 70.0",
+  "markdown_renderer": "pandoc 3.1.11.1",
+  "source_appendix_in_separate_file": true
+}

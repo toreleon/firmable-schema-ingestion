@@ -1,0 +1,13 @@
+{
+  "dataset_id": "78b81d12-5d55-4c2b-9a1b-da00ac598086",
+  "title": "Register of Commercial Office Space for Lease",
+  "findings": [
+    {
+      "url": "https://www.dpie.nsw.gov.au/__data/assets/pdf_file/0005/325094/GPNSW-Vacancy-Report_0.pdf",
+      "checked_at": "2026-10-21T10:35:30.325659+00:00",
+      "error": "HTTP Error 404: Not Found"
+    }
+  ],
+  "verdict": null,
+  "review_note": "Retrieval evidence only; existing inconclusive human verdict is retained."
+}

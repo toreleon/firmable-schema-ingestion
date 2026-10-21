@@ -1,0 +1,7 @@
+{
+  "requests": 59,
+  "request_limit": 60,
+  "reserved_usd": 8.068679999999999,
+  "limit_usd": 9,
+  "migration_note": "Settled earlier successful requests at conservative $10/M input + $20/M output using actual usage. Added $0.50 reserve for initial truncated DeepSeek response with missing usage and diagnostic calls. Rejected HTTP 400/402 requests excluded. These are cost ceilings, not actual billed spend."
+}

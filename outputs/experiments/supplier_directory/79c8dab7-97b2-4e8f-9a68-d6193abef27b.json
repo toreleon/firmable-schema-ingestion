@@ -1,0 +1,115 @@
+{
+  "entity_role": "supplier",
+  "parser": {
+    "format": "json",
+    "record_path": "result.records",
+    "encoding": "utf-8-sig"
+  },
+  "observed_at_field": null,
+  "mappings": [
+    {
+      "source_field": "Suppliers",
+      "canonical_field": "entity.abn",
+      "transforms": [
+        {
+          "op": "regex",
+          "pattern": "ABN: ?([0-9]{11})",
+          "group": 1,
+          "all": true
+        },
+        "abn"
+      ],
+      "confidence": 0.7,
+      "separate_entities": true,
+      "rationale": "Sample rows show explicit labelled supplier ABNs in the form 'ABN: 39109383593'. The prior regex used (?i) and \\s and \\b, which the execution flagged as exceeding the regex input/pattern limit on a very long multi-party cell. This replacement uses a literal label and a fixed-width character class with no case-insensitive flag, no \\s and no \\b, and is applied per-cell with all:true so each labelled ABN is isolated. Zero held-out emissions were produced by the previous pattern, so the pattern itself has not been validated on the failing cell; confidence is held at 0.7 pending checksum validation and a rerun. Checksum validity is unverified in the training counts (checksum_valid_abn 0 for all fields reflects no ABN-labelled matches in training check output, not a failure). Only supplier ABNs in Suppliers are mapped; Department, Section and Contact fields are buyer/agency and are excluded."
+    }
+  ],
+  "unmapped_fields": [
+    {
+      "source_field": "_id",
+      "reason": "Row index, not a supplier or entity identifier."
+    },
+    {
+      "source_field": "Arrangement Name",
+      "reason": "Procurement arrangement title, not a supplier legal or trading name."
+    },
+    {
+      "source_field": "Arrangement Number",
+      "reason": "Government arrangement identifier; not an ABN, ACN or NZBN."
+    },
+    {
+      "source_field": "Categories",
+      "reason": "Procurement category, not an ANZSIC industry code."
+    },
+    {
+      "source_field": "Subcategories",
+      "reason": "Procurement subcategory, not an industry code."
+    },
+    {
+      "source_field": "Product and Service Groups",
+      "reason": "Arrangement classification, list-valued; not an entity industry_code."
+    },
+    {
+      "source_field": "Start Date",
+      "reason": "Arrangement start date; not entity date_registered."
+    },
+    {
+      "source_field": "Expiry Date",
+      "reason": "Arrangement expiry date; not an entity status or registration date."
+    },
+    {
+      "source_field": "State",
+      "reason": "Publication state of the directory record, not an address state."
+    },
+    {
+      "source_field": "Status",
+      "reason": "Arrangement status, not the supplier's entity status."
+    },
+    {
+      "source_field": "Contact Name",
+      "reason": "Government contact; not supplier data."
+    },
+    {
+      "source_field": "Contact Email",
+      "reason": "Government buyer contact; not a supplier attribute."
+    },
+    {
+      "source_field": "Contact Phone",
+      "reason": "Government buyer contact; not a supplier attribute."
+    },
+    {
+      "source_field": "Department",
+      "reason": "Buying agency; must not be mapped as supplier identity or address."
+    },
+    {
+      "source_field": "Section",
+      "reason": "Buying agency unit; not supplier data."
+    },
+    {
+      "source_field": "Suppliers",
+      "reason": "Compound free text. Only the ABN-labelled identifier path is mapped. Supplier names, trading names, addresses, phones and emails cannot be safely attributed by index and remain unmapped."
+    }
+  ],
+  "minimum_field_confidence": 0.8,
+  "warnings": [
+    "Execution produced 0 observations. Per-field validation shows 13 valid emissions for Suppliers->entity.abn alongside 1 error on a very long cell, so the path did emit in part; the observation_count of 0 is inconsistent with per_field_validation and should be investigated in the runtime.",
+    "The previous regex used (?i), \\s and \\b; the replacement avoids these constructs and uses a literal label with a character class.",
+    "Confidence 0.7 is below minimum_field_confidence 0.8, so this mapping will be filtered out at the configured threshold until checksum validation and a successful rerun on the long cell are obtained. Coverage is sparse: most sample rows have no labelled ABN.",
+    "Checksum validity of extracted ABNs is unverified; the 'abn' transform is assumed to perform checksum validation.",
+    "The 'Suppliers' list contains buyer-unrelated free text. Names are not mapped because they cannot be reliably paired with ABNs by index.",
+    "observed_at_field is null; resource_last_modified_proxy is only a publication proxy, not a statement time.",
+    "No ACN or NZBN mapped; no ACN inferred from ABN. Review status pending."
+  ],
+  "source_id": "79c8dab7-97b2-4e8f-9a68-d6193abef27b",
+  "ontology_sha256": "f4b6b4941ec61dcc3fb07c6ee19edab927862aaaa8ae3df30b3023e047c9f9cd",
+  "generated_by": {
+    "kind": "multi_step_runtime_agent",
+    "model": "claude-haiku-5-5",
+    "run_identity": "9931b934905d01c296bf8ccbc75fcb8ce7a563a8ab82aa6ddacd0d6d6bf3120e"
+  },
+  "review": {
+    "status": "pending",
+    "reviewer": null,
+    "approved_config_sha256": null
+  }
+}

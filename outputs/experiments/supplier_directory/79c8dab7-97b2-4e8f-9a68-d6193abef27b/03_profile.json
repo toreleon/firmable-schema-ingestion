@@ -1,0 +1,329 @@
+{
+  "training": {
+    "record_count": 188,
+    "fields": {
+      "Arrangement Name": {
+        "nonempty": 188,
+        "types": {
+          "str": 188
+        },
+        "examples": [
+          "Total Parenteral Nutrition",
+          "Provision of Legal Services",
+          "Hand Hygiene, Surface Wipes and Pre-Op Sponges"
+        ],
+        "identifier_checks": {
+          "checksum_valid_abn": 0,
+          "checksum_valid_acn": 0
+        }
+      },
+      "Arrangement Number": {
+        "nonempty": 188,
+        "types": {
+          "str": 188
+        },
+        "examples": [
+          "QH122690",
+          "GGS0125-25",
+          "QH4872022"
+        ],
+        "identifier_checks": {
+          "checksum_valid_abn": 0,
+          "checksum_valid_acn": 0
+        }
+      },
+      "Categories": {
+        "nonempty": 188,
+        "types": {
+          "str": 188
+        },
+        "examples": [
+          "Medical",
+          "General Goods & Services",
+          "Information and Communication Technology"
+        ],
+        "identifier_checks": {
+          "checksum_valid_abn": 0,
+          "checksum_valid_acn": 0
+        }
+      },
+      "Contact Email": {
+        "nonempty": 188,
+        "types": {
+          "str": 188
+        },
+        "examples": [
+          "MedicalConsumables-sps@health.qld.gov.au",
+          "Panel.Manager@justice.qld.gov.au",
+          "procurement.ggs@qed.qld.gov.au"
+        ],
+        "identifier_checks": {
+          "checksum_valid_abn": 0,
+          "checksum_valid_acn": 0
+        }
+      },
+      "Contact Name": {
+        "nonempty": 188,
+        "types": {
+          "str": 188
+        },
+        "examples": [
+          "Lucy Geijskes",
+          "Jill Petrie",
+          "SOA Manager"
+        ],
+        "identifier_checks": {
+          "checksum_valid_abn": 0,
+          "checksum_valid_acn": 0
+        }
+      },
+      "Contact Phone": {
+        "nonempty": 188,
+        "types": {
+          "str": 188
+        },
+        "examples": [
+          "07 2100 9905",
+          "07 3738 9841",
+          "1300 366 612"
+        ],
+        "identifier_checks": {
+          "checksum_valid_abn": 0,
+          "checksum_valid_acn": 0
+        }
+      },
+      "Department": {
+        "nonempty": 188,
+        "types": {
+          "str": 188
+        },
+        "examples": [
+          "Queensland Health",
+          "Department of Justice",
+          "Department of Education"
+        ],
+        "identifier_checks": {
+          "checksum_valid_abn": 0,
+          "checksum_valid_acn": 0
+        }
+      },
+      "Expiry Date": {
+        "nonempty": 188,
+        "types": {
+          "str": 188
+        },
+        "examples": [
+          "2027-04-01T00:00:00",
+          "2030-09-30T00:00:00",
+          "2027-10-31T00:00:00"
+        ],
+        "identifier_checks": {
+          "checksum_valid_abn": 0,
+          "checksum_valid_acn": 0
+        }
+      },
+      "Product and Service Groups": {
+        "nonempty": 143,
+        "types": {
+          "NoneType": 45,
+          "str": 143
+        },
+        "examples": [
+          "Legal Services",
+          "Arts & Crafts Equipment & Accessories & Supplies,Educational Equipment,School Supplies",
+          "Services - Security Management"
+        ],
+        "identifier_checks": {
+          "checksum_valid_abn": 0,
+          "checksum_valid_acn": 0
+        }
+      },
+      "Section": {
+        "nonempty": 176,
+        "types": {
+          "str": 176,
+          "NoneType": 12
+        },
+        "examples": [
+          "Medical Consumables Category Team",
+          "Legal Services Coordination Unit",
+          "Procurement and Facilities Services - General Goods and Services"
+        ],
+        "identifier_checks": {
+          "checksum_valid_abn": 0,
+          "checksum_valid_acn": 0
+        }
+      },
+      "Start Date": {
+        "nonempty": 188,
+        "types": {
+          "str": 188
+        },
+        "examples": [
+          "2024-04-01T00:00:00",
+          "2026-10-01T00:00:00",
+          "2022-11-01T00:00:00"
+        ],
+        "identifier_checks": {
+          "checksum_valid_abn": 0,
+          "checksum_valid_acn": 0
+        }
+      },
+      "State": {
+        "nonempty": 188,
+        "types": {
+          "str": 188
+        },
+        "examples": [
+          "Published"
+        ],
+        "identifier_checks": {
+          "checksum_valid_abn": 0,
+          "checksum_valid_acn": 0
+        }
+      },
+      "Status": {
+        "nonempty": 188,
+        "types": {
+          "str": 188
+        },
+        "examples": [
+          "Active"
+        ],
+        "identifier_checks": {
+          "checksum_valid_abn": 0,
+          "checksum_valid_acn": 0
+        }
+      },
+      "Subcategories": {
+        "nonempty": 188,
+        "types": {
+          "str": 188
+        },
+        "examples": [
+          "Medical Equipment. & Supplies",
+          "Legal Services",
+          "Music, Game, Toy, Art, Craft & Edu"
+        ],
+        "identifier_checks": {
+          "checksum_valid_abn": 0,
+          "checksum_valid_acn": 0
+        }
+      },
+      "Suppliers": {
+        "nonempty": 188,
+        "types": {
+          "str": 188
+        },
+        "examples": [
+          "Fresenius Kabi Australia Pty Ltd, \nABN: 39109383593, \nPhone: (02) 8422 4825, \nEmail: communication@fresenius-kabi.com, \nAddress: Level 2, 2 Woodland Way, Mount Kuring-gai NSW 2080",
+          "TBA",
+          "Anaeron Pty Ltd, \nEBOS Healthcare Ecolab Pty Ltd, \nEcolab Pty Ltd, \nEgo Pharmaceuticals Pty Ltd, \nGAMA Healthcare Australia Pty Ltd, \nOrion Laboratories T/A Perrigo Australia Sarstedt Australia Pty Ltd, \nSarstedt Australia Pty Ltd, \nSchulke Australia Pty Ltd, \nSolventum-KCI Medical, \nSSS Australia, "
+        ],
+        "identifier_checks": {
+          "checksum_valid_abn": 0,
+          "checksum_valid_acn": 0
+        }
+      },
+      "_id": {
+        "nonempty": 188,
+        "types": {
+          "int": 188
+        },
+        "examples": [
+          "1",
+          "2",
+          "3"
+        ],
+        "identifier_checks": {
+          "checksum_valid_abn": 0,
+          "checksum_valid_acn": 0
+        }
+      }
+    },
+    "sample": [
+      {
+        "_id": 1,
+        "Arrangement Number": "QH122690",
+        "Arrangement Name": "Total Parenteral Nutrition",
+        "State": "Published",
+        "Categories": "Medical",
+        "Subcategories": "Medical Equipment. & Supplies",
+        "Product and Service Groups": null,
+        "Start Date": "2024-04-01T00:00:00",
+        "Expiry Date": "2027-04-01T00:00:00",
+        "Status": "Active",
+        "Contact Name": "Lucy Geijskes",
+        "Contact Email": "MedicalConsumables-sps@health.qld.gov.au",
+        "Contact Phone": "07 2100 9905",
+        "Department": "Queensland Health",
+        "Section": "Medical Consumables Category Team",
+        "Suppliers": "Fresenius Kabi Australia Pty Ltd, \nABN: 39109383593, \nPhone: (02) 8422 4825, \nEmail: communication@fresenius-kabi.com, \nAddress: Level 2, 2 Woodland Way, Mount Kuring-gai NSW 2080"
+      },
+      {
+        "_id": 2,
+        "Arrangement Number": "GGS0125-25",
+        "Arrangement Name": "Provision of Legal Services",
+        "State": "Published",
+        "Categories": "General Goods & Services",
+        "Subcategories": "Legal Services",
+        "Product and Service Groups": "Legal Services",
+        "Start Date": "2026-10-01T00:00:00",
+        "Expiry Date": "2030-09-30T00:00:00",
+        "Status": "Active",
+        "Contact Name": "Jill Petrie",
+        "Contact Email": "Panel.Manager@justice.qld.gov.au",
+        "Contact Phone": "07 3738 9841",
+        "Department": "Department of Justice",
+        "Section": "Legal Services Coordination Unit",
+        "Suppliers": "TBA"
+      },
+      {
+        "_id": 3,
+        "Arrangement Number": "QH4872022",
+        "Arrangement Name": "Hand Hygiene, Surface Wipes and Pre-Op Sponges",
+        "State": "Published",
+        "Categories": "Medical",
+        "Subcategories": "Medical Equipment. & Supplies",
+        "Product and Service Groups": null,
+        "Start Date": "2022-11-01T00:00:00",
+        "Expiry Date": "2027-10-31T00:00:00",
+        "Status": "Active",
+        "Contact Name": "Lucy Geijskes",
+        "Contact Email": "MedicalConsumables-sps@health.qld.gov.au",
+        "Contact Phone": "07 2100 9905",
+        "Department": "Queensland Health",
+        "Section": "Medical Consumables Category Team",
+        "Suppliers": "Anaeron Pty Ltd, \nEBOS Healthcare Ecolab Pty Ltd, \nEcolab Pty Ltd, \nEgo Pharmaceuticals Pty Ltd, \nGAMA Healthcare Australia Pty Ltd, \nOrion Laboratories T/A Perrigo Australia Sarstedt Australia Pty Ltd, \nSarstedt Australia Pty Ltd, \nSchulke Australia Pty Ltd, \nSolventum-KCI Medical, \nSSS Australia, \nThermo Fisher Scientific Australia Pty Ltd"
+      },
+      {
+        "_id": 4,
+        "Arrangement Number": "DET 65864",
+        "Arrangement Name": "Classroom Resources",
+        "State": "Published",
+        "Categories": "General Goods & Services",
+        "Subcategories": "Music, Game, Toy, Art, Craft & Edu",
+        "Product and Service Groups": "Arts & Crafts Equipment & Accessories & Supplies,Educational Equipment,School Supplies",
+        "Start Date": "2017-10-01T00:00:00",
+        "Expiry Date": "2026-12-31T00:00:00",
+        "Status": "Active",
+        "Contact Name": "SOA Manager",
+        "Contact Email": "procurement.ggs@qed.qld.gov.au",
+        "Contact Phone": "1300 366 612",
+        "Department": "Department of Education",
+        "Section": "Procurement and Facilities Services - General Goods and Services",
+        "Suppliers": "Bedrock Books, \nBox of Books, \nCampion Education, \nCleverPatch, \nComplete Office Supplies, \nEckersleys Arts & Craft, \nEDSCO, \nHarley's Educational, \nIOS Solutions t/a Impact Office Supplies, \nKookaburra Educational, \nMK Educational, \nModern Teaching Aids, \nMy School Gear, \nNetwork Educational, \nOfficeworks, \nOxlades Art Supplies, \nReadCloud Limited, \nS&S Wholesale, \nSchool Art Supplies, \nSchoolstuff, \nSpeedy School Supplies (Loveld Pty Ltd t/a), \nThe Book House, \nWarrego Office Choice, \nWinc Australia Pty Limited"
+      }
+    ]
+  },
+  "holdout_count": 81,
+  "split": "first 70% training, final 30% holdout; document-head inspection only",
+  "training_rows": [
+    1,
+    188
+  ],
+  "holdout_rows": [
+    189,
+    269
+  ]
+}

@@ -1,0 +1,208 @@
+{"source_record_id": "7b85367118b640c8:139:574e2b2de63de84f", "source_field": "ABN", "canonical_field": "entity.abn", "raw_value": "69 984 324 569", "reason": "Invalid ABN checksum"}
+{"source_record_id": "7b85367118b640c8:352:0632f6fbbe0f9002", "source_field": "ABN", "canonical_field": "entity.abn", "raw_value": "50 611 707 314", "reason": "Invalid ABN checksum"}
+{"source_record_id": "7b85367118b640c8:407:5c9c1bba78a599a1", "source_field": "ABN", "canonical_field": "entity.abn", "raw_value": "99 674 094 972", "reason": "Invalid ABN checksum"}
+{"source_record_id": "7b85367118b640c8:627:a7b97daf647f26ff", "source_field": "ACN", "canonical_field": "entity.acn", "raw_value": "116 501 957", "reason": "Invalid ACN checksum"}
+{"source_record_id": "7b85367118b640c8:716:dd37cf5ec2b9dd34", "source_field": "ACN", "canonical_field": "entity.acn", "raw_value": "678 541 697", "reason": "Invalid ACN checksum"}
+{"source_record_id": "7b85367118b640c8:729:3fc5ab23d6c1786f", "source_field": "ABN", "canonical_field": "entity.abn", "raw_value": "25 659 151 716", "reason": "Invalid ABN checksum"}
+{"source_record_id": "7b85367118b640c8:910:b8e0571cb44ff76b", "source_field": "ABN", "canonical_field": "entity.abn", "raw_value": "40 451 368 063", "reason": "Invalid ABN checksum"}
+{"source_record_id": "7b85367118b640c8:966:e03be02cc413cea4", "source_field": "ABN", "canonical_field": "entity.abn", "raw_value": "50 613 187 824", "reason": "Invalid ABN checksum"}
+{"source_record_id": "7b85367118b640c8:979:2ea40ae254f85082", "source_field": "ABN", "canonical_field": "entity.abn", "raw_value": "48 566 064 589", "reason": "Invalid ABN checksum"}
+{"source_record_id": "7b85367118b640c8:1416:4c863cd4c4aa4518", "source_field": "ABN", "canonical_field": "entity.abn", "raw_value": "26 635 039 093", "reason": "Invalid ABN checksum"}
+{"source_record_id": "7b85367118b640c8:1592:7285425a5b1447f0", "source_field": "ABN", "canonical_field": "entity.abn", "raw_value": "67 671 515 665", "reason": "Invalid ABN checksum"}
+{"source_record_id": "7b85367118b640c8:1592:7285425a5b1447f0", "source_field": "ACN", "canonical_field": "entity.acn", "raw_value": "761 515 665", "reason": "Invalid ACN checksum"}
+{"source_record_id": "7b85367118b640c8:1946:8d8ea76b59b74c98", "source_field": "ABN", "canonical_field": "entity.abn", "raw_value": "30 586 985 658", "reason": "Invalid ABN checksum"}
+{"source_record_id": "7b85367118b640c8:1976:0c56b8169cc7f6fc", "source_field": "ABN", "canonical_field": "entity.abn", "raw_value": "16 680 916 681", "reason": "Invalid ABN checksum"}
+{"source_record_id": "7b85367118b640c8:1976:0c56b8169cc7f6fc", "source_field": "ACN", "canonical_field": "entity.acn", "raw_value": "680 916 681", "reason": "Invalid ACN checksum"}
+{"source_record_id": "7b85367118b640c8:2362:a914c464f361d427", "source_field": "ABN", "canonical_field": "entity.abn", "raw_value": "81 160 506 189", "reason": "Invalid ABN checksum"}
+{"source_record_id": "7b85367118b640c8:2666:9159a2bff26fe8d1", "source_field": "ABN", "canonical_field": "entity.abn", "raw_value": "51 680 182 554", "reason": "Invalid ABN checksum"}
+{"source_record_id": "7b85367118b640c8:2749:c5b8cdb74da98a8b", "source_field": "ABN", "canonical_field": "entity.abn", "raw_value": "54 679 452 509", "reason": "Invalid ABN checksum"}
+{"source_record_id": "7b85367118b640c8:2749:c5b8cdb74da98a8b", "source_field": "ACN", "canonical_field": "entity.acn", "raw_value": "679 452 509", "reason": "Invalid ACN checksum"}
+{"source_record_id": "7b85367118b640c8:3402:2a30232a013d1fef", "source_field": "ABN", "canonical_field": "entity.abn", "raw_value": "97 123 952 779", "reason": "Invalid ABN checksum"}
+{"source_record_id": "7b85367118b640c8:3514:6ae6e923dc661f6d", "source_field": "ABN", "canonical_field": "entity.abn", "raw_value": "74 943 661 194", "reason": "Invalid ABN checksum"}
+{"source_record_id": "7b85367118b640c8:3811:09c2e52d8a1b0969", "source_field": "ABN", "canonical_field": "entity.abn", "raw_value": "56 499 284 087", "reason": "Invalid ABN checksum"}
+{"source_record_id": "7b85367118b640c8:3995:ea65288f4263b729", "source_field": "ABN", "canonical_field": "entity.abn", "raw_value": "92 926 089 947", "reason": "Invalid ABN checksum"}
+{"source_record_id": "7b85367118b640c8:4418:beced5fb026ff939", "source_field": "ABN", "canonical_field": "entity.abn", "raw_value": "54 663 126 336", "reason": "Invalid ABN checksum"}
+{"source_record_id": "7b85367118b640c8:4596:1928bc24188f5609", "source_field": "ABN", "canonical_field": "entity.abn", "raw_value": "21 695 209 701", "reason": "Invalid ABN checksum"}
+{"source_record_id": "7b85367118b640c8:4605:17a7bbf032f90ef8", "source_field": "ABN", "canonical_field": "entity.abn", "raw_value": "58 107 498 986", "reason": "Invalid ABN checksum"}
+{"source_record_id": "7b85367118b640c8:4624:c9e59f1a075d394d", "source_field": "ABN", "canonical_field": "entity.abn", "raw_value": "78 296 634 883", "reason": "Invalid ABN checksum"}
+{"source_record_id": "7b85367118b640c8:4808:e0f9226f2b207681", "source_field": "ABN", "canonical_field": "entity.abn", "raw_value": "61 659 437 591", "reason": "Invalid ABN checksum"}
+{"source_record_id": "7b85367118b640c8:4891:23433ef62c21ed24", "source_field": "ACN", "canonical_field": "entity.acn", "raw_value": "116 501 957", "reason": "Invalid ACN checksum"}
+{"source_record_id": "7b85367118b640c8:5095:38e32febdb3def2e", "source_field": "ABN", "canonical_field": "entity.abn", "raw_value": "73 446 917 476", "reason": "Invalid ABN checksum"}
+{"source_record_id": "7b85367118b640c8:5160:f55dc4086a6b6d0a", "source_field": "ABN", "canonical_field": "entity.abn", "raw_value": "94 920 707 543", "reason": "Invalid ABN checksum"}
+{"source_record_id": "7b85367118b640c8:5301:6dac20341be83a30", "source_field": "ABN", "canonical_field": "entity.abn", "raw_value": "48 781 867 270", "reason": "Invalid ABN checksum"}
+{"source_record_id": "7b85367118b640c8:5717:66137f6824dc7b19", "source_field": "ABN", "canonical_field": "entity.abn", "raw_value": "29 482 186 363", "reason": "Invalid ABN checksum"}
+{"source_record_id": "7b85367118b640c8:5851:57752c0924530d3b", "source_field": "ABN", "canonical_field": "entity.abn", "raw_value": "99 286 020 654", "reason": "Invalid ABN checksum"}
+{"source_record_id": "7b85367118b640c8:5881:eee2c920d0e8ed47", "source_field": "ACN", "canonical_field": "entity.acn", "raw_value": "645 965 119", "reason": "Invalid ACN checksum"}
+{"source_record_id": "7b85367118b640c8:6034:74594b5afc0c72bb", "source_field": "ABN", "canonical_field": "entity.abn", "raw_value": "59 160 593 420", "reason": "Invalid ABN checksum"}
+{"source_record_id": "7b85367118b640c8:6230:097e8b40daf72b23", "source_field": "ABN", "canonical_field": "entity.abn", "raw_value": "99 286 020 654", "reason": "Invalid ABN checksum"}
+{"source_record_id": "7b85367118b640c8:6243:156990d40a25937b", "source_field": "ABN", "canonical_field": "entity.abn", "raw_value": "58 107 498 986", "reason": "Invalid ABN checksum"}
+{"source_record_id": "7b85367118b640c8:6361:ed34b17e2b550287", "source_field": "ACN", "canonical_field": "entity.acn", "raw_value": "626 029 733", "reason": "Invalid ACN checksum"}
+{"source_record_id": "7b85367118b640c8:6418:d25610696c822373", "source_field": "ACN", "canonical_field": "entity.acn", "raw_value": "682 313 263", "reason": "Invalid ACN checksum"}
+{"source_record_id": "7b85367118b640c8:6587:a1eff99d6379bcf3", "source_field": "ABN", "canonical_field": "entity.abn", "raw_value": "59 161 249 897", "reason": "Invalid ABN checksum"}
+{"source_record_id": "7b85367118b640c8:6819:83cfdf695c63e2bc", "source_field": "ABN", "canonical_field": "entity.abn", "raw_value": "30 161 111 191", "reason": "Invalid ABN checksum"}
+{"source_record_id": "7b85367118b640c8:6934:b7cef8d8948fd7f4", "source_field": "ABN", "canonical_field": "entity.abn", "raw_value": "62 755 954 661", "reason": "Invalid ABN checksum"}
+{"source_record_id": "7b85367118b640c8:6983:93ba9ad6f12a7b2f", "source_field": "ABN", "canonical_field": "entity.abn", "raw_value": "90 149 172 640", "reason": "Invalid ABN checksum"}
+{"source_record_id": "7b85367118b640c8:7570:094cb691aff374e4", "source_field": "ABN", "canonical_field": "entity.abn", "raw_value": "42 734 148 053", "reason": "Invalid ABN checksum"}
+{"source_record_id": "7b85367118b640c8:7630:332ec486baa99385", "source_field": "ABN", "canonical_field": "entity.abn", "raw_value": "63 101 717 405", "reason": "Invalid ABN checksum"}
+{"source_record_id": "7b85367118b640c8:7924:af1d4860113d0cde", "source_field": "ABN", "canonical_field": "entity.abn", "raw_value": "72 677 679 079", "reason": "Invalid ABN checksum"}
+{"source_record_id": "7b85367118b640c8:7961:05db2e924e1aa403", "source_field": "ABN", "canonical_field": "entity.abn", "raw_value": "71 045 799 113", "reason": "Invalid ABN checksum"}
+{"source_record_id": "7b85367118b640c8:8238:c9339c2c53eccfc3", "source_field": "ABN", "canonical_field": "entity.abn", "raw_value": "88 691 912 781", "reason": "Invalid ABN checksum"}
+{"source_record_id": "7b85367118b640c8:8238:c9339c2c53eccfc3", "source_field": "ACN", "canonical_field": "entity.acn", "raw_value": "691 912 781", "reason": "Invalid ACN checksum"}
+{"source_record_id": "7b85367118b640c8:8272:ce3aeb659230a59e", "source_field": "ABN", "canonical_field": "entity.abn", "raw_value": "84 101 835 364", "reason": "Invalid ABN checksum"}
+{"source_record_id": "7b85367118b640c8:8642:406e3721689a5933", "source_field": "ABN", "canonical_field": "entity.abn", "raw_value": "26 635 039 093", "reason": "Invalid ABN checksum"}
+{"source_record_id": "7b85367118b640c8:9051:8c782f155ec11273", "source_field": "ABN", "canonical_field": "entity.abn", "raw_value": "11 474 964 474", "reason": "Invalid ABN checksum"}
+{"source_record_id": "7b85367118b640c8:9129:f657d89aa4a49f66", "source_field": "ABN", "canonical_field": "entity.abn", "raw_value": "92 926 089 947", "reason": "Invalid ABN checksum"}
+{"source_record_id": "7b85367118b640c8:9442:1d781a15aabb2e71", "source_field": "ABN", "canonical_field": "entity.abn", "raw_value": "82 612 748 214", "reason": "Invalid ABN checksum"}
+{"source_record_id": "7b85367118b640c8:9463:1ba90dd94794b7f7", "source_field": "ABN", "canonical_field": "entity.abn", "raw_value": "98 636 326 625", "reason": "Invalid ABN checksum"}
+{"source_record_id": "7b85367118b640c8:9609:787556ce6d7bb200", "source_field": "ABN", "canonical_field": "entity.abn", "raw_value": "18 955 403 918", "reason": "Invalid ABN checksum"}
+{"source_record_id": "7b85367118b640c8:9956:07a21c952b2801a5", "source_field": "ABN", "canonical_field": "entity.abn", "raw_value": "24 122 517 843", "reason": "Invalid ABN checksum"}
+{"source_record_id": "7b85367118b640c8:9980:9c7089f05f9b9719", "source_field": "ACN", "canonical_field": "entity.acn", "raw_value": "322 446 930", "reason": "Invalid ACN checksum"}
+{"source_record_id": "7b85367118b640c8:10046:5df40d909cdd538a", "source_field": "ABN", "canonical_field": "entity.abn", "raw_value": "96 778 837 038", "reason": "Invalid ABN checksum"}
+{"source_record_id": "7b85367118b640c8:10541:d53560818458678b", "source_field": "ABN", "canonical_field": "entity.abn", "raw_value": "60 561 482 231", "reason": "Invalid ABN checksum"}
+{"source_record_id": "7b85367118b640c8:10694:204f4e1c7862f70b", "source_field": "ABN", "canonical_field": "entity.abn", "raw_value": "39 914 910 175", "reason": "Invalid ABN checksum"}
+{"source_record_id": "7b85367118b640c8:10757:9eed6ff97f987096", "source_field": "ABN", "canonical_field": "entity.abn", "raw_value": "75 631 459 175", "reason": "Invalid ABN checksum"}
+{"source_record_id": "7b85367118b640c8:10757:9eed6ff97f987096", "source_field": "ACN", "canonical_field": "entity.acn", "raw_value": "631 459 175", "reason": "Invalid ACN checksum"}
+{"source_record_id": "7b85367118b640c8:10906:cbf6a6f4ae25ae03", "source_field": "ABN", "canonical_field": "entity.abn", "raw_value": "19 616 293 075", "reason": "Invalid ABN checksum"}
+{"source_record_id": "7b85367118b640c8:11050:ff6f546039b9d5f7", "source_field": "ABN", "canonical_field": "entity.abn", "raw_value": "61 684 830 601", "reason": "Invalid ABN checksum"}
+{"source_record_id": "7b85367118b640c8:11118:40bcc918eff3761b", "source_field": "ABN", "canonical_field": "entity.abn", "raw_value": "30 700 100 269", "reason": "Invalid ABN checksum"}
+{"source_record_id": "7b85367118b640c8:11643:4d7c985aaaea4fe5", "source_field": "ABN", "canonical_field": "entity.abn", "raw_value": "31 140 611 525", "reason": "Invalid ABN checksum"}
+{"source_record_id": "7b85367118b640c8:11666:f6d3923b60f0b4f4", "source_field": "ABN", "canonical_field": "entity.abn", "raw_value": "78 364 751 394", "reason": "Invalid ABN checksum"}
+{"source_record_id": "7b85367118b640c8:11780:5245a73ffd768457", "source_field": "ACN", "canonical_field": "entity.acn", "raw_value": "245 528 384", "reason": "Invalid ACN checksum"}
+{"source_record_id": "7b85367118b640c8:11849:18eb265f0123fbd8", "source_field": "ABN", "canonical_field": "entity.abn", "raw_value": "19 616 293 075", "reason": "Invalid ABN checksum"}
+{"source_record_id": "7b85367118b640c8:11891:a9ae420fe4e0af2c", "source_field": "ABN", "canonical_field": "entity.abn", "raw_value": "14 657 767 848", "reason": "Invalid ABN checksum"}
+{"source_record_id": "7b85367118b640c8:11974:c19ad8071c0a55d0", "source_field": "ACN", "canonical_field": "entity.acn", "raw_value": "569 282 900", "reason": "Invalid ACN checksum"}
+{"source_record_id": "7b85367118b640c8:11994:ce9d86e538f578ff", "source_field": "ABN", "canonical_field": "entity.abn", "raw_value": "54 675 790 931", "reason": "Invalid ABN checksum"}
+{"source_record_id": "7b85367118b640c8:12060:4e66a3bcf92e07d5", "source_field": "ABN", "canonical_field": "entity.abn", "raw_value": "19 616 293 075", "reason": "Invalid ABN checksum"}
+{"source_record_id": "7b85367118b640c8:12180:9459f9c40b11bb6b", "source_field": "ACN", "canonical_field": "entity.acn", "raw_value": "623 962 803", "reason": "Invalid ACN checksum"}
+{"source_record_id": "7b85367118b640c8:12391:3ab22d88d859edf1", "source_field": "ABN", "canonical_field": "entity.abn", "raw_value": "96 459 791 958", "reason": "Invalid ABN checksum"}
+{"source_record_id": "7b85367118b640c8:12660:ea4eea4a75ba376e", "source_field": "ABN", "canonical_field": "entity.abn", "raw_value": "16 835 871 829", "reason": "Invalid ABN checksum"}
+{"source_record_id": "7b85367118b640c8:12869:fde6d0a35d8342fe", "source_field": "ABN", "canonical_field": "entity.abn", "raw_value": "88 168 715 948", "reason": "Invalid ABN checksum"}
+{"source_record_id": "7b85367118b640c8:13022:fd434f837f1a15f4", "source_field": "ACN", "canonical_field": "entity.acn", "raw_value": "613 593 262", "reason": "Invalid ACN checksum"}
+{"source_record_id": "7b85367118b640c8:13029:8175da868daed324", "source_field": "ACN", "canonical_field": "entity.acn", "raw_value": "648 083 847", "reason": "Invalid ACN checksum"}
+{"source_record_id": "7b85367118b640c8:13129:c91731545463980a", "source_field": "ABN", "canonical_field": "entity.abn", "raw_value": "81 498 545 954", "reason": "Invalid ABN checksum"}
+{"source_record_id": "7b85367118b640c8:13240:cd6aec85a261e897", "source_field": "ABN", "canonical_field": "entity.abn", "raw_value": "75 645 406 935", "reason": "Invalid ABN checksum"}
+{"source_record_id": "7b85367118b640c8:13366:7ed3c0195883026e", "source_field": "ACN", "canonical_field": "entity.acn", "raw_value": "618 889 388", "reason": "Invalid ACN checksum"}
+{"source_record_id": "7b85367118b640c8:13397:00dabd389b223771", "source_field": "ABN", "canonical_field": "entity.abn", "raw_value": "99 689 858 464", "reason": "Invalid ABN checksum"}
+{"source_record_id": "7b85367118b640c8:13518:0a5bf338ede92345", "source_field": "ACN", "canonical_field": "entity.acn", "raw_value": "457 453 529", "reason": "Invalid ACN checksum"}
+{"source_record_id": "7b85367118b640c8:13689:9ea8c7e9ff574c0b", "source_field": "ABN", "canonical_field": "entity.abn", "raw_value": "75 884 859 534", "reason": "Invalid ABN checksum"}
+{"source_record_id": "7b85367118b640c8:13784:a2cb2b8e8d8b1854", "source_field": "ACN", "canonical_field": "entity.acn", "raw_value": "678 541 697", "reason": "Invalid ACN checksum"}
+{"source_record_id": "7b85367118b640c8:13912:c2581c4f0614513b", "source_field": "ABN", "canonical_field": "entity.abn", "raw_value": "57 690 588 800", "reason": "Invalid ABN checksum"}
+{"source_record_id": "7b85367118b640c8:13912:c2581c4f0614513b", "source_field": "ACN", "canonical_field": "entity.acn", "raw_value": "690 588 800", "reason": "Invalid ACN checksum"}
+{"source_record_id": "7b85367118b640c8:13976:10727cb9bb022bb0", "source_field": "ABN", "canonical_field": "entity.abn", "raw_value": "92 929 484 475", "reason": "Invalid ABN checksum"}
+{"source_record_id": "7b85367118b640c8:14152:8c2637e2e997efdf", "source_field": "ACN", "canonical_field": "entity.acn", "raw_value": "302 132 669", "reason": "Invalid ACN checksum"}
+{"source_record_id": "7b85367118b640c8:14283:77305db8e16a82c7", "source_field": "ABN", "canonical_field": "entity.abn", "raw_value": "61 679 496 561", "reason": "Invalid ABN checksum"}
+{"source_record_id": "7b85367118b640c8:14605:9568b513414b22b1", "source_field": "ABN", "canonical_field": "entity.abn", "raw_value": "54 559 536 297", "reason": "Invalid ABN checksum"}
+{"source_record_id": "7b85367118b640c8:14728:f4de1e3b0238312f", "source_field": "ABN", "canonical_field": "entity.abn", "raw_value": "53 672 743 808", "reason": "Invalid ABN checksum"}
+{"source_record_id": "7b85367118b640c8:14780:8923996355fd4330", "source_field": "ACN", "canonical_field": "entity.acn", "raw_value": "626 029 733", "reason": "Invalid ACN checksum"}
+{"source_record_id": "7b85367118b640c8:14961:28fbee4c9d0e0071", "source_field": "ACN", "canonical_field": "entity.acn", "raw_value": "163 318 665", "reason": "Invalid ACN checksum"}
+{"source_record_id": "7b85367118b640c8:15158:8f12cfef0133df3c", "source_field": "ACN", "canonical_field": "entity.acn", "raw_value": "569 282 900", "reason": "Invalid ACN checksum"}
+{"source_record_id": "7b85367118b640c8:15333:a4109e85e8ab145c", "source_field": "ABN", "canonical_field": "entity.abn", "raw_value": "71 693 162 029", "reason": "Invalid ABN checksum"}
+{"source_record_id": "7b85367118b640c8:15689:e3e567e75bf69bef", "source_field": "ABN", "canonical_field": "entity.abn", "raw_value": "99 674 094 972", "reason": "Invalid ABN checksum"}
+{"source_record_id": "7b85367118b640c8:15694:703f6befaf14c5e3", "source_field": "ABN", "canonical_field": "entity.abn", "raw_value": "42 199 199 839", "reason": "Invalid ABN checksum"}
+{"source_record_id": "7b85367118b640c8:16461:ac8eff219ec954d3", "source_field": "ABN", "canonical_field": "entity.abn", "raw_value": "96 778 837 038", "reason": "Invalid ABN checksum"}
+{"source_record_id": "7b85367118b640c8:16463:581f206345a2fb19", "source_field": "ABN", "canonical_field": "entity.abn", "raw_value": "78 164 874 414", "reason": "Invalid ABN checksum"}
+{"source_record_id": "7b85367118b640c8:16493:5c792fb6d9bbd686", "source_field": "ABN", "canonical_field": "entity.abn", "raw_value": "75 503 635 775", "reason": "Invalid ABN checksum"}
+{"source_record_id": "7b85367118b640c8:16557:7c1388ae041e4733", "source_field": "ABN", "canonical_field": "entity.abn", "raw_value": "61 601 987 687", "reason": "Invalid ABN checksum"}
+{"source_record_id": "7b85367118b640c8:16608:7deb0fa282f88966", "source_field": "ABN", "canonical_field": "entity.abn", "raw_value": "42 140 642 429", "reason": "Invalid ABN checksum"}
+{"source_record_id": "7b85367118b640c8:16627:cb39aa3548b63338", "source_field": "ABN", "canonical_field": "entity.abn", "raw_value": "78 225 394 690", "reason": "Invalid ABN checksum"}
+{"source_record_id": "7b85367118b640c8:16697:ad99b40dd0ddee88", "source_field": "ABN", "canonical_field": "entity.abn", "raw_value": "72 958 035 538", "reason": "Invalid ABN checksum"}
+{"source_record_id": "7b85367118b640c8:17127:d3d25a3c0beb0dad", "source_field": "ABN", "canonical_field": "entity.abn", "raw_value": "89 626 949 590", "reason": "Invalid ABN checksum"}
+{"source_record_id": "7b85367118b640c8:17174:11a1bca297496da4", "source_field": "ABN", "canonical_field": "entity.abn", "raw_value": "67 334 586 995", "reason": "Invalid ABN checksum"}
+{"source_record_id": "7b85367118b640c8:17189:2835887765a4d31e", "source_field": "ABN", "canonical_field": "entity.abn", "raw_value": "60 625 808 698", "reason": "Invalid ABN checksum"}
+{"source_record_id": "7b85367118b640c8:17197:c83b96fc9ed495ef", "source_field": "ABN", "canonical_field": "entity.abn", "raw_value": "51 010 870 153", "reason": "Invalid ABN checksum"}
+{"source_record_id": "7b85367118b640c8:17265:d990dc8fb03cf08b", "source_field": "ACN", "canonical_field": "entity.acn", "raw_value": "618 889 388", "reason": "Invalid ACN checksum"}
+{"source_record_id": "7b85367118b640c8:17273:c043bec418a68e6a", "source_field": "ABN", "canonical_field": "entity.abn", "raw_value": "66 467 631 749", "reason": "Invalid ABN checksum"}
+{"source_record_id": "7b85367118b640c8:17290:51c6db318de9e1a4", "source_field": "ACN", "canonical_field": "entity.acn", "raw_value": "626 029 733", "reason": "Invalid ACN checksum"}
+{"source_record_id": "7b85367118b640c8:17815:5ad6fda91c2158a8", "source_field": "ABN", "canonical_field": "entity.abn", "raw_value": "78 296 634 883", "reason": "Invalid ABN checksum"}
+{"source_record_id": "7b85367118b640c8:17816:4ca3a0cfa31a8394", "source_field": "ABN", "canonical_field": "entity.abn", "raw_value": "23 603 117 325", "reason": "Invalid ABN checksum"}
+{"source_record_id": "7b85367118b640c8:17936:f3f94911dd3a6671", "source_field": "ABN", "canonical_field": "entity.abn", "raw_value": "54 679 452 509", "reason": "Invalid ABN checksum"}
+{"source_record_id": "7b85367118b640c8:17936:f3f94911dd3a6671", "source_field": "ACN", "canonical_field": "entity.acn", "raw_value": "679 452 509", "reason": "Invalid ACN checksum"}
+{"source_record_id": "7b85367118b640c8:18571:3f2dc4b9f7ca4c0a", "source_field": "ABN", "canonical_field": "entity.abn", "raw_value": "72 621 282 666", "reason": "Invalid ABN checksum"}
+{"source_record_id": "7b85367118b640c8:18807:cb4c92648ff21747", "source_field": "ABN", "canonical_field": "entity.abn", "raw_value": "45 779 036 042", "reason": "Invalid ABN checksum"}
+{"source_record_id": "7b85367118b640c8:19012:705ff36d0bac2702", "source_field": "ABN", "canonical_field": "entity.abn", "raw_value": "86 204 466 350", "reason": "Invalid ABN checksum"}
+{"source_record_id": "7b85367118b640c8:19175:7b50e448cc53dd6d", "source_field": "ABN", "canonical_field": "entity.abn", "raw_value": "33 098 328 512", "reason": "Invalid ABN checksum"}
+{"source_record_id": "7b85367118b640c8:19319:fd64f83ba2e93e55", "source_field": "ABN", "canonical_field": "entity.abn", "raw_value": "96 717 929 358", "reason": "Invalid ABN checksum"}
+{"source_record_id": "7b85367118b640c8:19325:fbf71df0f5c55194", "source_field": "ABN", "canonical_field": "entity.abn", "raw_value": "76 673 392 445", "reason": "Invalid ABN checksum"}
+{"source_record_id": "7b85367118b640c8:19729:434f7e1820e14c9d", "source_field": "ACN", "canonical_field": "entity.acn", "raw_value": "419 450 201", "reason": "Invalid ACN checksum"}
+{"source_record_id": "7b85367118b640c8:19753:bc726c1d12675d7c", "source_field": "ABN", "canonical_field": "entity.abn", "raw_value": "61 461 981 007", "reason": "Invalid ABN checksum"}
+{"source_record_id": "7b85367118b640c8:19845:ad4f2f66c56a0e7e", "source_field": "ABN", "canonical_field": "entity.abn", "raw_value": "69 688 221 649", "reason": "Invalid ABN checksum"}
+{"source_record_id": "7b85367118b640c8:19845:ad4f2f66c56a0e7e", "source_field": "ACN", "canonical_field": "entity.acn", "raw_value": "688 221 649", "reason": "Invalid ACN checksum"}
+{"source_record_id": "7b85367118b640c8:19934:a633e8c92418e4d9", "source_field": "ABN", "canonical_field": "entity.abn", "raw_value": "90 149 172 640", "reason": "Invalid ABN checksum"}
+{"source_record_id": "7b85367118b640c8:20094:45affcaa3af75883", "source_field": "ABN", "canonical_field": "entity.abn", "raw_value": "23 351 354 622", "reason": "Invalid ABN checksum"}
+{"source_record_id": "7b85367118b640c8:20107:52267cda0a2aca17", "source_field": "ABN", "canonical_field": "entity.abn", "raw_value": "92 138 087 535", "reason": "Invalid ABN checksum"}
+{"source_record_id": "7b85367118b640c8:20110:1e4690c47a73a4aa", "source_field": "ACN", "canonical_field": "entity.acn", "raw_value": "974 536 684", "reason": "Invalid ACN checksum"}
+{"source_record_id": "7b85367118b640c8:20294:3007a9bad2baf249", "source_field": "ABN", "canonical_field": "entity.abn", "raw_value": "45 353 812 635", "reason": "Invalid ABN checksum"}
+{"source_record_id": "7b85367118b640c8:20318:2e1f7ac0ac4586c7", "source_field": "ABN", "canonical_field": "entity.abn", "raw_value": "97 661 484 882", "reason": "Invalid ABN checksum"}
+{"source_record_id": "7b85367118b640c8:20318:2e1f7ac0ac4586c7", "source_field": "ACN", "canonical_field": "entity.acn", "raw_value": "661 484 882", "reason": "Invalid ACN checksum"}
+{"source_record_id": "7b85367118b640c8:20383:2e658b37902ca077", "source_field": "ABN", "canonical_field": "entity.abn", "raw_value": "61 461 981 007", "reason": "Invalid ABN checksum"}
+{"source_record_id": "7b85367118b640c8:20905:428b30565f01d736", "source_field": "ABN", "canonical_field": "entity.abn", "raw_value": "81 628 477 791", "reason": "Invalid ABN checksum"}
+{"source_record_id": "7b85367118b640c8:20982:c61e87c44f5d86f4", "source_field": "ACN", "canonical_field": "entity.acn", "raw_value": "245 528 384", "reason": "Invalid ACN checksum"}
+{"source_record_id": "7b85367118b640c8:21113:995bc4af965cbcae", "source_field": "ABN", "canonical_field": "entity.abn", "raw_value": "30 906 947 359", "reason": "Invalid ABN checksum"}
+{"source_record_id": "7b85367118b640c8:21220:09d8d17b19d4a5b2", "source_field": "ABN", "canonical_field": "entity.abn", "raw_value": "19 838 537 682", "reason": "Invalid ABN checksum"}
+{"source_record_id": "7b85367118b640c8:21331:b1d196e03e2c6cef", "source_field": "ABN", "canonical_field": "entity.abn", "raw_value": "42 199 199 839", "reason": "Invalid ABN checksum"}
+{"source_record_id": "7b85367118b640c8:21342:988c46ff3415c1e4", "source_field": "ABN", "canonical_field": "entity.abn", "raw_value": "44 654 141 520", "reason": "Invalid ABN checksum"}
+{"source_record_id": "7b85367118b640c8:21563:49b8aff5ec8fb549", "source_field": "ABN", "canonical_field": "entity.abn", "raw_value": "79 960 280 269", "reason": "Invalid ABN checksum"}
+{"source_record_id": "7b85367118b640c8:21662:9fee939193d447ee", "source_field": "ABN", "canonical_field": "entity.abn", "raw_value": "58 058 773 969", "reason": "Invalid ABN checksum"}
+{"source_record_id": "7b85367118b640c8:21707:ed88d03819200943", "source_field": "ABN", "canonical_field": "entity.abn", "raw_value": "16 680 916 681", "reason": "Invalid ABN checksum"}
+{"source_record_id": "7b85367118b640c8:21707:ed88d03819200943", "source_field": "ACN", "canonical_field": "entity.acn", "raw_value": "680 916 681", "reason": "Invalid ACN checksum"}
+{"source_record_id": "7b85367118b640c8:21721:6e8dbf89cc57e2b5", "source_field": "ABN", "canonical_field": "entity.abn", "raw_value": "59 161 249 897", "reason": "Invalid ABN checksum"}
+{"source_record_id": "7b85367118b640c8:22295:fb75ba0f50d6d73a", "source_field": "ABN", "canonical_field": "entity.abn", "raw_value": "29 476 914 340", "reason": "Invalid ABN checksum"}
+{"source_record_id": "7b85367118b640c8:22365:4d3d63dc2855bf16", "source_field": "ABN", "canonical_field": "entity.abn", "raw_value": "88 976 539 113", "reason": "Invalid ABN checksum"}
+{"source_record_id": "7b85367118b640c8:22490:05b4203cac97dcf3", "source_field": "ABN", "canonical_field": "entity.abn", "raw_value": "88 168 715 948", "reason": "Invalid ABN checksum"}
+{"source_record_id": "7b85367118b640c8:22601:4f73a42f2f4480b3", "source_field": "ABN", "canonical_field": "entity.abn", "raw_value": "91 066 309 113", "reason": "Invalid ABN checksum"}
+{"source_record_id": "7b85367118b640c8:22631:d3f901921a35d0e0", "source_field": "ABN", "canonical_field": "entity.abn", "raw_value": "16 711 346 297", "reason": "Invalid ABN checksum"}
+{"source_record_id": "7b85367118b640c8:22965:12f1469638ec6ca6", "source_field": "ABN", "canonical_field": "entity.abn", "raw_value": "24 709 077 707", "reason": "Invalid ABN checksum"}
+{"source_record_id": "7b85367118b640c8:23217:ff8e9058b746aab4", "source_field": "ACN", "canonical_field": "entity.acn", "raw_value": "697 301 654", "reason": "Invalid ACN checksum"}
+{"source_record_id": "7b85367118b640c8:23298:e1dd2888c5249ef5", "source_field": "ACN", "canonical_field": "entity.acn", "raw_value": "245 528 384", "reason": "Invalid ACN checksum"}
+{"source_record_id": "7b85367118b640c8:23326:ec7db8a7dd61f925", "source_field": "ABN", "canonical_field": "entity.abn", "raw_value": "42 629 879 279", "reason": "Invalid ABN checksum"}
+{"source_record_id": "7b85367118b640c8:23405:4e9b4e07373bbcab", "source_field": "ABN", "canonical_field": "entity.abn", "raw_value": "93 281 246 689", "reason": "Invalid ABN checksum"}
+{"source_record_id": "7b85367118b640c8:23525:fab8c0df96a55d66", "source_field": "ABN", "canonical_field": "entity.abn", "raw_value": "54 663 126 336", "reason": "Invalid ABN checksum"}
+{"source_record_id": "7b85367118b640c8:23580:992a7d28f98ed28a", "source_field": "ABN", "canonical_field": "entity.abn", "raw_value": "99 286 020 654", "reason": "Invalid ABN checksum"}
+{"source_record_id": "7b85367118b640c8:23582:a23e7ae8d02c512a", "source_field": "ABN", "canonical_field": "entity.abn", "raw_value": "99 119 458 862", "reason": "Invalid ABN checksum"}
+{"source_record_id": "7b85367118b640c8:23616:a96130763d32bce8", "source_field": "ABN", "canonical_field": "entity.abn", "raw_value": "92 689 940 622", "reason": "Invalid ABN checksum"}
+{"source_record_id": "7b85367118b640c8:23616:a96130763d32bce8", "source_field": "ACN", "canonical_field": "entity.acn", "raw_value": "689 940 622", "reason": "Invalid ACN checksum"}
+{"source_record_id": "7b85367118b640c8:23841:9616110f33828680", "source_field": "ABN", "canonical_field": "entity.abn", "raw_value": "32 561 109 648", "reason": "Invalid ABN checksum"}
+{"source_record_id": "7b85367118b640c8:24262:769344a573d98e24", "source_field": "ACN", "canonical_field": "entity.acn", "raw_value": "921 860 625", "reason": "Invalid ACN checksum"}
+{"source_record_id": "7b85367118b640c8:24267:71f748e6c54cb2a2", "source_field": "ABN", "canonical_field": "entity.abn", "raw_value": "58 430 927 443", "reason": "Invalid ABN checksum"}
+{"source_record_id": "7b85367118b640c8:24268:da5c646bc756de3e", "source_field": "ABN", "canonical_field": "entity.abn", "raw_value": "38 131 732 636", "reason": "Invalid ABN checksum"}
+{"source_record_id": "7b85367118b640c8:24328:b3d53343a555df6b", "source_field": "ABN", "canonical_field": "entity.abn", "raw_value": "33 098 328 512", "reason": "Invalid ABN checksum"}
+{"source_record_id": "7b85367118b640c8:24476:ece9de861f39653b", "source_field": "ABN", "canonical_field": "entity.abn", "raw_value": "69 166 956 390", "reason": "Invalid ABN checksum"}
+{"source_record_id": "7b85367118b640c8:24571:3cfea9758c8b0d4c", "source_field": "ABN", "canonical_field": "entity.abn", "raw_value": "35 963 849 737", "reason": "Invalid ABN checksum"}
+{"source_record_id": "7b85367118b640c8:24712:d7efabcd624ab21c", "source_field": "ABN", "canonical_field": "entity.abn", "raw_value": "71 693 162 029", "reason": "Invalid ABN checksum"}
+{"source_record_id": "7b85367118b640c8:24939:d7153a5fe25a6935", "source_field": "ABN", "canonical_field": "entity.abn", "raw_value": "70 166 818 406", "reason": "Invalid ABN checksum"}
+{"source_record_id": "7b85367118b640c8:25431:c9d7bc37ec70ebb0", "source_field": "ABN", "canonical_field": "entity.abn", "raw_value": "48 979 991 434", "reason": "Invalid ABN checksum"}
+{"source_record_id": "7b85367118b640c8:25603:a87f1419297c7b9b", "source_field": "ABN", "canonical_field": "entity.abn", "raw_value": "26 443 969 544", "reason": "Invalid ABN checksum"}
+{"source_record_id": "7b85367118b640c8:25780:9316983550e88705", "source_field": "ABN", "canonical_field": "entity.abn", "raw_value": "42 199 199 839", "reason": "Invalid ABN checksum"}
+{"source_record_id": "7b85367118b640c8:25818:04674448385db89b", "source_field": "ABN", "canonical_field": "entity.abn", "raw_value": "86 876 942 332", "reason": "Invalid ABN checksum"}
+{"source_record_id": "7b85367118b640c8:25832:927e4d099d89b88d", "source_field": "ABN", "canonical_field": "entity.abn", "raw_value": "49 695 400 065", "reason": "Invalid ABN checksum"}
+{"source_record_id": "7b85367118b640c8:25938:b0477e6d91a041b3", "source_field": "ABN", "canonical_field": "entity.abn", "raw_value": "30 689 827 914", "reason": "Invalid ABN checksum"}
+{"source_record_id": "7b85367118b640c8:26157:d5df24aa6ce96a13", "source_field": "ABN", "canonical_field": "entity.abn", "raw_value": "54 679 452 509", "reason": "Invalid ABN checksum"}
+{"source_record_id": "7b85367118b640c8:26157:d5df24aa6ce96a13", "source_field": "ACN", "canonical_field": "entity.acn", "raw_value": "679 452 509", "reason": "Invalid ACN checksum"}
+{"source_record_id": "7b85367118b640c8:26160:30f305d735c52c6a", "source_field": "ABN", "canonical_field": "entity.abn", "raw_value": "85 389 107 988", "reason": "Invalid ABN checksum"}
+{"source_record_id": "7b85367118b640c8:26722:7795a44d0b8a4e77", "source_field": "ABN", "canonical_field": "entity.abn", "raw_value": "41 050 962 636", "reason": "Invalid ABN checksum"}
+{"source_record_id": "7b85367118b640c8:26772:ac35eea23ae6504e", "source_field": "ABN", "canonical_field": "entity.abn", "raw_value": "18 689 819 440", "reason": "Invalid ABN checksum"}
+{"source_record_id": "7b85367118b640c8:26979:7cbd67b3a86af0b4", "source_field": "ABN", "canonical_field": "entity.abn", "raw_value": "54 679 452 509", "reason": "Invalid ABN checksum"}
+{"source_record_id": "7b85367118b640c8:26979:7cbd67b3a86af0b4", "source_field": "ACN", "canonical_field": "entity.acn", "raw_value": "679 452 509", "reason": "Invalid ACN checksum"}
+{"source_record_id": "7b85367118b640c8:27271:5c4e78e8973fb868", "source_field": "ABN", "canonical_field": "entity.abn", "raw_value": "95 782 953 647", "reason": "Invalid ABN checksum"}
+{"source_record_id": "7b85367118b640c8:27489:5d73b6ad989331b3", "source_field": "ABN", "canonical_field": "entity.abn", "raw_value": "52 628 319 095", "reason": "Invalid ABN checksum"}
+{"source_record_id": "7b85367118b640c8:27550:436d0a849cfa40f4", "source_field": "ABN", "canonical_field": "entity.abn", "raw_value": "19 455 664 381", "reason": "Invalid ABN checksum"}
+{"source_record_id": "7b85367118b640c8:27562:c1e7dc9057e2dd1e", "source_field": "ABN", "canonical_field": "entity.abn", "raw_value": "92 138 087 535", "reason": "Invalid ABN checksum"}
+{"source_record_id": "7b85367118b640c8:27694:c6ff0a5c3237f15c", "source_field": "ABN", "canonical_field": "entity.abn", "raw_value": "38 311 459 866", "reason": "Invalid ABN checksum"}
+{"source_record_id": "7b85367118b640c8:28001:c1665b8d1d241722", "source_field": "ABN", "canonical_field": "entity.abn", "raw_value": "16 667 616 796", "reason": "Invalid ABN checksum"}
+{"source_record_id": "7b85367118b640c8:28001:c1665b8d1d241722", "source_field": "ACN", "canonical_field": "entity.acn", "raw_value": "667 616 796", "reason": "Invalid ACN checksum"}
+{"source_record_id": "7b85367118b640c8:28114:9b85922cf2c86d62", "source_field": "ABN", "canonical_field": "entity.abn", "raw_value": "40 893 147 275", "reason": "Invalid ABN checksum"}
+{"source_record_id": "7b85367118b640c8:28133:804c529a1145eee4", "source_field": "ACN", "canonical_field": "entity.acn", "raw_value": "697 301 654", "reason": "Invalid ACN checksum"}
+{"source_record_id": "7b85367118b640c8:28227:fb49fcfdeff80465", "source_field": "ACN", "canonical_field": "entity.acn", "raw_value": "688 568 947", "reason": "Invalid ACN checksum"}
+{"source_record_id": "7b85367118b640c8:28759:ea205eb91df7e28b", "source_field": "ABN", "canonical_field": "entity.abn", "raw_value": "89 987 988 652", "reason": "Invalid ABN checksum"}
+{"source_record_id": "7b85367118b640c8:28803:0a2841672603606c", "source_field": "ABN", "canonical_field": "entity.abn", "raw_value": "74 290 916 331", "reason": "Invalid ABN checksum"}
+{"source_record_id": "7b85367118b640c8:28817:f9f929d32ba1402f", "source_field": "ABN", "canonical_field": "entity.abn", "raw_value": "56 695 440 576", "reason": "Invalid ABN checksum"}
+{"source_record_id": "7b85367118b640c8:28839:19ca42821ad06222", "source_field": "ACN", "canonical_field": "entity.acn", "raw_value": "310 253 944", "reason": "Invalid ACN checksum"}
+{"source_record_id": "7b85367118b640c8:29060:f91f9b03be504ead", "source_field": "ABN", "canonical_field": "entity.abn", "raw_value": "81 319 028 988", "reason": "Invalid ABN checksum"}
+{"source_record_id": "7b85367118b640c8:29108:ca2b331880678c3c", "source_field": "ABN", "canonical_field": "entity.abn", "raw_value": "48 279 012 315", "reason": "Invalid ABN checksum"}
+{"source_record_id": "7b85367118b640c8:29112:4bfde005171b071f", "source_field": "ABN", "canonical_field": "entity.abn", "raw_value": "86 162 181 152", "reason": "Invalid ABN checksum"}
+{"source_record_id": "7b85367118b640c8:29213:56118e97092133ad", "source_field": "ABN", "canonical_field": "entity.abn", "raw_value": "41 155 255 425", "reason": "Invalid ABN checksum"}
+{"source_record_id": "7b85367118b640c8:29263:d2f059202b068d18", "source_field": "ABN", "canonical_field": "entity.abn", "raw_value": "43 665 668 882", "reason": "Invalid ABN checksum"}
+{"source_record_id": "7b85367118b640c8:29377:2981cf32e6368f98", "source_field": "ABN", "canonical_field": "entity.abn", "raw_value": "73 223 891 319", "reason": "Invalid ABN checksum"}
+{"source_record_id": "7b85367118b640c8:29622:d5ff745d923b19fb", "source_field": "ABN", "canonical_field": "entity.abn", "raw_value": "38 681 121 312", "reason": "Invalid ABN checksum"}
+{"source_record_id": "7b85367118b640c8:29743:ae69cff692bb73b6", "source_field": "ABN", "canonical_field": "entity.abn", "raw_value": "35 128 053 077", "reason": "Invalid ABN checksum"}
+{"source_record_id": "7b85367118b640c8:29948:f1c2fea2e28da1bf", "source_field": "ACN", "canonical_field": "entity.acn", "raw_value": "665 281 368", "reason": "Invalid ACN checksum"}

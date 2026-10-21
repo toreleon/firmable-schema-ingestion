@@ -1,0 +1,238 @@
+{
+  "records": 44,
+  "observation_count": 88,
+  "emitted_by_field": {
+    "entity.abn": 44,
+    "address.full": 44
+  },
+  "error_count": 0,
+  "errors": [],
+  "error_reasons": {},
+  "example_observations": [
+    {
+      "source_id": "73b67e91-d9bf-4471-80c3-a62d5afaee2a",
+      "source_record_id": "d54cd97404d1433f:1:20cc5f5995335cee",
+      "observed_at": "2024-06-30T23:59:54.469475",
+      "ingested_at": "2026-10-21T07:50:10.273222+00:00",
+      "licence": "Creative Commons Attribution 4.0",
+      "extractor_version": "0.1.0:dcfc69d9ca871b442214449f824d0ae123f123c929dbc8639c70e9f225abae74",
+      "observed_at_basis": "resource_last_modified_proxy",
+      "provenance": {
+        "resource_url": "https://www.data.qld.gov.au/datastore/dump/99e547e1-1def-473e-8514-76f625ebf30d?format=csv",
+        "resource_sha256": "d54cd97404d1433f292ebc47cba771072b2fa778a8b7564c6d0776bc946bfa90",
+        "raw_record_sha256": "20cc5f5995335cee308fe1a26a8de4240bb886db65b053c33b1e29a411fa2575",
+        "row_number": 1,
+        "config_sha256": "dcfc69d9ca871b442214449f824d0ae123f123c929dbc8639c70e9f225abae74",
+        "source_field": "Supplier ABN"
+      },
+      "canonical_field": "entity.abn",
+      "entity": {
+        "abn": "42072957923"
+      },
+      "raw_value": "42072957923",
+      "confidence": {
+        "source_reliability": 0.8,
+        "field_confidence": 0.9
+      },
+      "derivation_level": "L1",
+      "observation_id": "e1e0be87ecde982018e3c9e13da2fd9e708829717e9aa2c10ffa9b84b224bb74"
+    },
+    {
+      "source_id": "73b67e91-d9bf-4471-80c3-a62d5afaee2a",
+      "source_record_id": "d54cd97404d1433f:1:20cc5f5995335cee",
+      "observed_at": "2024-06-30T23:59:54.469475",
+      "ingested_at": "2026-10-21T07:50:10.273222+00:00",
+      "licence": "Creative Commons Attribution 4.0",
+      "extractor_version": "0.1.0:dcfc69d9ca871b442214449f824d0ae123f123c929dbc8639c70e9f225abae74",
+      "observed_at_basis": "resource_last_modified_proxy",
+      "provenance": {
+        "resource_url": "https://www.data.qld.gov.au/datastore/dump/99e547e1-1def-473e-8514-76f625ebf30d?format=csv",
+        "resource_sha256": "d54cd97404d1433f292ebc47cba771072b2fa778a8b7564c6d0776bc946bfa90",
+        "raw_record_sha256": "20cc5f5995335cee308fe1a26a8de4240bb886db65b053c33b1e29a411fa2575",
+        "row_number": 1,
+        "config_sha256": "dcfc69d9ca871b442214449f824d0ae123f123c929dbc8639c70e9f225abae74",
+        "source_field": "Supplier address"
+      },
+      "canonical_field": "address.full",
+      "address": {
+        "full": "L9, 10 Market Street, Brisbane QLD 4000"
+      },
+      "raw_value": "L9, 10 Market Street, Brisbane QLD 4000",
+      "confidence": {
+        "source_reliability": 0.8,
+        "field_confidence": 0.9
+      },
+      "derivation_level": "L1",
+      "observation_id": "d572433c69bad1fe3cc6742f73b8335f9efc38a5db764e09b96d6ab4bf12b2dd"
+    },
+    {
+      "source_id": "73b67e91-d9bf-4471-80c3-a62d5afaee2a",
+      "source_record_id": "d54cd97404d1433f:2:f11bd612fd1ffdc6",
+      "observed_at": "2024-06-30T23:59:54.469475",
+      "ingested_at": "2026-10-21T07:50:10.273222+00:00",
+      "licence": "Creative Commons Attribution 4.0",
+      "extractor_version": "0.1.0:dcfc69d9ca871b442214449f824d0ae123f123c929dbc8639c70e9f225abae74",
+      "observed_at_basis": "resource_last_modified_proxy",
+      "provenance": {
+        "resource_url": "https://www.data.qld.gov.au/datastore/dump/99e547e1-1def-473e-8514-76f625ebf30d?format=csv",
+        "resource_sha256": "d54cd97404d1433f292ebc47cba771072b2fa778a8b7564c6d0776bc946bfa90",
+        "raw_record_sha256": "f11bd612fd1ffdc66d1103dcfaf184f3739ff16798c3f35cdb888bc4815bba89",
+        "row_number": 2,
+        "config_sha256": "dcfc69d9ca871b442214449f824d0ae123f123c929dbc8639c70e9f225abae74",
+        "source_field": "Supplier ABN"
+      },
+      "canonical_field": "entity.abn",
+      "entity": {
+        "abn": "42072957923"
+      },
+      "raw_value": "42072957923",
+      "confidence": {
+        "source_reliability": 0.8,
+        "field_confidence": 0.9
+      },
+      "derivation_level": "L1",
+      "observation_id": "3fe02817fb599fae0c305376bdc6d11ae24ca3563d45fc511519c0866118dcaa"
+    },
+    {
+      "source_id": "73b67e91-d9bf-4471-80c3-a62d5afaee2a",
+      "source_record_id": "d54cd97404d1433f:2:f11bd612fd1ffdc6",
+      "observed_at": "2024-06-30T23:59:54.469475",
+      "ingested_at": "2026-10-21T07:50:10.273222+00:00",
+      "licence": "Creative Commons Attribution 4.0",
+      "extractor_version": "0.1.0:dcfc69d9ca871b442214449f824d0ae123f123c929dbc8639c70e9f225abae74",
+      "observed_at_basis": "resource_last_modified_proxy",
+      "provenance": {
+        "resource_url": "https://www.data.qld.gov.au/datastore/dump/99e547e1-1def-473e-8514-76f625ebf30d?format=csv",
+        "resource_sha256": "d54cd97404d1433f292ebc47cba771072b2fa778a8b7564c6d0776bc946bfa90",
+        "raw_record_sha256": "f11bd612fd1ffdc66d1103dcfaf184f3739ff16798c3f35cdb888bc4815bba89",
+        "row_number": 2,
+        "config_sha256": "dcfc69d9ca871b442214449f824d0ae123f123c929dbc8639c70e9f225abae74",
+        "source_field": "Supplier address"
+      },
+      "canonical_field": "address.full",
+      "address": {
+        "full": "L9, 10 Market Street, Brisbane QLD 4000"
+      },
+      "raw_value": "L9, 10 Market Street, Brisbane QLD 4000",
+      "confidence": {
+        "source_reliability": 0.8,
+        "field_confidence": 0.9
+      },
+      "derivation_level": "L1",
+      "observation_id": "e2db74be8b997a7fef145f19db1036ba6e24563c48ee254d768c4d39960cb734"
+    },
+    {
+      "source_id": "73b67e91-d9bf-4471-80c3-a62d5afaee2a",
+      "source_record_id": "d54cd97404d1433f:3:ccc6f51c4eee177d",
+      "observed_at": "2024-06-30T23:59:54.469475",
+      "ingested_at": "2026-10-21T07:50:10.273222+00:00",
+      "licence": "Creative Commons Attribution 4.0",
+      "extractor_version": "0.1.0:dcfc69d9ca871b442214449f824d0ae123f123c929dbc8639c70e9f225abae74",
+      "observed_at_basis": "resource_last_modified_proxy",
+      "provenance": {
+        "resource_url": "https://www.data.qld.gov.au/datastore/dump/99e547e1-1def-473e-8514-76f625ebf30d?format=csv",
+        "resource_sha256": "d54cd97404d1433f292ebc47cba771072b2fa778a8b7564c6d0776bc946bfa90",
+        "raw_record_sha256": "ccc6f51c4eee177d213ba40721af8b8b01c4758aad5cd7ff6d3226c588c3a76f",
+        "row_number": 3,
+        "config_sha256": "dcfc69d9ca871b442214449f824d0ae123f123c929dbc8639c70e9f225abae74",
+        "source_field": "Supplier ABN"
+      },
+      "canonical_field": "entity.abn",
+      "entity": {
+        "abn": "88060295356"
+      },
+      "raw_value": "88060295356",
+      "confidence": {
+        "source_reliability": 0.8,
+        "field_confidence": 0.9
+      },
+      "derivation_level": "L1",
+      "observation_id": "e781b2faedbff5956d4c398f57a9c0bdcf8740777d9f5416a382b140486e4c54"
+    },
+    {
+      "source_id": "73b67e91-d9bf-4471-80c3-a62d5afaee2a",
+      "source_record_id": "d54cd97404d1433f:3:ccc6f51c4eee177d",
+      "observed_at": "2024-06-30T23:59:54.469475",
+      "ingested_at": "2026-10-21T07:50:10.273222+00:00",
+      "licence": "Creative Commons Attribution 4.0",
+      "extractor_version": "0.1.0:dcfc69d9ca871b442214449f824d0ae123f123c929dbc8639c70e9f225abae74",
+      "observed_at_basis": "resource_last_modified_proxy",
+      "provenance": {
+        "resource_url": "https://www.data.qld.gov.au/datastore/dump/99e547e1-1def-473e-8514-76f625ebf30d?format=csv",
+        "resource_sha256": "d54cd97404d1433f292ebc47cba771072b2fa778a8b7564c6d0776bc946bfa90",
+        "raw_record_sha256": "ccc6f51c4eee177d213ba40721af8b8b01c4758aad5cd7ff6d3226c588c3a76f",
+        "row_number": 3,
+        "config_sha256": "dcfc69d9ca871b442214449f824d0ae123f123c929dbc8639c70e9f225abae74",
+        "source_field": "Supplier address"
+      },
+      "canonical_field": "address.full",
+      "address": {
+        "full": "L8, 127 Creek Street, Brisbane QLD"
+      },
+      "raw_value": "L8, 127 Creek Street, Brisbane QLD",
+      "confidence": {
+        "source_reliability": 0.8,
+        "field_confidence": 0.9
+      },
+      "derivation_level": "L1",
+      "observation_id": "2a846ab0a4ed2d04376a7e72e06cb79f3bb4a5339075081153513ea733161d2c"
+    },
+    {
+      "source_id": "73b67e91-d9bf-4471-80c3-a62d5afaee2a",
+      "source_record_id": "d54cd97404d1433f:4:e7f4090424000d24",
+      "observed_at": "2024-06-30T23:59:54.469475",
+      "ingested_at": "2026-10-21T07:50:10.273222+00:00",
+      "licence": "Creative Commons Attribution 4.0",
+      "extractor_version": "0.1.0:dcfc69d9ca871b442214449f824d0ae123f123c929dbc8639c70e9f225abae74",
+      "observed_at_basis": "resource_last_modified_proxy",
+      "provenance": {
+        "resource_url": "https://www.data.qld.gov.au/datastore/dump/99e547e1-1def-473e-8514-76f625ebf30d?format=csv",
+        "resource_sha256": "d54cd97404d1433f292ebc47cba771072b2fa778a8b7564c6d0776bc946bfa90",
+        "raw_record_sha256": "e7f4090424000d24858e90ef42210031f6f8c2617b7445a71a0d4de3495116cc",
+        "row_number": 4,
+        "config_sha256": "dcfc69d9ca871b442214449f824d0ae123f123c929dbc8639c70e9f225abae74",
+        "source_field": "Supplier ABN"
+      },
+      "canonical_field": "entity.abn",
+      "entity": {
+        "abn": "92122998743"
+      },
+      "raw_value": "92122998743",
+      "confidence": {
+        "source_reliability": 0.8,
+        "field_confidence": 0.9
+      },
+      "derivation_level": "L1",
+      "observation_id": "e41df7f98a6e15171d1d87d4a75036cf4a68eccacd6f63f2de5a8798b5b19ced"
+    },
+    {
+      "source_id": "73b67e91-d9bf-4471-80c3-a62d5afaee2a",
+      "source_record_id": "d54cd97404d1433f:4:e7f4090424000d24",
+      "observed_at": "2024-06-30T23:59:54.469475",
+      "ingested_at": "2026-10-21T07:50:10.273222+00:00",
+      "licence": "Creative Commons Attribution 4.0",
+      "extractor_version": "0.1.0:dcfc69d9ca871b442214449f824d0ae123f123c929dbc8639c70e9f225abae74",
+      "observed_at_basis": "resource_last_modified_proxy",
+      "provenance": {
+        "resource_url": "https://www.data.qld.gov.au/datastore/dump/99e547e1-1def-473e-8514-76f625ebf30d?format=csv",
+        "resource_sha256": "d54cd97404d1433f292ebc47cba771072b2fa778a8b7564c6d0776bc946bfa90",
+        "raw_record_sha256": "e7f4090424000d24858e90ef42210031f6f8c2617b7445a71a0d4de3495116cc",
+        "row_number": 4,
+        "config_sha256": "dcfc69d9ca871b442214449f824d0ae123f123c929dbc8639c70e9f225abae74",
+        "source_field": "Supplier address"
+      },
+      "canonical_field": "address.full",
+      "address": {
+        "full": "L43, 264-278 George Street, Sydney NSW 2000"
+      },
+      "raw_value": "L43, 264-278 George Street, Sydney NSW 2000",
+      "confidence": {
+        "source_reliability": 0.8,
+        "field_confidence": 0.9
+      },
+      "derivation_level": "L1",
+      "observation_id": "5b4870fd56ebc723bf135ebd87aff3917e7d0f98bf8909d90c6f80c6ec7d08df"
+    }
+  ],
+  "note": "Type/checksum validation does not prove semantic correctness; semantic review required."
+}

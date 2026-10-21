@@ -1,0 +1,129 @@
+{
+  "entity_role": "supplier",
+  "parser": {
+    "format": "csv",
+    "delimiter": ",",
+    "header_row": 1,
+    "encoding": "utf-8-sig"
+  },
+  "observed_at_field": null,
+  "mappings": [
+    {
+      "source_field": "Supplier ABN",
+      "canonical_field": "entity.abn",
+      "transforms": [
+        {
+          "op": "split",
+          "delimiter": ";"
+        },
+        "abn"
+      ],
+      "confidence": 0.9,
+      "rationale": "Explicitly labelled supplier ABN field. Semicolon-separated list of ABNs is split into one identifier per ABN; checksum validation via abn transform. Each ABN emitted as identifier-only party claim with no paired name or address. Source sample shows 88 of 94 non-empty values checksum-valid; values with spaces are normalised by the abn transform.",
+      "separate_entities": true
+    }
+  ],
+  "unmapped_fields": [
+    {
+      "source_field": "Agency (Dept or Stat Body)",
+      "reason": "Buyer/agency identifier, not a supplier attribute."
+    },
+    {
+      "source_field": "Agency address",
+      "reason": "Buyer/agency address; must not be mapped to supplier address."
+    },
+    {
+      "source_field": "Award contract date",
+      "reason": "Contract award date; not a registration date or observation time."
+    },
+    {
+      "source_field": "Commence date",
+      "reason": "Contract commencement date; not a supplier registration date."
+    },
+    {
+      "source_field": "Contract category group",
+      "reason": "Procurement category, not an industry code (ANZSIC) and not mapped."
+    },
+    {
+      "source_field": "Contract description/name",
+      "reason": "Contract description, not a supplier trading name."
+    },
+    {
+      "source_field": "Contract milestones",
+      "reason": "Contract administration field; out of scope."
+    },
+    {
+      "source_field": "Contract performance management",
+      "reason": "Contract administration field; out of scope."
+    },
+    {
+      "source_field": "Contract reference number",
+      "reason": "Contract reference, not a supplier identifier."
+    },
+    {
+      "source_field": "Contract value",
+      "reason": "Contract value; must not be mapped to business identity or address."
+    },
+    {
+      "source_field": "Deliverables",
+      "reason": "Contract scope text; out of scope."
+    },
+    {
+      "source_field": "Evaluation criteria and weightings",
+      "reason": "Procurement evaluation text; out of scope."
+    },
+    {
+      "source_field": "Finish date",
+      "reason": "Contract finish date; not a registration date."
+    },
+    {
+      "source_field": "Form of contract",
+      "reason": "Contract form; not an entity attribute."
+    },
+    {
+      "source_field": "Justification (if limited tender)",
+      "reason": "Procurement justification; out of scope."
+    },
+    {
+      "source_field": "Number of offers sought",
+      "reason": "Procurement metric; out of scope."
+    },
+    {
+      "source_field": "Parent contract number/SOA",
+      "reason": "Contract/SOA reference; not a supplier identifier."
+    },
+    {
+      "source_field": "Procurement method",
+      "reason": "Procurement method; out of scope."
+    },
+    {
+      "source_field": "Specific confidentiality provision used",
+      "reason": "Procurement disclosure flag; out of scope."
+    },
+    {
+      "source_field": "Supplier address",
+      "reason": "Compound multi-supplier addresses (semicolon-separated) cannot be safely paired with names or ABNs by index; the address is not attributable to a single party, and the source has no explicit per-supplier pairing. Left unmapped. Address-to-party attribution is also not established for single-supplier rows."
+    },
+    {
+      "source_field": "Supplier name",
+      "reason": "Business supplier name is not established as a registered legal name (source is a procurement register, not a registry); multi-supplier cells cannot be safely split to names without pairing risk. Left unmapped for conservative ingest."
+    },
+    {
+      "source_field": "Variation to contract (Yes/No)",
+      "reason": "Procurement flag; out of scope."
+    },
+    {
+      "source_field": "_id",
+      "reason": "Internal row identifier of the source file, not an entity identifier."
+    }
+  ],
+  "minimum_field_confidence": 0.8,
+  "warnings": [
+    "observed_at_field set to null: the only timestamp (observed_at / resource_last_modified_proxy) is a publication proxy, not a verified source statement time.",
+    "Supplier ABN is the only mapped field; supplier names and addresses are left unmapped because multi-supplier cells cannot be paired safely and single-supplier rows do not establish a legal name by themselves.",
+    "Supplier ABN is a procurement register field; ABNs are not verified against the ABR here. Checksum validation only.",
+    "Training sample shows 0 ACN-checksum-valid values; no ACN mapping proposed and no ACN inferred from ABN.",
+    "Supplier ABN field has 94 of 141 non-empty values; 6 non-checksum-valid values in sample may be rejected by the abn transform.",
+    "Contract reference number contains multi-item values separated by semicolons and inconsistent spacing; not mapped as an identifier."
+  ]
+}

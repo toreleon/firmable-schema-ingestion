@@ -1,0 +1,32 @@
+{
+  "matcher_version": "exact-identifiers-v2-subject-guards",
+  "current_proposals": 110,
+  "profile_eligible_links": 107,
+  "historical_sample_size": 50,
+  "development_regression": {
+    "previously_supported": 47,
+    "previously_rejected": 3,
+    "supported_pairs_retained": 44,
+    "rejected_pairs_still_proposed": 0,
+    "supported_pairs_profile_eligible": 44,
+    "scope": "Development regression only; v2 rules were informed by these v1 cases, so this is not new measured precision."
+  },
+  "fresh_review_pool_size": 47,
+  "fresh_sample_size": 47,
+  "fresh_sample_reviewed": 0,
+  "fresh_sample_precision": null,
+  "fresh_review_attribution": [],
+  "fresh_sample_human_reviewed": 47,
+  "fresh_sample_human_approved": 47,
+  "fresh_sample_binary_verdicts_recorded": 0,
+  "v2_release_approved": false,
+  "fresh_sample_path": "outputs/link_audit_v2.jsonl",
+  "seed": "exact-identifiers-v2-subject-guards:20261021",
+  "fresh_sample_disjoint_from_v1": true,
+  "fresh_sample_record_disjoint_from_v1": true,
+  "fresh_sample_known_entity_keys_disjoint_from_v1": true,
+  "fresh_sample_unique_entities": 44,
+  "sample_target": 50,
+  "sample_shortfall": 3,
+  "precision_claim": "Human review/approval and binary correctness verdicts are recorded separately; no new precision is claimed without explicit true/false verdicts."
+}

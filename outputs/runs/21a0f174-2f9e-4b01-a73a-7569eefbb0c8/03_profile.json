@@ -1,0 +1,368 @@
+{
+  "training": {
+    "record_count": 700,
+    "fields": {
+      "Agency (Dept or Stat Body)": {
+        "nonempty": 700,
+        "types": {
+          "str": 700
+        },
+        "examples": [
+          "Transport and Main Roads"
+        ]
+      },
+      "Agency address": {
+        "nonempty": 700,
+        "types": {
+          "str": 700
+        },
+        "examples": [
+          "PO Box 1412 Brisbane QLD 4001"
+        ]
+      },
+      "Award contract date": {
+        "nonempty": 700,
+        "types": {
+          "str": 700
+        },
+        "examples": [
+          "2019-09-17T00:00:00",
+          "2020-01-21T00:00:00",
+          "2020-05-18T00:00:00"
+        ]
+      },
+      "Commence date": {
+        "nonempty": 1,
+        "types": {
+          "str": 700
+        },
+        "examples": [
+          "4/07/2024"
+        ]
+      },
+      "Contract category group": {
+        "nonempty": 0,
+        "types": {
+          "str": 700
+        },
+        "examples": []
+      },
+      "Contract description/name": {
+        "nonempty": 698,
+        "types": {
+          "str": 700
+        },
+        "examples": [
+          "Proserpine-Shute Harbour Road Duplication between Paluma Road and Tropic Road",
+          "SCD - Urban Maintenance Systems - Bus Infrastructure Cleaning, Horticulture and Maintenance",
+          "Visual and Digital Lead"
+        ]
+      },
+      "Contract milestones": {
+        "nonempty": 45,
+        "types": {
+          "str": 700
+        },
+        "examples": [
+          "The contract milestones are:\n To meet the required Cycle timeframes.\nTo comply with the Contract Restoration Standards.\nReduction in Public Complaints  and meet TMR's Expectations.",
+          "Delivery of service under the Contract.",
+          "KM11 - AWARD - Delivery 29 March 2023.\nKM12 - Available for Use 29 May 2024.\nKM17 - 21 October 2024."
+        ]
+      },
+      "Contract performance management": {
+        "nonempty": 45,
+        "types": {
+          "str": 700
+        },
+        "examples": [
+          "Supplier Performance is managed against the following KPI's\nKPI 1: Cycles completed within the required time frame. (Frequency of reporting: Every two months)\nKPI 2: Number of third party damage claims (Frequency of reporting: Within 48 hours of vent with a monthly summary for reporting.)\nKPI 3: Tra",
+          "a) Supply requests met within the desired timeframe.\nb) Accuracy of invoices\nc) No damage to equipment\nd) Timeliness of incident and monthly reporting\ne) Quality of employees   Frequency of site visit and audits each month",
+          "KPI 01 – Quality and Timeliness of Service \nKPI 02 – Reliability and Safety of the Plant and Equipment to perform service\nKPI 03 - Transport\nKPI 04 - Accuracy & Timeliness\nKPI 05 - Complaints\nKPI 06 - QPP"
+        ]
+      },
+      "Contract reference number": {
+        "nonempty": 700,
+        "types": {
+          "str": 700
+        },
+        "examples": [
+          "CN-11817",
+          "CN-13446",
+          "TD20-103852"
+        ]
+      },
+      "Contract value": {
+        "nonempty": 700,
+        "types": {
+          "str": 700
+        },
+        "examples": [
+          "7706608",
+          "1016746",
+          "1157189"
+        ]
+      },
+      "Deliverables": {
+        "nonempty": 45,
+        "types": {
+          "str": 700
+        },
+        "examples": [
+          "Mowing through the Network Min. timeframe to be completed:\nFor Standard Cycles - 7 weeks\nFor Hazard Cycles - 9 weeks\nwith 5 cycles  / year.",
+          "Ensure continuous supply of fully registered, competent, reliable locally based traffic control services for RoadTek statewide.",
+          "Tier 1 and 2 suppliers to provide safe, modern and efficient major and minor equipment hire (without an operator) to effectively support civil construction and maintenance projects."
+        ]
+      },
+      "Evaluation criteria and weightings": {
+        "nonempty": 45,
+        "types": {
+          "str": 700
+        },
+        "examples": [
+          "EC1 - Price 35%\nEC2 - Demonstrated Experience, ability and capacity to provide services detailed in the specifications 20%\nEC3 - Demonstrated safe work Practices in compliance with relevant Workplace Health Safety codes of practice 15%\nEC4 - Suitability of works program",
+          "C1. Ability to supply employees who have successfully completed TC, TMI and TD training - 25%\nC2.  Demonstrated safe work practices - 25%\nC3. Business practices and providing strong customer services - 20%\nC4. Corporate social responsibility - 10%",
+          "1.  Demonstrated ability and capacity in meeting requirements within nominated timeframes -  20%\n2.  Ability to supply safe plant and equipment and attachments to a high technical standard -  25% \n3.  Capability for provision of ongoing support -  25%\n4.  Commitment to sustainable practices -  10%\n5"
+        ]
+      },
+      "Finish date": {
+        "nonempty": 0,
+        "types": {
+          "str": 700
+        },
+        "examples": []
+      },
+      "Form of contract": {
+        "nonempty": 45,
+        "types": {
+          "str": 700
+        },
+        "examples": [
+          "RoadTek Major Works SubContract",
+          "Standing Offer Arrangement",
+          "Transport Infrastructure Contract - Construct Only (TIC-CO)"
+        ]
+      },
+      "Justification": {
+        "nonempty": 700,
+        "types": {
+          "str": 700
+        },
+        "examples": [
+          "Not required",
+          "if the good or service can be supplied only by a particular supplier and no reasonable alternative or substitute good or service exists for any of the following reasons: \n(iii) due to an absence of competition for technical reasons",
+          "b) if the good or service can be supplied only by a particular supplier and no reasonable alternative or substitute good or service exists for any of the following reasons: \n(iii) due to an absence of competition for technical reasons;"
+        ]
+      },
+      "Number of offers sought": {
+        "nonempty": 45,
+        "types": {
+          "str": 700
+        },
+        "examples": [
+          "Open Market",
+          "Multi-staged process\nStage 1 - Open Market\nStage 2 - Limited",
+          "3"
+        ]
+      },
+      "Parent contract number/SOA": {
+        "nonempty": 12,
+        "types": {
+          "str": 700
+        },
+        "examples": [
+          "TMR8615",
+          "TMR03118",
+          "RTCQ10320"
+        ]
+      },
+      "Procurement method": {
+        "nonempty": 698,
+        "types": {
+          "str": 700
+        },
+        "examples": [
+          "Limited",
+          "Other",
+          "Open"
+        ]
+      },
+      "Specific confidentiality provision used": {
+        "nonempty": 700,
+        "types": {
+          "str": 700
+        },
+        "examples": [
+          "No"
+        ]
+      },
+      "Supplier ABN": {
+        "nonempty": 1,
+        "types": {
+          "str": 700
+        },
+        "examples": [
+          "66008709608"
+        ]
+      },
+      "Supplier address": {
+        "nonempty": 700,
+        "types": {
+          "str": 700
+        },
+        "examples": [
+          "4006",
+          "3149",
+          "4000"
+        ]
+      },
+      "Supplier name": {
+        "nonempty": 700,
+        "types": {
+          "str": 700
+        },
+        "examples": [
+          "SMEC Australia Pty Ltd",
+          "Urban Maintenance Systems Pty Ltd",
+          "The Comms Team"
+        ]
+      },
+      "Variation": {
+        "nonempty": 700,
+        "types": {
+          "str": 700
+        },
+        "examples": [
+          "Yes",
+          "No"
+        ]
+      },
+      "_id": {
+        "nonempty": 700,
+        "types": {
+          "str": 700
+        },
+        "examples": [
+          "1",
+          "2",
+          "3"
+        ]
+      }
+    },
+    "sample": [
+      {
+        "_id": "1",
+        "Agency (Dept or Stat Body)": "Transport and Main Roads",
+        "Agency address": "PO Box 1412 Brisbane QLD 4001",
+        "Contract description/name": "Proserpine-Shute Harbour Road Duplication between Paluma Road and Tropic Road",
+        "Award contract date": "2019-09-17T00:00:00",
+        "Contract value": "7706608",
+        "Supplier name": "SMEC Australia Pty Ltd",
+        "Supplier address": "4006",
+        "Variation": "Yes",
+        "Specific confidentiality provision used": "No",
+        "Procurement method": "Limited",
+        "Justification": "Not required",
+        "Form of contract": "",
+        "Number of offers sought": "",
+        "Evaluation criteria and weightings": "",
+        "Deliverables": "",
+        "Contract milestones": "",
+        "Contract performance management": "",
+        "Contract reference number": "CN-11817",
+        "Contract category group": "",
+        "Parent contract number/SOA": "",
+        "Commence date": "",
+        "Supplier ABN": "",
+        "Finish date": ""
+      },
+      {
+        "_id": "2",
+        "Agency (Dept or Stat Body)": "Transport and Main Roads",
+        "Agency address": "PO Box 1412 Brisbane QLD 4001",
+        "Contract description/name": "SCD - Urban Maintenance Systems - Bus Infrastructure Cleaning, Horticulture and Maintenance",
+        "Award contract date": "2020-01-21T00:00:00",
+        "Contract value": "1016746",
+        "Supplier name": "Urban Maintenance Systems Pty Ltd",
+        "Supplier address": "3149",
+        "Variation": "Yes",
+        "Specific confidentiality provision used": "No",
+        "Procurement method": "Other",
+        "Justification": "Not required",
+        "Form of contract": "",
+        "Number of offers sought": "",
+        "Evaluation criteria and weightings": "",
+        "Deliverables": "",
+        "Contract milestones": "",
+        "Contract performance management": "",
+        "Contract reference number": "CN-13446",
+        "Contract category group": "",
+        "Parent contract number/SOA": "",
+        "Commence date": "",
+        "Supplier ABN": "",
+        "Finish date": ""
+      },
+      {
+        "_id": "3",
+        "Agency (Dept or Stat Body)": "Transport and Main Roads",
+        "Agency address": "PO Box 1412 Brisbane QLD 4001",
+        "Contract description/name": "Visual and Digital Lead",
+        "Award contract date": "2020-05-18T00:00:00",
+        "Contract value": "1157189",
+        "Supplier name": "The Comms Team",
+        "Supplier address": "4006",
+        "Variation": "Yes",
+        "Specific confidentiality provision used": "No",
+        "Procurement method": "Open",
+        "Justification": "Not required",
+        "Form of contract": "",
+        "Number of offers sought": "",
+        "Evaluation criteria and weightings": "",
+        "Deliverables": "",
+        "Contract milestones": "",
+        "Contract performance management": "",
+        "Contract reference number": "TD20-103852",
+        "Contract category group": "",
+        "Parent contract number/SOA": "",
+        "Commence date": "",
+        "Supplier ABN": "",
+        "Finish date": ""
+      },
+      {
+        "_id": "4",
+        "Agency (Dept or Stat Body)": "Transport and Main Roads",
+        "Agency address": "PO Box 1412 Brisbane QLD 4001",
+        "Contract description/name": "NCR - B2N EPBC Preliminary documentation assessment",
+        "Award contract date": "2021-04-14T00:00:00",
+        "Contract value": "316433",
+        "Supplier name": "Environmental Resources Management Australia Pty Ltd",
+        "Supplier address": "4000",
+        "Variation": "Yes",
+        "Specific confidentiality provision used": "No",
+        "Procurement method": "Limited",
+        "Justification": "Not required",
+        "Form of contract": "",
+        "Number of offers sought": "",
+        "Evaluation criteria and weightings": "",
+        "Deliverables": "",
+        "Contract milestones": "",
+        "Contract performance management": "",
+        "Contract reference number": "CN-16215",
+        "Contract category group": "",
+        "Parent contract number/SOA": "",
+        "Commence date": "",
+        "Supplier ABN": "",
+        "Finish date": ""
+      }
+    ]
+  },
+  "holdout_count": 300,
+  "split": "first 70% training, final 30% holdout; document-head inspection only",
+  "training_rows": [
+    1,
+    700
+  ],
+  "holdout_rows": [
+    701,
+    1000
+  ]
+}

@@ -1,0 +1,1020 @@
+[
+  {
+    "removed_source": "21a0f174-2f9e-4b01-a73a-7569eefbb0c8",
+    "profiles_with_value_changes": 0,
+    "fields_lost": 0,
+    "profiles_with_any_provenance_or_confidence_change": 0,
+    "profiles_losing_cross_source_support": 0,
+    "details": [],
+    "scope": "Fixed entity membership counterfactual; production withdrawal also retracts links and recomputes membership"
+  },
+  {
+    "removed_source": "2b977e4d-c765-4ce5-8088-65210a744add",
+    "profiles_with_value_changes": 0,
+    "fields_lost": 0,
+    "profiles_with_any_provenance_or_confidence_change": 5,
+    "profiles_losing_cross_source_support": 4,
+    "details": [],
+    "scope": "Fixed entity membership counterfactual; production withdrawal also retracts links and recomputes membership"
+  },
+  {
+    "removed_source": "42bad3df-f2e0-4c9c-bef0-0a4328927718",
+    "profiles_with_value_changes": 46,
+    "fields_lost": 46,
+    "profiles_with_any_provenance_or_confidence_change": 46,
+    "profiles_losing_cross_source_support": 45,
+    "details": [
+      {
+        "canonical_entity_key": "abn:85000059665",
+        "changed_fields": [
+          "entity.legal_name"
+        ],
+        "lost_fields": [
+          "entity.legal_name"
+        ]
+      },
+      {
+        "canonical_entity_key": "abn:12001806097",
+        "changed_fields": [
+          "entity.legal_name"
+        ],
+        "lost_fields": [
+          "entity.legal_name"
+        ]
+      },
+      {
+        "canonical_entity_key": "abn:12010732297",
+        "changed_fields": [
+          "entity.legal_name"
+        ],
+        "lost_fields": [
+          "entity.legal_name"
+        ]
+      },
+      {
+        "canonical_entity_key": "abn:12609471392",
+        "changed_fields": [
+          "entity.legal_name"
+        ],
+        "lost_fields": [
+          "entity.legal_name"
+        ]
+      },
+      {
+        "canonical_entity_key": "abn:14115507885",
+        "changed_fields": [
+          "entity.legal_name"
+        ],
+        "lost_fields": [
+          "entity.legal_name"
+        ]
+      },
+      {
+        "canonical_entity_key": "abn:14694442469",
+        "changed_fields": [
+          "entity.legal_name"
+        ],
+        "lost_fields": [
+          "entity.legal_name"
+        ]
+      },
+      {
+        "canonical_entity_key": "abn:16122776845",
+        "changed_fields": [
+          "entity.legal_name"
+        ],
+        "lost_fields": [
+          "entity.legal_name"
+        ]
+      },
+      {
+        "canonical_entity_key": "abn:17138052570",
+        "changed_fields": [
+          "entity.legal_name"
+        ],
+        "lost_fields": [
+          "entity.legal_name"
+        ]
+      },
+      {
+        "canonical_entity_key": "abn:18102557175",
+        "changed_fields": [
+          "entity.legal_name"
+        ],
+        "lost_fields": [
+          "entity.legal_name"
+        ]
+      },
+      {
+        "canonical_entity_key": "abn:20104975493",
+        "changed_fields": [
+          "entity.legal_name"
+        ],
+        "lost_fields": [
+          "entity.legal_name"
+        ]
+      },
+      {
+        "canonical_entity_key": "abn:21125465689",
+        "changed_fields": [
+          "entity.legal_name"
+        ],
+        "lost_fields": [
+          "entity.legal_name"
+        ]
+      },
+      {
+        "canonical_entity_key": "abn:21144680008",
+        "changed_fields": [
+          "entity.legal_name"
+        ],
+        "lost_fields": [
+          "entity.legal_name"
+        ]
+      },
+      {
+        "canonical_entity_key": "abn:22068324121",
+        "changed_fields": [
+          "entity.legal_name"
+        ],
+        "lost_fields": [
+          "entity.legal_name"
+        ]
+      },
+      {
+        "canonical_entity_key": "abn:23652547236",
+        "changed_fields": [
+          "entity.legal_name"
+        ],
+        "lost_fields": [
+          "entity.legal_name"
+        ]
+      },
+      {
+        "canonical_entity_key": "abn:27051642614",
+        "changed_fields": [
+          "entity.legal_name"
+        ],
+        "lost_fields": [
+          "entity.legal_name"
+        ]
+      },
+      {
+        "canonical_entity_key": "abn:28104490366",
+        "changed_fields": [
+          "entity.legal_name"
+        ],
+        "lost_fields": [
+          "entity.legal_name"
+        ]
+      },
+      {
+        "canonical_entity_key": "abn:30049323068",
+        "changed_fields": [
+          "entity.legal_name"
+        ],
+        "lost_fields": [
+          "entity.legal_name"
+        ]
+      },
+      {
+        "canonical_entity_key": "abn:32001255312",
+        "changed_fields": [
+          "entity.legal_name"
+        ],
+        "lost_fields": [
+          "entity.legal_name"
+        ]
+      },
+      {
+        "canonical_entity_key": "abn:34692797087",
+        "changed_fields": [
+          "entity.legal_name"
+        ],
+        "lost_fields": [
+          "entity.legal_name"
+        ]
+      },
+      {
+        "canonical_entity_key": "abn:36010942195",
+        "changed_fields": [
+          "entity.legal_name"
+        ],
+        "lost_fields": [
+          "entity.legal_name"
+        ]
+      },
+      {
+        "canonical_entity_key": "abn:38662317955",
+        "changed_fields": [
+          "entity.legal_name"
+        ],
+        "lost_fields": [
+          "entity.legal_name"
+        ]
+      },
+      {
+        "canonical_entity_key": "abn:39168256203",
+        "changed_fields": [
+          "entity.legal_name"
+        ],
+        "lost_fields": [
+          "entity.legal_name"
+        ]
+      },
+      {
+        "canonical_entity_key": "abn:41122294991",
+        "changed_fields": [
+          "entity.legal_name"
+        ],
+        "lost_fields": [
+          "entity.legal_name"
+        ]
+      },
+      {
+        "canonical_entity_key": "abn:42006334505",
+        "changed_fields": [
+          "entity.legal_name"
+        ],
+        "lost_fields": [
+          "entity.legal_name"
+        ]
+      },
+      {
+        "canonical_entity_key": "abn:42600327393",
+        "changed_fields": [
+          "entity.legal_name"
+        ],
+        "lost_fields": [
+          "entity.legal_name"
+        ]
+      },
+      {
+        "canonical_entity_key": "abn:43111372064",
+        "changed_fields": [
+          "entity.legal_name"
+        ],
+        "lost_fields": [
+          "entity.legal_name"
+        ]
+      },
+      {
+        "canonical_entity_key": "abn:43646051989",
+        "changed_fields": [
+          "entity.legal_name"
+        ],
+        "lost_fields": [
+          "entity.legal_name"
+        ]
+      },
+      {
+        "canonical_entity_key": "abn:44104025363",
+        "changed_fields": [
+          "entity.legal_name"
+        ],
+        "lost_fields": [
+          "entity.legal_name"
+        ]
+      },
+      {
+        "canonical_entity_key": "abn:45107139024",
+        "changed_fields": [
+          "entity.legal_name"
+        ],
+        "lost_fields": [
+          "entity.legal_name"
+        ]
+      },
+      {
+        "canonical_entity_key": "abn:47124138567",
+        "changed_fields": [
+          "entity.legal_name"
+        ],
+        "lost_fields": [
+          "entity.legal_name"
+        ]
+      },
+      {
+        "canonical_entity_key": "abn:47167796876",
+        "changed_fields": [
+          "entity.legal_name"
+        ],
+        "lost_fields": [
+          "entity.legal_name"
+        ]
+      },
+      {
+        "canonical_entity_key": "abn:48061993342",
+        "changed_fields": [
+          "entity.legal_name"
+        ],
+        "lost_fields": [
+          "entity.legal_name"
+        ]
+      },
+      {
+        "canonical_entity_key": "abn:49166544912",
+        "changed_fields": [
+          "entity.legal_name"
+        ],
+        "lost_fields": [
+          "entity.legal_name"
+        ]
+      },
+      {
+        "canonical_entity_key": "abn:50113079208",
+        "changed_fields": [
+          "entity.legal_name"
+        ],
+        "lost_fields": [
+          "entity.legal_name"
+        ]
+      },
+      {
+        "canonical_entity_key": "abn:51169145831",
+        "changed_fields": [
+          "entity.legal_name"
+        ],
+        "lost_fields": [
+          "entity.legal_name"
+        ]
+      },
+      {
+        "canonical_entity_key": "abn:52663897167",
+        "changed_fields": [
+          "entity.legal_name"
+        ],
+        "lost_fields": [
+          "entity.legal_name"
+        ]
+      },
+      {
+        "canonical_entity_key": "abn:53110127501",
+        "changed_fields": [
+          "entity.legal_name"
+        ],
+        "lost_fields": [
+          "entity.legal_name"
+        ]
+      },
+      {
+        "canonical_entity_key": "abn:56126161108",
+        "changed_fields": [
+          "entity.legal_name"
+        ],
+        "lost_fields": [
+          "entity.legal_name"
+        ]
+      },
+      {
+        "canonical_entity_key": "abn:57058199849",
+        "changed_fields": [
+          "entity.legal_name"
+        ],
+        "lost_fields": [
+          "entity.legal_name"
+        ]
+      },
+      {
+        "canonical_entity_key": "abn:57060397293",
+        "changed_fields": [
+          "entity.legal_name"
+        ],
+        "lost_fields": [
+          "entity.legal_name"
+        ]
+      },
+      {
+        "canonical_entity_key": "abn:57667551019",
+        "changed_fields": [
+          "entity.legal_name"
+        ],
+        "lost_fields": [
+          "entity.legal_name"
+        ]
+      },
+      {
+        "canonical_entity_key": "abn:59010126100",
+        "changed_fields": [
+          "entity.legal_name"
+        ],
+        "lost_fields": [
+          "entity.legal_name"
+        ]
+      },
+      {
+        "canonical_entity_key": "abn:60163375479",
+        "changed_fields": [
+          "entity.legal_name"
+        ],
+        "lost_fields": [
+          "entity.legal_name"
+        ]
+      },
+      {
+        "canonical_entity_key": "abn:63113128671",
+        "changed_fields": [
+          "entity.legal_name"
+        ],
+        "lost_fields": [
+          "entity.legal_name"
+        ]
+      },
+      {
+        "canonical_entity_key": "abn:64104180163",
+        "changed_fields": [
+          "entity.legal_name"
+        ],
+        "lost_fields": [
+          "entity.legal_name"
+        ]
+      },
+      {
+        "canonical_entity_key": "abn:64632514473",
+        "changed_fields": [
+          "entity.legal_name"
+        ],
+        "lost_fields": [
+          "entity.legal_name"
+        ]
+      }
+    ],
+    "scope": "Fixed entity membership counterfactual; production withdrawal also retracts links and recomputes membership"
+  },
+  {
+    "removed_source": "73b67e91-d9bf-4471-80c3-a62d5afaee2a",
+    "profiles_with_value_changes": 0,
+    "fields_lost": 0,
+    "profiles_with_any_provenance_or_confidence_change": 0,
+    "profiles_losing_cross_source_support": 0,
+    "details": [],
+    "scope": "Fixed entity membership counterfactual; production withdrawal also retracts links and recomputes membership"
+  },
+  {
+    "removed_source": "8792a410-dea1-4fc9-b783-b97f0fefc208",
+    "profiles_with_value_changes": 0,
+    "fields_lost": 0,
+    "profiles_with_any_provenance_or_confidence_change": 0,
+    "profiles_losing_cross_source_support": 0,
+    "details": [],
+    "scope": "Fixed entity membership counterfactual; production withdrawal also retracts links and recomputes membership"
+  },
+  {
+    "removed_source": "980b6499-c0b4-491b-ba9c-1c7506368a50",
+    "profiles_with_value_changes": 50,
+    "fields_lost": 99,
+    "profiles_with_any_provenance_or_confidence_change": 50,
+    "profiles_losing_cross_source_support": 49,
+    "details": [
+      {
+        "canonical_entity_key": "abn:85000059665",
+        "changed_fields": [
+          "address.full"
+        ],
+        "lost_fields": [
+          "address.full"
+        ]
+      },
+      {
+        "canonical_entity_key": "abn:12001806097",
+        "changed_fields": [
+          "address.full",
+          "entity.abn"
+        ],
+        "lost_fields": [
+          "address.full",
+          "entity.abn"
+        ]
+      },
+      {
+        "canonical_entity_key": "abn:12010732297",
+        "changed_fields": [
+          "address.full",
+          "entity.abn"
+        ],
+        "lost_fields": [
+          "address.full",
+          "entity.abn"
+        ]
+      },
+      {
+        "canonical_entity_key": "abn:12609471392",
+        "changed_fields": [
+          "address.full",
+          "entity.abn"
+        ],
+        "lost_fields": [
+          "address.full",
+          "entity.abn"
+        ]
+      },
+      {
+        "canonical_entity_key": "abn:14115507885",
+        "changed_fields": [
+          "address.full",
+          "entity.abn"
+        ],
+        "lost_fields": [
+          "address.full",
+          "entity.abn"
+        ]
+      },
+      {
+        "canonical_entity_key": "abn:14694442469",
+        "changed_fields": [
+          "address.full",
+          "entity.abn"
+        ],
+        "lost_fields": [
+          "address.full",
+          "entity.abn"
+        ]
+      },
+      {
+        "canonical_entity_key": "abn:16122776845",
+        "changed_fields": [
+          "address.full",
+          "entity.abn"
+        ],
+        "lost_fields": [
+          "address.full",
+          "entity.abn"
+        ]
+      },
+      {
+        "canonical_entity_key": "abn:17138052570",
+        "changed_fields": [
+          "address.full",
+          "entity.abn"
+        ],
+        "lost_fields": [
+          "address.full",
+          "entity.abn"
+        ]
+      },
+      {
+        "canonical_entity_key": "abn:18102557175",
+        "changed_fields": [
+          "address.full",
+          "entity.abn"
+        ],
+        "lost_fields": [
+          "address.full",
+          "entity.abn"
+        ]
+      },
+      {
+        "canonical_entity_key": "abn:20104975493",
+        "changed_fields": [
+          "address.full",
+          "entity.abn"
+        ],
+        "lost_fields": [
+          "address.full",
+          "entity.abn"
+        ]
+      },
+      {
+        "canonical_entity_key": "abn:21125465689",
+        "changed_fields": [
+          "address.full",
+          "entity.abn"
+        ],
+        "lost_fields": [
+          "address.full",
+          "entity.abn"
+        ]
+      },
+      {
+        "canonical_entity_key": "abn:21144680008",
+        "changed_fields": [
+          "address.full",
+          "entity.abn"
+        ],
+        "lost_fields": [
+          "address.full",
+          "entity.abn"
+        ]
+      },
+      {
+        "canonical_entity_key": "abn:22068324121",
+        "changed_fields": [
+          "address.full",
+          "entity.abn"
+        ],
+        "lost_fields": [
+          "address.full",
+          "entity.abn"
+        ]
+      },
+      {
+        "canonical_entity_key": "abn:23652547236",
+        "changed_fields": [
+          "address.full",
+          "entity.abn"
+        ],
+        "lost_fields": [
+          "address.full",
+          "entity.abn"
+        ]
+      },
+      {
+        "canonical_entity_key": "abn:27051642614",
+        "changed_fields": [
+          "address.full",
+          "entity.abn"
+        ],
+        "lost_fields": [
+          "address.full",
+          "entity.abn"
+        ]
+      },
+      {
+        "canonical_entity_key": "abn:28104490366",
+        "changed_fields": [
+          "address.full",
+          "entity.abn"
+        ],
+        "lost_fields": [
+          "address.full",
+          "entity.abn"
+        ]
+      },
+      {
+        "canonical_entity_key": "abn:30049323068",
+        "changed_fields": [
+          "address.full",
+          "entity.abn"
+        ],
+        "lost_fields": [
+          "address.full",
+          "entity.abn"
+        ]
+      },
+      {
+        "canonical_entity_key": "abn:32001255312",
+        "changed_fields": [
+          "address.full",
+          "entity.abn"
+        ],
+        "lost_fields": [
+          "address.full",
+          "entity.abn"
+        ]
+      },
+      {
+        "canonical_entity_key": "abn:34692797087",
+        "changed_fields": [
+          "address.full",
+          "entity.abn"
+        ],
+        "lost_fields": [
+          "address.full",
+          "entity.abn"
+        ]
+      },
+      {
+        "canonical_entity_key": "abn:36010942195",
+        "changed_fields": [
+          "address.full",
+          "entity.abn"
+        ],
+        "lost_fields": [
+          "address.full",
+          "entity.abn"
+        ]
+      },
+      {
+        "canonical_entity_key": "abn:38662317955",
+        "changed_fields": [
+          "address.full",
+          "entity.abn"
+        ],
+        "lost_fields": [
+          "address.full",
+          "entity.abn"
+        ]
+      },
+      {
+        "canonical_entity_key": "abn:39168256203",
+        "changed_fields": [
+          "address.full",
+          "entity.abn"
+        ],
+        "lost_fields": [
+          "address.full",
+          "entity.abn"
+        ]
+      },
+      {
+        "canonical_entity_key": "abn:41122294991",
+        "changed_fields": [
+          "address.full",
+          "entity.abn"
+        ],
+        "lost_fields": [
+          "address.full",
+          "entity.abn"
+        ]
+      },
+      {
+        "canonical_entity_key": "abn:42006334505",
+        "changed_fields": [
+          "address.full",
+          "entity.abn"
+        ],
+        "lost_fields": [
+          "address.full",
+          "entity.abn"
+        ]
+      },
+      {
+        "canonical_entity_key": "abn:42600327393",
+        "changed_fields": [
+          "address.full",
+          "entity.abn"
+        ],
+        "lost_fields": [
+          "address.full",
+          "entity.abn"
+        ]
+      },
+      {
+        "canonical_entity_key": "abn:43111372064",
+        "changed_fields": [
+          "address.full",
+          "entity.abn"
+        ],
+        "lost_fields": [
+          "address.full",
+          "entity.abn"
+        ]
+      },
+      {
+        "canonical_entity_key": "abn:43646051989",
+        "changed_fields": [
+          "address.full",
+          "entity.abn"
+        ],
+        "lost_fields": [
+          "address.full",
+          "entity.abn"
+        ]
+      },
+      {
+        "canonical_entity_key": "abn:44104025363",
+        "changed_fields": [
+          "address.full",
+          "entity.abn"
+        ],
+        "lost_fields": [
+          "address.full",
+          "entity.abn"
+        ]
+      },
+      {
+        "canonical_entity_key": "abn:45107139024",
+        "changed_fields": [
+          "address.full",
+          "entity.abn"
+        ],
+        "lost_fields": [
+          "address.full",
+          "entity.abn"
+        ]
+      },
+      {
+        "canonical_entity_key": "abn:47000067541",
+        "changed_fields": [
+          "address.full",
+          "entity.acn"
+        ],
+        "lost_fields": [
+          "address.full",
+          "entity.acn"
+        ]
+      },
+      {
+        "canonical_entity_key": "abn:47124138567",
+        "changed_fields": [
+          "address.full",
+          "entity.abn"
+        ],
+        "lost_fields": [
+          "address.full",
+          "entity.abn"
+        ]
+      },
+      {
+        "canonical_entity_key": "abn:47167796876",
+        "changed_fields": [
+          "address.full",
+          "entity.abn"
+        ],
+        "lost_fields": [
+          "address.full",
+          "entity.abn"
+        ]
+      },
+      {
+        "canonical_entity_key": "abn:48061993342",
+        "changed_fields": [
+          "address.full",
+          "entity.abn"
+        ],
+        "lost_fields": [
+          "address.full",
+          "entity.abn"
+        ]
+      },
+      {
+        "canonical_entity_key": "abn:49166544912",
+        "changed_fields": [
+          "address.full",
+          "entity.abn"
+        ],
+        "lost_fields": [
+          "address.full",
+          "entity.abn"
+        ]
+      },
+      {
+        "canonical_entity_key": "abn:50113079208",
+        "changed_fields": [
+          "address.full",
+          "entity.abn"
+        ],
+        "lost_fields": [
+          "address.full",
+          "entity.abn"
+        ]
+      },
+      {
+        "canonical_entity_key": "abn:51169145831",
+        "changed_fields": [
+          "address.full",
+          "entity.abn"
+        ],
+        "lost_fields": [
+          "address.full",
+          "entity.abn"
+        ]
+      },
+      {
+        "canonical_entity_key": "abn:52096882576",
+        "changed_fields": [
+          "address.full",
+          "entity.acn"
+        ],
+        "lost_fields": [
+          "address.full",
+          "entity.acn"
+        ]
+      },
+      {
+        "canonical_entity_key": "abn:52663897167",
+        "changed_fields": [
+          "address.full",
+          "entity.abn"
+        ],
+        "lost_fields": [
+          "address.full",
+          "entity.abn"
+        ]
+      },
+      {
+        "canonical_entity_key": "abn:53003469654",
+        "changed_fields": [
+          "address.full",
+          "entity.acn"
+        ],
+        "lost_fields": [
+          "address.full",
+          "entity.acn"
+        ]
+      },
+      {
+        "canonical_entity_key": "abn:53110127501",
+        "changed_fields": [
+          "address.full",
+          "entity.abn"
+        ],
+        "lost_fields": [
+          "address.full",
+          "entity.abn"
+        ]
+      },
+      {
+        "canonical_entity_key": "abn:56126161108",
+        "changed_fields": [
+          "address.full",
+          "entity.abn"
+        ],
+        "lost_fields": [
+          "address.full",
+          "entity.abn"
+        ]
+      },
+      {
+        "canonical_entity_key": "abn:57058199849",
+        "changed_fields": [
+          "address.full",
+          "entity.abn"
+        ],
+        "lost_fields": [
+          "address.full",
+          "entity.abn"
+        ]
+      },
+      {
+        "canonical_entity_key": "abn:57060397293",
+        "changed_fields": [
+          "address.full",
+          "entity.abn"
+        ],
+        "lost_fields": [
+          "address.full",
+          "entity.abn"
+        ]
+      },
+      {
+        "canonical_entity_key": "abn:57667551019",
+        "changed_fields": [
+          "address.full",
+          "entity.abn"
+        ],
+        "lost_fields": [
+          "address.full",
+          "entity.abn"
+        ]
+      },
+      {
+        "canonical_entity_key": "abn:58160713799",
+        "changed_fields": [
+          "address.full",
+          "entity.acn"
+        ],
+        "lost_fields": [
+          "address.full",
+          "entity.acn"
+        ]
+      },
+      {
+        "canonical_entity_key": "abn:59010126100",
+        "changed_fields": [
+          "address.full",
+          "entity.abn"
+        ],
+        "lost_fields": [
+          "address.full",
+          "entity.abn"
+        ]
+      },
+      {
+        "canonical_entity_key": "abn:60163375479",
+        "changed_fields": [
+          "address.full",
+          "entity.abn"
+        ],
+        "lost_fields": [
+          "address.full",
+          "entity.abn"
+        ]
+      },
+      {
+        "canonical_entity_key": "abn:63113128671",
+        "changed_fields": [
+          "address.full",
+          "entity.abn"
+        ],
+        "lost_fields": [
+          "address.full",
+          "entity.abn"
+        ]
+      },
+      {
+        "canonical_entity_key": "abn:64104180163",
+        "changed_fields": [
+          "address.full",
+          "entity.abn"
+        ],
+        "lost_fields": [
+          "address.full",
+          "entity.abn"
+        ]
+      },
+      {
+        "canonical_entity_key": "abn:64632514473",
+        "changed_fields": [
+          "address.full",
+          "entity.abn"
+        ],
+        "lost_fields": [
+          "address.full",
+          "entity.abn"
+        ]
+      }
+    ],
+    "scope": "Fixed entity membership counterfactual; production withdrawal also retracts links and recomputes membership"
+  }
+]

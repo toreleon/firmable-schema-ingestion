@@ -1,0 +1,162 @@
+{
+  "config": {
+    "entity_role": "supplier",
+    "parser": {
+      "format": "json",
+      "record_path": "result.records",
+      "encoding": "utf-8-sig"
+    },
+    "observed_at_field": null,
+    "minimum_field_confidence": 0.8,
+    "mappings": [
+      {
+        "source_field": "Business Number",
+        "canonical_field": "entity.acn",
+        "transforms": [
+          {
+            "op": "regex",
+            "pattern": "^ACN [ ]*([0-9]{9})$",
+            "group": 1,
+            "all": true
+          },
+          "acn"
+        ],
+        "confidence": 0.5,
+        "rationale": "Values are explicitly labelled 'ACN ' in the sample and training data, so a regex capturing the nine digits after the literal label is supported. However, the ACN checksum has 0 valid checks on training, the column is named Business Number and holds mixed identifier types (nonempty only for 5730 of 10577 training rows), and the previous attempt failed because the prefix was not removed. Confidence remains below 0.8 because semantic correctness and checksum validity are unverified; it will not be accepted at the 0.8 threshold."
+      },
+      {
+        "source_field": "Customer Name",
+        "canonical_field": "entity.legal_name",
+        "transforms": [
+          "strip"
+        ],
+        "confidence": 0.6,
+        "rationale": "Field is labelled as customer rather than registered legal name; values appear to be business names (e.g. '$Uccess Pty Ltd'). Legal-name semantics are an unverified assumption. Below threshold."
+      },
+      {
+        "source_field": "Location",
+        "canonical_field": "address.locality",
+        "transforms": [
+          {
+            "op": "regex",
+            "pattern": "^([^,]+), ([A-Z]{2,3}), ([0-9]{4})$",
+            "group": 1
+          }
+        ],
+        "confidence": 0.4,
+        "rationale": "Compound string 'SUBURB, STATE, POSTCODE' with a regex to isolate suburb; pattern not validated against all samples and the 'Location' label does not establish that the first component is a locality. Below threshold; retained for review only."
+      }
+    ],
+    "unmapped_fields": [
+      {
+        "source_field": "_id",
+        "reason": "Row index within source, not a stable business identifier; used only for traceability by the engine."
+      },
+      {
+        "source_field": "Entity Type",
+        "reason": "Values such as 'Corporation (Company)' and 'An individual or Sole trader' are not explicitly mapped to the entity_type enum; no enum map supplied with evidence, and defaulting would be guessing."
+      },
+      {
+        "source_field": "Registration Date",
+        "reason": "Format '%Y-%m-%d 00:00:00' and meaning as date_registered are unconfirmed; future-looking values (2026) need review."
+      },
+      {
+        "source_field": "RSO Number",
+        "reason": "Register-internal reference for the suitable operator registration; not an ABN, ACN, or NZBN. Checksum-valid ACN matches are coincidental."
+      },
+      {
+        "source_field": "Registration Status",
+        "reason": "Register-specific status 'Registered' has no clear mapping to the entity.status enum."
+      },
+      {
+        "source_field": "Location (state/postcode)",
+        "reason": "State and postcode are embedded in the compound Location string and not mapped at threshold; no address.full because the address is incomplete."
+      }
+    ],
+    "warnings": [
+      "Execution produced zero observations: all Business Number values failed with 'Identifier contains non-numeric text' because the 'ACN ' prefix was not removed before digit validation. The revised regex captures the nine digits after the literal label, but the mapping remains below the 0.8 threshold and will not emit at minimum_field_confidence 0.8.",
+      "No mapping in this configuration reaches 0.8 confidence; the config is expected to produce zero accepted observations under the fixed policy. Coverage and confidence are reported separately.",
+      "ACN checksum is unverified (0 valid ACN checks on training); no ABN is inferred from ACN or vice versa.",
+      "Business Number is nonempty for 5730 of 10577 training rows (about 54%); missing values must not be filled.",
+      "observed_at_field is null: the only time basis is resource_last_modified_proxy, which is a publication proxy and not a verified source statement time.",
+      "Customer Name is labelled as customer, not registered legal name; the legal_name assumption must be verified and quoted names may need cleaning.",
+      "Source is a suitable operator register for ERAs; records are regulatory operator registrations, so the supplier role may be better described as registered operator.",
+      "No buyer or agency identifiers are mapped as supplier identifiers; the publishing department is not an entity identifier here."
+    ],
+    "source_id": "42bad3df-f2e0-4c9c-bef0-0a4328927718",
+    "ontology_sha256": "f4b6b4941ec61dcc3fb07c6ee19edab927862aaaa8ae3df30b3023e047c9f9cd",
+    "generated_by": {
+      "kind": "multi_step_runtime_agent",
+      "model": "claude-haiku-5-5",
+      "run_identity": "f46ee217c5805947a01e1050b4b7be74a64923c5c260f0e4b68d83491106d794"
+    },
+    "review": {
+      "status": "pending",
+      "reviewer": null,
+      "approved_config_sha256": null
+    }
+  },
+  "validation": {
+    "records": 15111,
+    "observation_count": 0,
+    "emitted_by_field": {},
+    "error_count": 0,
+    "errors": [],
+    "per_field_validation": [
+      {
+        "source_field": "Business Number",
+        "canonical_field": "entity.acn",
+        "valid_emissions": 7911,
+        "errors": 35,
+        "error_examples": [
+          {
+            "source_record_id": "dddeea919b69e858:316:3688deeb0c007312",
+            "source_field": "Business Number",
+            "canonical_field": "entity.acn",
+            "raw_value": "ACN 000119434",
+            "reason": "Invalid ACN checksum"
+          },
+          {
+            "source_record_id": "dddeea919b69e858:876:6eb8a58667ffc766",
+            "source_field": "Business Number",
+            "canonical_field": "entity.acn",
+            "raw_value": "ACN 723987072",
+            "reason": "Invalid ACN checksum"
+          }
+        ]
+      },
+      {
+        "source_field": "Customer Name",
+        "canonical_field": "entity.legal_name",
+        "valid_emissions": 15111,
+        "errors": 0,
+        "error_examples": []
+      },
+      {
+        "source_field": "Location",
+        "canonical_field": "address.locality",
+        "valid_emissions": 14855,
+        "errors": 242,
+        "error_examples": [
+          {
+            "source_record_id": "dddeea919b69e858:34:5f0581c8c9d426f8",
+            "source_field": "Location",
+            "canonical_field": "address.locality",
+            "raw_value": "WILLAWONG, QLD, 4110, AUSTRALIA",
+            "reason": "Regex needs exactly one match; ambiguous compound record refused"
+          },
+          {
+            "source_record_id": "dddeea919b69e858:62:a2b94b2fc017bbd5",
+            "source_field": "Location",
+            "canonical_field": "address.locality",
+            "raw_value": "TAMROOKUM, QLDQUEENSLAND, 4285",
+            "reason": "Regex needs exactly one match; ambiguous compound record refused"
+          }
+        ]
+      }
+    ],
+    "error_reasons": {},
+    "example_observations": [],
+    "note": "Type/checksum validation does not prove semantic correctness; semantic review required."
+  }
+}

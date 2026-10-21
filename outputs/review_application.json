@@ -1,0 +1,12 @@
+{
+  "policy": "Quarantine both endpoints of rejected links and any explicit alias evidence that depends on them; no claim about which source is wrong.",
+  "evaluated_proposals": 110,
+  "evaluated_population_sha256": "92e6550ee17dae54c82835954b8df784226ec2ea45efd063ab69e34fae52eeac",
+  "reviewed_false_links": 0,
+  "quarantined_records": 6,
+  "historical_rejected_reviews": 3,
+  "withheld_links": 3,
+  "profile_eligible_links": 107,
+  "profile_eligible_entities": 84,
+  "precision_note": "The review result belongs to the original frozen proposal sample. No precision claim is made for the filtered remainder."
+}

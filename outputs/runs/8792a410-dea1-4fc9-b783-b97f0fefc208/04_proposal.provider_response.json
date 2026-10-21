@@ -1,0 +1,205 @@
+{
+  "id": "msg_011CgF3D6BGSuhcNpeP8Ek1J",
+  "usage": {
+    "prompt_tokens": 6765,
+    "completion_tokens": 1910,
+    "total_tokens": 8675,
+    "native": {
+      "input_tokens": 6765,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "cache_creation": {
+        "ephemeral_5m_input_tokens": 0,
+        "ephemeral_1h_input_tokens": 0
+      },
+      "output_tokens": 1910,
+      "output_tokens_details": {
+        "thinking_tokens": 0
+      },
+      "service_tier": "standard",
+      "inference_geo": "global",
+      "speed": "standard"
+    }
+  },
+  "native_response": {
+    "model": "claude-haiku-5-5",
+    "id": "msg_011CgF3D6BGSuhcNpeP8Ek1J",
+    "type": "message",
+    "role": "assistant",
+    "content": [
+      {
+        "type": "tool_use",
+        "id": "toolu_01897qB8YLHKrBfCqYYooRVA",
+        "name": "emit_result",
+        "input": {
+          "entity_role": "supplier",
+          "parser": {
+            "format": "csv",
+            "delimiter": ",",
+            "header_row": 1,
+            "encoding": "utf-8-sig"
+          },
+          "observed_at_field": null,
+          "mappings": [
+            {
+              "source_field": "Supplier name",
+              "canonical_field": "entity.legal_name",
+              "transforms": [
+                "strip"
+              ],
+              "confidence": 0.7,
+              "rationale": "Values are business names (e.g. 'Pty Ltd', 'Pty Limited', 'Pte Ltd'), so organisation context is reasonably established, but the source does not state these are as-registered names; assumption flagged. Confidence set below 0.8 reflects this, so it will not pass the minimum threshold without review."
+            },
+            {
+              "source_field": "Supplier address",
+              "canonical_field": "address.full",
+              "transforms": [
+                "strip"
+              ],
+              "confidence": 0.85,
+              "rationale": "Free-text supplier address; some values include 'C/o' third-party prefixes and some lack a state or postcode. Full string preserved as stated."
+            }
+          ],
+          "unmapped_fields": [
+            {
+              "source_field": "_id",
+              "reason": "Row identifier, internal to source; not a canonical field. Retain for source_record_id construction."
+            },
+            {
+              "source_field": "Description",
+              "reason": "Mostly empty free text ('OCDS name' in sample); not clearly a supplier attribute."
+            },
+            {
+              "source_field": "Agency (Dept or Stat Body)",
+              "reason": "Buyer/agency, not supplier identity; must not be mapped to supplier fields."
+            },
+            {
+              "source_field": "Agency address",
+              "reason": "Buyer/agency address, not supplier address; must not be mapped to address fields."
+            },
+            {
+              "source_field": "Contract description/name",
+              "reason": "Contract description, not an industry code or supplier attribute; ANZSIC not present."
+            },
+            {
+              "source_field": "Award contract date",
+              "reason": "Contract award date, not date_registered; not an observation time either (format is dd/mm/yyyy and it is a contract event date)."
+            },
+            {
+              "source_field": "Contract value",
+              "reason": "Contract value; must not be mapped to entity or address fields."
+            },
+            {
+              "source_field": "Variation to contract (Yes/No)",
+              "reason": "Contract attribute, not entity status."
+            },
+            {
+              "source_field": "Specific confidentiality provision used",
+              "reason": "Contract attribute, not entity status."
+            },
+            {
+              "source_field": "Procurement method",
+              "reason": "Contract attribute; mostly empty."
+            },
+            {
+              "source_field": "Reason for use of limited tendering",
+              "reason": "Contract attribute; mostly empty."
+            },
+            {
+              "source_field": "Form of contract",
+              "reason": "Contract attribute; empty in sample."
+            },
+            {
+              "source_field": "Number of offers sought",
+              "reason": "Procurement attribute; empty in sample."
+            },
+            {
+              "source_field": "Evaluation criteria and weightings",
+              "reason": "Procurement attribute; empty in sample."
+            },
+            {
+              "source_field": "Deliverables",
+              "reason": "Contract attribute; empty in sample."
+            },
+            {
+              "source_field": "Contract milestones",
+              "reason": "Contract attribute; empty in sample."
+            },
+            {
+              "source_field": "Contract performance management",
+              "reason": "Contract attribute; empty in sample."
+            },
+            {
+              "source_field": "Contract reference number",
+              "reason": "Contract identifier, not a supplier registration identifier; empty in sample."
+            },
+            {
+              "source_field": "Contract category group",
+              "reason": "Contract attribute; empty in sample."
+            },
+            {
+              "source_field": "Parent contract number/SOA",
+              "reason": "Contract identifier, not supplier identifier; empty in sample."
+            },
+            {
+              "source_field": "Commence date",
+              "reason": "Contract date, not date_registered; empty in sample."
+            },
+            {
+              "source_field": "Finish date",
+              "reason": "Contract date, not date_registered; empty in sample."
+            },
+            {
+              "source_field": "Supplier ABN",
+              "reason": "Field is empty in all 195 training rows; no value to validate. Left unmapped to avoid unverified identifier mapping; may be mapped with abn transform if populated in future snapshots."
+            }
+          ],
+          "minimum_field_confidence": 0.8,
+          "warnings": [
+            "observed_at_field is null: the only temporal value is resource last-modified proxy (observed_at_basis 'resource_last_modified_proxy'), which is a publication proxy, not a source statement time. Not used as observed_at.",
+            "Supplier name is a business name with Pty Ltd/Pty Limited/Pte Ltd suffixes but the source does not state it is as-registered; legal_name mapping is an assumption and confidence 0.7 is below the 0.8 minimum, so it should be reviewed or excluded.",
+            "Supplier address is free text and may include 'C/o' third-party addresses or a street-only value without state/postcode; no address.state, address.postcode, or address.locality split is performed.",
+            "Supplier ABN and ACN are not populated in training data; none mapped. No ACN inferred from ABN.",
+            "Trading names not present; no trading_name mapping.",
+            "Each row has one supplier; no multi-supplier splitting required in sample. Source_record_id should be built from _id, with the resource_id documented as part of the key.",
+            "Agency/buyer fields are explicitly excluded from supplier identity and address mappings.",
+            "Training profile lists 195 records; only 4 sample rows were visible, so value patterns beyond the sample are unverified.",
+            "Contract value and dates are not mapped; no date_registered source exists."
+          ]
+        },
+        "caller": {
+          "type": "direct"
+        }
+      }
+    ],
+    "container": null,
+    "stop_reason": "tool_use",
+    "stop_sequence": null,
+    "stop_details": null,
+    "usage": {
+      "input_tokens": 6765,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "cache_creation": {
+        "ephemeral_5m_input_tokens": 0,
+        "ephemeral_1h_input_tokens": 0
+      },
+      "output_tokens": 1910,
+      "output_tokens_details": {
+        "thinking_tokens": 0
+      },
+      "service_tier": "standard",
+      "inference_geo": "global",
+      "speed": "standard"
+    },
+    "diagnostics": null
+  },
+  "choices": [
+    {
+      "message": {
+        "content": "{\"entity_role\": \"supplier\", \"parser\": {\"format\": \"csv\", \"delimiter\": \",\", \"header_row\": 1, \"encoding\": \"utf-8-sig\"}, \"observed_at_field\": null, \"mappings\": [{\"source_field\": \"Supplier name\", \"canonical_field\": \"entity.legal_name\", \"transforms\": [\"strip\"], \"confidence\": 0.7, \"rationale\": \"Values are business names (e.g. 'Pty Ltd', 'Pty Limited', 'Pte Ltd'), so organisation context is reasonably established, but the source does not state these are as-registered names; assumption flagged. Confidence set below 0.8 reflects this, so it will not pass the minimum threshold without review.\"}, {\"source_field\": \"Supplier address\", \"canonical_field\": \"address.full\", \"transforms\": [\"strip\"], \"confidence\": 0.85, \"rationale\": \"Free-text supplier address; some values include 'C/o' third-party prefixes and some lack a state or postcode. Full string preserved as stated.\"}], \"unmapped_fields\": [{\"source_field\": \"_id\", \"reason\": \"Row identifier, internal to source; not a canonical field. Retain for source_record_id construction.\"}, {\"source_field\": \"Description\", \"reason\": \"Mostly empty free text ('OCDS name' in sample); not clearly a supplier attribute.\"}, {\"source_field\": \"Agency (Dept or Stat Body)\", \"reason\": \"Buyer/agency, not supplier identity; must not be mapped to supplier fields.\"}, {\"source_field\": \"Agency address\", \"reason\": \"Buyer/agency address, not supplier address; must not be mapped to address fields.\"}, {\"source_field\": \"Contract description/name\", \"reason\": \"Contract description, not an industry code or supplier attribute; ANZSIC not present.\"}, {\"source_field\": \"Award contract date\", \"reason\": \"Contract award date, not date_registered; not an observation time either (format is dd/mm/yyyy and it is a contract event date).\"}, {\"source_field\": \"Contract value\", \"reason\": \"Contract value; must not be mapped to entity or address fields.\"}, {\"source_field\": \"Variation to contract (Yes/No)\", \"reason\": \"Contract attribute, not entity status.\"}, {\"source_field\": \"Specific confidentiality provision used\", \"reason\": \"Contract attribute, not entity status.\"}, {\"source_field\": \"Procurement method\", \"reason\": \"Contract attribute; mostly empty.\"}, {\"source_field\": \"Reason for use of limited tendering\", \"reason\": \"Contract attribute; mostly empty.\"}, {\"source_field\": \"Form of contract\", \"reason\": \"Contract attribute; empty in sample.\"}, {\"source_field\": \"Number of offers sought\", \"reason\": \"Procurement attribute; empty in sample.\"}, {\"source_field\": \"Evaluation criteria and weightings\", \"reason\": \"Procurement attribute; empty in sample.\"}, {\"source_field\": \"Deliverables\", \"reason\": \"Contract attribute; empty in sample.\"}, {\"source_field\": \"Contract milestones\", \"reason\": \"Contract attribute; empty in sample.\"}, {\"source_field\": \"Contract performance management\", \"reason\": \"Contract attribute; empty in sample.\"}, {\"source_field\": \"Contract reference number\", \"reason\": \"Contract identifier, not a supplier registration identifier; empty in sample.\"}, {\"source_field\": \"Contract category group\", \"reason\": \"Contract attribute; empty in sample.\"}, {\"source_field\": \"Parent contract number/SOA\", \"reason\": \"Contract identifier, not supplier identifier; empty in sample.\"}, {\"source_field\": \"Commence date\", \"reason\": \"Contract date, not date_registered; empty in sample.\"}, {\"source_field\": \"Finish date\", \"reason\": \"Contract date, not date_registered; empty in sample.\"}, {\"source_field\": \"Supplier ABN\", \"reason\": \"Field is empty in all 195 training rows; no value to validate. Left unmapped to avoid unverified identifier mapping; may be mapped with abn transform if populated in future snapshots.\"}], \"minimum_field_confidence\": 0.8, \"warnings\": [\"observed_at_field is null: the only temporal value is resource last-modified proxy (observed_at_basis 'resource_last_modified_proxy'), which is a publication proxy, not a source statement time. Not used as observed_at.\", \"Supplier name is a business name with Pty Ltd/Pty Limited/Pte Ltd suffixes but the source does not state it is as-registered; legal_name mapping is an assumption and confidence 0.7 is below the 0.8 minimum, so it should be reviewed or excluded.\", \"Supplier address is free text and may include 'C/o' third-party addresses or a street-only value without state/postcode; no address.state, address.postcode, or address.locality split is performed.\", \"Supplier ABN and ACN are not populated in training data; none mapped. No ACN inferred from ABN.\", \"Trading names not present; no trading_name mapping.\", \"Each row has one supplier; no multi-supplier splitting required in sample. Source_record_id should be built from _id, with the resource_id documented as part of the key.\", \"Agency/buyer fields are explicitly excluded from supplier identity and address mappings.\", \"Training profile lists 195 records; only 4 sample rows were visible, so value patterns beyond the sample are unverified.\", \"Contract value and dates are not mapped; no date_registered source exists.\"]}"
+      },
+      "finish_reason": "stop"
+    }
+  ]
+}

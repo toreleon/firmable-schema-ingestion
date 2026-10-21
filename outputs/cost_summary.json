@@ -1,0 +1,135 @@
+{
+  "sources": {
+    "21a0f174-2f9e-4b01-a73a-7569eefbb0c8": {
+      "recorded_model_requests_all_attempts": 7,
+      "input_tokens_all_attempts": 77714,
+      "output_tokens_all_attempts": 15450,
+      "model_wall_seconds_all_attempts": 70.0786117350001,
+      "latest_step_receipts_input_tokens": 27594,
+      "latest_step_receipts_output_tokens": 4438,
+      "latest_step_receipts_model_wall_seconds": 20.017453632999832,
+      "final_invocation_wall_seconds": 0.1544615339998927,
+      "status": "awaiting_human_approval",
+      "step_count": 8,
+      "api_usd_actual": null,
+      "per_record_model_cost_usd": 0,
+      "models": [
+        "claude-haiku-5-5",
+        "deepseek-flash"
+      ]
+    },
+    "2b977e4d-c765-4ce5-8088-65210a744add": {
+      "recorded_model_requests_all_attempts": 9,
+      "input_tokens_all_attempts": 102254,
+      "output_tokens_all_attempts": 19579,
+      "model_wall_seconds_all_attempts": 80.74757088399974,
+      "latest_step_receipts_input_tokens": 28920,
+      "latest_step_receipts_output_tokens": 4428,
+      "latest_step_receipts_model_wall_seconds": 17.77568070799998,
+      "final_invocation_wall_seconds": 17.856282602999954,
+      "status": "awaiting_human_approval",
+      "step_count": 8,
+      "api_usd_actual": null,
+      "per_record_model_cost_usd": 0,
+      "models": [
+        "claude-haiku-5-5",
+        "deepseek-flash"
+      ]
+    },
+    "42bad3df-f2e0-4c9c-bef0-0a4328927718": {
+      "recorded_model_requests_all_attempts": 8,
+      "input_tokens_all_attempts": 74765,
+      "output_tokens_all_attempts": 15054,
+      "model_wall_seconds_all_attempts": 68.08509972399906,
+      "latest_step_receipts_input_tokens": 38183,
+      "latest_step_receipts_output_tokens": 6966,
+      "latest_step_receipts_model_wall_seconds": 31.392106817999775,
+      "final_invocation_wall_seconds": 19.438049945999865,
+      "status": "awaiting_human_approval",
+      "step_count": 11,
+      "api_usd_actual": null,
+      "per_record_model_cost_usd": 0,
+      "models": [
+        "claude-haiku-5-5"
+      ]
+    },
+    "73b67e91-d9bf-4471-80c3-a62d5afaee2a": {
+      "recorded_model_requests_all_attempts": 4,
+      "input_tokens_all_attempts": 49046,
+      "output_tokens_all_attempts": 9617,
+      "model_wall_seconds_all_attempts": 39.09070576399995,
+      "latest_step_receipts_input_tokens": 23461,
+      "latest_step_receipts_output_tokens": 4694,
+      "latest_step_receipts_model_wall_seconds": 18.038772397000002,
+      "final_invocation_wall_seconds": 18.06287073700014,
+      "status": "awaiting_human_approval",
+      "step_count": 8,
+      "api_usd_actual": null,
+      "per_record_model_cost_usd": 0,
+      "models": [
+        "claude-haiku-5-5"
+      ]
+    },
+    "8792a410-dea1-4fc9-b783-b97f0fefc208": {
+      "recorded_model_requests_all_attempts": 4,
+      "input_tokens_all_attempts": 51404,
+      "output_tokens_all_attempts": 8659,
+      "model_wall_seconds_all_attempts": 35.90382621599997,
+      "latest_step_receipts_input_tokens": 22997,
+      "latest_step_receipts_output_tokens": 4144,
+      "latest_step_receipts_model_wall_seconds": 18.02113529600001,
+      "final_invocation_wall_seconds": 18.072758839000016,
+      "status": "awaiting_human_approval",
+      "step_count": 8,
+      "api_usd_actual": null,
+      "per_record_model_cost_usd": 0,
+      "models": [
+        "claude-haiku-5-5"
+      ]
+    },
+    "980b6499-c0b4-491b-ba9c-1c7506368a50": {
+      "recorded_model_requests_all_attempts": 7,
+      "input_tokens_all_attempts": 77229,
+      "output_tokens_all_attempts": 11576,
+      "model_wall_seconds_all_attempts": 57.120065867999756,
+      "latest_step_receipts_input_tokens": 27946,
+      "latest_step_receipts_output_tokens": 3597,
+      "latest_step_receipts_model_wall_seconds": 16.25840882400007,
+      "final_invocation_wall_seconds": 26.612006500000007,
+      "status": "awaiting_human_approval",
+      "step_count": 8,
+      "api_usd_actual": null,
+      "per_record_model_cost_usd": 0,
+      "models": [
+        "claude-haiku-5-5"
+      ]
+    }
+  },
+  "input_tokens_recorded": 543341,
+  "output_tokens_recorded": 93554,
+  "actual_api_usd": 8.0687,
+  "actual_api_usd_note": "Actual Haiku spend checked and confirmed by the user in conversation; per-source dollars are not allocated. Recorded token totals remain lower bounds.",
+  "recorded_requests": 46,
+  "per_record_model_cost_usd": 0,
+  "budget": {
+    "requests": 59,
+    "request_limit": 60,
+    "reserved_usd": 8.068679999999999,
+    "limit_usd": 9,
+    "migration_note": "Settled earlier successful requests at conservative $10/M input + $20/M output using actual usage. Added $0.50 reserve for initial truncated DeepSeek response with missing usage and diagnostic calls. Rejected HTTP 400/402 requests excluded. These are cost ceilings, not actual billed spend."
+  },
+  "pricing_note": "Reservation uses conservative ceilings $10/M input and $20/M output, with one input token reserved per serialized request character. This is a spend guard, not a claimed invoice.",
+  "actual_api_usd_scope": "Haiku usage; no per-source dollar allocation was provided",
+  "actual_api_provider": "anthropic",
+  "actual_api_model_family": "Haiku",
+  "billing_confirmation": "outputs/user_confirmations.json",
+  "demo_allowance": {
+    "requests": 0,
+    "request_limit": 6,
+    "reserved_usd": 0,
+    "limit_usd": 1.0,
+    "scope": "separate bounded seventh-source demo",
+    "historical_baseline_usd": 8.0687,
+    "created_at": "2026-10-21T10:33:44.412640+00:00"
+  }
+}

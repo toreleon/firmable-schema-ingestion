@@ -1,0 +1,164 @@
+{
+  "config": {
+    "entity_role": "supplier",
+    "parser": {
+      "format": "json",
+      "record_path": "result.records",
+      "encoding": "utf-8-sig"
+    },
+    "observed_at_field": null,
+    "minimum_field_confidence": 0.8,
+    "mappings": [
+      {
+        "source_field": "Business Number",
+        "canonical_field": "entity.acn",
+        "transforms": [
+          {
+            "op": "regex",
+            "pattern": "^ACN [ ]*([0-9]{9})$",
+            "group": 1,
+            "all": true
+          },
+          "acn"
+        ],
+        "confidence": 0.5,
+        "rationale": "Post-execution evidence: the regex extracted 7911 valid emissions with 35 rejected for invalid ACN checksum; the explicit 'ACN ' label is present and the label-specific extraction succeeded. However, the column is named Business Number and the training data reports 0 checksum-valid ACN checks in the pre-execution sample, which conflicts with the post-execution checksum pass rate (7911 pass, 35 fail). Semantic correctness of the column as the supplier's ACN is not verified, and 'Business Number' may hold mixed identifier types. Below the 0.8 threshold, so it will not emit at minimum_field_confidence 0.8."
+      },
+      {
+        "source_field": "Customer Name",
+        "canonical_field": "entity.legal_name",
+        "transforms": [
+          "strip"
+        ],
+        "confidence": 0.6,
+        "rationale": "Post-execution evidence: 15111 valid emissions with 0 errors, so the strip transform is type-valid across all records. Semantic correctness is still unverified: the field is labelled Customer Name, not registered legal name, and values such as '$Uccess Pty Ltd' and quoted names suggest business trading-style names. Legal-name semantics are not confirmed, so confidence stays below threshold."
+      },
+      {
+        "source_field": "Location",
+        "canonical_field": "address.locality",
+        "transforms": [
+          {
+            "op": "regex",
+            "pattern": "^([^,]+), ([A-Z]{2,3}), ([0-9]{4})$",
+            "group": 1
+          }
+        ],
+        "confidence": 0.4,
+        "rationale": "Post-execution evidence: 14855 valid emissions and 242 rejected as ambiguous compound records (e.g. 'WILLAWONG, QLD, 4110, AUSTRALIA' and 'TAMROOKUM, QLDQUEENSLAND, 4285'). The regex covers the dominant pattern but the 'Location' label does not establish that the first component is a locality, and the rejected records show the pattern is not universal. Retained for review only; below threshold."
+      }
+    ],
+    "unmapped_fields": [
+      {
+        "source_field": "_id",
+        "reason": "Row index within source, not a stable business identifier; used only for traceability by the engine."
+      },
+      {
+        "source_field": "Entity Type",
+        "reason": "Values such as 'Corporation (Company)' and 'An individual or Sole trader' are not explicitly mapped to the entity_type enum; no enum map with evidence is supplied, and defaulting would be guessing."
+      },
+      {
+        "source_field": "Registration Date",
+        "reason": "Format '%Y-%m-%d 00:00:00' and meaning as date_registered are unconfirmed; future-looking values (2026) need review."
+      },
+      {
+        "source_field": "RSO Number",
+        "reason": "Register-internal reference for the suitable operator registration; not an ABN, ACN, or NZBN. Checksum-valid ACN matches are coincidental."
+      },
+      {
+        "source_field": "Registration Status",
+        "reason": "Register-specific status 'Registered' has no clear mapping to the entity.status enum."
+      },
+      {
+        "source_field": "Location (state/postcode)",
+        "reason": "State and postcode are embedded in the compound Location string and not mapped at threshold; no address.full because the address is incomplete."
+      }
+    ],
+    "warnings": [
+      "Execution produced zero accepted observations (observation_count 0; emitted_by_field empty). Per-field validation counts show emissions that passed type/checksum validation before the threshold gate, but no mapping reaches the fixed 0.8 minimum_field_confidence, so nothing is emitted.",
+      "Obsolete failed transform: the earlier run failed because the 'ACN ' prefix was not removed; the corrected regex succeeded (7911 valid emissions, 35 invalid ACN checksum rejections). Confidence reflects the corrected execution, not the failure.",
+      "Business Number post-execution: 7911 valid, 35 checksum failures (e.g. 'ACN 000119434', 'ACN 723987072' rejected). The pre-execution training sample reported 0 checksum-valid ACN checks; this conflict is unresolved and must be reviewed before any promotion. Semantic mapping of 'Business Number' to entity.acn remains unverified, so the field is not promoted.",
+      "No ABN is inferred from ACN or vice versa; no unlabelled identifiers are inferred.",
+      "Location: 242 ambiguous compound records were refused and not emitted; the locality regex is not a validated parse of the full field.",
+      "Customer Name: 0 errors but legal-name semantics remain unverified; the field is not promoted to entity.legal_name.",
+      "observed_at_field is null: the only time basis is resource_last_modified_proxy, a publication proxy, not a verified source statement time.",
+      "Source is an operator register for ERAs; supplier role may be better described as registered operator.",
+      "No buyer or agency identifiers are mapped as supplier identifiers; the publishing department is not an entity identifier here.",
+      "Review status remains pending; no approved_config_sha256 is set."
+    ],
+    "source_id": "42bad3df-f2e0-4c9c-bef0-0a4328927718",
+    "ontology_sha256": "f4b6b4941ec61dcc3fb07c6ee19edab927862aaaa8ae3df30b3023e047c9f9cd",
+    "generated_by": {
+      "kind": "multi_step_runtime_agent",
+      "model": "claude-haiku-5-5",
+      "run_identity": "f46ee217c5805947a01e1050b4b7be74a64923c5c260f0e4b68d83491106d794"
+    },
+    "review": {
+      "status": "pending",
+      "reviewer": null,
+      "approved_config_sha256": null
+    }
+  },
+  "validation": {
+    "records": 15111,
+    "observation_count": 0,
+    "emitted_by_field": {},
+    "error_count": 0,
+    "errors": [],
+    "per_field_validation": [
+      {
+        "source_field": "Business Number",
+        "canonical_field": "entity.acn",
+        "valid_emissions": 7911,
+        "errors": 35,
+        "error_examples": [
+          {
+            "source_record_id": "dddeea919b69e858:316:3688deeb0c007312",
+            "source_field": "Business Number",
+            "canonical_field": "entity.acn",
+            "raw_value": "ACN 000119434",
+            "reason": "Invalid ACN checksum"
+          },
+          {
+            "source_record_id": "dddeea919b69e858:876:6eb8a58667ffc766",
+            "source_field": "Business Number",
+            "canonical_field": "entity.acn",
+            "raw_value": "ACN 723987072",
+            "reason": "Invalid ACN checksum"
+          }
+        ]
+      },
+      {
+        "source_field": "Customer Name",
+        "canonical_field": "entity.legal_name",
+        "valid_emissions": 15111,
+        "errors": 0,
+        "error_examples": []
+      },
+      {
+        "source_field": "Location",
+        "canonical_field": "address.locality",
+        "valid_emissions": 14855,
+        "errors": 242,
+        "error_examples": [
+          {
+            "source_record_id": "dddeea919b69e858:34:5f0581c8c9d426f8",
+            "source_field": "Location",
+            "canonical_field": "address.locality",
+            "raw_value": "WILLAWONG, QLD, 4110, AUSTRALIA",
+            "reason": "Regex needs exactly one match; ambiguous compound record refused"
+          },
+          {
+            "source_record_id": "dddeea919b69e858:62:a2b94b2fc017bbd5",
+            "source_field": "Location",
+            "canonical_field": "address.locality",
+            "raw_value": "TAMROOKUM, QLDQUEENSLAND, 4285",
+            "reason": "Regex needs exactly one match; ambiguous compound record refused"
+          }
+        ]
+      }
+    ],
+    "error_reasons": {},
+    "example_observations": [],
+    "note": "Type/checksum validation does not prove semantic correctness; semantic review required."
+  }
+}

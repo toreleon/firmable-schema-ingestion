@@ -1,0 +1,91 @@
+[
+  {
+    "url": "https://data.gov.au/data/api/3/action/package_search?q=abn&rows=100&start=0",
+    "at": "2026-10-21T07:43:45.057002+00:00",
+    "error": "HTTP Error 403: Forbidden"
+  },
+  {
+    "url": "https://www.data.qld.gov.au/api/3/action/package_search?q=abn&rows=100&start=0",
+    "at": "2026-10-21T07:43:46.623635+00:00",
+    "returned": 7,
+    "total": 7
+  },
+  {
+    "url": "https://www.data.qld.gov.au/api/3/action/package_search?q=contract&rows=100&start=0",
+    "at": "2026-10-21T07:43:48.253148+00:00",
+    "returned": 100,
+    "total": 477
+  },
+  {
+    "url": "https://www.data.qld.gov.au/api/3/action/package_search?q=licence&rows=100&start=0",
+    "at": "2026-10-21T07:43:49.873718+00:00",
+    "returned": 100,
+    "total": 114
+  },
+  {
+    "url": "https://www.data.qld.gov.au/api/3/action/package_search?q=supplier&rows=100&start=0",
+    "at": "2026-10-21T07:43:50.557701+00:00",
+    "returned": 14,
+    "total": 14
+  },
+  {
+    "url": "https://www.data.qld.gov.au/api/3/action/package_search?q=business+register&rows=100&start=0",
+    "at": "2026-10-21T07:43:51.433273+00:00",
+    "returned": 42,
+    "total": 42
+  },
+  {
+    "url": "https://www.data.qld.gov.au/api/3/action/package_search?q=grant&rows=100&start=0",
+    "at": "2026-10-21T07:43:52.208508+00:00",
+    "returned": 100,
+    "total": 588
+  },
+  {
+    "url": "https://www.data.qld.gov.au/api/3/action/package_search?q=charity&rows=100&start=0",
+    "at": "2026-10-21T07:43:52.583758+00:00",
+    "returned": 1,
+    "total": 1
+  },
+  {
+    "url": "https://data.nsw.gov.au/data/api/3/action/package_search?q=abn&rows=100&start=0",
+    "at": "2026-10-21T07:43:53.438428+00:00",
+    "returned": 1,
+    "total": 1
+  },
+  {
+    "url": "https://data.nsw.gov.au/data/api/3/action/package_search?q=contract&rows=100&start=0",
+    "at": "2026-10-21T07:43:55.211581+00:00",
+    "returned": 100,
+    "total": 191
+  },
+  {
+    "url": "https://data.nsw.gov.au/data/api/3/action/package_search?q=licence&rows=100&start=0",
+    "at": "2026-10-21T07:43:56.798817+00:00",
+    "returned": 100,
+    "total": 115
+  },
+  {
+    "url": "https://data.nsw.gov.au/data/api/3/action/package_search?q=supplier&rows=100&start=0",
+    "at": "2026-10-21T07:43:57.283046+00:00",
+    "returned": 5,
+    "total": 5
+  },
+  {
+    "url": "https://data.nsw.gov.au/data/api/3/action/package_search?q=business+register&rows=100&start=0",
+    "at": "2026-10-21T07:43:58.364075+00:00",
+    "returned": 8,
+    "total": 8
+  },
+  {
+    "url": "https://data.nsw.gov.au/data/api/3/action/package_search?q=grant&rows=100&start=0",
+    "at": "2026-10-21T07:43:59.387765+00:00",
+    "returned": 73,
+    "total": 73
+  },
+  {
+    "url": "https://data.nsw.gov.au/data/api/3/action/package_search?q=charity&rows=100&start=0",
+    "at": "2026-10-21T07:44:00.085431+00:00",
+    "returned": 5,
+    "total": 5
+  }
+]

@@ -1,0 +1,9 @@
+{
+  "requests": 0,
+  "request_limit": 6,
+  "reserved_usd": 0,
+  "limit_usd": 1.0,
+  "scope": "separate bounded seventh-source demo",
+  "historical_baseline_usd": 8.0687,
+  "created_at": "2026-10-21T10:33:44.412640+00:00"
+}

@@ -1,0 +1,172 @@
+{
+  "id": "msg_011CgF4rEgP4piEzDPnxfVRr",
+  "usage": {
+    "prompt_tokens": 17544,
+    "completion_tokens": 1917,
+    "total_tokens": 19461,
+    "native": {
+      "input_tokens": 17544,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "cache_creation": {
+        "ephemeral_5m_input_tokens": 0,
+        "ephemeral_1h_input_tokens": 0
+      },
+      "output_tokens": 1917,
+      "output_tokens_details": {
+        "thinking_tokens": 0
+      },
+      "service_tier": "standard",
+      "inference_geo": "global",
+      "speed": "standard"
+    }
+  },
+  "native_response": {
+    "model": "claude-haiku-5-5",
+    "id": "msg_011CgF4rEgP4piEzDPnxfVRr",
+    "type": "message",
+    "role": "assistant",
+    "content": [
+      {
+        "type": "tool_use",
+        "id": "toolu_0171cUV3ov3VSp8W26iKEhUH",
+        "name": "emit_result",
+        "input": {
+          "config": {
+            "entity_role": "supplier",
+            "parser": {
+              "format": "json",
+              "record_path": "result.records",
+              "encoding": "utf-8-sig"
+            },
+            "observed_at_field": null,
+            "mappings": [
+              {
+                "source_field": "Customer Name",
+                "canonical_field": "entity.legal_name",
+                "transforms": [
+                  "strip"
+                ],
+                "confidence": 0.8,
+                "rationale": "Retained. Held-out validation shows 4534/4534 emissions with 0 errors. Sample values include individual names (e.g. 'Paul Robert Purtle') alongside company names, so legal-name semantics are weak for individual/sole-trader rows; confidence kept at the 0.8 policy floor with explicit review flag."
+              },
+              {
+                "source_field": "Business Number",
+                "canonical_field": "entity.acn",
+                "transforms": [
+                  "strip",
+                  {
+                    "op": "regex",
+                    "pattern": "ACN:?\\s*(\\d{9})",
+                    "group": 1
+                  },
+                  "acn"
+                ],
+                "confidence": 0.85,
+                "rationale": "Retained the single-ACN extraction. Held-out errors (170) are all engine refusals for ambiguous or non-ACN rows, which is the safe outcome. The pattern is tightened to an optional colon to match the 'ACN ACN:606489785' style, but that row contains two ACN labels and will still be refused by the one-match rule. ABN-labelled rows and 'ARBN' rows are not extracted as ACN, since the pattern requires the literal 'ACN' label followed by 9 digits; 'ARBN' does not match because 'ACN' is not a substring boundary-preceded match problem only if preceded by letters, so review is needed (see risks). 19 invalid-checksum refusals are also safe.",
+                "changes_note": "see changes"
+              }
+            ],
+            "unmapped_fields": [
+              {
+                "source_field": "Entity Type",
+                "reason": "Free-text values such as 'Corporation (Company)', 'An individual or Sole trader', and 'Local Government Authority' lack a reviewed enum map; not guessed."
+              },
+              {
+                "source_field": "Location",
+                "reason": "Combined suburb/state/postcode string describes operating location, not the registered business address."
+              },
+              {
+                "source_field": "RSO Number",
+                "reason": "Register-internal reference number (including 'RSO' prefixed values); numeric values sometimes pass ACN checksum, so mapping as ACN would be unsafe."
+              },
+              {
+                "source_field": "Registration Date",
+                "reason": "Date of suitable operator registration, not verified as entity date_registered."
+              },
+              {
+                "source_field": "Registration Status",
+                "reason": "Refers to the suitable operator register status, not the entity corporate status."
+              },
+              {
+                "source_field": "_id",
+                "reason": "Internal row sequence identifier; used only for source_record_id construction."
+              }
+            ],
+            "minimum_field_confidence": 0.8,
+            "warnings": [
+              "observed_at_field is null: only a resource last-modified proxy is available; registration dates are not statement times.",
+              "Business Number column is predominantly ACN-labelled. Labelled ABN matches (102 in held-out, 100 valid) are not mapped to entity.abn because the ABN labels in this column are not verified as supplier-attributed identifiers at scale; review before adding.",
+              "Customer Name may include individuals or sole traders; legal_name assumption flagged.",
+              "Source reliability is an uncalibrated prior and is not used for mapping confidence.",
+              "Held-out ACN checksum failures (19) and ambiguous compound rows (151) are refused by the engine as designed."
+            ],
+            "warnings_added": []
+          },
+          "changes": [
+            {
+              "field": "entity.legal_name (Customer Name)",
+              "before": "transforms: [strip], confidence 0.8",
+              "after": "unchanged: transforms [strip], confidence 0.8",
+              "reason": "Held-out validation 4534 emissions, 0 errors. Semantic concern flagged for individual names; retained with review flag."
+            },
+            {
+              "field": "entity.acn (Business Number)",
+              "before": "regex 'ACN\\\\s*(\\\\d{9})' group 1, then acn",
+              "after": "regex 'ACN:?\\\\s*(\\\\d{9})' group 1, then acn",
+              "reason": "Minor tightening to match 'ACN:' label variants seen in held-out examples. Compound rows remain refused by the engine's single-match rule. No ABN-to-ACN reuse introduced."
+            },
+            {
+              "field": "entity.abn",
+              "before": "not mapped",
+              "after": "not mapped",
+              "reason": "Labelled ABN values (102 held-out, 100 valid) are sparse and not established as supplier-attributed at scale; not mapped pending review. separate_entities split approach not applied because no explicit supplier ABN list is present."
+            }
+          ],
+          "semantic_risks": [
+            "Customer Name may be an individual's name (sole trader or person) rather than a registered legal entity name; entity.legal_name semantics are weaker for these rows.",
+            "Held-out ACN extraction has 170 refused rows (151 ambiguous compound, 19 invalid checksum); coverage for entity.acn is about 55% of held-out records.",
+            "Labelled ABN values in Business Number (e.g. 'ABN 34103787081') are not mapped to entity.abn; the ACN regex does not extract them, but it also does not explicitly exclude 'ARBN' or 'ABN' prefixes beyond requiring the literal 'ACN' token.",
+            "RSO Number values may pass ACN checksum by coincidence and must not be treated as ACNs.",
+            "Registration Date and Registration Status refer to the suitable operator register and are not entity date_registered or entity.status.",
+            "Location is the operating location, not the registered business address.",
+            "observed_at is a resource-modified proxy, not a statement time."
+          ],
+          "requires_human_review": true
+        },
+        "caller": {
+          "type": "direct"
+        }
+      }
+    ],
+    "container": null,
+    "stop_reason": "tool_use",
+    "stop_sequence": null,
+    "stop_details": null,
+    "usage": {
+      "input_tokens": 17544,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "cache_creation": {
+        "ephemeral_5m_input_tokens": 0,
+        "ephemeral_1h_input_tokens": 0
+      },
+      "output_tokens": 1917,
+      "output_tokens_details": {
+        "thinking_tokens": 0
+      },
+      "service_tier": "standard",
+      "inference_geo": "global",
+      "speed": "standard"
+    },
+    "diagnostics": null
+  },
+  "choices": [
+    {
+      "message": {
+        "content": "{\"config\": {\"entity_role\": \"supplier\", \"parser\": {\"format\": \"json\", \"record_path\": \"result.records\", \"encoding\": \"utf-8-sig\"}, \"observed_at_field\": null, \"mappings\": [{\"source_field\": \"Customer Name\", \"canonical_field\": \"entity.legal_name\", \"transforms\": [\"strip\"], \"confidence\": 0.8, \"rationale\": \"Retained. Held-out validation shows 4534/4534 emissions with 0 errors. Sample values include individual names (e.g. 'Paul Robert Purtle') alongside company names, so legal-name semantics are weak for individual/sole-trader rows; confidence kept at the 0.8 policy floor with explicit review flag.\"}, {\"source_field\": \"Business Number\", \"canonical_field\": \"entity.acn\", \"transforms\": [\"strip\", {\"op\": \"regex\", \"pattern\": \"ACN:?\\\\s*(\\\\d{9})\", \"group\": 1}, \"acn\"], \"confidence\": 0.85, \"rationale\": \"Retained the single-ACN extraction. Held-out errors (170) are all engine refusals for ambiguous or non-ACN rows, which is the safe outcome. The pattern is tightened to an optional colon to match the 'ACN ACN:606489785' style, but that row contains two ACN labels and will still be refused by the one-match rule. ABN-labelled rows and 'ARBN' rows are not extracted as ACN, since the pattern requires the literal 'ACN' label followed by 9 digits; 'ARBN' does not match because 'ACN' is not a substring boundary-preceded match problem only if preceded by letters, so review is needed (see risks). 19 invalid-checksum refusals are also safe.\", \"changes_note\": \"see changes\"}], \"unmapped_fields\": [{\"source_field\": \"Entity Type\", \"reason\": \"Free-text values such as 'Corporation (Company)', 'An individual or Sole trader', and 'Local Government Authority' lack a reviewed enum map; not guessed.\"}, {\"source_field\": \"Location\", \"reason\": \"Combined suburb/state/postcode string describes operating location, not the registered business address.\"}, {\"source_field\": \"RSO Number\", \"reason\": \"Register-internal reference number (including 'RSO' prefixed values); numeric values sometimes pass ACN checksum, so mapping as ACN would be unsafe.\"}, {\"source_field\": \"Registration Date\", \"reason\": \"Date of suitable operator registration, not verified as entity date_registered.\"}, {\"source_field\": \"Registration Status\", \"reason\": \"Refers to the suitable operator register status, not the entity corporate status.\"}, {\"source_field\": \"_id\", \"reason\": \"Internal row sequence identifier; used only for source_record_id construction.\"}], \"minimum_field_confidence\": 0.8, \"warnings\": [\"observed_at_field is null: only a resource last-modified proxy is available; registration dates are not statement times.\", \"Business Number column is predominantly ACN-labelled. Labelled ABN matches (102 in held-out, 100 valid) are not mapped to entity.abn because the ABN labels in this column are not verified as supplier-attributed identifiers at scale; review before adding.\", \"Customer Name may include individuals or sole traders; legal_name assumption flagged.\", \"Source reliability is an uncalibrated prior and is not used for mapping confidence.\", \"Held-out ACN checksum failures (19) and ambiguous compound rows (151) are refused by the engine as designed.\"], \"warnings_added\": []}, \"changes\": [{\"field\": \"entity.legal_name (Customer Name)\", \"before\": \"transforms: [strip], confidence 0.8\", \"after\": \"unchanged: transforms [strip], confidence 0.8\", \"reason\": \"Held-out validation 4534 emissions, 0 errors. Semantic concern flagged for individual names; retained with review flag.\"}, {\"field\": \"entity.acn (Business Number)\", \"before\": \"regex 'ACN\\\\\\\\s*(\\\\\\\\d{9})' group 1, then acn\", \"after\": \"regex 'ACN:?\\\\\\\\s*(\\\\\\\\d{9})' group 1, then acn\", \"reason\": \"Minor tightening to match 'ACN:' label variants seen in held-out examples. Compound rows remain refused by the engine's single-match rule. No ABN-to-ACN reuse introduced.\"}, {\"field\": \"entity.abn\", \"before\": \"not mapped\", \"after\": \"not mapped\", \"reason\": \"Labelled ABN values (102 held-out, 100 valid) are sparse and not established as supplier-attributed at scale; not mapped pending review. separate_entities split approach not applied because no explicit supplier ABN list is present.\"}], \"semantic_risks\": [\"Customer Name may be an individual's name (sole trader or person) rather than a registered legal entity name; entity.legal_name semantics are weaker for these rows.\", \"Held-out ACN extraction has 170 refused rows (151 ambiguous compound, 19 invalid checksum); coverage for entity.acn is about 55% of held-out records.\", \"Labelled ABN values in Business Number (e.g. 'ABN 34103787081') are not mapped to entity.abn; the ACN regex does not extract them, but it also does not explicitly exclude 'ARBN' or 'ABN' prefixes beyond requiring the literal 'ACN' token.\", \"RSO Number values may pass ACN checksum by coincidence and must not be treated as ACNs.\", \"Registration Date and Registration Status refer to the suitable operator register and are not entity date_registered or entity.status.\", \"Location is the operating location, not the registered business address.\", \"observed_at is a resource-modified proxy, not a statement time.\"], \"requires_human_review\": true}"
+      },
+      "finish_reason": "stop"
+    }
+  ]
+}

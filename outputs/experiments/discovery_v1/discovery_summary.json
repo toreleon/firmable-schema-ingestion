@@ -1,0 +1,8 @@
+{
+  "pool_size": 638,
+  "shortlist_size": 50,
+  "audit_seed": 20261021,
+  "false_positive_rate": null,
+  "audit_status": "pending independent human review",
+  "score_interpretation": "Ordinal, uncalibrated metadata score. No measured probability or precision claim."
+}

@@ -1,0 +1,12 @@
+{
+  "parser": {
+    "format": "csv",
+    "delimiter": ",",
+    "header_row": 1,
+    "encoding": "utf-8-sig"
+  },
+  "warnings": [
+    "Deterministic format/container inspection; semantics are inferred by the model in proposal and revision."
+  ],
+  "selected_by": "generic_format_and_container_inspection"
+}

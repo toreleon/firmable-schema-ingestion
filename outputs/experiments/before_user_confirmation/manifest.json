@@ -1,0 +1,14 @@
+{
+  "purpose": "Preserve AI-prepared review, prior cost accounting and pre-existing working outputs before user confirmation",
+  "files_sha256": {
+    "outputs/link_audit.jsonl": "049267ff0e744a6666952e64109781a5cddac02fb85299feec80b689d11834be",
+    "outputs/triage_audit.jsonl": "046f541eb6f87f6ce288b81c40c236f91b26d00338b2d1d9b659f745e96e0bad",
+    "outputs/review/audit_results.csv": "cb42141ab99a87e28b1c4276c6cf3b284dfffbd82687e570376e48c1d46739b0",
+    "outputs/review/link_evidence.jsonl": "df3d64d76a82f7cef3e34ea7949370fc39202be816b797d34b6c32750f739c66",
+    "outputs/review/triage_evidence.jsonl": "e7ae73175223a21cb6f8778437d2a1139a84e9d51b1286aac65f6308d9d68b6d",
+    "outputs/cost_summary.json": "9df9f814a33c9ebce2287df445706d70bea06f773a8caeca994f8a4803020910",
+    "outputs/clean_checkout_validation.json": "6702c872e21e2c8233780c2e1b73ef6c848292c5d6a1e74b476f79708bf6cfa4",
+    "outputs/profile_links.jsonl": "3ee744c4dfdb541fd91d6c355696f452cd3c26620a53e39fcfafea670162730a"
+  },
+  "preexisting_profile_links_note": "Working file held 129 v1 links despite v2 summaries; archived before rebuilding coherent v2 outputs."
+}

@@ -1,0 +1,408 @@
+{
+  "records": 3000,
+  "observation_count": 5302,
+  "emitted_by_field": {
+    "entity.abn": 1602,
+    "address.full": 3000,
+    "entity.acn": 700
+  },
+  "error_count": 15,
+  "errors": [
+    {
+      "source_record_id": "3cbe0f0eff4ffb9c:7570:094cb691aff374e4",
+      "source_field": "ABN",
+      "canonical_field": "entity.abn",
+      "raw_value": "42 734 148 053",
+      "reason": "Invalid ABN checksum"
+    },
+    {
+      "source_record_id": "3cbe0f0eff4ffb9c:7630:332ec486baa99385",
+      "source_field": "ABN",
+      "canonical_field": "entity.abn",
+      "raw_value": "63 101 717 405",
+      "reason": "Invalid ABN checksum"
+    },
+    {
+      "source_record_id": "3cbe0f0eff4ffb9c:7924:af1d4860113d0cde",
+      "source_field": "ABN",
+      "canonical_field": "entity.abn",
+      "raw_value": "72 677 679 079",
+      "reason": "Invalid ABN checksum"
+    },
+    {
+      "source_record_id": "3cbe0f0eff4ffb9c:7961:05db2e924e1aa403",
+      "source_field": "ABN",
+      "canonical_field": "entity.abn",
+      "raw_value": "71 045 799 113",
+      "reason": "Invalid ABN checksum"
+    },
+    {
+      "source_record_id": "3cbe0f0eff4ffb9c:8238:c9339c2c53eccfc3",
+      "source_field": "ACN",
+      "canonical_field": "entity.acn",
+      "raw_value": "691 912 781",
+      "reason": "Invalid ACN checksum"
+    },
+    {
+      "source_record_id": "3cbe0f0eff4ffb9c:8238:c9339c2c53eccfc3",
+      "source_field": "ABN",
+      "canonical_field": "entity.abn",
+      "raw_value": "88 691 912 781",
+      "reason": "Invalid ABN checksum"
+    },
+    {
+      "source_record_id": "3cbe0f0eff4ffb9c:8272:ce3aeb659230a59e",
+      "source_field": "ABN",
+      "canonical_field": "entity.abn",
+      "raw_value": "84 101 835 364",
+      "reason": "Invalid ABN checksum"
+    },
+    {
+      "source_record_id": "3cbe0f0eff4ffb9c:8642:406e3721689a5933",
+      "source_field": "ABN",
+      "canonical_field": "entity.abn",
+      "raw_value": "26 635 039 093",
+      "reason": "Invalid ABN checksum"
+    },
+    {
+      "source_record_id": "3cbe0f0eff4ffb9c:9051:8c782f155ec11273",
+      "source_field": "ABN",
+      "canonical_field": "entity.abn",
+      "raw_value": "11 474 964 474",
+      "reason": "Invalid ABN checksum"
+    },
+    {
+      "source_record_id": "3cbe0f0eff4ffb9c:9129:f657d89aa4a49f66",
+      "source_field": "ABN",
+      "canonical_field": "entity.abn",
+      "raw_value": "92 926 089 947",
+      "reason": "Invalid ABN checksum"
+    },
+    {
+      "source_record_id": "3cbe0f0eff4ffb9c:9442:1d781a15aabb2e71",
+      "source_field": "ABN",
+      "canonical_field": "entity.abn",
+      "raw_value": "82 612 748 214",
+      "reason": "Invalid ABN checksum"
+    },
+    {
+      "source_record_id": "3cbe0f0eff4ffb9c:9463:1ba90dd94794b7f7",
+      "source_field": "ABN",
+      "canonical_field": "entity.abn",
+      "raw_value": "98 636 326 625",
+      "reason": "Invalid ABN checksum"
+    },
+    {
+      "source_record_id": "3cbe0f0eff4ffb9c:9609:787556ce6d7bb200",
+      "source_field": "ABN",
+      "canonical_field": "entity.abn",
+      "raw_value": "18 955 403 918",
+      "reason": "Invalid ABN checksum"
+    },
+    {
+      "source_record_id": "3cbe0f0eff4ffb9c:9956:07a21c952b2801a5",
+      "source_field": "ABN",
+      "canonical_field": "entity.abn",
+      "raw_value": "24 122 517 843",
+      "reason": "Invalid ABN checksum"
+    },
+    {
+      "source_record_id": "3cbe0f0eff4ffb9c:9980:9c7089f05f9b9719",
+      "source_field": "ACN",
+      "canonical_field": "entity.acn",
+      "raw_value": "322 446 930",
+      "reason": "Invalid ACN checksum"
+    }
+  ],
+  "per_field_validation": [
+    {
+      "source_field": "Licensee Name",
+      "canonical_field": "entity.legal_name",
+      "valid_emissions": 3000,
+      "errors": 0,
+      "error_examples": []
+    },
+    {
+      "source_field": "ACN",
+      "canonical_field": "entity.acn",
+      "valid_emissions": 700,
+      "errors": 2,
+      "error_examples": [
+        {
+          "source_record_id": "3cbe0f0eff4ffb9c:8238:c9339c2c53eccfc3",
+          "source_field": "ACN",
+          "canonical_field": "entity.acn",
+          "raw_value": "691 912 781",
+          "reason": "Invalid ACN checksum"
+        },
+        {
+          "source_record_id": "3cbe0f0eff4ffb9c:9980:9c7089f05f9b9719",
+          "source_field": "ACN",
+          "canonical_field": "entity.acn",
+          "raw_value": "322 446 930",
+          "reason": "Invalid ACN checksum"
+        }
+      ]
+    },
+    {
+      "source_field": "ABN",
+      "canonical_field": "entity.abn",
+      "valid_emissions": 1602,
+      "errors": 13,
+      "error_examples": [
+        {
+          "source_record_id": "3cbe0f0eff4ffb9c:7570:094cb691aff374e4",
+          "source_field": "ABN",
+          "canonical_field": "entity.abn",
+          "raw_value": "42 734 148 053",
+          "reason": "Invalid ABN checksum"
+        },
+        {
+          "source_record_id": "3cbe0f0eff4ffb9c:7630:332ec486baa99385",
+          "source_field": "ABN",
+          "canonical_field": "entity.abn",
+          "raw_value": "63 101 717 405",
+          "reason": "Invalid ABN checksum"
+        }
+      ]
+    },
+    {
+      "source_field": "Licensee Business Address",
+      "canonical_field": "address.full",
+      "valid_emissions": 3000,
+      "errors": 0,
+      "error_examples": []
+    }
+  ],
+  "error_reasons": {
+    "Invalid ABN checksum": 13,
+    "Invalid ACN checksum": 2
+  },
+  "example_observations": [
+    {
+      "source_id": "980b6499-c0b4-491b-ba9c-1c7506368a50",
+      "source_record_id": "3cbe0f0eff4ffb9c:7001:050ee12d6cb14f90",
+      "observed_at": "2026-10-20T21:00:25.932039",
+      "ingested_at": "2026-10-21T08:11:35.909004+00:00",
+      "licence": "Creative Commons Attribution 4.0",
+      "extractor_version": "0.1.0:91625c4b5b9f84f84de85d26c918dbe4571eb5dd68439bc282d0d2f0ea3351b6",
+      "observed_at_basis": "resource_last_modified_proxy",
+      "provenance": {
+        "resource_url": "https://www.data.qld.gov.au/api/3/action/datastore_search_sql?sql=SELECT+%2A+FROM+%2225608781-b28c-44f8-8545-0ab18d84082f%22+ORDER+BY+md5%28_id%3A%3Atext%29+LIMIT+10000",
+        "resource_sha256": "3cbe0f0eff4ffb9cac4ad566638d766084a89289f42071ac5668f19bdbf4fe41",
+        "raw_record_sha256": "050ee12d6cb14f90a83fb1c59330471fa8026591b50174f71a140eb72955d01e",
+        "row_number": 7001,
+        "config_sha256": "91625c4b5b9f84f84de85d26c918dbe4571eb5dd68439bc282d0d2f0ea3351b6",
+        "source_field": "ABN"
+      },
+      "canonical_field": "entity.abn",
+      "entity": {
+        "abn": "42407528687"
+      },
+      "raw_value": "42 407 528 687",
+      "confidence": {
+        "source_reliability": 0.8,
+        "field_confidence": 0.95
+      },
+      "derivation_level": "L1",
+      "observation_id": "80a54137a1d35c40c4211955d7c26a05961e9604222b9400184b3505937a711d"
+    },
+    {
+      "source_id": "980b6499-c0b4-491b-ba9c-1c7506368a50",
+      "source_record_id": "3cbe0f0eff4ffb9c:7001:050ee12d6cb14f90",
+      "observed_at": "2026-10-20T21:00:25.932039",
+      "ingested_at": "2026-10-21T08:11:35.909004+00:00",
+      "licence": "Creative Commons Attribution 4.0",
+      "extractor_version": "0.1.0:91625c4b5b9f84f84de85d26c918dbe4571eb5dd68439bc282d0d2f0ea3351b6",
+      "observed_at_basis": "resource_last_modified_proxy",
+      "provenance": {
+        "resource_url": "https://www.data.qld.gov.au/api/3/action/datastore_search_sql?sql=SELECT+%2A+FROM+%2225608781-b28c-44f8-8545-0ab18d84082f%22+ORDER+BY+md5%28_id%3A%3Atext%29+LIMIT+10000",
+        "resource_sha256": "3cbe0f0eff4ffb9cac4ad566638d766084a89289f42071ac5668f19bdbf4fe41",
+        "raw_record_sha256": "050ee12d6cb14f90a83fb1c59330471fa8026591b50174f71a140eb72955d01e",
+        "row_number": 7001,
+        "config_sha256": "91625c4b5b9f84f84de85d26c918dbe4571eb5dd68439bc282d0d2f0ea3351b6",
+        "source_field": "Licensee Business Address"
+      },
+      "canonical_field": "address.full",
+      "address": {
+        "full": "13 Tanunda Dr Helensvale QLD 4212"
+      },
+      "raw_value": "13 Tanunda Dr Helensvale QLD 4212",
+      "confidence": {
+        "source_reliability": 0.8,
+        "field_confidence": 0.85
+      },
+      "derivation_level": "L1",
+      "observation_id": "c09fb0bfaacd6c390fb3a3959cf970b4564f38e69a2bb441b5a8ac214765be1b"
+    },
+    {
+      "source_id": "980b6499-c0b4-491b-ba9c-1c7506368a50",
+      "source_record_id": "3cbe0f0eff4ffb9c:7002:7cda30f24d96d1f9",
+      "observed_at": "2026-10-20T21:00:25.932039",
+      "ingested_at": "2026-10-21T08:11:35.909004+00:00",
+      "licence": "Creative Commons Attribution 4.0",
+      "extractor_version": "0.1.0:91625c4b5b9f84f84de85d26c918dbe4571eb5dd68439bc282d0d2f0ea3351b6",
+      "observed_at_basis": "resource_last_modified_proxy",
+      "provenance": {
+        "resource_url": "https://www.data.qld.gov.au/api/3/action/datastore_search_sql?sql=SELECT+%2A+FROM+%2225608781-b28c-44f8-8545-0ab18d84082f%22+ORDER+BY+md5%28_id%3A%3Atext%29+LIMIT+10000",
+        "resource_sha256": "3cbe0f0eff4ffb9cac4ad566638d766084a89289f42071ac5668f19bdbf4fe41",
+        "raw_record_sha256": "7cda30f24d96d1f965d94494847c17cb3f0bdf64c37d4859e20d8244191a43f2",
+        "row_number": 7002,
+        "config_sha256": "91625c4b5b9f84f84de85d26c918dbe4571eb5dd68439bc282d0d2f0ea3351b6",
+        "source_field": "ABN"
+      },
+      "canonical_field": "entity.abn",
+      "entity": {
+        "abn": "41214226433"
+      },
+      "raw_value": "41 214 226 433",
+      "confidence": {
+        "source_reliability": 0.8,
+        "field_confidence": 0.95
+      },
+      "derivation_level": "L1",
+      "observation_id": "29ee41f1e06762acf7bb6c0834a3f7b1ea07059c4f626dcdf635b6ff8e43fcf2"
+    },
+    {
+      "source_id": "980b6499-c0b4-491b-ba9c-1c7506368a50",
+      "source_record_id": "3cbe0f0eff4ffb9c:7002:7cda30f24d96d1f9",
+      "observed_at": "2026-10-20T21:00:25.932039",
+      "ingested_at": "2026-10-21T08:11:35.909004+00:00",
+      "licence": "Creative Commons Attribution 4.0",
+      "extractor_version": "0.1.0:91625c4b5b9f84f84de85d26c918dbe4571eb5dd68439bc282d0d2f0ea3351b6",
+      "observed_at_basis": "resource_last_modified_proxy",
+      "provenance": {
+        "resource_url": "https://www.data.qld.gov.au/api/3/action/datastore_search_sql?sql=SELECT+%2A+FROM+%2225608781-b28c-44f8-8545-0ab18d84082f%22+ORDER+BY+md5%28_id%3A%3Atext%29+LIMIT+10000",
+        "resource_sha256": "3cbe0f0eff4ffb9cac4ad566638d766084a89289f42071ac5668f19bdbf4fe41",
+        "raw_record_sha256": "7cda30f24d96d1f965d94494847c17cb3f0bdf64c37d4859e20d8244191a43f2",
+        "row_number": 7002,
+        "config_sha256": "91625c4b5b9f84f84de85d26c918dbe4571eb5dd68439bc282d0d2f0ea3351b6",
+        "source_field": "Licensee Business Address"
+      },
+      "canonical_field": "address.full",
+      "address": {
+        "full": "63 Melinda St Southport QLD 4215"
+      },
+      "raw_value": "63 Melinda St Southport QLD 4215",
+      "confidence": {
+        "source_reliability": 0.8,
+        "field_confidence": 0.85
+      },
+      "derivation_level": "L1",
+      "observation_id": "bc4c0351fd5d32c6408a0d5180c18dafe685decf4c46de08c3c14118b452fe41"
+    },
+    {
+      "source_id": "980b6499-c0b4-491b-ba9c-1c7506368a50",
+      "source_record_id": "3cbe0f0eff4ffb9c:7003:c549cb2a361c3043",
+      "observed_at": "2026-10-20T21:00:25.932039",
+      "ingested_at": "2026-10-21T08:11:35.909004+00:00",
+      "licence": "Creative Commons Attribution 4.0",
+      "extractor_version": "0.1.0:91625c4b5b9f84f84de85d26c918dbe4571eb5dd68439bc282d0d2f0ea3351b6",
+      "observed_at_basis": "resource_last_modified_proxy",
+      "provenance": {
+        "resource_url": "https://www.data.qld.gov.au/api/3/action/datastore_search_sql?sql=SELECT+%2A+FROM+%2225608781-b28c-44f8-8545-0ab18d84082f%22+ORDER+BY+md5%28_id%3A%3Atext%29+LIMIT+10000",
+        "resource_sha256": "3cbe0f0eff4ffb9cac4ad566638d766084a89289f42071ac5668f19bdbf4fe41",
+        "raw_record_sha256": "c549cb2a361c30430bf68e15c0c28e0883f04f4a79809e279595b78de6d13254",
+        "row_number": 7003,
+        "config_sha256": "91625c4b5b9f84f84de85d26c918dbe4571eb5dd68439bc282d0d2f0ea3351b6",
+        "source_field": "ACN"
+      },
+      "canonical_field": "entity.acn",
+      "entity": {
+        "acn": "105983579"
+      },
+      "raw_value": "105 983 579",
+      "confidence": {
+        "source_reliability": 0.8,
+        "field_confidence": 0.95
+      },
+      "derivation_level": "L1",
+      "observation_id": "2b98a0455c6ca7e12cee08930a0a6f93d152a40662e7bdcf3316072742802cf6"
+    },
+    {
+      "source_id": "980b6499-c0b4-491b-ba9c-1c7506368a50",
+      "source_record_id": "3cbe0f0eff4ffb9c:7003:c549cb2a361c3043",
+      "observed_at": "2026-10-20T21:00:25.932039",
+      "ingested_at": "2026-10-21T08:11:35.909004+00:00",
+      "licence": "Creative Commons Attribution 4.0",
+      "extractor_version": "0.1.0:91625c4b5b9f84f84de85d26c918dbe4571eb5dd68439bc282d0d2f0ea3351b6",
+      "observed_at_basis": "resource_last_modified_proxy",
+      "provenance": {
+        "resource_url": "https://www.data.qld.gov.au/api/3/action/datastore_search_sql?sql=SELECT+%2A+FROM+%2225608781-b28c-44f8-8545-0ab18d84082f%22+ORDER+BY+md5%28_id%3A%3Atext%29+LIMIT+10000",
+        "resource_sha256": "3cbe0f0eff4ffb9cac4ad566638d766084a89289f42071ac5668f19bdbf4fe41",
+        "raw_record_sha256": "c549cb2a361c30430bf68e15c0c28e0883f04f4a79809e279595b78de6d13254",
+        "row_number": 7003,
+        "config_sha256": "91625c4b5b9f84f84de85d26c918dbe4571eb5dd68439bc282d0d2f0ea3351b6",
+        "source_field": "ABN"
+      },
+      "canonical_field": "entity.abn",
+      "entity": {
+        "abn": "22105983579"
+      },
+      "raw_value": "22 105 983 579",
+      "confidence": {
+        "source_reliability": 0.8,
+        "field_confidence": 0.95
+      },
+      "derivation_level": "L1",
+      "observation_id": "1f09dfc72c454b53e886e33919d16c8a8c43979d61786b6aac4b9bdbe48b7871"
+    },
+    {
+      "source_id": "980b6499-c0b4-491b-ba9c-1c7506368a50",
+      "source_record_id": "3cbe0f0eff4ffb9c:7003:c549cb2a361c3043",
+      "observed_at": "2026-10-20T21:00:25.932039",
+      "ingested_at": "2026-10-21T08:11:35.909004+00:00",
+      "licence": "Creative Commons Attribution 4.0",
+      "extractor_version": "0.1.0:91625c4b5b9f84f84de85d26c918dbe4571eb5dd68439bc282d0d2f0ea3351b6",
+      "observed_at_basis": "resource_last_modified_proxy",
+      "provenance": {
+        "resource_url": "https://www.data.qld.gov.au/api/3/action/datastore_search_sql?sql=SELECT+%2A+FROM+%2225608781-b28c-44f8-8545-0ab18d84082f%22+ORDER+BY+md5%28_id%3A%3Atext%29+LIMIT+10000",
+        "resource_sha256": "3cbe0f0eff4ffb9cac4ad566638d766084a89289f42071ac5668f19bdbf4fe41",
+        "raw_record_sha256": "c549cb2a361c30430bf68e15c0c28e0883f04f4a79809e279595b78de6d13254",
+        "row_number": 7003,
+        "config_sha256": "91625c4b5b9f84f84de85d26c918dbe4571eb5dd68439bc282d0d2f0ea3351b6",
+        "source_field": "Licensee Business Address"
+      },
+      "canonical_field": "address.full",
+      "address": {
+        "full": "UNIT 7322 OLD CLEVELAND ROAD COORPAROO QLD 4151"
+      },
+      "raw_value": "UNIT 7322 OLD CLEVELAND ROAD COORPAROO QLD 4151",
+      "confidence": {
+        "source_reliability": 0.8,
+        "field_confidence": 0.85
+      },
+      "derivation_level": "L1",
+      "observation_id": "5c3815866ef31844a78f0b6f2b304e3254ed6fdd4ab071b20d22d3e234a2e5e1"
+    },
+    {
+      "source_id": "980b6499-c0b4-491b-ba9c-1c7506368a50",
+      "source_record_id": "3cbe0f0eff4ffb9c:7004:29eced201944ce56",
+      "observed_at": "2026-10-20T21:00:25.932039",
+      "ingested_at": "2026-10-21T08:11:35.909004+00:00",
+      "licence": "Creative Commons Attribution 4.0",
+      "extractor_version": "0.1.0:91625c4b5b9f84f84de85d26c918dbe4571eb5dd68439bc282d0d2f0ea3351b6",
+      "observed_at_basis": "resource_last_modified_proxy",
+      "provenance": {
+        "resource_url": "https://www.data.qld.gov.au/api/3/action/datastore_search_sql?sql=SELECT+%2A+FROM+%2225608781-b28c-44f8-8545-0ab18d84082f%22+ORDER+BY+md5%28_id%3A%3Atext%29+LIMIT+10000",
+        "resource_sha256": "3cbe0f0eff4ffb9cac4ad566638d766084a89289f42071ac5668f19bdbf4fe41",
+        "raw_record_sha256": "29eced201944ce56490a73488607993e5f204a352837967075414acb8e08178f",
+        "row_number": 7004,
+        "config_sha256": "91625c4b5b9f84f84de85d26c918dbe4571eb5dd68439bc282d0d2f0ea3351b6",
+        "source_field": "Licensee Business Address"
+      },
+      "canonical_field": "address.full",
+      "address": {
+        "full": "9 Corporate Cres Garbutt QLD 4814"
+      },
+      "raw_value": "9 Corporate Cres Garbutt QLD 4814",
+      "confidence": {
+        "source_reliability": 0.8,
+        "field_confidence": 0.85
+      },
+      "derivation_level": "L1",
+      "observation_id": "574c79a907e95cd02090d353991cec5ecc620d0520339a3cdfb2c9b1bbe580c2"
+    }
+  ],
+  "note": "Type/checksum validation does not prove semantic correctness; semantic review required."
+}

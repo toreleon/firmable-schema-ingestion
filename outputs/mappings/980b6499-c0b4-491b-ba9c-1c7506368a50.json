@@ -1,0 +1,119 @@
+{
+  "entity_role": "licensee",
+  "parser": {
+    "format": "json",
+    "record_path": "result.records",
+    "encoding": "utf-8-sig"
+  },
+  "observed_at_field": null,
+  "mappings": [
+    {
+      "source_field": "Licensee Name",
+      "canonical_field": "entity.legal_name",
+      "transforms": [
+        "strip"
+      ],
+      "confidence": 0.6,
+      "rationale": "Held-out validation shows 9000/9000 emissions with no errors, but this confirms only that values are non-empty, not that they are registered legal names. Field confidence 0.6 is below the 0.8 minimum, so this mapping is retained only for review and will not meet threshold. Names may be individuals (Licence Type DESC = Individual) and are not verified as registered legal names."
+    },
+    {
+      "source_field": "ABN",
+      "canonical_field": "entity.abn",
+      "transforms": [
+        "strip",
+        "abn"
+      ],
+      "confidence": 0.95,
+      "rationale": "Explicitly labelled ABN column, sparse. Held-out: 4969 non-empty, 4912 pass checksum; 57 fail the abn checksum and are rejected by the engine. Nulls emit nothing. Mapping correctness is high; coverage is sparse.",
+      "separate_entities": false
+    },
+    {
+      "source_field": "ACN",
+      "canonical_field": "entity.acn",
+      "transforms": [
+        "strip",
+        "acn"
+      ],
+      "confidence": 0.95,
+      "rationale": "Explicitly labelled ACN column, sparse. Held-out: 2108 non-empty, 2096 pass ACN checksum; 12 rejected. Not derived from ABN.",
+      "separate_entities": false
+    },
+    {
+      "source_field": "Licensee Business Address",
+      "canonical_field": "address.full",
+      "transforms": [
+        "strip"
+      ],
+      "confidence": 0.85,
+      "rationale": "Single labelled business address string for the licensee, 9000/9000 emitted. Mapped as full address only; locality, state and postcode are not reliably separable without parsing, so left unmapped."
+    }
+  ],
+  "unmapped_fields": [
+    {
+      "source_field": "_id",
+      "reason": "Internal row identifier of the source dataset; not a supplier identifier. Retain as source_record_id reference only."
+    },
+    {
+      "source_field": "id",
+      "reason": "Duplicate of _id; internal identifier, not an entity identifier."
+    },
+    {
+      "source_field": "_full_text",
+      "reason": "Search index artefact derived from other fields; not a source statement."
+    },
+    {
+      "source_field": "Licence Number",
+      "reason": "QBCC licence number is a licence identifier, not an ABN, ACN or NZBN; no canonical field exists."
+    },
+    {
+      "source_field": "Licence Type CODE",
+      "reason": "Licence type code (I/C); no enum mapping supplied; entity_type not inferred to avoid guessing."
+    },
+    {
+      "source_field": "Licence Type DESC",
+      "reason": "Describes individual vs company licence holder. Could inform entity_type but no explicit enum map is provided; not guessed."
+    },
+    {
+      "source_field": "Financial Category CODE",
+      "reason": "Regulatory financial category; no canonical field."
+    },
+    {
+      "source_field": "Financial Category DESC",
+      "reason": "Regulatory financial category description; no canonical field."
+    },
+    {
+      "source_field": "Licence Grade",
+      "reason": "Licence grade, not industry code (ANZSIC); no canonical field."
+    },
+    {
+      "source_field": "Licence Class Type",
+      "reason": "Licence class (trade/occupational); not ANZSIC industry_code, so not mapped."
+    }
+  ],
+  "minimum_field_confidence": 0.8,
+  "warnings": [
+    "observed_at_field is null: the only time is resource_last_modified_proxy, a publication proxy, not a verified record statement time.",
+    "Licensee Name mapping confidence 0.6 is below the 0.8 minimum; it will not pass threshold.",
+    "Licensee Name may be a person's name for Individual licences; legal_name not established for individuals.",
+    "ABN and ACN are sparse; nulls are not mapped. ACN is never inferred from ABN.",
+    "Address is unparsed; not split into locality, state or postcode.",
+    "Licence number and QBCC identifiers are not supplier identifiers and are not mapped.",
+    "Source reliability is an uncalibrated prior; mapping confidence is independent of publisher reliability.",
+    "Held-out checksum rejections (57 ABN, 12 ACN) are invalid identifiers in source data; they are rejected by the engine and not corrected."
+  ],
+  "note": "Config retained unchanged in substance.",
+  "source_id": "980b6499-c0b4-491b-ba9c-1c7506368a50",
+  "ontology_sha256": "f4b6b4941ec61dcc3fb07c6ee19edab927862aaaa8ae3df30b3023e047c9f9cd",
+  "generated_by": {
+    "kind": "multi_step_runtime_agent",
+    "model": "claude-haiku-5-5",
+    "run_identity": "7aaa12a6864babaa46db76f991985193a133d5895f9574db908a402b0d624a05"
+  },
+  "review": {
+    "status": "approved",
+    "reviewer": "User",
+    "notes": "User: I have reviewed all v2 and approve for it. Approval of the current v2 submission, recorded from conversation.",
+    "reviewed_at": "2026-10-21T10:10:26.139370+00:00",
+    "approved_config_sha256": "39284dbbd8f20a5e3614609532c014fcba7d6abb38639d860294423fba17fee4"
+  }
+}

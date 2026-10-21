@@ -1,0 +1,238 @@
+{
+  "records": 14,
+  "observation_count": 28,
+  "emitted_by_field": {
+    "entity.abn": 14,
+    "address.full": 14
+  },
+  "error_count": 0,
+  "errors": [],
+  "error_reasons": {},
+  "example_observations": [
+    {
+      "source_id": "73b67e91-d9bf-4471-80c3-a62d5afaee2a",
+      "source_record_id": "d54cd97404d1433f:31:b0d9aed5f01ce95c",
+      "observed_at": "2024-06-30T23:59:54.469475",
+      "ingested_at": "2026-10-21T07:50:10.273222+00:00",
+      "licence": "Creative Commons Attribution 4.0",
+      "extractor_version": "0.1.0:f28134a0bcdd555c77399c3aec45dd00a7ff7fa722bb2313a77a50f6f02e08f3",
+      "observed_at_basis": "resource_last_modified_proxy",
+      "provenance": {
+        "resource_url": "https://www.data.qld.gov.au/datastore/dump/99e547e1-1def-473e-8514-76f625ebf30d?format=csv",
+        "resource_sha256": "d54cd97404d1433f292ebc47cba771072b2fa778a8b7564c6d0776bc946bfa90",
+        "raw_record_sha256": "b0d9aed5f01ce95ce66ef9d0433ebf7073e1ed92dec23e89e5e1114542de550d",
+        "row_number": 31,
+        "config_sha256": "f28134a0bcdd555c77399c3aec45dd00a7ff7fa722bb2313a77a50f6f02e08f3",
+        "source_field": "Supplier ABN"
+      },
+      "canonical_field": "entity.abn",
+      "entity": {
+        "abn": "70600569784"
+      },
+      "raw_value": "70600569784",
+      "confidence": {
+        "source_reliability": 0.8,
+        "field_confidence": 0.9
+      },
+      "derivation_level": "L1",
+      "observation_id": "d4210c49a075b969f9dcd647c9444ee907968c75ed3de34f0507bc8e979b924f"
+    },
+    {
+      "source_id": "73b67e91-d9bf-4471-80c3-a62d5afaee2a",
+      "source_record_id": "d54cd97404d1433f:31:b0d9aed5f01ce95c",
+      "observed_at": "2024-06-30T23:59:54.469475",
+      "ingested_at": "2026-10-21T07:50:10.273222+00:00",
+      "licence": "Creative Commons Attribution 4.0",
+      "extractor_version": "0.1.0:f28134a0bcdd555c77399c3aec45dd00a7ff7fa722bb2313a77a50f6f02e08f3",
+      "observed_at_basis": "resource_last_modified_proxy",
+      "provenance": {
+        "resource_url": "https://www.data.qld.gov.au/datastore/dump/99e547e1-1def-473e-8514-76f625ebf30d?format=csv",
+        "resource_sha256": "d54cd97404d1433f292ebc47cba771072b2fa778a8b7564c6d0776bc946bfa90",
+        "raw_record_sha256": "b0d9aed5f01ce95ce66ef9d0433ebf7073e1ed92dec23e89e5e1114542de550d",
+        "row_number": 31,
+        "config_sha256": "f28134a0bcdd555c77399c3aec45dd00a7ff7fa722bb2313a77a50f6f02e08f3",
+        "source_field": "Supplier address"
+      },
+      "canonical_field": "address.full",
+      "address": {
+        "full": "L19, 99 Walker Street, North Sydney NSW 2060"
+      },
+      "raw_value": "L19, 99 Walker Street, North Sydney NSW 2060",
+      "confidence": {
+        "source_reliability": 0.8,
+        "field_confidence": 0.9
+      },
+      "derivation_level": "L1",
+      "observation_id": "e4f03591558b122e13342bdbe8c80feaf862c63a2f389f8e3e7d25ad12c452f9"
+    },
+    {
+      "source_id": "73b67e91-d9bf-4471-80c3-a62d5afaee2a",
+      "source_record_id": "d54cd97404d1433f:32:b36faf48d1e96412",
+      "observed_at": "2024-06-30T23:59:54.469475",
+      "ingested_at": "2026-10-21T07:50:10.273222+00:00",
+      "licence": "Creative Commons Attribution 4.0",
+      "extractor_version": "0.1.0:f28134a0bcdd555c77399c3aec45dd00a7ff7fa722bb2313a77a50f6f02e08f3",
+      "observed_at_basis": "resource_last_modified_proxy",
+      "provenance": {
+        "resource_url": "https://www.data.qld.gov.au/datastore/dump/99e547e1-1def-473e-8514-76f625ebf30d?format=csv",
+        "resource_sha256": "d54cd97404d1433f292ebc47cba771072b2fa778a8b7564c6d0776bc946bfa90",
+        "raw_record_sha256": "b36faf48d1e9641200e9fe0fcad8e52a3627f0a518fa53b7d8f701a9cfb86725",
+        "row_number": 32,
+        "config_sha256": "f28134a0bcdd555c77399c3aec45dd00a7ff7fa722bb2313a77a50f6f02e08f3",
+        "source_field": "Supplier ABN"
+      },
+      "canonical_field": "entity.abn",
+      "entity": {
+        "abn": "70600569784"
+      },
+      "raw_value": "70600569784",
+      "confidence": {
+        "source_reliability": 0.8,
+        "field_confidence": 0.9
+      },
+      "derivation_level": "L1",
+      "observation_id": "5a8d26f98c01d61701671528f363f99d91d661fc93364a7d12391be32fc8f37d"
+    },
+    {
+      "source_id": "73b67e91-d9bf-4471-80c3-a62d5afaee2a",
+      "source_record_id": "d54cd97404d1433f:32:b36faf48d1e96412",
+      "observed_at": "2024-06-30T23:59:54.469475",
+      "ingested_at": "2026-10-21T07:50:10.273222+00:00",
+      "licence": "Creative Commons Attribution 4.0",
+      "extractor_version": "0.1.0:f28134a0bcdd555c77399c3aec45dd00a7ff7fa722bb2313a77a50f6f02e08f3",
+      "observed_at_basis": "resource_last_modified_proxy",
+      "provenance": {
+        "resource_url": "https://www.data.qld.gov.au/datastore/dump/99e547e1-1def-473e-8514-76f625ebf30d?format=csv",
+        "resource_sha256": "d54cd97404d1433f292ebc47cba771072b2fa778a8b7564c6d0776bc946bfa90",
+        "raw_record_sha256": "b36faf48d1e9641200e9fe0fcad8e52a3627f0a518fa53b7d8f701a9cfb86725",
+        "row_number": 32,
+        "config_sha256": "f28134a0bcdd555c77399c3aec45dd00a7ff7fa722bb2313a77a50f6f02e08f3",
+        "source_field": "Supplier address"
+      },
+      "canonical_field": "address.full",
+      "address": {
+        "full": "L19, 99 Walker Street, North Sydney NSW 2060"
+      },
+      "raw_value": "L19, 99 Walker Street, North Sydney NSW 2060",
+      "confidence": {
+        "source_reliability": 0.8,
+        "field_confidence": 0.9
+      },
+      "derivation_level": "L1",
+      "observation_id": "87a474dab6078b9e67d8126921a15b9a16a0eec0f25420591ea2b2b55c047d19"
+    },
+    {
+      "source_id": "73b67e91-d9bf-4471-80c3-a62d5afaee2a",
+      "source_record_id": "d54cd97404d1433f:33:dedd1820ba7f468d",
+      "observed_at": "2024-06-30T23:59:54.469475",
+      "ingested_at": "2026-10-21T07:50:10.273222+00:00",
+      "licence": "Creative Commons Attribution 4.0",
+      "extractor_version": "0.1.0:f28134a0bcdd555c77399c3aec45dd00a7ff7fa722bb2313a77a50f6f02e08f3",
+      "observed_at_basis": "resource_last_modified_proxy",
+      "provenance": {
+        "resource_url": "https://www.data.qld.gov.au/datastore/dump/99e547e1-1def-473e-8514-76f625ebf30d?format=csv",
+        "resource_sha256": "d54cd97404d1433f292ebc47cba771072b2fa778a8b7564c6d0776bc946bfa90",
+        "raw_record_sha256": "dedd1820ba7f468d769e65ac0480aa358999e4115289037df57bb2b0c4ab3acc",
+        "row_number": 33,
+        "config_sha256": "f28134a0bcdd555c77399c3aec45dd00a7ff7fa722bb2313a77a50f6f02e08f3",
+        "source_field": "Supplier ABN"
+      },
+      "canonical_field": "entity.abn",
+      "entity": {
+        "abn": "70600569784"
+      },
+      "raw_value": "70600569784",
+      "confidence": {
+        "source_reliability": 0.8,
+        "field_confidence": 0.9
+      },
+      "derivation_level": "L1",
+      "observation_id": "2a48efaa7fce9e84047dba86fae583972a6bae412c4223df9081b7557036116f"
+    },
+    {
+      "source_id": "73b67e91-d9bf-4471-80c3-a62d5afaee2a",
+      "source_record_id": "d54cd97404d1433f:33:dedd1820ba7f468d",
+      "observed_at": "2024-06-30T23:59:54.469475",
+      "ingested_at": "2026-10-21T07:50:10.273222+00:00",
+      "licence": "Creative Commons Attribution 4.0",
+      "extractor_version": "0.1.0:f28134a0bcdd555c77399c3aec45dd00a7ff7fa722bb2313a77a50f6f02e08f3",
+      "observed_at_basis": "resource_last_modified_proxy",
+      "provenance": {
+        "resource_url": "https://www.data.qld.gov.au/datastore/dump/99e547e1-1def-473e-8514-76f625ebf30d?format=csv",
+        "resource_sha256": "d54cd97404d1433f292ebc47cba771072b2fa778a8b7564c6d0776bc946bfa90",
+        "raw_record_sha256": "dedd1820ba7f468d769e65ac0480aa358999e4115289037df57bb2b0c4ab3acc",
+        "row_number": 33,
+        "config_sha256": "f28134a0bcdd555c77399c3aec45dd00a7ff7fa722bb2313a77a50f6f02e08f3",
+        "source_field": "Supplier address"
+      },
+      "canonical_field": "address.full",
+      "address": {
+        "full": "L19, 99 Walker Street, North Sydney NSW 2060"
+      },
+      "raw_value": "L19, 99 Walker Street, North Sydney NSW 2060",
+      "confidence": {
+        "source_reliability": 0.8,
+        "field_confidence": 0.9
+      },
+      "derivation_level": "L1",
+      "observation_id": "f59c5d4570f8b05fd0b42b14f6452840e48d14426fe0ca6737874f9939a6d7b8"
+    },
+    {
+      "source_id": "73b67e91-d9bf-4471-80c3-a62d5afaee2a",
+      "source_record_id": "d54cd97404d1433f:34:d56cad901831097f",
+      "observed_at": "2024-06-30T23:59:54.469475",
+      "ingested_at": "2026-10-21T07:50:10.273222+00:00",
+      "licence": "Creative Commons Attribution 4.0",
+      "extractor_version": "0.1.0:f28134a0bcdd555c77399c3aec45dd00a7ff7fa722bb2313a77a50f6f02e08f3",
+      "observed_at_basis": "resource_last_modified_proxy",
+      "provenance": {
+        "resource_url": "https://www.data.qld.gov.au/datastore/dump/99e547e1-1def-473e-8514-76f625ebf30d?format=csv",
+        "resource_sha256": "d54cd97404d1433f292ebc47cba771072b2fa778a8b7564c6d0776bc946bfa90",
+        "raw_record_sha256": "d56cad901831097f26a08f3d17991f2cb2425dd6047517707188e3ee75d44563",
+        "row_number": 34,
+        "config_sha256": "f28134a0bcdd555c77399c3aec45dd00a7ff7fa722bb2313a77a50f6f02e08f3",
+        "source_field": "Supplier ABN"
+      },
+      "canonical_field": "entity.abn",
+      "entity": {
+        "abn": "70600569784"
+      },
+      "raw_value": "70600569784",
+      "confidence": {
+        "source_reliability": 0.8,
+        "field_confidence": 0.9
+      },
+      "derivation_level": "L1",
+      "observation_id": "268e6f6fd2dbc2116f7802da9e7e27f2018b7a397b6204887cf7c6e6495d0407"
+    },
+    {
+      "source_id": "73b67e91-d9bf-4471-80c3-a62d5afaee2a",
+      "source_record_id": "d54cd97404d1433f:34:d56cad901831097f",
+      "observed_at": "2024-06-30T23:59:54.469475",
+      "ingested_at": "2026-10-21T07:50:10.273222+00:00",
+      "licence": "Creative Commons Attribution 4.0",
+      "extractor_version": "0.1.0:f28134a0bcdd555c77399c3aec45dd00a7ff7fa722bb2313a77a50f6f02e08f3",
+      "observed_at_basis": "resource_last_modified_proxy",
+      "provenance": {
+        "resource_url": "https://www.data.qld.gov.au/datastore/dump/99e547e1-1def-473e-8514-76f625ebf30d?format=csv",
+        "resource_sha256": "d54cd97404d1433f292ebc47cba771072b2fa778a8b7564c6d0776bc946bfa90",
+        "raw_record_sha256": "d56cad901831097f26a08f3d17991f2cb2425dd6047517707188e3ee75d44563",
+        "row_number": 34,
+        "config_sha256": "f28134a0bcdd555c77399c3aec45dd00a7ff7fa722bb2313a77a50f6f02e08f3",
+        "source_field": "Supplier address"
+      },
+      "canonical_field": "address.full",
+      "address": {
+        "full": "L19, 99 Walker Street, North Sydney NSW 2060"
+      },
+      "raw_value": "L19, 99 Walker Street, North Sydney NSW 2060",
+      "confidence": {
+        "source_reliability": 0.8,
+        "field_confidence": 0.9
+      },
+      "derivation_level": "L1",
+      "observation_id": "831e249dd9753bb6012e65f46ff8951f0e1b4e91e5d25d4d126f375543afd269"
+    }
+  ],
+  "note": "Type/checksum validation does not prove semantic correctness; semantic review required."
+}

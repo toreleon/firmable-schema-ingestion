@@ -1,0 +1,533 @@
+{
+  "source": {
+    "source_id": "42bad3df-f2e0-4c9c-bef0-0a4328927718",
+    "dataset_id": "42bad3df-f2e0-4c9c-bef0-0a4328927718",
+    "title": "Suitable Operator Register (SOR) for Environmentally Relevant Activities (ERAs)",
+    "resource_id": "e119647b-a2aa-4e78-b810-d3f6d60c53af",
+    "resource_url": "https://www.data.qld.gov.au/api/3/action/datastore_search?resource_id=e119647b-a2aa-4e78-b810-d3f6d60c53af&limit=16000&sort=_id+asc",
+    "original_resource_url": "https://storagesolutiondocsprod.blob.core.windows.net/register-documents-rso/rso-register.xlsx?timestamp=2026-10-16T10:20:02+10:00",
+    "acquisition_representation": "json",
+    "original_format": "XLSX",
+    "resource_sha256": "dddeea919b69e8583ffbe0a3e1d98906cbd84d4a5d556ea45094f2aa1e26676b",
+    "local_path": "data/raw/42bad3df-f2e0-4c9c-bef0-0a4328927718",
+    "snapshot_path": "data/snapshots/42bad3df-f2e0-4c9c-bef0-0a4328927718.gz",
+    "downloaded_at": "2026-10-21T08:18:45.178733+00:00",
+    "observed_at": "2026-10-16T00:20:03.266696",
+    "observed_at_basis": "resource_last_modified_proxy",
+    "licence": "Creative Commons Attribution 4.0",
+    "licence_url": "https://creativecommons.org/licenses/by/4.0/",
+    "publisher": "Environment, Tourism, Science and Innovation",
+    "source_reliability": 0.8,
+    "source_reliability_basis": "Uncalibrated government-source prior; uniform, not claimed measured",
+    "description": "A suitable operator is a person or corporation who has been registered by the **Department of the Environment, Tourism, Science and Innovation** as being suitable to carry out an environmentally relevant activity (ERA). The suitable operator register is required under the _Environmental Protection Act 1994_.",
+    "temporal_warning": "Resource/catalogue modification time is a publication proxy, not a verified record statement time",
+    "licence_warning": false
+  },
+  "config": {
+    "entity_role": "supplier",
+    "parser": {
+      "format": "json",
+      "record_path": "result.records",
+      "encoding": "utf-8-sig"
+    },
+    "observed_at_field": null,
+    "mappings": [
+      {
+        "source_field": "Customer Name",
+        "canonical_field": "entity.legal_name",
+        "transforms": [
+          "strip"
+        ],
+        "confidence": 0.8,
+        "rationale": "Retained. Held-out validation shows 4534/4534 emissions with 0 errors. Sample values include individual names (e.g. 'Paul Robert Purtle') alongside company names, so legal-name semantics are weak for individual/sole-trader rows; confidence kept at the 0.8 policy floor with explicit review flag."
+      },
+      {
+        "source_field": "Business Number",
+        "canonical_field": "entity.acn",
+        "transforms": [
+          "strip",
+          {
+            "op": "regex",
+            "pattern": "ACN:?\\s*(\\d{9})",
+            "group": 1
+          },
+          "acn"
+        ],
+        "confidence": 0.85,
+        "rationale": "Retained the single-ACN extraction. Held-out errors (170) are all engine refusals for ambiguous or non-ACN rows, which is the safe outcome. The pattern is tightened to an optional colon to match the 'ACN ACN:606489785' style, but that row contains two ACN labels and will still be refused by the one-match rule. ABN-labelled rows and 'ARBN' rows are not extracted as ACN, since the pattern requires the literal 'ACN' label followed by 9 digits; 'ARBN' does not match because 'ACN' is not a substring boundary-preceded match problem only if preceded by letters, so review is needed (see risks). 19 invalid-checksum refusals are also safe.",
+        "changes_note": "see changes"
+      }
+    ],
+    "unmapped_fields": [
+      {
+        "source_field": "Entity Type",
+        "reason": "Free-text values such as 'Corporation (Company)', 'An individual or Sole trader', and 'Local Government Authority' lack a reviewed enum map; not guessed."
+      },
+      {
+        "source_field": "Location",
+        "reason": "Combined suburb/state/postcode string describes operating location, not the registered business address."
+      },
+      {
+        "source_field": "RSO Number",
+        "reason": "Register-internal reference number (including 'RSO' prefixed values); numeric values sometimes pass ACN checksum, so mapping as ACN would be unsafe."
+      },
+      {
+        "source_field": "Registration Date",
+        "reason": "Date of suitable operator registration, not verified as entity date_registered."
+      },
+      {
+        "source_field": "Registration Status",
+        "reason": "Refers to the suitable operator register status, not the entity corporate status."
+      },
+      {
+        "source_field": "_id",
+        "reason": "Internal row sequence identifier; used only for source_record_id construction."
+      }
+    ],
+    "minimum_field_confidence": 0.8,
+    "warnings": [
+      "observed_at_field is null: only a resource last-modified proxy is available; registration dates are not statement times.",
+      "Business Number column is predominantly ACN-labelled. Labelled ABN matches (102 in held-out, 100 valid) are not mapped to entity.abn because the ABN labels in this column are not verified as supplier-attributed identifiers at scale; review before adding.",
+      "Customer Name may include individuals or sole traders; legal_name assumption flagged.",
+      "Source reliability is an uncalibrated prior and is not used for mapping confidence.",
+      "Held-out ACN checksum failures (19) and ambiguous compound rows (151) are refused by the engine as designed."
+    ],
+    "warnings_added": [],
+    "source_id": "42bad3df-f2e0-4c9c-bef0-0a4328927718",
+    "ontology_sha256": "f4b6b4941ec61dcc3fb07c6ee19edab927862aaaa8ae3df30b3023e047c9f9cd",
+    "generated_by": {
+      "kind": "multi_step_runtime_agent",
+      "model": "claude-haiku-5-5",
+      "run_identity": "f46ee217c5805947a01e1050b4b7be74a64923c5c260f0e4b68d83491106d794"
+    },
+    "review": {
+      "status": "pending",
+      "reviewer": null,
+      "approved_config_sha256": null
+    }
+  },
+  "validation": {
+    "records": 15111,
+    "observation_count": 23029,
+    "emitted_by_field": {
+      "entity.legal_name": 15111,
+      "entity.acn": 7918
+    },
+    "error_count": 492,
+    "errors": [
+      {
+        "source_record_id": "dddeea919b69e858:76:6d7fa0433365598c",
+        "source_field": "Business Number",
+        "canonical_field": "entity.acn",
+        "raw_value": "ABN 71374710707",
+        "reason": "Regex needs exactly one match; ambiguous compound record refused"
+      },
+      {
+        "source_record_id": "dddeea919b69e858:83:cbe4dd0b6252021b",
+        "source_field": "Business Number",
+        "canonical_field": "entity.acn",
+        "raw_value": "ACN 14631562957",
+        "reason": "Invalid ACN checksum"
+      },
+      {
+        "source_record_id": "dddeea919b69e858:112:11e747e18b365fc5",
+        "source_field": "Business Number",
+        "canonical_field": "entity.acn",
+        "raw_value": "ACN 10183534",
+        "reason": "Regex needs exactly one match; ambiguous compound record refused"
+      },
+      {
+        "source_record_id": "dddeea919b69e858:242:e1c87b98c41365e8",
+        "source_field": "Business Number",
+        "canonical_field": "entity.acn",
+        "raw_value": "ACN 89206324",
+        "reason": "Regex needs exactly one match; ambiguous compound record refused"
+      },
+      {
+        "source_record_id": "dddeea919b69e858:316:3688deeb0c007312",
+        "source_field": "Business Number",
+        "canonical_field": "entity.acn",
+        "raw_value": "ACN 000119434",
+        "reason": "Invalid ACN checksum"
+      },
+      {
+        "source_record_id": "dddeea919b69e858:373:a6faf7551a3fe601",
+        "source_field": "Business Number",
+        "canonical_field": "entity.acn",
+        "raw_value": "ABN 61250757901",
+        "reason": "Regex needs exactly one match; ambiguous compound record refused"
+      },
+      {
+        "source_record_id": "dddeea919b69e858:429:77bf40c83b8ac566",
+        "source_field": "Business Number",
+        "canonical_field": "entity.acn",
+        "raw_value": "ABN 91677856067",
+        "reason": "Regex needs exactly one match; ambiguous compound record refused"
+      },
+      {
+        "source_record_id": "dddeea919b69e858:499:af1572c9ac7e0a7b",
+        "source_field": "Business Number",
+        "canonical_field": "entity.acn",
+        "raw_value": "ABN 80769308350",
+        "reason": "Regex needs exactly one match; ambiguous compound record refused"
+      },
+      {
+        "source_record_id": "dddeea919b69e858:520:c46e489079850097",
+        "source_field": "Business Number",
+        "canonical_field": "entity.acn",
+        "raw_value": "ABN 34628764875",
+        "reason": "Regex needs exactly one match; ambiguous compound record refused"
+      },
+      {
+        "source_record_id": "dddeea919b69e858:541:e2a9fa0ab5b0a214",
+        "source_field": "Business Number",
+        "canonical_field": "entity.acn",
+        "raw_value": "ABN 92603071450",
+        "reason": "Regex needs exactly one match; ambiguous compound record refused"
+      },
+      {
+        "source_record_id": "dddeea919b69e858:577:2528ad566d85a67b",
+        "source_field": "Business Number",
+        "canonical_field": "entity.acn",
+        "raw_value": "ABN 64317089101",
+        "reason": "Regex needs exactly one match; ambiguous compound record refused"
+      },
+      {
+        "source_record_id": "dddeea919b69e858:646:3aaf71d2a957cdfe",
+        "source_field": "Business Number",
+        "canonical_field": "entity.acn",
+        "raw_value": "ABN 42395545311",
+        "reason": "Regex needs exactly one match; ambiguous compound record refused"
+      },
+      {
+        "source_record_id": "dddeea919b69e858:655:7f2adda7af3ca8da",
+        "source_field": "Business Number",
+        "canonical_field": "entity.acn",
+        "raw_value": "ABN 50499051634",
+        "reason": "Regex needs exactly one match; ambiguous compound record refused"
+      },
+      {
+        "source_record_id": "dddeea919b69e858:658:1e5ca92e9c7c0d48",
+        "source_field": "Business Number",
+        "canonical_field": "entity.acn",
+        "raw_value": "ABN 11640422189",
+        "reason": "Regex needs exactly one match; ambiguous compound record refused"
+      },
+      {
+        "source_record_id": "dddeea919b69e858:711:0d1996cc5072455f",
+        "source_field": "Business Number",
+        "canonical_field": "entity.acn",
+        "raw_value": "ACN 10028850",
+        "reason": "Regex needs exactly one match; ambiguous compound record refused"
+      },
+      {
+        "source_record_id": "dddeea919b69e858:731:16bc10c8d2f45f5e",
+        "source_field": "Business Number",
+        "canonical_field": "entity.acn",
+        "raw_value": "ACN 8713791",
+        "reason": "Regex needs exactly one match; ambiguous compound record refused"
+      },
+      {
+        "source_record_id": "dddeea919b69e858:847:b3db60b9ef3546b7",
+        "source_field": "Business Number",
+        "canonical_field": "entity.acn",
+        "raw_value": "ABN 44640361064",
+        "reason": "Regex needs exactly one match; ambiguous compound record refused"
+      },
+      {
+        "source_record_id": "dddeea919b69e858:863:387b395982df01a9",
+        "source_field": "Business Number",
+        "canonical_field": "entity.acn",
+        "raw_value": "ACN 84603054404",
+        "reason": "Invalid ACN checksum"
+      },
+      {
+        "source_record_id": "dddeea919b69e858:870:c5d0f91abe08e0cc",
+        "source_field": "Business Number",
+        "canonical_field": "entity.acn",
+        "raw_value": "ABN 30146809781",
+        "reason": "Regex needs exactly one match; ambiguous compound record refused"
+      },
+      {
+        "source_record_id": "dddeea919b69e858:876:6eb8a58667ffc766",
+        "source_field": "Business Number",
+        "canonical_field": "entity.acn",
+        "raw_value": "ACN 723987072",
+        "reason": "Invalid ACN checksum"
+      }
+    ],
+    "per_field_validation": [
+      {
+        "source_field": "Customer Name",
+        "canonical_field": "entity.legal_name",
+        "valid_emissions": 15111,
+        "errors": 0,
+        "error_examples": []
+      },
+      {
+        "source_field": "Business Number",
+        "canonical_field": "entity.acn",
+        "valid_emissions": 7918,
+        "errors": 492,
+        "error_examples": [
+          {
+            "source_record_id": "dddeea919b69e858:76:6d7fa0433365598c",
+            "source_field": "Business Number",
+            "canonical_field": "entity.acn",
+            "raw_value": "ABN 71374710707",
+            "reason": "Regex needs exactly one match; ambiguous compound record refused"
+          },
+          {
+            "source_record_id": "dddeea919b69e858:83:cbe4dd0b6252021b",
+            "source_field": "Business Number",
+            "canonical_field": "entity.acn",
+            "raw_value": "ACN 14631562957",
+            "reason": "Invalid ACN checksum"
+          }
+        ]
+      }
+    ],
+    "error_reasons": {
+      "Regex needs exactly one match; ambiguous compound record refused": 419,
+      "Invalid ACN checksum": 73
+    },
+    "example_observations": [
+      {
+        "source_id": "42bad3df-f2e0-4c9c-bef0-0a4328927718",
+        "source_record_id": "dddeea919b69e858:1:ef0c377367dc8368",
+        "observed_at": "2026-10-16T00:20:03.266696",
+        "ingested_at": "2026-10-21T08:18:45.178733+00:00",
+        "licence": "Creative Commons Attribution 4.0",
+        "extractor_version": "0.1.0:7838252c91a03f6146a9078a4a58a3dc9cabb088dd6e71763d9d9d8d45c0bdb7",
+        "observed_at_basis": "resource_last_modified_proxy",
+        "provenance": {
+          "resource_url": "https://www.data.qld.gov.au/api/3/action/datastore_search?resource_id=e119647b-a2aa-4e78-b810-d3f6d60c53af&limit=16000&sort=_id+asc",
+          "resource_sha256": "dddeea919b69e8583ffbe0a3e1d98906cbd84d4a5d556ea45094f2aa1e26676b",
+          "raw_record_sha256": "ef0c377367dc8368c5fb2ef1e8d16dac27a5c41d10adbe558934d6c0d7da53ed",
+          "row_number": 1,
+          "config_sha256": "7838252c91a03f6146a9078a4a58a3dc9cabb088dd6e71763d9d9d8d45c0bdb7",
+          "source_field": "Customer Name"
+        },
+        "canonical_field": "entity.legal_name",
+        "entity": {
+          "legal_name": "\"OVER THE TOP\" ROOF RESTORATIONS PTY. LTD"
+        },
+        "raw_value": "\"OVER THE TOP\" ROOF RESTORATIONS PTY. LTD",
+        "confidence": {
+          "source_reliability": 0.8,
+          "field_confidence": 0.8
+        },
+        "derivation_level": "L1",
+        "observation_id": "3cbf6befc5837a452a01ed1d17e6c8341a7658b3561b31d627277d1015ee7546"
+      },
+      {
+        "source_id": "42bad3df-f2e0-4c9c-bef0-0a4328927718",
+        "source_record_id": "dddeea919b69e858:1:ef0c377367dc8368",
+        "observed_at": "2026-10-16T00:20:03.266696",
+        "ingested_at": "2026-10-21T08:18:45.178733+00:00",
+        "licence": "Creative Commons Attribution 4.0",
+        "extractor_version": "0.1.0:7838252c91a03f6146a9078a4a58a3dc9cabb088dd6e71763d9d9d8d45c0bdb7",
+        "observed_at_basis": "resource_last_modified_proxy",
+        "provenance": {
+          "resource_url": "https://www.data.qld.gov.au/api/3/action/datastore_search?resource_id=e119647b-a2aa-4e78-b810-d3f6d60c53af&limit=16000&sort=_id+asc",
+          "resource_sha256": "dddeea919b69e8583ffbe0a3e1d98906cbd84d4a5d556ea45094f2aa1e26676b",
+          "raw_record_sha256": "ef0c377367dc8368c5fb2ef1e8d16dac27a5c41d10adbe558934d6c0d7da53ed",
+          "row_number": 1,
+          "config_sha256": "7838252c91a03f6146a9078a4a58a3dc9cabb088dd6e71763d9d9d8d45c0bdb7",
+          "source_field": "Business Number"
+        },
+        "canonical_field": "entity.acn",
+        "entity": {
+          "acn": "090444714"
+        },
+        "raw_value": "ACN 090444714",
+        "confidence": {
+          "source_reliability": 0.8,
+          "field_confidence": 0.85
+        },
+        "derivation_level": "L1",
+        "observation_id": "d6d8af0595e5faf1d309825f123f7349130e24f62b4c0878754021f305276ce6"
+      },
+      {
+        "source_id": "42bad3df-f2e0-4c9c-bef0-0a4328927718",
+        "source_record_id": "dddeea919b69e858:2:eb261617459f5737",
+        "observed_at": "2026-10-16T00:20:03.266696",
+        "ingested_at": "2026-10-21T08:18:45.178733+00:00",
+        "licence": "Creative Commons Attribution 4.0",
+        "extractor_version": "0.1.0:7838252c91a03f6146a9078a4a58a3dc9cabb088dd6e71763d9d9d8d45c0bdb7",
+        "observed_at_basis": "resource_last_modified_proxy",
+        "provenance": {
+          "resource_url": "https://www.data.qld.gov.au/api/3/action/datastore_search?resource_id=e119647b-a2aa-4e78-b810-d3f6d60c53af&limit=16000&sort=_id+asc",
+          "resource_sha256": "dddeea919b69e8583ffbe0a3e1d98906cbd84d4a5d556ea45094f2aa1e26676b",
+          "raw_record_sha256": "eb261617459f5737be686aa463e634dee46764aa1902f1ccc576504229224fe5",
+          "row_number": 2,
+          "config_sha256": "7838252c91a03f6146a9078a4a58a3dc9cabb088dd6e71763d9d9d8d45c0bdb7",
+          "source_field": "Customer Name"
+        },
+        "canonical_field": "entity.legal_name",
+        "entity": {
+          "legal_name": "$Uccess Pty Ltd"
+        },
+        "raw_value": "$Uccess Pty Ltd",
+        "confidence": {
+          "source_reliability": 0.8,
+          "field_confidence": 0.8
+        },
+        "derivation_level": "L1",
+        "observation_id": "fda490cb4372203257f4a4ea936297a203497639d14e5331edeb3f8cbf63382d"
+      },
+      {
+        "source_id": "42bad3df-f2e0-4c9c-bef0-0a4328927718",
+        "source_record_id": "dddeea919b69e858:2:eb261617459f5737",
+        "observed_at": "2026-10-16T00:20:03.266696",
+        "ingested_at": "2026-10-21T08:18:45.178733+00:00",
+        "licence": "Creative Commons Attribution 4.0",
+        "extractor_version": "0.1.0:7838252c91a03f6146a9078a4a58a3dc9cabb088dd6e71763d9d9d8d45c0bdb7",
+        "observed_at_basis": "resource_last_modified_proxy",
+        "provenance": {
+          "resource_url": "https://www.data.qld.gov.au/api/3/action/datastore_search?resource_id=e119647b-a2aa-4e78-b810-d3f6d60c53af&limit=16000&sort=_id+asc",
+          "resource_sha256": "dddeea919b69e8583ffbe0a3e1d98906cbd84d4a5d556ea45094f2aa1e26676b",
+          "raw_record_sha256": "eb261617459f5737be686aa463e634dee46764aa1902f1ccc576504229224fe5",
+          "row_number": 2,
+          "config_sha256": "7838252c91a03f6146a9078a4a58a3dc9cabb088dd6e71763d9d9d8d45c0bdb7",
+          "source_field": "Business Number"
+        },
+        "canonical_field": "entity.acn",
+        "entity": {
+          "acn": "600137942"
+        },
+        "raw_value": "ACN 600137942",
+        "confidence": {
+          "source_reliability": 0.8,
+          "field_confidence": 0.85
+        },
+        "derivation_level": "L1",
+        "observation_id": "3e114afd9e12ace6676228ad1de927211e3b98bc877c59937b31e4356615126c"
+      },
+      {
+        "source_id": "42bad3df-f2e0-4c9c-bef0-0a4328927718",
+        "source_record_id": "dddeea919b69e858:3:db83a7b48bfc0a5d",
+        "observed_at": "2026-10-16T00:20:03.266696",
+        "ingested_at": "2026-10-21T08:18:45.178733+00:00",
+        "licence": "Creative Commons Attribution 4.0",
+        "extractor_version": "0.1.0:7838252c91a03f6146a9078a4a58a3dc9cabb088dd6e71763d9d9d8d45c0bdb7",
+        "observed_at_basis": "resource_last_modified_proxy",
+        "provenance": {
+          "resource_url": "https://www.data.qld.gov.au/api/3/action/datastore_search?resource_id=e119647b-a2aa-4e78-b810-d3f6d60c53af&limit=16000&sort=_id+asc",
+          "resource_sha256": "dddeea919b69e8583ffbe0a3e1d98906cbd84d4a5d556ea45094f2aa1e26676b",
+          "raw_record_sha256": "db83a7b48bfc0a5d11c53820b9208bfe64d235114445361fb51b509452e5e36b",
+          "row_number": 3,
+          "config_sha256": "7838252c91a03f6146a9078a4a58a3dc9cabb088dd6e71763d9d9d8d45c0bdb7",
+          "source_field": "Customer Name"
+        },
+        "canonical_field": "entity.legal_name",
+        "entity": {
+          "legal_name": "111 TRADING GROUP PTY LTD"
+        },
+        "raw_value": "111 TRADING GROUP PTY LTD",
+        "confidence": {
+          "source_reliability": 0.8,
+          "field_confidence": 0.8
+        },
+        "derivation_level": "L1",
+        "observation_id": "1b746a3131574da045d364e64956c168bc3e7d914962a8275d28f64431b10301"
+      },
+      {
+        "source_id": "42bad3df-f2e0-4c9c-bef0-0a4328927718",
+        "source_record_id": "dddeea919b69e858:3:db83a7b48bfc0a5d",
+        "observed_at": "2026-10-16T00:20:03.266696",
+        "ingested_at": "2026-10-21T08:18:45.178733+00:00",
+        "licence": "Creative Commons Attribution 4.0",
+        "extractor_version": "0.1.0:7838252c91a03f6146a9078a4a58a3dc9cabb088dd6e71763d9d9d8d45c0bdb7",
+        "observed_at_basis": "resource_last_modified_proxy",
+        "provenance": {
+          "resource_url": "https://www.data.qld.gov.au/api/3/action/datastore_search?resource_id=e119647b-a2aa-4e78-b810-d3f6d60c53af&limit=16000&sort=_id+asc",
+          "resource_sha256": "dddeea919b69e8583ffbe0a3e1d98906cbd84d4a5d556ea45094f2aa1e26676b",
+          "raw_record_sha256": "db83a7b48bfc0a5d11c53820b9208bfe64d235114445361fb51b509452e5e36b",
+          "row_number": 3,
+          "config_sha256": "7838252c91a03f6146a9078a4a58a3dc9cabb088dd6e71763d9d9d8d45c0bdb7",
+          "source_field": "Business Number"
+        },
+        "canonical_field": "entity.acn",
+        "entity": {
+          "acn": "688234362"
+        },
+        "raw_value": "ACN 688234362",
+        "confidence": {
+          "source_reliability": 0.8,
+          "field_confidence": 0.85
+        },
+        "derivation_level": "L1",
+        "observation_id": "dcea593a138180bedcb73dc256b5a460f3fce2e9e4d90d89d69535aabddf22a2"
+      },
+      {
+        "source_id": "42bad3df-f2e0-4c9c-bef0-0a4328927718",
+        "source_record_id": "dddeea919b69e858:4:cd87f208faaedfe4",
+        "observed_at": "2026-10-16T00:20:03.266696",
+        "ingested_at": "2026-10-21T08:18:45.178733+00:00",
+        "licence": "Creative Commons Attribution 4.0",
+        "extractor_version": "0.1.0:7838252c91a03f6146a9078a4a58a3dc9cabb088dd6e71763d9d9d8d45c0bdb7",
+        "observed_at_basis": "resource_last_modified_proxy",
+        "provenance": {
+          "resource_url": "https://www.data.qld.gov.au/api/3/action/datastore_search?resource_id=e119647b-a2aa-4e78-b810-d3f6d60c53af&limit=16000&sort=_id+asc",
+          "resource_sha256": "dddeea919b69e8583ffbe0a3e1d98906cbd84d4a5d556ea45094f2aa1e26676b",
+          "raw_record_sha256": "cd87f208faaedfe46b12bbeef7b2b5cf9b02e60c84fd9e8ba368f0544886b2e9",
+          "row_number": 4,
+          "config_sha256": "7838252c91a03f6146a9078a4a58a3dc9cabb088dd6e71763d9d9d8d45c0bdb7",
+          "source_field": "Customer Name"
+        },
+        "canonical_field": "entity.legal_name",
+        "entity": {
+          "legal_name": "1205 PTY LTD"
+        },
+        "raw_value": "1205 PTY LTD",
+        "confidence": {
+          "source_reliability": 0.8,
+          "field_confidence": 0.8
+        },
+        "derivation_level": "L1",
+        "observation_id": "f31ab2df2bf2918fbe1ac5244f7449903fd4c3ddaad4e9c1c24bf083d7c5c949"
+      },
+      {
+        "source_id": "42bad3df-f2e0-4c9c-bef0-0a4328927718",
+        "source_record_id": "dddeea919b69e858:4:cd87f208faaedfe4",
+        "observed_at": "2026-10-16T00:20:03.266696",
+        "ingested_at": "2026-10-21T08:18:45.178733+00:00",
+        "licence": "Creative Commons Attribution 4.0",
+        "extractor_version": "0.1.0:7838252c91a03f6146a9078a4a58a3dc9cabb088dd6e71763d9d9d8d45c0bdb7",
+        "observed_at_basis": "resource_last_modified_proxy",
+        "provenance": {
+          "resource_url": "https://www.data.qld.gov.au/api/3/action/datastore_search?resource_id=e119647b-a2aa-4e78-b810-d3f6d60c53af&limit=16000&sort=_id+asc",
+          "resource_sha256": "dddeea919b69e8583ffbe0a3e1d98906cbd84d4a5d556ea45094f2aa1e26676b",
+          "raw_record_sha256": "cd87f208faaedfe46b12bbeef7b2b5cf9b02e60c84fd9e8ba368f0544886b2e9",
+          "row_number": 4,
+          "config_sha256": "7838252c91a03f6146a9078a4a58a3dc9cabb088dd6e71763d9d9d8d45c0bdb7",
+          "source_field": "Business Number"
+        },
+        "canonical_field": "entity.acn",
+        "entity": {
+          "acn": "669387562"
+        },
+        "raw_value": "ACN 669387562",
+        "confidence": {
+          "source_reliability": 0.8,
+          "field_confidence": 0.85
+        },
+        "derivation_level": "L1",
+        "observation_id": "3b45d1cf616cae1b108abc7888a532d6e5674a8b5a89e434dc45c0a522a646a8"
+      }
+    ],
+    "note": "Type/checksum validation does not prove semantic correctness; semantic review required."
+  },
+  "warnings": [
+    "Customer Name may be an individual's name (sole trader or person) rather than a registered legal entity name; entity.legal_name semantics are weaker for these rows.",
+    "Held-out ACN extraction has 170 refused rows (151 ambiguous compound, 19 invalid checksum); coverage for entity.acn is about 55% of held-out records.",
+    "Labelled ABN values in Business Number (e.g. 'ABN 34103787081') are not mapped to entity.abn; the ACN regex does not extract them, but it also does not explicitly exclude 'ARBN' or 'ABN' prefixes beyond requiring the literal 'ACN' token.",
+    "RSO Number values may pass ACN checksum by coincidence and must not be treated as ACNs.",
+    "Registration Date and Registration Status refer to the suitable operator register and are not entity date_registered or entity.status.",
+    "Location is the operating location, not the registered business address.",
+    "observed_at is a resource-modified proxy, not a statement time."
+  ],
+  "draft": true,
+  "review_instructions": "Inspect roles, source evidence, temporal proxy, field coverage, unmapped fields and samples. Approve the exact config hash or reject with reason."
+}

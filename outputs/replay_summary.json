@@ -1,0 +1,61 @@
+{
+  "sources": [
+    {
+      "source_id": "980b6499-c0b4-491b-ba9c-1c7506368a50",
+      "input_records": 30000,
+      "observations": 53428,
+      "field_errors": 208
+    },
+    {
+      "source_id": "21a0f174-2f9e-4b01-a73a-7569eefbb0c8",
+      "input_records": 1000,
+      "observations": 885,
+      "field_errors": 120
+    },
+    {
+      "source_id": "2b977e4d-c765-4ce5-8088-65210a744add",
+      "input_records": 202,
+      "observations": 151,
+      "field_errors": 5
+    },
+    {
+      "source_id": "73b67e91-d9bf-4471-80c3-a62d5afaee2a",
+      "input_records": 44,
+      "observations": 88,
+      "field_errors": 0
+    },
+    {
+      "source_id": "42bad3df-f2e0-4c9c-bef0-0a4328927718",
+      "input_records": 15111,
+      "observations": 23029,
+      "field_errors": 492
+    },
+    {
+      "source_id": "8792a410-dea1-4fc9-b783-b97f0fefc208",
+      "input_records": 279,
+      "observations": 279,
+      "field_errors": 0
+    }
+  ],
+  "total_observations": 77860,
+  "proposed_links": 110,
+  "profile_eligible_links": 107,
+  "review_rejected_links": 0,
+  "profiles": 50,
+  "requested_profiles": 50,
+  "draft": false,
+  "profile_target_met": true,
+  "measured_precision": 1.0,
+  "historical_review_sample_precision": 0.94,
+  "fresh_audit_sample_size": 47,
+  "v2_release_approved": false,
+  "fresh_sample_human_reviewed": 47,
+  "fresh_sample_human_approved": 47,
+  "historical_v1_link_human_audit_complete": true,
+  "human_audit_status": "Current 50-link audit records explicit verdicts with reviewer attribution; unresolved triage items and any AI reviews remain declared.",
+  "submission_audit_size": 50,
+  "submission_audit_reviewed": 50,
+  "submission_audit_reviewer_kinds": {
+    "human": 50
+  }
+}

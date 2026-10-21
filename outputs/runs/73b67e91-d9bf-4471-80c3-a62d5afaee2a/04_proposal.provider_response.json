@@ -1,0 +1,214 @@
+{
+  "id": "msg_011CgF3Bm1Kf39moJ1uXtXHr",
+  "usage": {
+    "prompt_tokens": 6918,
+    "completion_tokens": 1834,
+    "total_tokens": 8752,
+    "native": {
+      "input_tokens": 6918,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "cache_creation": {
+        "ephemeral_5m_input_tokens": 0,
+        "ephemeral_1h_input_tokens": 0
+      },
+      "output_tokens": 1834,
+      "output_tokens_details": {
+        "thinking_tokens": 0
+      },
+      "service_tier": "standard",
+      "inference_geo": "global",
+      "speed": "standard"
+    }
+  },
+  "native_response": {
+    "model": "claude-haiku-5-5",
+    "id": "msg_011CgF3Bm1Kf39moJ1uXtXHr",
+    "type": "message",
+    "role": "assistant",
+    "content": [
+      {
+        "type": "tool_use",
+        "id": "toolu_01XagTBUQBm2cd7Q8EcJREBi",
+        "name": "emit_result",
+        "input": {
+          "parser": {
+            "format": "csv",
+            "delimiter": ",",
+            "header_row": 1,
+            "encoding": "utf-8-sig"
+          },
+          "observed_at_field": null,
+          "mappings": [
+            {
+              "source_field": "Supplier name",
+              "canonical_field": "entity.legal_name",
+              "transforms": [
+                "strip"
+              ],
+              "confidence": 0.5,
+              "rationale": "Supplier name is a business name in a contractor register, but the source does not state it is the registered legal name. Mapped conservatively as legal_name only with flagged assumption; it may be a trading name. Confidence set below the 0.8 minimum, so it should be excluded by the threshold."
+            },
+            {
+              "source_field": "Supplier ABN",
+              "canonical_field": "entity.abn",
+              "transforms": [
+                "strip",
+                "abn"
+              ],
+              "confidence": 0.9,
+              "rationale": "Column is labelled as the supplier's ABN (11 digits in samples), and the abn transform validates checksum. Row-level supplier identifier, not buyer or agency."
+            },
+            {
+              "source_field": "Supplier address",
+              "canonical_field": "address.full",
+              "transforms": [
+                "strip"
+              ],
+              "confidence": 0.9,
+              "rationale": "Labelled supplier address, a full single-line address for the supplier. Not the agency address."
+            }
+          ],
+          "unmapped_fields": [
+            {
+              "source_field": "_id",
+              "reason": "Row index, not an entity attribute."
+            },
+            {
+              "source_field": "Agency (Dept or Stat Body)",
+              "reason": "Buyer/agency identifier; must not be mapped as supplier identity."
+            },
+            {
+              "source_field": "Agency address",
+              "reason": "Buyer/agency address; must not be mapped to supplier address."
+            },
+            {
+              "source_field": "Award contract date",
+              "reason": "Contract award date; not a registration or observation date."
+            },
+            {
+              "source_field": "Commence date",
+              "reason": "Contract commencement date; not entity date_registered."
+            },
+            {
+              "source_field": "Finish date",
+              "reason": "Contract finish date; not an entity attribute."
+            },
+            {
+              "source_field": "Contract value",
+              "reason": "Contract value; must not be mapped to entity or address fields."
+            },
+            {
+              "source_field": "Contract description/name",
+              "reason": "Contract description, not entity industry_code or trading name."
+            },
+            {
+              "source_field": "Contract reference number",
+              "reason": "Contract identifier, not an entity identifier."
+            },
+            {
+              "source_field": "Parent contract number/SOA",
+              "reason": "Contract/SOA identifier, not an entity identifier."
+            },
+            {
+              "source_field": "Description",
+              "reason": "Empty in sample; no defined entity meaning."
+            },
+            {
+              "source_field": "Contract category group",
+              "reason": "Contract classification, not ANZSIC industry_code; empty in sample."
+            },
+            {
+              "source_field": "Contract milestones",
+              "reason": "Contract attribute; empty in sample."
+            },
+            {
+              "source_field": "Contract performance management",
+              "reason": "Contract attribute; empty in sample."
+            },
+            {
+              "source_field": "Deliverables",
+              "reason": "Contract attribute; empty in sample."
+            },
+            {
+              "source_field": "Evaluation criteria and weightings",
+              "reason": "Procurement attribute; empty in sample."
+            },
+            {
+              "source_field": "Form of contract",
+              "reason": "Procurement attribute; empty in sample."
+            },
+            {
+              "source_field": "Number of offers sought",
+              "reason": "Procurement attribute; empty in sample."
+            },
+            {
+              "source_field": "Procurement method",
+              "reason": "Procurement attribute; not entity status or type."
+            },
+            {
+              "source_field": "Reason for use of limited tendering",
+              "reason": "Procurement attribute; empty in sample."
+            },
+            {
+              "source_field": "Specific confidentiality provision used",
+              "reason": "Contract attribute, not entity status."
+            },
+            {
+              "source_field": "Variation to contract (Yes/No)",
+              "reason": "Contract attribute, not entity status."
+            },
+            {
+              "source_field": "Variation comments",
+              "reason": "Contract attribute; free text about contract variation."
+            }
+          ],
+          "minimum_field_confidence": 0.8,
+          "warnings": [
+            "Supplier name mapped to entity.legal_name is an assumption: source does not establish it as registered legal name; confidence 0.5 is below the 0.8 threshold so it will be excluded unless reviewed.",
+            "Each row carries one supplier; no multi-supplier records observed, but compound names/ABNs should be checked before ingest.",
+            "Supplier address lacks a structured state/postcode in some rows (e.g. 'L8, 127 Creek Street, Brisbane QLD' has no postcode); mapped only to address.full with no derived state or postcode.",
+            "observed_at_field is null: the only time is resource_last_modified_proxy, which is a publication proxy, not a verified statement time.",
+            "Supplier ABN checksum validation is applied; invalid checksums will be rejected. ACN is not inferred from ABN.",
+            "Source suppliers in sample are repeated across rows (same ABN for multiple contracts); observations should be deduplicated by source_record_id, not treated as distinct entities.",
+            "Address field has no mapping to country; default AU is not applied at ingest.",
+            "Licence is Creative Commons Attribution 4.0 per source metadata, but licence_warning is false; no action needed beyond recording it."
+          ],
+          "entity_role": "supplier"
+        },
+        "caller": {
+          "type": "direct"
+        }
+      }
+    ],
+    "container": null,
+    "stop_reason": "tool_use",
+    "stop_sequence": null,
+    "stop_details": null,
+    "usage": {
+      "input_tokens": 6918,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "cache_creation": {
+        "ephemeral_5m_input_tokens": 0,
+        "ephemeral_1h_input_tokens": 0
+      },
+      "output_tokens": 1834,
+      "output_tokens_details": {
+        "thinking_tokens": 0
+      },
+      "service_tier": "standard",
+      "inference_geo": "global",
+      "speed": "standard"
+    },
+    "diagnostics": null
+  },
+  "choices": [
+    {
+      "message": {
+        "content": "{\"parser\": {\"format\": \"csv\", \"delimiter\": \",\", \"header_row\": 1, \"encoding\": \"utf-8-sig\"}, \"observed_at_field\": null, \"mappings\": [{\"source_field\": \"Supplier name\", \"canonical_field\": \"entity.legal_name\", \"transforms\": [\"strip\"], \"confidence\": 0.5, \"rationale\": \"Supplier name is a business name in a contractor register, but the source does not state it is the registered legal name. Mapped conservatively as legal_name only with flagged assumption; it may be a trading name. Confidence set below the 0.8 minimum, so it should be excluded by the threshold.\"}, {\"source_field\": \"Supplier ABN\", \"canonical_field\": \"entity.abn\", \"transforms\": [\"strip\", \"abn\"], \"confidence\": 0.9, \"rationale\": \"Column is labelled as the supplier's ABN (11 digits in samples), and the abn transform validates checksum. Row-level supplier identifier, not buyer or agency.\"}, {\"source_field\": \"Supplier address\", \"canonical_field\": \"address.full\", \"transforms\": [\"strip\"], \"confidence\": 0.9, \"rationale\": \"Labelled supplier address, a full single-line address for the supplier. Not the agency address.\"}], \"unmapped_fields\": [{\"source_field\": \"_id\", \"reason\": \"Row index, not an entity attribute.\"}, {\"source_field\": \"Agency (Dept or Stat Body)\", \"reason\": \"Buyer/agency identifier; must not be mapped as supplier identity.\"}, {\"source_field\": \"Agency address\", \"reason\": \"Buyer/agency address; must not be mapped to supplier address.\"}, {\"source_field\": \"Award contract date\", \"reason\": \"Contract award date; not a registration or observation date.\"}, {\"source_field\": \"Commence date\", \"reason\": \"Contract commencement date; not entity date_registered.\"}, {\"source_field\": \"Finish date\", \"reason\": \"Contract finish date; not an entity attribute.\"}, {\"source_field\": \"Contract value\", \"reason\": \"Contract value; must not be mapped to entity or address fields.\"}, {\"source_field\": \"Contract description/name\", \"reason\": \"Contract description, not entity industry_code or trading name.\"}, {\"source_field\": \"Contract reference number\", \"reason\": \"Contract identifier, not an entity identifier.\"}, {\"source_field\": \"Parent contract number/SOA\", \"reason\": \"Contract/SOA identifier, not an entity identifier.\"}, {\"source_field\": \"Description\", \"reason\": \"Empty in sample; no defined entity meaning.\"}, {\"source_field\": \"Contract category group\", \"reason\": \"Contract classification, not ANZSIC industry_code; empty in sample.\"}, {\"source_field\": \"Contract milestones\", \"reason\": \"Contract attribute; empty in sample.\"}, {\"source_field\": \"Contract performance management\", \"reason\": \"Contract attribute; empty in sample.\"}, {\"source_field\": \"Deliverables\", \"reason\": \"Contract attribute; empty in sample.\"}, {\"source_field\": \"Evaluation criteria and weightings\", \"reason\": \"Procurement attribute; empty in sample.\"}, {\"source_field\": \"Form of contract\", \"reason\": \"Procurement attribute; empty in sample.\"}, {\"source_field\": \"Number of offers sought\", \"reason\": \"Procurement attribute; empty in sample.\"}, {\"source_field\": \"Procurement method\", \"reason\": \"Procurement attribute; not entity status or type.\"}, {\"source_field\": \"Reason for use of limited tendering\", \"reason\": \"Procurement attribute; empty in sample.\"}, {\"source_field\": \"Specific confidentiality provision used\", \"reason\": \"Contract attribute, not entity status.\"}, {\"source_field\": \"Variation to contract (Yes/No)\", \"reason\": \"Contract attribute, not entity status.\"}, {\"source_field\": \"Variation comments\", \"reason\": \"Contract attribute; free text about contract variation.\"}], \"minimum_field_confidence\": 0.8, \"warnings\": [\"Supplier name mapped to entity.legal_name is an assumption: source does not establish it as registered legal name; confidence 0.5 is below the 0.8 threshold so it will be excluded unless reviewed.\", \"Each row carries one supplier; no multi-supplier records observed, but compound names/ABNs should be checked before ingest.\", \"Supplier address lacks a structured state/postcode in some rows (e.g. 'L8, 127 Creek Street, Brisbane QLD' has no postcode); mapped only to address.full with no derived state or postcode.\", \"observed_at_field is null: the only time is resource_last_modified_proxy, which is a publication proxy, not a verified statement time.\", \"Supplier ABN checksum validation is applied; invalid checksums will be rejected. ACN is not inferred from ABN.\", \"Source suppliers in sample are repeated across rows (same ABN for multiple contracts); observations should be deduplicated by source_record_id, not treated as distinct entities.\", \"Address field has no mapping to country; default AU is not applied at ingest.\", \"Licence is Creative Commons Attribution 4.0 per source metadata, but licence_warning is false; no action needed beyond recording it.\"], \"entity_role\": \"supplier\"}"
+      },
+      "finish_reason": "stop"
+    }
+  ]
+}

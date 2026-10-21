@@ -1,0 +1,38 @@
+[
+  {
+    "dataset_id": "980b6499-c0b4-491b-ba9c-1c7506368a50",
+    "resource_id": "25608781-b28c-44f8-8545-0ab18d84082f",
+    "representation": "json_sample",
+    "limit": 30000
+  },
+  {
+    "dataset_id": "21a0f174-2f9e-4b01-a73a-7569eefbb0c8",
+    "resource_id": "95313d0f-5f76-46e5-9485-41266fb12bc6",
+    "representation": "csv",
+    "limit": 1000
+  },
+  {
+    "dataset_id": "2b977e4d-c765-4ce5-8088-65210a744add",
+    "resource_id": "30026b85-0102-4a55-8c4b-a53de647f1d0",
+    "representation": "csv",
+    "limit": 1000
+  },
+  {
+    "dataset_id": "73b67e91-d9bf-4471-80c3-a62d5afaee2a",
+    "resource_id": "99e547e1-1def-473e-8514-76f625ebf30d",
+    "representation": "csv",
+    "limit": 1000
+  },
+  {
+    "dataset_id": "42bad3df-f2e0-4c9c-bef0-0a4328927718",
+    "resource_id": "e119647b-a2aa-4e78-b810-d3f6d60c53af",
+    "representation": "json",
+    "limit": 16000
+  },
+  {
+    "dataset_id": "8792a410-dea1-4fc9-b783-b97f0fefc208",
+    "resource_id": "44c65b7e-03b7-40b3-b3cd-15d474dfb980",
+    "representation": "csv",
+    "limit": 1000
+  }
+]

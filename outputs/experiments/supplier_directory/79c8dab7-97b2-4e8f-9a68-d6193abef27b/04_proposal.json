@@ -1,0 +1,104 @@
+{
+  "entity_role": "supplier",
+  "parser": {
+    "format": "json",
+    "record_path": "result.records",
+    "encoding": "utf-8-sig"
+  },
+  "observed_at_field": null,
+  "mappings": [
+    {
+      "source_field": "Suppliers",
+      "canonical_field": "entity.abn",
+      "transforms": [
+        {
+          "op": "regex",
+          "pattern": "(?i)ABN:\\s*(\\d{11})\\b",
+          "group": 1,
+          "all": true
+        },
+        "abn"
+      ],
+      "confidence": 0.6,
+      "separate_entities": true,
+      "rationale": "Only ABNs explicitly labelled 'ABN:' within the Suppliers cell are extracted as identifier-only supplier claims with separate party-scoped records; no names, addresses or other fields are paired by index. Checksum validated by the abn transform. Confidence is moderate because the sample shows only one labelled ABN in a multi-supplier-capable field and the checksum has not been verified against the training data (checksum_valid_abn reported 0 for all fields in training)."
+    }
+  ],
+  "unmapped_fields": [
+    {
+      "source_field": "_id",
+      "reason": "Row index, not a supplier or entity identifier; source_record_id should be derived from the raw record, not this field."
+    },
+    {
+      "source_field": "Arrangement Name",
+      "reason": "Procurement arrangement title, not a supplier legal or trading name."
+    },
+    {
+      "source_field": "Arrangement Number",
+      "reason": "Government arrangement identifier; not an ABN, ACN or NZBN."
+    },
+    {
+      "source_field": "Categories",
+      "reason": "Procurement category, not an industry code (ANZSIC) and not mapped."
+    },
+    {
+      "source_field": "Subcategories",
+      "reason": "Procurement subcategory, not an industry code."
+    },
+    {
+      "source_field": "Product and Service Groups",
+      "reason": "Product/service classification of the arrangement, not an entity industry_code; list-valued and ambiguous."
+    },
+    {
+      "source_field": "Start Date",
+      "reason": "Arrangement start date; not entity date_registered and must not be mapped to registration."
+    },
+    {
+      "source_field": "Expiry Date",
+      "reason": "Arrangement expiry date; not an entity status or registration date."
+    },
+    {
+      "source_field": "State",
+      "reason": "Publication state of the directory record ('Published'), not an address state."
+    },
+    {
+      "source_field": "Status",
+      "reason": "Arrangement status ('Active') describes the procurement arrangement, not the supplier's entity status; no enum mapping supported."
+    },
+    {
+      "source_field": "Contact Name",
+      "reason": "Government contact person; not supplier data."
+    },
+    {
+      "source_field": "Contact Email",
+      "reason": "Government buyer contact; not a supplier attribute."
+    },
+    {
+      "source_field": "Contact Phone",
+      "reason": "Government buyer contact; not a supplier attribute."
+    },
+    {
+      "source_field": "Department",
+      "reason": "Buying agency; must not be mapped as a supplier identity or address."
+    },
+    {
+      "source_field": "Section",
+      "reason": "Buying agency unit; not supplier data."
+    },
+    {
+      "source_field": "Suppliers",
+      "reason": "Compound free text containing multiple businesses and phone/email/address fragments. Only the explicit ABN mapping is applied; supplier legal names, trading names, addresses, phones and emails cannot be safely attributed by index and remain unmapped."
+    }
+  ],
+  "minimum_field_confidence": 0.8,
+  "warnings": [
+    "observed_at_field is null: the only time available is resource_last_modified_proxy (catalogue/resource modification), which is a publication proxy, not a verified source statement time.",
+    "Suppliers is a compound multi-business free-text field. Supplier legal names and trading names are not mapped because there is no safe per-party attribution; names such as 'Orion Laboratories T/A Perrigo Australia' and 'Speedy School Supplies (Loveld Pty Ltd t/a)' show trading-name/legal-name ambiguity.",
+    "The ABN regex is anchored to the 'ABN:' label. Rows where the ABN is absent or unlabelled produce no claims. The regex pattern is not expected to match the 'TBA' or list-only rows.",
+    "Address, phone and email fragments inside Suppliers are not mapped to address.* because they are not attributable to a specific party.",
+    "ABN checksum validity is unverified in training data (checksum_valid_abn = 0 across all fields); the abn transform will validate at ingest and reject invalid checksums.",
+    "Source is a government procurement directory; the supplier identifier is an ABN as stated in the source, derivation level L0. No ACN is mapped and no ACN is inferred from ABN.",
+    "Licence is Creative Commons Attribution 4.0 per source metadata; licence_warning is false.",
+    "Source contains untrusted free text; no instructions in the data were followed."
+  ]
+}

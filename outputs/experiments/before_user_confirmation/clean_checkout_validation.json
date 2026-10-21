@@ -1,0 +1,36 @@
+{
+  "clean_checkout": true,
+  "validated_commit": "19b3dcef2dad3fd5fa4d9b4bcde64b4573b89958",
+  "dependency_environment": "Previously verified fresh virtual environment with unchanged pinned dependencies; imports asserted from new clone",
+  "network_disabled_during_replay": true,
+  "snapshots_rehydrated": true,
+  "replay_seconds": 12.200629872999343,
+  "outputs_match_reference": {
+    "company_profiles.jsonl": "71e52132b1dcf66aa86257a15253d0bc97fd1d58cfbb4ba0513f3c7a48e1ca96",
+    "proposed_links.jsonl": "4bd470ee51b20acf632331c54d692c29d47b0c8998260d093fe8d356e6ae04ab",
+    "profile_links.jsonl": "6de1ab54bb4b043e15d8c6a632cd7781e8d93fc985015cb8851738fef79925de",
+    "unlinked_queue.jsonl": "5c86d92599d5d968feb89fa29b22acab43b12599b264aef7daf58c6807d13e6e",
+    "audit_summary.json": "6afb5dfa49fb17754216aa2b577bff7b581940b10f6424817b4867f3ed25c8c8",
+    "audit_summary_v2.json": "8589448dd7c91f48d7537128033d7e3408b6974ccd104c4a86598b72b655dde0",
+    "matcher_comparison.json": "15d723e4ec8f8f1d31e2b99ca436ad12ec0f49907c46091b908b5a0196a21660",
+    "link_migration_v1_to_v2.json": "aa122a068d26e775c80764004908ddd6de65b68705f2179a003498f4bf43b6d1",
+    "replay_summary.json": "d57890c7998076053e59fadb93fa07ea35f918866bae4d1b20e58129f21fa25d",
+    "resolution_summary.json": "3aae8f54799ce3e5112b5a66e96a559762f0985b93f6f4cc9eaa8e205184262b"
+  },
+  "all_six_canonical_observation_files_identical": true,
+  "audit_files_and_both_review_csvs_preserved": {
+    "outputs/link_audit.jsonl": "049267ff0e744a6666952e64109781a5cddac02fb85299feec80b689d11834be",
+    "outputs/triage_audit.jsonl": "046f541eb6f87f6ce288b81c40c236f91b26d00338b2d1d9b659f745e96e0bad",
+    "outputs/review/audit_results.csv": "cb42141ab99a87e28b1c4276c6cf3b284dfffbd82687e570376e48c1d46739b0",
+    "outputs/link_audit_v2.jsonl": "72ce1f1f9671aca54d72c65705a644959fccd2bc2f6fdedb1c8bddc25e012cd2",
+    "outputs/review/link_audit_v2.csv": "9bbfbcec9cd446d5fd5eef9ef4b5d65ba0831af26be7ab835d1fc599f083b3db"
+  },
+  "tests_passed": 28,
+  "observations": 77860,
+  "proposed_links": 110,
+  "profile_eligible_links": 107,
+  "profiles": 50,
+  "fresh_audit_sample_size": 47,
+  "fresh_precision": null,
+  "incremental_paid_api_calls": 0
+}

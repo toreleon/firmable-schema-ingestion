@@ -1,0 +1,53 @@
+{
+  "triage": {
+    "sample_size": 20,
+    "reviewed": 15,
+    "positive": 12,
+    "negative": 3,
+    "inconclusive": 5,
+    "assessed": 20,
+    "all_items_assessed": true,
+    "reviewer_kinds": {
+      "human": 20
+    },
+    "human_approved": 0,
+    "binary_verdicts_recorded": 15,
+    "available_sample_human_review_complete": true,
+    "independent_human_audit_complete": false,
+    "complete": false,
+    "precision": 0.8,
+    "false_positive_rate": 0.2,
+    "scope": "Conclusive cases in frozen proposal sample; reviewer attribution is preserved. AI review is not independent human sign-off.",
+    "verification_coverage": 0.75,
+    "full_sample_false_positive_rate": null,
+    "full_sample_false_positive_rate_bounds": [
+      0.15,
+      0.4
+    ]
+  },
+  "link": {
+    "sample_size": 50,
+    "reviewed": 50,
+    "positive": 50,
+    "negative": 0,
+    "inconclusive": 0,
+    "assessed": 50,
+    "all_items_assessed": true,
+    "reviewer_kinds": {
+      "human": 50
+    },
+    "human_approved": 0,
+    "binary_verdicts_recorded": 50,
+    "available_sample_human_review_complete": true,
+    "independent_human_audit_complete": true,
+    "complete": true,
+    "precision": 1.0,
+    "false_positive_rate": null,
+    "scope": "Conclusive cases in frozen proposal sample; reviewer attribution is preserved. AI review is not independent human sign-off.",
+    "conclusive_precision": 1.0,
+    "threshold": [
+      0.98
+    ],
+    "sampling": "Retained identical raw pairs from the earlier human audit plus seeded additional current proposals; development/convenience sample, not independent population precision."
+  }
+}

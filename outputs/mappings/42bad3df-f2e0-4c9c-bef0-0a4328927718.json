@@ -1,0 +1,85 @@
+{
+  "entity_role": "supplier",
+  "parser": {
+    "format": "json",
+    "record_path": "result.records",
+    "encoding": "utf-8-sig"
+  },
+  "observed_at_field": null,
+  "mappings": [
+    {
+      "source_field": "Customer Name",
+      "canonical_field": "entity.legal_name",
+      "transforms": [
+        "strip"
+      ],
+      "confidence": 0.8,
+      "rationale": "Retained. Held-out validation shows 4534/4534 emissions with 0 errors. Sample values include individual names (e.g. 'Paul Robert Purtle') alongside company names, so legal-name semantics are weak for individual/sole-trader rows; confidence kept at the 0.8 policy floor with explicit review flag."
+    },
+    {
+      "source_field": "Business Number",
+      "canonical_field": "entity.acn",
+      "transforms": [
+        "strip",
+        {
+          "op": "regex",
+          "pattern": "ACN:?\\s*(\\d{9})",
+          "group": 1
+        },
+        "acn"
+      ],
+      "confidence": 0.85,
+      "rationale": "Retained the single-ACN extraction. Held-out errors (170) are all engine refusals for ambiguous or non-ACN rows, which is the safe outcome. The pattern is tightened to an optional colon to match the 'ACN ACN:606489785' style, but that row contains two ACN labels and will still be refused by the one-match rule. ABN-labelled rows and 'ARBN' rows are not extracted as ACN, since the pattern requires the literal 'ACN' label followed by 9 digits; 'ARBN' does not match because 'ACN' is not a substring boundary-preceded match problem only if preceded by letters, so review is needed (see risks). 19 invalid-checksum refusals are also safe.",
+      "changes_note": "see changes"
+    }
+  ],
+  "unmapped_fields": [
+    {
+      "source_field": "Entity Type",
+      "reason": "Free-text values such as 'Corporation (Company)', 'An individual or Sole trader', and 'Local Government Authority' lack a reviewed enum map; not guessed."
+    },
+    {
+      "source_field": "Location",
+      "reason": "Combined suburb/state/postcode string describes operating location, not the registered business address."
+    },
+    {
+      "source_field": "RSO Number",
+      "reason": "Register-internal reference number (including 'RSO' prefixed values); numeric values sometimes pass ACN checksum, so mapping as ACN would be unsafe."
+    },
+    {
+      "source_field": "Registration Date",
+      "reason": "Date of suitable operator registration, not verified as entity date_registered."
+    },
+    {
+      "source_field": "Registration Status",
+      "reason": "Refers to the suitable operator register status, not the entity corporate status."
+    },
+    {
+      "source_field": "_id",
+      "reason": "Internal row sequence identifier; used only for source_record_id construction."
+    }
+  ],
+  "minimum_field_confidence": 0.8,
+  "warnings": [
+    "observed_at_field is null: only a resource last-modified proxy is available; registration dates are not statement times.",
+    "Business Number column is predominantly ACN-labelled. Labelled ABN matches (102 in held-out, 100 valid) are not mapped to entity.abn because the ABN labels in this column are not verified as supplier-attributed identifiers at scale; review before adding.",
+    "Customer Name may include individuals or sole traders; legal_name assumption flagged.",
+    "Source reliability is an uncalibrated prior and is not used for mapping confidence.",
+    "Held-out ACN checksum failures (19) and ambiguous compound rows (151) are refused by the engine as designed."
+  ],
+  "warnings_added": [],
+  "source_id": "42bad3df-f2e0-4c9c-bef0-0a4328927718",
+  "ontology_sha256": "f4b6b4941ec61dcc3fb07c6ee19edab927862aaaa8ae3df30b3023e047c9f9cd",
+  "generated_by": {
+    "kind": "multi_step_runtime_agent",
+    "model": "claude-haiku-5-5",
+    "run_identity": "f46ee217c5805947a01e1050b4b7be74a64923c5c260f0e4b68d83491106d794"
+  },
+  "review": {
+    "status": "approved",
+    "reviewer": "User",
+    "notes": "User: I have reviewed all v2 and approve for it. Approval of the current v2 submission, recorded from conversation.",
+    "reviewed_at": "2026-10-21T10:10:26.132867+00:00",
+    "approved_config_sha256": "7838252c91a03f6146a9078a4a58a3dc9cabb088dd6e71763d9d9d8d45c0bdb7"
+  }
+}

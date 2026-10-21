@@ -1,0 +1,105 @@
+{
+  "parser": {
+    "format": "json",
+    "record_path": "result.records",
+    "encoding": "utf-8-sig"
+  },
+  "observed_at_field": null,
+  "mappings": [
+    {
+      "source_field": "Licensee Name",
+      "canonical_field": "entity.legal_name",
+      "transforms": [
+        "strip"
+      ],
+      "confidence": 0.6,
+      "rationale": "Source is a QBCC licensee name. Mixed individuals and companies (e.g. 'RAMS PLUMBING & GAS PTY LTD' vs 'BRENT STEPHEN ABBOTT'). Only the company rows look like registered organisation names; individual rows are personal names and are not business legal names. Assumption that this column is the registered name is not verified by source context. Confidence kept below threshold, so it should be rejected at the 0.8 minimum unless split by Licence Type DESC is introduced later.",
+      "separate_entities": false
+    },
+    {
+      "source_field": "ACN",
+      "canonical_field": "entity.acn",
+      "transforms": [
+        "strip",
+        "digits",
+        "acn"
+      ],
+      "confidence": 0.95,
+      "rationale": "Column labelled ACN; training sample shows 1658 of 1667 nonempty values pass ACN checksum and 0 pass ABN checksum, so it is consistently an ACN. Formatted with spaces; digits then acn validates checksum."
+    },
+    {
+      "source_field": "ABN",
+      "canonical_field": "entity.abn",
+      "transforms": [
+        "strip",
+        "digits",
+        "abn"
+      ],
+      "confidence": 0.95,
+      "rationale": "Column labelled ABN; training shows 3851 of 3886 nonempty values pass ABN checksum and 0 pass ACN checksum. Single-value cell per row, so no multi-ABN splitting required. Formatted with spaces; digits then abn validates checksum."
+    },
+    {
+      "source_field": "Licensee Business Address",
+      "canonical_field": "address.full",
+      "transforms": [
+        "strip"
+      ],
+      "confidence": 0.85,
+      "rationale": "Labelled business address, free text, single address per row. Maps to address.full. Locality, state and postcode are embedded in the string and are not separated here, so they are left to address.full only."
+    }
+  ],
+  "unmapped_fields": [
+    {
+      "source_field": "_id",
+      "reason": "Internal row identifier of the export; not a supplier identifier. Preserve as source_record_id candidate only, not an entity field."
+    },
+    {
+      "source_field": "id",
+      "reason": "Duplicate of _id; internal record key, not an entity field."
+    },
+    {
+      "source_field": "_full_text",
+      "reason": "Search index text artefact derived from other fields; not a source statement."
+    },
+    {
+      "source_field": "Licence Number",
+      "reason": "QBCC licence number is a licence identifier, not an ABN/ACN/NZBN; no ontology field exists for it."
+    },
+    {
+      "source_field": "Licence Type CODE",
+      "reason": "Licence type code (I/C); not entity_type. Mapping to entity_type would be a guess without an explicit enum map supported by source evidence."
+    },
+    {
+      "source_field": "Licence Type DESC",
+      "reason": "Values 'Individual' and 'Company' are close to entity_type but the source is a licence category, not a legal entity type. Left unmapped to avoid guessing entity_type; could be reviewed later with an explicit enum map."
+    },
+    {
+      "source_field": "Financial Category CODE",
+      "reason": "Regulatory financial category; not an ontology field."
+    },
+    {
+      "source_field": "Financial Category DESC",
+      "reason": "Regulatory financial category; not an ontology field."
+    },
+    {
+      "source_field": "Licence Grade",
+      "reason": "Licence grade/role; not an entity field."
+    },
+    {
+      "source_field": "Licence Class Type",
+      "reason": "Licence class/trade; industry_code is ANZSIC where available and this is not ANZSIC, so not mapped."
+    }
+  ],
+  "minimum_field_confidence": 0.8,
+  "warnings": [
+    "observed_at_field is null: the only time is resource_last_modified_proxy, a publication proxy, not a verified record statement time. Do not use as observed_at.",
+    "Licensee Name mixes individuals (personal names) and companies; legal_name assumption is weak. Confidence 0.6 is below the 0.8 minimum, so this mapping should be rejected under the threshold. Do not infer entity_type from name form.",
+    "Licensee Business Address is a compound free-text string; state, postcode and locality are not separated, so only address.full is mapped. Address may be a business address for individuals; do not treat as a registered address without review.",
+    "Snapshot is a current-state register but the description mentions suspended and cancelled event lists; no status field is mapped, so status must remain unknown.",
+    "No website, NZBN, trading name, date_registered or industry_code fields exist in the sample; none mapped.",
+    "ABN and ACN values are present in training as formatted strings with spaces; checksum validation is expected to reject invalid values. ACN must not be inferred from ABN.",
+    "Ingest-time records are sampled (json_sample); mapping is based on a 7000-row training description and 3 sample rows, so full-file behaviour is not verified.",
+    "source_reliability 0.8 is an uncalibrated prior and is not used as mapping confidence."
+  ],
+  "entity_role": "supplier"
+}

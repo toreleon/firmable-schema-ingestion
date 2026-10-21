@@ -1,0 +1,422 @@
+{
+  "source": {
+    "source_id": "73b67e91-d9bf-4471-80c3-a62d5afaee2a",
+    "dataset_id": "73b67e91-d9bf-4471-80c3-a62d5afaee2a",
+    "title": "P&SCO Contract Disclosure Report",
+    "resource_id": "99e547e1-1def-473e-8514-76f625ebf30d",
+    "resource_url": "https://www.data.qld.gov.au/datastore/dump/99e547e1-1def-473e-8514-76f625ebf30d?format=csv",
+    "original_resource_url": "https://www.data.qld.gov.au/dataset/73b67e91-d9bf-4471-80c3-a62d5afaee2a/resource/99e547e1-1def-473e-8514-76f625ebf30d/download/psco-portfolio-contract-disclosure-report-2023-24-contractors.csv",
+    "acquisition_representation": "csv",
+    "original_format": "CSV",
+    "resource_sha256": "d54cd97404d1433f292ebc47cba771072b2fa778a8b7564c6d0776bc946bfa90",
+    "local_path": "data/raw/73b67e91-d9bf-4471-80c3-a62d5afaee2a",
+    "downloaded_at": "2026-10-21T07:50:10.273222+00:00",
+    "observed_at": "2024-06-30T23:59:54.469475",
+    "observed_at_basis": "resource_last_modified_proxy",
+    "licence": "Creative Commons Attribution 4.0",
+    "licence_url": "https://creativecommons.org/licenses/by/4.0/",
+    "publisher": "Queensland Health",
+    "source_reliability": 0.8,
+    "source_reliability_basis": "Uncalibrated government-source prior; uniform, not claimed measured",
+    "description": "Register containing current contracts valued at over $10,000 within the P&SCO Portfolio",
+    "temporal_warning": "Resource/catalogue modification time is a publication proxy, not a verified record statement time",
+    "licence_warning": false,
+    "snapshot_path": "data/snapshots/73b67e91-d9bf-4471-80c3-a62d5afaee2a.gz"
+  },
+  "config": {
+    "parser": {
+      "format": "csv",
+      "delimiter": ",",
+      "header_row": 1,
+      "encoding": "utf-8-sig"
+    },
+    "observed_at_field": null,
+    "mappings": [
+      {
+        "source_field": "Supplier ABN",
+        "canonical_field": "entity.abn",
+        "transforms": [
+          "abn"
+        ],
+        "confidence": 0.9,
+        "rationale": "Column explicitly labelled as the supplier's ABN; 11-digit values in training and held-out samples; abn transform normalizes spaces and enforces checksum. Row-level supplier identifier, not buyer/agency. Held-out execution emitted 14 entity.abn observations with zero errors. Redundant 'strip' removed since abn already normalizes."
+      },
+      {
+        "source_field": "Supplier address",
+        "canonical_field": "address.full",
+        "transforms": [
+          "strip"
+        ],
+        "confidence": 0.9,
+        "rationale": "Labelled supplier address, single-line; not the agency address. Held-out execution emitted 14 address.full observations. Retained as-is. Some values lack postcode/state (e.g. 'L8, 127 Creek Street, Brisbane QLD'), so no derived state/postcode are mapped."
+      }
+    ],
+    "unmapped_fields": [
+      {
+        "source_field": "Supplier name",
+        "reason": "Business supplier name; source does not establish it as the registered legal name or a trading name. Previous confidence 0.5 is below the 0.8 threshold. Left unmapped pending a registered-name source (e.g. ABR lookup) to avoid mislabelling as legal_name."
+      },
+      {
+        "source_field": "_id",
+        "reason": "Row index, not an entity attribute."
+      },
+      {
+        "source_field": "Agency (Dept or Stat Body)",
+        "reason": "Buyer/agency identifier; must not be mapped as supplier identity."
+      },
+      {
+        "source_field": "Agency address",
+        "reason": "Buyer/agency address; must not be mapped to supplier address."
+      },
+      {
+        "source_field": "Award contract date",
+        "reason": "Contract award date; not a registration or observation date."
+      },
+      {
+        "source_field": "Commence date",
+        "reason": "Contract commencement date; not entity date_registered."
+      },
+      {
+        "source_field": "Finish date",
+        "reason": "Contract finish date; not an entity attribute."
+      },
+      {
+        "source_field": "Contract value",
+        "reason": "Contract value; not an entity or address attribute."
+      },
+      {
+        "source_field": "Contract description/name",
+        "reason": "Contract description, not entity industry_code or trading name."
+      },
+      {
+        "source_field": "Contract reference number",
+        "reason": "Contract identifier, not an entity identifier."
+      },
+      {
+        "source_field": "Parent contract number/SOA",
+        "reason": "Contract/SOA identifier, not an entity identifier."
+      },
+      {
+        "source_field": "Description",
+        "reason": "Empty in samples; no defined entity meaning."
+      },
+      {
+        "source_field": "Contract category group",
+        "reason": "Contract classification, not ANZSIC industry_code; empty in samples."
+      },
+      {
+        "source_field": "Contract milestones",
+        "reason": "Contract attribute; empty in samples."
+      },
+      {
+        "source_field": "Contract performance management",
+        "reason": "Contract attribute; empty in samples."
+      },
+      {
+        "source_field": "Deliverables",
+        "reason": "Contract attribute; empty in samples."
+      },
+      {
+        "source_field": "Evaluation criteria and weightings",
+        "reason": "Procurement attribute; empty in samples."
+      },
+      {
+        "source_field": "Form of contract",
+        "reason": "Procurement attribute; empty in samples."
+      },
+      {
+        "source_field": "Number of offers sought",
+        "reason": "Procurement attribute; empty in samples."
+      },
+      {
+        "source_field": "Procurement method",
+        "reason": "Procurement attribute; not entity status or type."
+      },
+      {
+        "source_field": "Reason for use of limited tendering",
+        "reason": "Procurement attribute; empty in samples."
+      },
+      {
+        "source_field": "Specific confidentiality provision used",
+        "reason": "Contract attribute, not entity status."
+      },
+      {
+        "source_field": "Variation to contract (Yes/No)",
+        "reason": "Contract attribute, not entity status."
+      },
+      {
+        "source_field": "Variation comments",
+        "reason": "Contract free text about variation; not a trading name."
+      }
+    ],
+    "minimum_field_confidence": 0.8,
+    "warnings": [
+      "observed_at_field is null: the only time is a resource_last_modified_proxy publication proxy, not a verified statement time.",
+      "Supplier rows repeat the same ABN across multiple contracts; deduplicate by source_record_id and do not treat repeats as distinct entities.",
+      "Supplier address lacks structured state/postcode in some rows; no derived state, postcode or country are emitted.",
+      "Address country default AU is not applied at ingest.",
+      "ACN is not inferred from ABN.",
+      "Licence is CC BY 4.0 per source metadata; licence_warning is false."
+    ],
+    "entity_role": "supplier",
+    "source_id": "73b67e91-d9bf-4471-80c3-a62d5afaee2a",
+    "ontology_sha256": "f4b6b4941ec61dcc3fb07c6ee19edab927862aaaa8ae3df30b3023e047c9f9cd",
+    "generated_by": {
+      "kind": "multi_step_runtime_agent",
+      "model": "claude-haiku-5-5",
+      "run_identity": "6b060410d8aa4c6183d695f99f52ada23abf333d26edeaeaa1567c554f25209d"
+    },
+    "review": {
+      "status": "pending",
+      "reviewer": null,
+      "approved_config_sha256": null
+    }
+  },
+  "validation": {
+    "records": 44,
+    "observation_count": 88,
+    "emitted_by_field": {
+      "entity.abn": 44,
+      "address.full": 44
+    },
+    "error_count": 0,
+    "errors": [],
+    "error_reasons": {},
+    "example_observations": [
+      {
+        "source_id": "73b67e91-d9bf-4471-80c3-a62d5afaee2a",
+        "source_record_id": "d54cd97404d1433f:1:20cc5f5995335cee",
+        "observed_at": "2024-06-30T23:59:54.469475",
+        "ingested_at": "2026-10-21T07:50:10.273222+00:00",
+        "licence": "Creative Commons Attribution 4.0",
+        "extractor_version": "0.1.0:dcfc69d9ca871b442214449f824d0ae123f123c929dbc8639c70e9f225abae74",
+        "observed_at_basis": "resource_last_modified_proxy",
+        "provenance": {
+          "resource_url": "https://www.data.qld.gov.au/datastore/dump/99e547e1-1def-473e-8514-76f625ebf30d?format=csv",
+          "resource_sha256": "d54cd97404d1433f292ebc47cba771072b2fa778a8b7564c6d0776bc946bfa90",
+          "raw_record_sha256": "20cc5f5995335cee308fe1a26a8de4240bb886db65b053c33b1e29a411fa2575",
+          "row_number": 1,
+          "config_sha256": "dcfc69d9ca871b442214449f824d0ae123f123c929dbc8639c70e9f225abae74",
+          "source_field": "Supplier ABN"
+        },
+        "canonical_field": "entity.abn",
+        "entity": {
+          "abn": "42072957923"
+        },
+        "raw_value": "42072957923",
+        "confidence": {
+          "source_reliability": 0.8,
+          "field_confidence": 0.9
+        },
+        "derivation_level": "L1",
+        "observation_id": "e1e0be87ecde982018e3c9e13da2fd9e708829717e9aa2c10ffa9b84b224bb74"
+      },
+      {
+        "source_id": "73b67e91-d9bf-4471-80c3-a62d5afaee2a",
+        "source_record_id": "d54cd97404d1433f:1:20cc5f5995335cee",
+        "observed_at": "2024-06-30T23:59:54.469475",
+        "ingested_at": "2026-10-21T07:50:10.273222+00:00",
+        "licence": "Creative Commons Attribution 4.0",
+        "extractor_version": "0.1.0:dcfc69d9ca871b442214449f824d0ae123f123c929dbc8639c70e9f225abae74",
+        "observed_at_basis": "resource_last_modified_proxy",
+        "provenance": {
+          "resource_url": "https://www.data.qld.gov.au/datastore/dump/99e547e1-1def-473e-8514-76f625ebf30d?format=csv",
+          "resource_sha256": "d54cd97404d1433f292ebc47cba771072b2fa778a8b7564c6d0776bc946bfa90",
+          "raw_record_sha256": "20cc5f5995335cee308fe1a26a8de4240bb886db65b053c33b1e29a411fa2575",
+          "row_number": 1,
+          "config_sha256": "dcfc69d9ca871b442214449f824d0ae123f123c929dbc8639c70e9f225abae74",
+          "source_field": "Supplier address"
+        },
+        "canonical_field": "address.full",
+        "address": {
+          "full": "L9, 10 Market Street, Brisbane QLD 4000"
+        },
+        "raw_value": "L9, 10 Market Street, Brisbane QLD 4000",
+        "confidence": {
+          "source_reliability": 0.8,
+          "field_confidence": 0.9
+        },
+        "derivation_level": "L1",
+        "observation_id": "d572433c69bad1fe3cc6742f73b8335f9efc38a5db764e09b96d6ab4bf12b2dd"
+      },
+      {
+        "source_id": "73b67e91-d9bf-4471-80c3-a62d5afaee2a",
+        "source_record_id": "d54cd97404d1433f:2:f11bd612fd1ffdc6",
+        "observed_at": "2024-06-30T23:59:54.469475",
+        "ingested_at": "2026-10-21T07:50:10.273222+00:00",
+        "licence": "Creative Commons Attribution 4.0",
+        "extractor_version": "0.1.0:dcfc69d9ca871b442214449f824d0ae123f123c929dbc8639c70e9f225abae74",
+        "observed_at_basis": "resource_last_modified_proxy",
+        "provenance": {
+          "resource_url": "https://www.data.qld.gov.au/datastore/dump/99e547e1-1def-473e-8514-76f625ebf30d?format=csv",
+          "resource_sha256": "d54cd97404d1433f292ebc47cba771072b2fa778a8b7564c6d0776bc946bfa90",
+          "raw_record_sha256": "f11bd612fd1ffdc66d1103dcfaf184f3739ff16798c3f35cdb888bc4815bba89",
+          "row_number": 2,
+          "config_sha256": "dcfc69d9ca871b442214449f824d0ae123f123c929dbc8639c70e9f225abae74",
+          "source_field": "Supplier ABN"
+        },
+        "canonical_field": "entity.abn",
+        "entity": {
+          "abn": "42072957923"
+        },
+        "raw_value": "42072957923",
+        "confidence": {
+          "source_reliability": 0.8,
+          "field_confidence": 0.9
+        },
+        "derivation_level": "L1",
+        "observation_id": "3fe02817fb599fae0c305376bdc6d11ae24ca3563d45fc511519c0866118dcaa"
+      },
+      {
+        "source_id": "73b67e91-d9bf-4471-80c3-a62d5afaee2a",
+        "source_record_id": "d54cd97404d1433f:2:f11bd612fd1ffdc6",
+        "observed_at": "2024-06-30T23:59:54.469475",
+        "ingested_at": "2026-10-21T07:50:10.273222+00:00",
+        "licence": "Creative Commons Attribution 4.0",
+        "extractor_version": "0.1.0:dcfc69d9ca871b442214449f824d0ae123f123c929dbc8639c70e9f225abae74",
+        "observed_at_basis": "resource_last_modified_proxy",
+        "provenance": {
+          "resource_url": "https://www.data.qld.gov.au/datastore/dump/99e547e1-1def-473e-8514-76f625ebf30d?format=csv",
+          "resource_sha256": "d54cd97404d1433f292ebc47cba771072b2fa778a8b7564c6d0776bc946bfa90",
+          "raw_record_sha256": "f11bd612fd1ffdc66d1103dcfaf184f3739ff16798c3f35cdb888bc4815bba89",
+          "row_number": 2,
+          "config_sha256": "dcfc69d9ca871b442214449f824d0ae123f123c929dbc8639c70e9f225abae74",
+          "source_field": "Supplier address"
+        },
+        "canonical_field": "address.full",
+        "address": {
+          "full": "L9, 10 Market Street, Brisbane QLD 4000"
+        },
+        "raw_value": "L9, 10 Market Street, Brisbane QLD 4000",
+        "confidence": {
+          "source_reliability": 0.8,
+          "field_confidence": 0.9
+        },
+        "derivation_level": "L1",
+        "observation_id": "e2db74be8b997a7fef145f19db1036ba6e24563c48ee254d768c4d39960cb734"
+      },
+      {
+        "source_id": "73b67e91-d9bf-4471-80c3-a62d5afaee2a",
+        "source_record_id": "d54cd97404d1433f:3:ccc6f51c4eee177d",
+        "observed_at": "2024-06-30T23:59:54.469475",
+        "ingested_at": "2026-10-21T07:50:10.273222+00:00",
+        "licence": "Creative Commons Attribution 4.0",
+        "extractor_version": "0.1.0:dcfc69d9ca871b442214449f824d0ae123f123c929dbc8639c70e9f225abae74",
+        "observed_at_basis": "resource_last_modified_proxy",
+        "provenance": {
+          "resource_url": "https://www.data.qld.gov.au/datastore/dump/99e547e1-1def-473e-8514-76f625ebf30d?format=csv",
+          "resource_sha256": "d54cd97404d1433f292ebc47cba771072b2fa778a8b7564c6d0776bc946bfa90",
+          "raw_record_sha256": "ccc6f51c4eee177d213ba40721af8b8b01c4758aad5cd7ff6d3226c588c3a76f",
+          "row_number": 3,
+          "config_sha256": "dcfc69d9ca871b442214449f824d0ae123f123c929dbc8639c70e9f225abae74",
+          "source_field": "Supplier ABN"
+        },
+        "canonical_field": "entity.abn",
+        "entity": {
+          "abn": "88060295356"
+        },
+        "raw_value": "88060295356",
+        "confidence": {
+          "source_reliability": 0.8,
+          "field_confidence": 0.9
+        },
+        "derivation_level": "L1",
+        "observation_id": "e781b2faedbff5956d4c398f57a9c0bdcf8740777d9f5416a382b140486e4c54"
+      },
+      {
+        "source_id": "73b67e91-d9bf-4471-80c3-a62d5afaee2a",
+        "source_record_id": "d54cd97404d1433f:3:ccc6f51c4eee177d",
+        "observed_at": "2024-06-30T23:59:54.469475",
+        "ingested_at": "2026-10-21T07:50:10.273222+00:00",
+        "licence": "Creative Commons Attribution 4.0",
+        "extractor_version": "0.1.0:dcfc69d9ca871b442214449f824d0ae123f123c929dbc8639c70e9f225abae74",
+        "observed_at_basis": "resource_last_modified_proxy",
+        "provenance": {
+          "resource_url": "https://www.data.qld.gov.au/datastore/dump/99e547e1-1def-473e-8514-76f625ebf30d?format=csv",
+          "resource_sha256": "d54cd97404d1433f292ebc47cba771072b2fa778a8b7564c6d0776bc946bfa90",
+          "raw_record_sha256": "ccc6f51c4eee177d213ba40721af8b8b01c4758aad5cd7ff6d3226c588c3a76f",
+          "row_number": 3,
+          "config_sha256": "dcfc69d9ca871b442214449f824d0ae123f123c929dbc8639c70e9f225abae74",
+          "source_field": "Supplier address"
+        },
+        "canonical_field": "address.full",
+        "address": {
+          "full": "L8, 127 Creek Street, Brisbane QLD"
+        },
+        "raw_value": "L8, 127 Creek Street, Brisbane QLD",
+        "confidence": {
+          "source_reliability": 0.8,
+          "field_confidence": 0.9
+        },
+        "derivation_level": "L1",
+        "observation_id": "2a846ab0a4ed2d04376a7e72e06cb79f3bb4a5339075081153513ea733161d2c"
+      },
+      {
+        "source_id": "73b67e91-d9bf-4471-80c3-a62d5afaee2a",
+        "source_record_id": "d54cd97404d1433f:4:e7f4090424000d24",
+        "observed_at": "2024-06-30T23:59:54.469475",
+        "ingested_at": "2026-10-21T07:50:10.273222+00:00",
+        "licence": "Creative Commons Attribution 4.0",
+        "extractor_version": "0.1.0:dcfc69d9ca871b442214449f824d0ae123f123c929dbc8639c70e9f225abae74",
+        "observed_at_basis": "resource_last_modified_proxy",
+        "provenance": {
+          "resource_url": "https://www.data.qld.gov.au/datastore/dump/99e547e1-1def-473e-8514-76f625ebf30d?format=csv",
+          "resource_sha256": "d54cd97404d1433f292ebc47cba771072b2fa778a8b7564c6d0776bc946bfa90",
+          "raw_record_sha256": "e7f4090424000d24858e90ef42210031f6f8c2617b7445a71a0d4de3495116cc",
+          "row_number": 4,
+          "config_sha256": "dcfc69d9ca871b442214449f824d0ae123f123c929dbc8639c70e9f225abae74",
+          "source_field": "Supplier ABN"
+        },
+        "canonical_field": "entity.abn",
+        "entity": {
+          "abn": "92122998743"
+        },
+        "raw_value": "92122998743",
+        "confidence": {
+          "source_reliability": 0.8,
+          "field_confidence": 0.9
+        },
+        "derivation_level": "L1",
+        "observation_id": "e41df7f98a6e15171d1d87d4a75036cf4a68eccacd6f63f2de5a8798b5b19ced"
+      },
+      {
+        "source_id": "73b67e91-d9bf-4471-80c3-a62d5afaee2a",
+        "source_record_id": "d54cd97404d1433f:4:e7f4090424000d24",
+        "observed_at": "2024-06-30T23:59:54.469475",
+        "ingested_at": "2026-10-21T07:50:10.273222+00:00",
+        "licence": "Creative Commons Attribution 4.0",
+        "extractor_version": "0.1.0:dcfc69d9ca871b442214449f824d0ae123f123c929dbc8639c70e9f225abae74",
+        "observed_at_basis": "resource_last_modified_proxy",
+        "provenance": {
+          "resource_url": "https://www.data.qld.gov.au/datastore/dump/99e547e1-1def-473e-8514-76f625ebf30d?format=csv",
+          "resource_sha256": "d54cd97404d1433f292ebc47cba771072b2fa778a8b7564c6d0776bc946bfa90",
+          "raw_record_sha256": "e7f4090424000d24858e90ef42210031f6f8c2617b7445a71a0d4de3495116cc",
+          "row_number": 4,
+          "config_sha256": "dcfc69d9ca871b442214449f824d0ae123f123c929dbc8639c70e9f225abae74",
+          "source_field": "Supplier address"
+        },
+        "canonical_field": "address.full",
+        "address": {
+          "full": "L43, 264-278 George Street, Sydney NSW 2000"
+        },
+        "raw_value": "L43, 264-278 George Street, Sydney NSW 2000",
+        "confidence": {
+          "source_reliability": 0.8,
+          "field_confidence": 0.9
+        },
+        "derivation_level": "L1",
+        "observation_id": "5b4870fd56ebc723bf135ebd87aff3917e7d0f98bf8909d90c6f80c6ec7d08df"
+      }
+    ],
+    "note": "Type/checksum validation does not prove semantic correctness; semantic review required."
+  },
+  "warnings": [
+    "Supplier name was mapped to entity.legal_name at 0.5 confidence; removed because a business name is not established as the registered legal name.",
+    "Supplier address is unparsed free text; state/postcode may be missing or inconsistently cased (e.g. 'Brisbane Qld 4000').",
+    "observed_at is a resource_last_modified publication proxy, not a verified statement date.",
+    "ABN checksum validates format only, not that the ABN belongs to the named supplier or that the supplier is active.",
+    "Held-out sample covers 14 records from one agency; multi-supplier or compound identifiers are untested."
+  ],
+  "draft": true,
+  "review_instructions": "Inspect roles, source evidence, temporal proxy, field coverage, unmapped fields and samples. Approve the exact config hash or reject with reason."
+}

@@ -1,0 +1,28 @@
+{
+  "dataset_id": "14dcf3cf-87a4-4943-a815-8e749b3531f2",
+  "title": "P&SCO Projects, SCB Contract Disclosure Report 2025-26 Q3 Jan-March26",
+  "findings": [
+    {
+      "url": "https://www.data.qld.gov.au/dataset/14dcf3cf-87a4-4943-a815-8e749b3531f2/resource/e311d6c4-049b-4301-8170-048ed63e8c09/download/2025-2026-scb-psco-projects-contract-disclosure-info-q3-jan-to-mar-26.csv",
+      "checked_at": "2026-10-21T10:35:30.324164+00:00",
+      "http_status": 202,
+      "content_type": "text/html; charset=UTF-8",
+      "bytes_sampled": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "sample": ""
+    },
+    {
+      "url": "https://www.data.qld.gov.au/datastore/dump/e311d6c4-049b-4301-8170-048ed63e8c09?format=csv",
+      "checked_at": "2026-10-21T10:35:30.519424+00:00",
+      "http_status": 200,
+      "content_type": "application/octet-stream",
+      "bytes_sampled": 73,
+      "sha256": "e782182bb1a0155e6c91cbc9fc8af924051f182286985435185907f23b2b7e30",
+      "sample": "_id,Mandatory Fields,Contracts over $500k only,Contracts over $10m only\r\n",
+      "csv_rows": 0,
+      "csv_first_rows": []
+    }
+  ],
+  "verdict": null,
+  "review_note": "Retrieval evidence only; existing inconclusive human verdict is retained."
+}

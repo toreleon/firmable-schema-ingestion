@@ -1,0 +1,383 @@
+{
+  "records": 10000,
+  "observation_count": 16654,
+  "emitted_by_field": {
+    "address.full": 10000,
+    "entity.abn": 5551,
+    "entity.acn": 1103
+  },
+  "error_count": 72,
+  "errors": [
+    {
+      "source_record_id": "12eddbc982d4397d:334:7fd4a6df68afea21",
+      "source_field": "ACN",
+      "canonical_field": "entity.acn",
+      "raw_value": "633 596 696",
+      "reason": "Invalid ACN checksum"
+    },
+    {
+      "source_record_id": "12eddbc982d4397d:335:455f5c150659c550",
+      "source_field": "ACN",
+      "canonical_field": "entity.acn",
+      "raw_value": "633 596 696",
+      "reason": "Invalid ACN checksum"
+    },
+    {
+      "source_record_id": "12eddbc982d4397d:338:d25ae07c361c7554",
+      "source_field": "ABN",
+      "canonical_field": "entity.abn",
+      "raw_value": "92 839 560 926",
+      "reason": "Invalid ABN checksum"
+    },
+    {
+      "source_record_id": "12eddbc982d4397d:382:25b1ebe85efc3c68",
+      "source_field": "ACN",
+      "canonical_field": "entity.acn",
+      "raw_value": "634 403 891",
+      "reason": "Invalid ACN checksum"
+    },
+    {
+      "source_record_id": "12eddbc982d4397d:872:e60811bd0e2caafe",
+      "source_field": "ABN",
+      "canonical_field": "entity.abn",
+      "raw_value": "79 894 597 045",
+      "reason": "Invalid ABN checksum"
+    },
+    {
+      "source_record_id": "12eddbc982d4397d:1455:86eb3a80d41effaf",
+      "source_field": "ABN",
+      "canonical_field": "entity.abn",
+      "raw_value": "84 101 835 364",
+      "reason": "Invalid ABN checksum"
+    },
+    {
+      "source_record_id": "12eddbc982d4397d:1492:0297c8c0537a915e",
+      "source_field": "ABN",
+      "canonical_field": "entity.abn",
+      "raw_value": "45 779 036 042",
+      "reason": "Invalid ABN checksum"
+    },
+    {
+      "source_record_id": "12eddbc982d4397d:1493:910d61183b71bd1e",
+      "source_field": "ABN",
+      "canonical_field": "entity.abn",
+      "raw_value": "45 779 036 042",
+      "reason": "Invalid ABN checksum"
+    },
+    {
+      "source_record_id": "12eddbc982d4397d:1494:880776206937ed0c",
+      "source_field": "ABN",
+      "canonical_field": "entity.abn",
+      "raw_value": "45 779 036 042",
+      "reason": "Invalid ABN checksum"
+    },
+    {
+      "source_record_id": "12eddbc982d4397d:1598:95c16021ad57d294",
+      "source_field": "ABN",
+      "canonical_field": "entity.abn",
+      "raw_value": "21 160 981 920",
+      "reason": "Invalid ABN checksum"
+    },
+    {
+      "source_record_id": "12eddbc982d4397d:1599:15e8fa1d0faf0196",
+      "source_field": "ABN",
+      "canonical_field": "entity.abn",
+      "raw_value": "21 160 981 920",
+      "reason": "Invalid ABN checksum"
+    },
+    {
+      "source_record_id": "12eddbc982d4397d:1600:d42c162cdd3503b8",
+      "source_field": "ABN",
+      "canonical_field": "entity.abn",
+      "raw_value": "21 160 981 920",
+      "reason": "Invalid ABN checksum"
+    },
+    {
+      "source_record_id": "12eddbc982d4397d:1923:4e3eac6c7d9573bd",
+      "source_field": "ABN",
+      "canonical_field": "entity.abn",
+      "raw_value": "42 734 148 053",
+      "reason": "Invalid ABN checksum"
+    },
+    {
+      "source_record_id": "12eddbc982d4397d:1924:27fe1cb8223cd353",
+      "source_field": "ABN",
+      "canonical_field": "entity.abn",
+      "raw_value": "42 734 148 053",
+      "reason": "Invalid ABN checksum"
+    },
+    {
+      "source_record_id": "12eddbc982d4397d:1925:4dcdfd51d824f9fb",
+      "source_field": "ABN",
+      "canonical_field": "entity.abn",
+      "raw_value": "42 734 148 053",
+      "reason": "Invalid ABN checksum"
+    },
+    {
+      "source_record_id": "12eddbc982d4397d:1926:310d3069071bd894",
+      "source_field": "ABN",
+      "canonical_field": "entity.abn",
+      "raw_value": "42 734 148 053",
+      "reason": "Invalid ABN checksum"
+    },
+    {
+      "source_record_id": "12eddbc982d4397d:1927:4055ba04b6895300",
+      "source_field": "ABN",
+      "canonical_field": "entity.abn",
+      "raw_value": "42 734 148 053",
+      "reason": "Invalid ABN checksum"
+    },
+    {
+      "source_record_id": "12eddbc982d4397d:1928:31d7ea2699e5e05b",
+      "source_field": "ABN",
+      "canonical_field": "entity.abn",
+      "raw_value": "42 734 148 053",
+      "reason": "Invalid ABN checksum"
+    },
+    {
+      "source_record_id": "12eddbc982d4397d:2657:20e41efd6ec8d499",
+      "source_field": "ACN",
+      "canonical_field": "entity.acn",
+      "raw_value": "974 536 684",
+      "reason": "Invalid ACN checksum"
+    },
+    {
+      "source_record_id": "12eddbc982d4397d:2658:41ca0847a7ca623b",
+      "source_field": "ACN",
+      "canonical_field": "entity.acn",
+      "raw_value": "974 536 684",
+      "reason": "Invalid ACN checksum"
+    }
+  ],
+  "error_reasons": {
+    "Invalid ACN checksum": 7,
+    "Invalid ABN checksum": 65
+  },
+  "example_observations": [
+    {
+      "source_id": "980b6499-c0b4-491b-ba9c-1c7506368a50",
+      "source_record_id": "12eddbc982d4397d:1:ff729e14c0633729",
+      "observed_at": "2026-10-20T21:00:25.932039",
+      "ingested_at": "2026-10-21T07:50:11.891811+00:00",
+      "licence": "Creative Commons Attribution 4.0",
+      "extractor_version": "0.1.0:5f94622e3ed40ea43643ddfb8d00520e07bfc422087e511d4f5e6abf78369572",
+      "observed_at_basis": "resource_last_modified_proxy",
+      "provenance": {
+        "resource_url": "https://www.data.qld.gov.au/api/3/action/datastore_search?resource_id=25608781-b28c-44f8-8545-0ab18d84082f&limit=10000&sort=_id+asc",
+        "resource_sha256": "12eddbc982d4397df36a2c469dc650bf4b054952f379891f39398a8964cf6e61",
+        "raw_record_sha256": "ff729e14c0633729ee132e8cb5a6834711410ec43af2c3be3b5bc33cc57b0e42",
+        "row_number": 1,
+        "config_sha256": "5f94622e3ed40ea43643ddfb8d00520e07bfc422087e511d4f5e6abf78369572",
+        "source_field": "Licensee Business Address"
+      },
+      "canonical_field": "address.full",
+      "address": {
+        "full": "4 CRESWICK CLOSE MANLY WEST QLD 4179"
+      },
+      "raw_value": "4 CRESWICK CLOSE MANLY WEST QLD 4179",
+      "confidence": {
+        "source_reliability": 0.8,
+        "field_confidence": 0.85
+      },
+      "derivation_level": "L1",
+      "observation_id": "d0187a71b72e031b69bfaaa5eaeb45f6a510cfb8c445411f8abfe98642381a0c"
+    },
+    {
+      "source_id": "980b6499-c0b4-491b-ba9c-1c7506368a50",
+      "source_record_id": "12eddbc982d4397d:2:51dedf162d91ecb5",
+      "observed_at": "2026-10-20T21:00:25.932039",
+      "ingested_at": "2026-10-21T07:50:11.891811+00:00",
+      "licence": "Creative Commons Attribution 4.0",
+      "extractor_version": "0.1.0:5f94622e3ed40ea43643ddfb8d00520e07bfc422087e511d4f5e6abf78369572",
+      "observed_at_basis": "resource_last_modified_proxy",
+      "provenance": {
+        "resource_url": "https://www.data.qld.gov.au/api/3/action/datastore_search?resource_id=25608781-b28c-44f8-8545-0ab18d84082f&limit=10000&sort=_id+asc",
+        "resource_sha256": "12eddbc982d4397df36a2c469dc650bf4b054952f379891f39398a8964cf6e61",
+        "raw_record_sha256": "51dedf162d91ecb513108fc2b708b34b1e882ef3111487658ccc83bcf6d1ee8c",
+        "row_number": 2,
+        "config_sha256": "5f94622e3ed40ea43643ddfb8d00520e07bfc422087e511d4f5e6abf78369572",
+        "source_field": "Licensee Business Address"
+      },
+      "canonical_field": "address.full",
+      "address": {
+        "full": "4 CRESWICK CLOSE MANLY WEST QLD 4179"
+      },
+      "raw_value": "4 CRESWICK CLOSE MANLY WEST QLD 4179",
+      "confidence": {
+        "source_reliability": 0.8,
+        "field_confidence": 0.85
+      },
+      "derivation_level": "L1",
+      "observation_id": "fa3ce022b350408e4ed540f2374376510d111dfedebda74678cd6479a8c15526"
+    },
+    {
+      "source_id": "980b6499-c0b4-491b-ba9c-1c7506368a50",
+      "source_record_id": "12eddbc982d4397d:3:9e1b12733c302bfc",
+      "observed_at": "2026-10-20T21:00:25.932039",
+      "ingested_at": "2026-10-21T07:50:11.891811+00:00",
+      "licence": "Creative Commons Attribution 4.0",
+      "extractor_version": "0.1.0:5f94622e3ed40ea43643ddfb8d00520e07bfc422087e511d4f5e6abf78369572",
+      "observed_at_basis": "resource_last_modified_proxy",
+      "provenance": {
+        "resource_url": "https://www.data.qld.gov.au/api/3/action/datastore_search?resource_id=25608781-b28c-44f8-8545-0ab18d84082f&limit=10000&sort=_id+asc",
+        "resource_sha256": "12eddbc982d4397df36a2c469dc650bf4b054952f379891f39398a8964cf6e61",
+        "raw_record_sha256": "9e1b12733c302bfcfd9ece067bb1a54ca2796db557e768ea3de8b4dd39763c46",
+        "row_number": 3,
+        "config_sha256": "5f94622e3ed40ea43643ddfb8d00520e07bfc422087e511d4f5e6abf78369572",
+        "source_field": "Licensee Business Address"
+      },
+      "canonical_field": "address.full",
+      "address": {
+        "full": "4 CRESWICK CLOSE MANLY WEST QLD 4179"
+      },
+      "raw_value": "4 CRESWICK CLOSE MANLY WEST QLD 4179",
+      "confidence": {
+        "source_reliability": 0.8,
+        "field_confidence": 0.85
+      },
+      "derivation_level": "L1",
+      "observation_id": "d20f9a55e894220b1010b736738ee99481ca0a9f810ded90e45ef9df50015b43"
+    },
+    {
+      "source_id": "980b6499-c0b4-491b-ba9c-1c7506368a50",
+      "source_record_id": "12eddbc982d4397d:4:1806b926ddfd1a43",
+      "observed_at": "2026-10-20T21:00:25.932039",
+      "ingested_at": "2026-10-21T07:50:11.891811+00:00",
+      "licence": "Creative Commons Attribution 4.0",
+      "extractor_version": "0.1.0:5f94622e3ed40ea43643ddfb8d00520e07bfc422087e511d4f5e6abf78369572",
+      "observed_at_basis": "resource_last_modified_proxy",
+      "provenance": {
+        "resource_url": "https://www.data.qld.gov.au/api/3/action/datastore_search?resource_id=25608781-b28c-44f8-8545-0ab18d84082f&limit=10000&sort=_id+asc",
+        "resource_sha256": "12eddbc982d4397df36a2c469dc650bf4b054952f379891f39398a8964cf6e61",
+        "raw_record_sha256": "1806b926ddfd1a4364c49a8ff722a5f5b69f887bdc94c969f481d7cb95b77946",
+        "row_number": 4,
+        "config_sha256": "5f94622e3ed40ea43643ddfb8d00520e07bfc422087e511d4f5e6abf78369572",
+        "source_field": "Licensee Business Address"
+      },
+      "canonical_field": "address.full",
+      "address": {
+        "full": "2 ROBA PLACE ASHMORE QLD 4214"
+      },
+      "raw_value": "2 ROBA PLACE ASHMORE QLD 4214",
+      "confidence": {
+        "source_reliability": 0.8,
+        "field_confidence": 0.85
+      },
+      "derivation_level": "L1",
+      "observation_id": "84319949246e75a761165899cba979853cb6c307c32879f34f32aec9b5e73d92"
+    },
+    {
+      "source_id": "980b6499-c0b4-491b-ba9c-1c7506368a50",
+      "source_record_id": "12eddbc982d4397d:5:cac25418c716be28",
+      "observed_at": "2026-10-20T21:00:25.932039",
+      "ingested_at": "2026-10-21T07:50:11.891811+00:00",
+      "licence": "Creative Commons Attribution 4.0",
+      "extractor_version": "0.1.0:5f94622e3ed40ea43643ddfb8d00520e07bfc422087e511d4f5e6abf78369572",
+      "observed_at_basis": "resource_last_modified_proxy",
+      "provenance": {
+        "resource_url": "https://www.data.qld.gov.au/api/3/action/datastore_search?resource_id=25608781-b28c-44f8-8545-0ab18d84082f&limit=10000&sort=_id+asc",
+        "resource_sha256": "12eddbc982d4397df36a2c469dc650bf4b054952f379891f39398a8964cf6e61",
+        "raw_record_sha256": "cac25418c716be2854d87607edb57a6a0bddc2a1268c936d4e9d09c0b1c3901a",
+        "row_number": 5,
+        "config_sha256": "5f94622e3ed40ea43643ddfb8d00520e07bfc422087e511d4f5e6abf78369572",
+        "source_field": "ABN"
+      },
+      "canonical_field": "entity.abn",
+      "entity": {
+        "abn": "77341770421"
+      },
+      "raw_value": "77 341 770 421",
+      "confidence": {
+        "source_reliability": 0.8,
+        "field_confidence": 0.85
+      },
+      "derivation_level": "L1",
+      "observation_id": "3f81ce021607641a045a578961c44a8193230461e227d71015729c886a5051ce"
+    },
+    {
+      "source_id": "980b6499-c0b4-491b-ba9c-1c7506368a50",
+      "source_record_id": "12eddbc982d4397d:5:cac25418c716be28",
+      "observed_at": "2026-10-20T21:00:25.932039",
+      "ingested_at": "2026-10-21T07:50:11.891811+00:00",
+      "licence": "Creative Commons Attribution 4.0",
+      "extractor_version": "0.1.0:5f94622e3ed40ea43643ddfb8d00520e07bfc422087e511d4f5e6abf78369572",
+      "observed_at_basis": "resource_last_modified_proxy",
+      "provenance": {
+        "resource_url": "https://www.data.qld.gov.au/api/3/action/datastore_search?resource_id=25608781-b28c-44f8-8545-0ab18d84082f&limit=10000&sort=_id+asc",
+        "resource_sha256": "12eddbc982d4397df36a2c469dc650bf4b054952f379891f39398a8964cf6e61",
+        "raw_record_sha256": "cac25418c716be2854d87607edb57a6a0bddc2a1268c936d4e9d09c0b1c3901a",
+        "row_number": 5,
+        "config_sha256": "5f94622e3ed40ea43643ddfb8d00520e07bfc422087e511d4f5e6abf78369572",
+        "source_field": "Licensee Business Address"
+      },
+      "canonical_field": "address.full",
+      "address": {
+        "full": "12 Sunny St Palmview QLD 4553"
+      },
+      "raw_value": "12 Sunny St Palmview QLD 4553",
+      "confidence": {
+        "source_reliability": 0.8,
+        "field_confidence": 0.85
+      },
+      "derivation_level": "L1",
+      "observation_id": "a1fd906bf0910bcf4e34d5c0885bd27d32f5154eab7af37d1300a38152dedfd7"
+    },
+    {
+      "source_id": "980b6499-c0b4-491b-ba9c-1c7506368a50",
+      "source_record_id": "12eddbc982d4397d:6:4c9253f8c31b549d",
+      "observed_at": "2026-10-20T21:00:25.932039",
+      "ingested_at": "2026-10-21T07:50:11.891811+00:00",
+      "licence": "Creative Commons Attribution 4.0",
+      "extractor_version": "0.1.0:5f94622e3ed40ea43643ddfb8d00520e07bfc422087e511d4f5e6abf78369572",
+      "observed_at_basis": "resource_last_modified_proxy",
+      "provenance": {
+        "resource_url": "https://www.data.qld.gov.au/api/3/action/datastore_search?resource_id=25608781-b28c-44f8-8545-0ab18d84082f&limit=10000&sort=_id+asc",
+        "resource_sha256": "12eddbc982d4397df36a2c469dc650bf4b054952f379891f39398a8964cf6e61",
+        "raw_record_sha256": "4c9253f8c31b549d29264621058386c7189c24f95579f0aae56aad204795bae3",
+        "row_number": 6,
+        "config_sha256": "5f94622e3ed40ea43643ddfb8d00520e07bfc422087e511d4f5e6abf78369572",
+        "source_field": "Licensee Business Address"
+      },
+      "canonical_field": "address.full",
+      "address": {
+        "full": "11 Couldrey St Bardon QLD 4065"
+      },
+      "raw_value": "11 Couldrey St Bardon QLD 4065",
+      "confidence": {
+        "source_reliability": 0.8,
+        "field_confidence": 0.85
+      },
+      "derivation_level": "L1",
+      "observation_id": "3e77c26a48937a724b4ada532a54b9f475c99e4458223b2a49b7148a12e60bac"
+    },
+    {
+      "source_id": "980b6499-c0b4-491b-ba9c-1c7506368a50",
+      "source_record_id": "12eddbc982d4397d:7:51976bac8bf8e0bd",
+      "observed_at": "2026-10-20T21:00:25.932039",
+      "ingested_at": "2026-10-21T07:50:11.891811+00:00",
+      "licence": "Creative Commons Attribution 4.0",
+      "extractor_version": "0.1.0:5f94622e3ed40ea43643ddfb8d00520e07bfc422087e511d4f5e6abf78369572",
+      "observed_at_basis": "resource_last_modified_proxy",
+      "provenance": {
+        "resource_url": "https://www.data.qld.gov.au/api/3/action/datastore_search?resource_id=25608781-b28c-44f8-8545-0ab18d84082f&limit=10000&sort=_id+asc",
+        "resource_sha256": "12eddbc982d4397df36a2c469dc650bf4b054952f379891f39398a8964cf6e61",
+        "raw_record_sha256": "51976bac8bf8e0bd5ceda212a5e332b1badb26e59154cbbf104acf58cf6faec3",
+        "row_number": 7,
+        "config_sha256": "5f94622e3ed40ea43643ddfb8d00520e07bfc422087e511d4f5e6abf78369572",
+        "source_field": "ABN"
+      },
+      "canonical_field": "entity.abn",
+      "entity": {
+        "abn": "26025458538"
+      },
+      "raw_value": "26 025 458 538",
+      "confidence": {
+        "source_reliability": 0.8,
+        "field_confidence": 0.85
+      },
+      "derivation_level": "L1",
+      "observation_id": "7b9dcc635278aed5de9104a2ac76a5f3a54945c46848188878d31ea96319a306"
+    }
+  ],
+  "note": "Type/checksum validation does not prove semantic correctness; semantic review required."
+}

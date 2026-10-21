@@ -1,0 +1,219 @@
+{
+  "training": {
+    "record_count": 10577,
+    "fields": {
+      "Business Number": {
+        "nonempty": 5730,
+        "types": {
+          "str": 5730,
+          "NoneType": 4847
+        },
+        "examples": [
+          "ACN 090444714",
+          "ACN 600137942",
+          "ACN 688234362"
+        ],
+        "identifier_checks": {
+          "checksum_valid_abn": 0,
+          "checksum_valid_acn": 0,
+          "raw_check_scope": "The two raw counts require numeric-only cells. A zero does NOT invalidate prefixed/labelled identifiers.",
+          "labelled_abn_matches": 203,
+          "labelled_abn_checksum_valid": 199,
+          "labelled_acn_matches": 5461,
+          "labelled_acn_checksum_valid": 5404
+        }
+      },
+      "Customer Name": {
+        "nonempty": 10577,
+        "types": {
+          "str": 10577
+        },
+        "examples": [
+          "\"OVER THE TOP\" ROOF RESTORATIONS PTY. LTD",
+          "$Uccess Pty Ltd",
+          "111 TRADING GROUP PTY LTD"
+        ],
+        "identifier_checks": {
+          "checksum_valid_abn": 0,
+          "checksum_valid_acn": 0,
+          "raw_check_scope": "The two raw counts require numeric-only cells. A zero does NOT invalidate prefixed/labelled identifiers.",
+          "labelled_abn_matches": 1,
+          "labelled_abn_checksum_valid": 0,
+          "labelled_acn_matches": 6,
+          "labelled_acn_checksum_valid": 6
+        }
+      },
+      "Entity Type": {
+        "nonempty": 10577,
+        "types": {
+          "str": 10577
+        },
+        "examples": [
+          "Corporation (Company)",
+          "An individual or Sole trader",
+          "Incorporated Association"
+        ],
+        "identifier_checks": {
+          "checksum_valid_abn": 0,
+          "checksum_valid_acn": 0,
+          "raw_check_scope": "The two raw counts require numeric-only cells. A zero does NOT invalidate prefixed/labelled identifiers.",
+          "labelled_abn_matches": 0,
+          "labelled_abn_checksum_valid": 0,
+          "labelled_acn_matches": 0,
+          "labelled_acn_checksum_valid": 0
+        }
+      },
+      "Location": {
+        "nonempty": 10569,
+        "types": {
+          "str": 10569,
+          "NoneType": 8
+        },
+        "examples": [
+          "BIRTINYA, QLD, 4575",
+          "KELSO, QLD, 4815",
+          "ROCKLEA, QLD, 4106"
+        ],
+        "identifier_checks": {
+          "checksum_valid_abn": 0,
+          "checksum_valid_acn": 0,
+          "raw_check_scope": "The two raw counts require numeric-only cells. A zero does NOT invalidate prefixed/labelled identifiers.",
+          "labelled_abn_matches": 0,
+          "labelled_abn_checksum_valid": 0,
+          "labelled_acn_matches": 0,
+          "labelled_acn_checksum_valid": 0
+        }
+      },
+      "RSO Number": {
+        "nonempty": 10577,
+        "types": {
+          "str": 10577
+        },
+        "examples": [
+          "649054",
+          "735094",
+          "101064497"
+        ],
+        "identifier_checks": {
+          "checksum_valid_abn": 0,
+          "checksum_valid_acn": 233,
+          "raw_check_scope": "The two raw counts require numeric-only cells. A zero does NOT invalidate prefixed/labelled identifiers.",
+          "labelled_abn_matches": 0,
+          "labelled_abn_checksum_valid": 0,
+          "labelled_acn_matches": 0,
+          "labelled_acn_checksum_valid": 0
+        }
+      },
+      "Registration Date": {
+        "nonempty": 10577,
+        "types": {
+          "str": 10577
+        },
+        "examples": [
+          "2013-03-26 00:00:00",
+          "2014-12-18 00:00:00",
+          "2026-03-27 00:00:00"
+        ],
+        "identifier_checks": {
+          "checksum_valid_abn": 0,
+          "checksum_valid_acn": 0,
+          "raw_check_scope": "The two raw counts require numeric-only cells. A zero does NOT invalidate prefixed/labelled identifiers.",
+          "labelled_abn_matches": 0,
+          "labelled_abn_checksum_valid": 0,
+          "labelled_acn_matches": 0,
+          "labelled_acn_checksum_valid": 0
+        }
+      },
+      "Registration Status": {
+        "nonempty": 10577,
+        "types": {
+          "str": 10577
+        },
+        "examples": [
+          "Registered"
+        ],
+        "identifier_checks": {
+          "checksum_valid_abn": 0,
+          "checksum_valid_acn": 0,
+          "raw_check_scope": "The two raw counts require numeric-only cells. A zero does NOT invalidate prefixed/labelled identifiers.",
+          "labelled_abn_matches": 0,
+          "labelled_abn_checksum_valid": 0,
+          "labelled_acn_matches": 0,
+          "labelled_acn_checksum_valid": 0
+        }
+      },
+      "_id": {
+        "nonempty": 10577,
+        "types": {
+          "int": 10577
+        },
+        "examples": [
+          "1",
+          "2",
+          "3"
+        ],
+        "identifier_checks": {
+          "checksum_valid_abn": 0,
+          "checksum_valid_acn": 0,
+          "raw_check_scope": "The two raw counts require numeric-only cells. A zero does NOT invalidate prefixed/labelled identifiers.",
+          "labelled_abn_matches": 0,
+          "labelled_abn_checksum_valid": 0,
+          "labelled_acn_matches": 0,
+          "labelled_acn_checksum_valid": 0
+        }
+      }
+    },
+    "sample": [
+      {
+        "_id": 1,
+        "Entity Type": "Corporation (Company)",
+        "Customer Name": "\"OVER THE TOP\" ROOF RESTORATIONS PTY. LTD",
+        "Business Number": "ACN 090444714",
+        "Registration Date": "2013-03-26 00:00:00",
+        "RSO Number": "649054",
+        "Registration Status": "Registered",
+        "Location": "BIRTINYA, QLD, 4575"
+      },
+      {
+        "_id": 2,
+        "Entity Type": "Corporation (Company)",
+        "Customer Name": "$Uccess Pty Ltd",
+        "Business Number": "ACN 600137942",
+        "Registration Date": "2014-12-18 00:00:00",
+        "RSO Number": "735094",
+        "Registration Status": "Registered",
+        "Location": "KELSO, QLD, 4815"
+      },
+      {
+        "_id": 3,
+        "Entity Type": "Corporation (Company)",
+        "Customer Name": "111 TRADING GROUP PTY LTD",
+        "Business Number": "ACN 688234362",
+        "Registration Date": "2026-03-27 00:00:00",
+        "RSO Number": "101064497",
+        "Registration Status": "Registered",
+        "Location": "ROCKLEA, QLD, 4106"
+      },
+      {
+        "_id": 4,
+        "Entity Type": "Corporation (Company)",
+        "Customer Name": "1205 PTY LTD",
+        "Business Number": "ACN 669387562",
+        "Registration Date": "2024-10-15 00:00:00",
+        "RSO Number": "100740901",
+        "Registration Status": "Registered",
+        "Location": "ORMOND, VIC, 3204"
+      }
+    ]
+  },
+  "holdout_count": 4534,
+  "split": "first 70% training, final 30% holdout; document-head inspection only",
+  "training_rows": [
+    1,
+    10577
+  ],
+  "holdout_rows": [
+    10578,
+    15111
+  ]
+}

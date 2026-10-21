@@ -1,0 +1,34 @@
+{
+  "input_records": 46465,
+  "proposed_links": 136,
+  "linked_entities": 96,
+  "unlinked_records": 46418,
+  "unlinked_reasons": {
+    "no_checksum_valid_identifier_name_alone_insufficient": 21261,
+    "identifier_not_observed_in_another_source": 24972,
+    "no_remaining_link_after_review_quarantine": 3,
+    "record_quarantined_by_rejected_link_review": 6,
+    "no_fields_mapped_confidently_business_candidate_requires_review": 176
+  },
+  "threshold": 0.98,
+  "measured_precision": 0.94,
+  "precision_status": "Fixed proposal sample; preserve reviewer attribution; independent human sign-off pending",
+  "audit_sample_size": 50,
+  "audit_seed": 20261021,
+  "matcher_version": "exact-identifiers-v1",
+  "confidence_note": "Rule scores are not measured precision; do not claim 99.5% precision from the score.",
+  "review_application": {
+    "policy": "Quarantine both endpoints of rejected links and any explicit alias evidence that depends on them; no claim about which source is wrong.",
+    "evaluated_proposals": 136,
+    "evaluated_population_sha256": "e2e128afd3b841988c129b8b2eda63029f62102f4dd18cc0490aa14908993192",
+    "reviewed_false_links": 3,
+    "quarantined_records": 6,
+    "withheld_links": 7,
+    "profile_eligible_links": 129,
+    "profile_eligible_entities": 94,
+    "precision_note": "The review result belongs to the original frozen proposal sample. No precision claim is made for the filtered remainder."
+  },
+  "reviewer_kinds": {
+    "ai": 50
+  }
+}

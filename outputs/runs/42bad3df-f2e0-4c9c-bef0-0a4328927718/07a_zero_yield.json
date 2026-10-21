@@ -1,0 +1,48 @@
+{
+  "records": 15111,
+  "observation_count": 0,
+  "emitted_by_field": {},
+  "error_count": 0,
+  "errors": [],
+  "per_field_validation": [
+    {
+      "source_field": "Customer Name",
+      "canonical_field": "entity.legal_name",
+      "valid_emissions": 15111,
+      "errors": 0,
+      "error_examples": []
+    },
+    {
+      "source_field": "Location",
+      "canonical_field": "address.locality",
+      "valid_emissions": 15097,
+      "errors": 0,
+      "error_examples": []
+    },
+    {
+      "source_field": "Business Number",
+      "canonical_field": "entity.acn",
+      "valid_emissions": 0,
+      "errors": 8410,
+      "error_examples": [
+        {
+          "source_record_id": "dddeea919b69e858:1:ef0c377367dc8368",
+          "source_field": "Business Number",
+          "canonical_field": "entity.acn",
+          "raw_value": "ACN 090444714",
+          "reason": "Identifier contains non-numeric text"
+        },
+        {
+          "source_record_id": "dddeea919b69e858:2:eb261617459f5737",
+          "source_field": "Business Number",
+          "canonical_field": "entity.acn",
+          "raw_value": "ACN 600137942",
+          "reason": "Identifier contains non-numeric text"
+        }
+      ]
+    }
+  ],
+  "error_reasons": {},
+  "example_observations": [],
+  "note": "Type/checksum validation does not prove semantic correctness; semantic review required."
+}

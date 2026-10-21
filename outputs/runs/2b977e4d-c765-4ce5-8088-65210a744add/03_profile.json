@@ -1,0 +1,469 @@
+{
+  "training": {
+    "record_count": 141,
+    "fields": {
+      "Agency (Dept or Stat Body)": {
+        "nonempty": 141,
+        "types": {
+          "str": 141
+        },
+        "examples": [
+          "Queensland Health",
+          "QLD Health Services"
+        ],
+        "identifier_checks": {
+          "checksum_valid_abn": 0,
+          "checksum_valid_acn": 0
+        }
+      },
+      "Agency address": {
+        "nonempty": 141,
+        "types": {
+          "str": 141
+        },
+        "examples": [
+          "41 O'Connell Terrace, Bowen Hills",
+          "139 Grafton St, Cairns",
+          "187-209 Stanley St, Townsville"
+        ],
+        "identifier_checks": {
+          "checksum_valid_abn": 0,
+          "checksum_valid_acn": 0
+        }
+      },
+      "Award contract date": {
+        "nonempty": 140,
+        "types": {
+          "str": 141
+        },
+        "examples": [
+          "2022-07-01T00:00:00",
+          "2022-07-05T00:00:00",
+          "2022-07-13T00:00:00"
+        ],
+        "identifier_checks": {
+          "checksum_valid_abn": 0,
+          "checksum_valid_acn": 0
+        }
+      },
+      "Commence date": {
+        "nonempty": 125,
+        "types": {
+          "str": 141
+        },
+        "examples": [
+          "2022-05-01T00:00:00",
+          "2022-07-23T00:00:00",
+          "2022-08-01T00:00:00"
+        ],
+        "identifier_checks": {
+          "checksum_valid_abn": 0,
+          "checksum_valid_acn": 0
+        }
+      },
+      "Contract category group": {
+        "nonempty": 139,
+        "types": {
+          "str": 141
+        },
+        "examples": [
+          "Medical Services",
+          "Legal Services",
+          "Whole-of-Government"
+        ],
+        "identifier_checks": {
+          "checksum_valid_abn": 0,
+          "checksum_valid_acn": 0
+        }
+      },
+      "Contract description/name": {
+        "nonempty": 140,
+        "types": {
+          "str": 141
+        },
+        "examples": [
+          "Infusion Pumps",
+          "Professional - Legal Services",
+          "Diagnostic Instruments and Accessories"
+        ],
+        "identifier_checks": {
+          "checksum_valid_abn": 0,
+          "checksum_valid_acn": 0
+        }
+      },
+      "Contract milestones": {
+        "nonempty": 0,
+        "types": {
+          "str": 141
+        },
+        "examples": [],
+        "identifier_checks": {
+          "checksum_valid_abn": 0,
+          "checksum_valid_acn": 0
+        }
+      },
+      "Contract performance management": {
+        "nonempty": 0,
+        "types": {
+          "str": 141
+        },
+        "examples": [],
+        "identifier_checks": {
+          "checksum_valid_abn": 0,
+          "checksum_valid_acn": 0
+        }
+      },
+      "Contract reference number": {
+        "nonempty": 87,
+        "types": {
+          "str": 141
+        },
+        "examples": [
+          "HSQ109250-4; HSQ109250-5",
+          "HSQ79838-05",
+          "HSQ82745-1; HSQ82745-2; HSQ82745-3; HSQ82745-4; HSQ82745-5; HSQ82745-6; HSQ82745-7;HSQ82745-8; HSQ82745-10; HSQ82745-11; HSQ82745-12; HSQ82745-13; HSQ82745-14; HSQ82745-15; HSQ82745-16; HSQ82745-17; HSQ82745-18; HSQ82745-19; HSQ82745-20; HSQ82745-21; HSQ82745-22; HSQ82745-23; HSQ82745-24; HSQ82745-2"
+        ],
+        "identifier_checks": {
+          "checksum_valid_abn": 0,
+          "checksum_valid_acn": 0
+        }
+      },
+      "Contract value": {
+        "nonempty": 140,
+        "types": {
+          "str": 141
+        },
+        "examples": [
+          "$55,300,000.00",
+          "$17,577.50",
+          "$39,142.00"
+        ],
+        "identifier_checks": {
+          "checksum_valid_abn": 0,
+          "checksum_valid_acn": 0
+        }
+      },
+      "Deliverables": {
+        "nonempty": 13,
+        "types": {
+          "str": 141
+        },
+        "examples": [
+          "Dialysis goods and services",
+          "Header Arrangement Supplier Panel for Medical Imaging Equipment above $250k",
+          "Conduct Request for Quote (RFQ) under the existing WoG SOA DET82823 (Provision of Office Supplies).  Completion date aligns with current expiry of WoG SOA which has;  Expiry 30/12/2023  One remaining option of 24 Months"
+        ],
+        "identifier_checks": {
+          "checksum_valid_abn": 0,
+          "checksum_valid_acn": 0
+        }
+      },
+      "Evaluation criteria and weightings": {
+        "nonempty": 1,
+        "types": {
+          "str": 141
+        },
+        "examples": [
+          "Compliance -Complaint/Non-Compliant; Statement of capability- acceptable/potentially acceptable/not acceptable/non-comlpliant; Mandatory requirements - section 2 Schedule B- acceptable/potentially acceptable/not acceptable/non-compliant"
+        ],
+        "identifier_checks": {
+          "checksum_valid_abn": 0,
+          "checksum_valid_acn": 0
+        }
+      },
+      "Finish date": {
+        "nonempty": 137,
+        "types": {
+          "str": 141
+        },
+        "examples": [
+          "30/04/2025",
+          "5/07/2022",
+          "22/07/2023"
+        ],
+        "identifier_checks": {
+          "checksum_valid_abn": 0,
+          "checksum_valid_acn": 0
+        }
+      },
+      "Form of contract": {
+        "nonempty": 134,
+        "types": {
+          "str": 141
+        },
+        "examples": [
+          "Standing Offer Arrangement",
+          "Use of Existing SOA",
+          "Used Existing SOA"
+        ],
+        "identifier_checks": {
+          "checksum_valid_abn": 0,
+          "checksum_valid_acn": 0
+        }
+      },
+      "Justification (if limited tender)": {
+        "nonempty": 80,
+        "types": {
+          "str": 141
+        },
+        "examples": [
+          "Variation of Existing SOA",
+          "Extension of Existing SOA",
+          "Limited number of capable suppliers in Australia"
+        ],
+        "identifier_checks": {
+          "checksum_valid_abn": 0,
+          "checksum_valid_acn": 0
+        }
+      },
+      "Number of offers sought": {
+        "nonempty": 5,
+        "types": {
+          "str": 141
+        },
+        "examples": [
+          "4",
+          "3",
+          "Two"
+        ],
+        "identifier_checks": {
+          "checksum_valid_abn": 0,
+          "checksum_valid_acn": 0
+        }
+      },
+      "Parent contract number/SOA": {
+        "nonempty": 83,
+        "types": {
+          "str": 141
+        },
+        "examples": [
+          "HSQ109250",
+          "HSQ79838",
+          "HSQ82745"
+        ],
+        "identifier_checks": {
+          "checksum_valid_abn": 0,
+          "checksum_valid_acn": 0
+        }
+      },
+      "Procurement method": {
+        "nonempty": 79,
+        "types": {
+          "str": 141
+        },
+        "examples": [
+          "Open Tender",
+          "Limited tender",
+          "Open"
+        ],
+        "identifier_checks": {
+          "checksum_valid_abn": 0,
+          "checksum_valid_acn": 0
+        }
+      },
+      "Specific confidentiality provision used": {
+        "nonempty": 135,
+        "types": {
+          "str": 141
+        },
+        "examples": [
+          "No"
+        ],
+        "identifier_checks": {
+          "checksum_valid_abn": 0,
+          "checksum_valid_acn": 0
+        }
+      },
+      "Supplier ABN": {
+        "nonempty": 94,
+        "types": {
+          "str": 141
+        },
+        "examples": [
+          "82005914796; 40058091973",
+          "37 246 549 189",
+          "72167940203"
+        ],
+        "identifier_checks": {
+          "checksum_valid_abn": 88,
+          "checksum_valid_acn": 0
+        }
+      },
+      "Supplier address": {
+        "nonempty": 30,
+        "types": {
+          "str": 141
+        },
+        "examples": [
+          "381 MacArthur Ave, Hamilton QLD 4007; 30 Graystone St, Tingalpa QLD 4173",
+          "Level 19, 480 Queen Street, Brisbane QLD 4000",
+          "44/11-21 Underwood Rd, Homebush NSW 2140"
+        ],
+        "identifier_checks": {
+          "checksum_valid_abn": 0,
+          "checksum_valid_acn": 0
+        }
+      },
+      "Supplier name": {
+        "nonempty": 123,
+        "types": {
+          "str": 141
+        },
+        "examples": [
+          "Becton Dickinson Pty Ltd; Device Technologies Australia Pty Ltd",
+          "HWL Ebsworth Lawyers",
+          "Atris Pty Ltd"
+        ],
+        "identifier_checks": {
+          "checksum_valid_abn": 0,
+          "checksum_valid_acn": 0
+        }
+      },
+      "Variation to contract (Yes/No)": {
+        "nonempty": 138,
+        "types": {
+          "str": 141
+        },
+        "examples": [
+          "No",
+          "Yes"
+        ],
+        "identifier_checks": {
+          "checksum_valid_abn": 0,
+          "checksum_valid_acn": 0
+        }
+      },
+      "_id": {
+        "nonempty": 141,
+        "types": {
+          "str": 141
+        },
+        "examples": [
+          "1",
+          "2",
+          "3"
+        ],
+        "identifier_checks": {
+          "checksum_valid_abn": 0,
+          "checksum_valid_acn": 0
+        }
+      }
+    },
+    "sample": [
+      {
+        "_id": "1",
+        "Agency (Dept or Stat Body)": "Queensland Health",
+        "Agency address": "41 O'Connell Terrace, Bowen Hills",
+        "Contract description/name": "Infusion Pumps",
+        "Award contract date": "2022-07-01T00:00:00",
+        "Contract value": "$55,300,000.00",
+        "Supplier name": "Becton Dickinson Pty Ltd; Device Technologies Australia Pty Ltd",
+        "Supplier address": "381 MacArthur Ave, Hamilton QLD 4007; 30 Graystone St, Tingalpa QLD 4173",
+        "Variation to contract (Yes/No)": "No",
+        "Specific confidentiality provision used": "No",
+        "Procurement method": "Open Tender",
+        "Justification (if limited tender)": "",
+        "Form of contract": "Standing Offer Arrangement",
+        "Number of offers sought": "",
+        "Evaluation criteria and weightings": "",
+        "Deliverables": "",
+        "Contract milestones": "",
+        "Contract performance management": "",
+        "Contract reference number": "HSQ109250-4; HSQ109250-5",
+        "Contract category group": "Medical Services",
+        "Parent contract number/SOA": "HSQ109250",
+        "Commence date": "2022-05-01T00:00:00",
+        "Supplier ABN": "82005914796; 40058091973",
+        "Finish date": "30/04/2025"
+      },
+      {
+        "_id": "2",
+        "Agency (Dept or Stat Body)": "Queensland Health",
+        "Agency address": "41 O'Connell Terrace, Bowen Hills",
+        "Contract description/name": "Professional - Legal Services",
+        "Award contract date": "2022-07-05T00:00:00",
+        "Contract value": "$17,577.50",
+        "Supplier name": "HWL Ebsworth Lawyers",
+        "Supplier address": "Level 19, 480 Queen Street, Brisbane QLD 4000",
+        "Variation to contract (Yes/No)": "No",
+        "Specific confidentiality provision used": "No",
+        "Procurement method": "",
+        "Justification (if limited tender)": "",
+        "Form of contract": "Use of Existing SOA",
+        "Number of offers sought": "",
+        "Evaluation criteria and weightings": "",
+        "Deliverables": "",
+        "Contract milestones": "",
+        "Contract performance management": "",
+        "Contract reference number": "",
+        "Contract category group": "Legal Services",
+        "Parent contract number/SOA": "",
+        "Commence date": "",
+        "Supplier ABN": "37 246 549 189",
+        "Finish date": "5/07/2022"
+      },
+      {
+        "_id": "3",
+        "Agency (Dept or Stat Body)": "Queensland Health",
+        "Agency address": "41 O'Connell Terrace, Bowen Hills",
+        "Contract description/name": "Diagnostic Instruments and Accessories",
+        "Award contract date": "2022-07-13T00:00:00",
+        "Contract value": "$39,142.00",
+        "Supplier name": "Atris Pty Ltd",
+        "Supplier address": "44/11-21 Underwood Rd, Homebush NSW 2140",
+        "Variation to contract (Yes/No)": "Yes",
+        "Specific confidentiality provision used": "",
+        "Procurement method": "",
+        "Justification (if limited tender)": "Variation of Existing SOA",
+        "Form of contract": "Standing Offer Arrangement",
+        "Number of offers sought": "",
+        "Evaluation criteria and weightings": "",
+        "Deliverables": "",
+        "Contract milestones": "",
+        "Contract performance management": "",
+        "Contract reference number": "HSQ79838-05",
+        "Contract category group": "Medical Services",
+        "Parent contract number/SOA": "HSQ79838",
+        "Commence date": "",
+        "Supplier ABN": "72167940203",
+        "Finish date": ""
+      },
+      {
+        "_id": "4",
+        "Agency (Dept or Stat Body)": "Queensland Health",
+        "Agency address": "41 O'Connell Terrace, Bowen Hills",
+        "Contract description/name": "Endoscopic and Laparoscopic Consumables [SOA973]",
+        "Award contract date": "2022-07-19T00:00:00",
+        "Contract value": "$45,700,000.00",
+        "Supplier name": "",
+        "Supplier address": "",
+        "Variation to contract (Yes/No)": "Yes",
+        "Specific confidentiality provision used": "No",
+        "Procurement method": "",
+        "Justification (if limited tender)": "Variation of Existing SOA",
+        "Form of contract": "Standing Offer Arrangement",
+        "Number of offers sought": "",
+        "Evaluation criteria and weightings": "",
+        "Deliverables": "",
+        "Contract milestones": "",
+        "Contract performance management": "",
+        "Contract reference number": "HSQ82745-1; HSQ82745-2; HSQ82745-3; HSQ82745-4; HSQ82745-5; HSQ82745-6; HSQ82745-7;HSQ82745-8; HSQ82745-10; HSQ82745-11; HSQ82745-12; HSQ82745-13; HSQ82745-14; HSQ82745-15; HSQ82745-16; HSQ82745-17; HSQ82745-18; HSQ82745-19; HSQ82745-20; HSQ82745-21; HSQ82745-22; HSQ82745-23; HSQ82745-24; HSQ82745-25; HSQ82745-26-HSQ82745-27; HSQ82745-28; HSQ82745-29; HSQ82745-30; HSQ82745-31; HSQ82745-32; HSQ82745-33",
+        "Contract category group": "Medical Services",
+        "Parent contract number/SOA": "HSQ82745",
+        "Commence date": "2022-07-23T00:00:00",
+        "Supplier ABN": "",
+        "Finish date": "22/07/2023"
+      }
+    ]
+  },
+  "holdout_count": 61,
+  "split": "first 70% training, final 30% holdout; document-head inspection only",
+  "training_rows": [
+    1,
+    141
+  ],
+  "holdout_rows": [
+    142,
+    202
+  ]
+}

@@ -1,0 +1,204 @@
+{
+  "id": "msg_011CgF2iWs1ZrvAFSx8e7HZr",
+  "usage": {
+    "prompt_tokens": 11701,
+    "completion_tokens": 2043,
+    "total_tokens": 13744,
+    "native": {
+      "input_tokens": 11701,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "cache_creation": {
+        "ephemeral_5m_input_tokens": 0,
+        "ephemeral_1h_input_tokens": 0
+      },
+      "output_tokens": 2043,
+      "output_tokens_details": {
+        "thinking_tokens": 0
+      },
+      "service_tier": "standard",
+      "inference_geo": "global",
+      "speed": "standard"
+    }
+  },
+  "native_response": {
+    "model": "claude-haiku-5-5",
+    "id": "msg_011CgF2iWs1ZrvAFSx8e7HZr",
+    "type": "message",
+    "role": "assistant",
+    "content": [
+      {
+        "type": "tool_use",
+        "id": "toolu_019QoZDQsfm233F6j6Nz9zQK",
+        "name": "emit_result",
+        "input": {
+          "config": {
+            "parser": {
+              "format": "json",
+              "record_path": "result.records",
+              "encoding": "utf-8-sig"
+            },
+            "observed_at_field": null,
+            "entity_role": "licensee",
+            "minimum_field_confidence": 0.8,
+            "mappings": [
+              {
+                "source_field": "ABN",
+                "canonical_field": "entity.abn",
+                "transforms": [
+                  "strip",
+                  "digits",
+                  "abn"
+                ],
+                "confidence": 0.85,
+                "rationale": "Held-out profile shows 11-digit ABN strings with spaces (e.g. '59 283 578 741'); the abn transform validates checksum and formatting. Ownership is not established by the source (may be individual's ABN), so confidence is kept below the prior 0.9 and flagged. Not a buyer or agency identifier. Rows with failing checksums should be rejected, not coerced."
+              },
+              {
+                "source_field": "ACN",
+                "canonical_field": "entity.acn",
+                "transforms": [
+                  "strip",
+                  "digits",
+                  "acn"
+                ],
+                "confidence": 0.8,
+                "rationale": "Held-out values are 9-digit ACN strings with spaces (e.g. '105 317 682'); acn transform validates checksum. Sparse (36 of 3000 non-empty), so coverage is poor; retained at threshold only with checksum validation. Not derived from ABN."
+              },
+              {
+                "source_field": "Licensee Business Address",
+                "canonical_field": "address.full",
+                "transforms": [
+                  "strip"
+                ],
+                "confidence": 0.85,
+                "rationale": "Single-line free-text address labelled as business address; maps to full address only. Locality, state and postcode are embedded and not split, to avoid unreliable parsing. Address may be residential or c/- mailing address."
+              }
+            ],
+            "unmapped_fields": [
+              {
+                "source_field": "Licensee Name",
+                "reason": "Previous mapping to entity.legal_name at confidence 0.6 is below the 0.8 minimum and is not supported as a registered legal name: most rows are individual persons (Licence Type DESC = Individual). Removed from mappings; no defensible legal_name evidence. Could be considered for a person-level entity role in future."
+              },
+              {
+                "source_field": "_id",
+                "reason": "Row index/system identifier, not an entity attribute."
+              },
+              {
+                "source_field": "id",
+                "reason": "Row identifier, not an entity attribute."
+              },
+              {
+                "source_field": "Licence Number",
+                "reason": "QBCC regulator licence identifier; no canonical target."
+              },
+              {
+                "source_field": "Financial Category CODE",
+                "reason": "Regulatory financial category; no canonical target."
+              },
+              {
+                "source_field": "Financial Category DESC",
+                "reason": "Regulatory financial category; no canonical target."
+              },
+              {
+                "source_field": "Licence Type CODE",
+                "reason": "Licence type, not legal entity type; no defensible enum mapping."
+              },
+              {
+                "source_field": "Licence Type DESC",
+                "reason": "Individual/Company licence type is ambiguous for entity_type; defaults to unknown, so not mapped."
+              },
+              {
+                "source_field": "Licence Grade",
+                "reason": "Describes licence class held, not industry_code or status."
+              },
+              {
+                "source_field": "Licence Class Type",
+                "reason": "Licence class description, not an ANZSIC code."
+              }
+            ],
+            "warnings": [
+              "Holdout validation failed with fatal error \"'str' object has no attribute 'get'\" and produced 0 observations; the mapping was not executed successfully and remains unverified against execution results.",
+              "observed_at_field is null; the resource modification time is a publication proxy only, not a source statement time.",
+              "Rows are per licence, so the same licensee appears multiple times; no deduplication at ingest.",
+              "Source has no trading_name, website, status, date_registered, nzbn, or industry_code fields."
+            ]
+          },
+          "changes": [
+            {
+              "field": "entity.legal_name (Licensee Name)",
+              "before": "Mapped with strip, confidence 0.6",
+              "after": "Removed from mappings; moved to unmapped_fields",
+              "reason": "Confidence below 0.8 minimum; the field is mostly individual person names, so it is not defensible as a registered legal name."
+            },
+            {
+              "field": "entity.abn (ABN)",
+              "before": "transforms [strip, abn], confidence 0.9",
+              "after": "transforms [strip, digits, abn], confidence 0.85",
+              "reason": "Added digits to remove any residual non-digit characters before checksum validation; confidence reduced because ownership of the identifier (individual vs business) is not established."
+            },
+            {
+              "field": "entity.acn (ACN)",
+              "before": "transforms [strip, acn], confidence 0.9",
+              "after": "transforms [strip, digits, acn], confidence 0.8",
+              "reason": "Added digits for normalisation; confidence reduced because coverage is very sparse (36/3000 held-out) and no execution evidence supports 0.9."
+            },
+            {
+              "field": "address.full (Licensee Business Address)",
+              "before": "transforms [strip], confidence 0.85",
+              "after": "transforms [strip], confidence 0.85",
+              "reason": "Retained. Source is a consistent single-line address; no split performed."
+            },
+            {
+              "field": "config.entity_role / warnings",
+              "before": "Prior proposal had no holdout execution evidence",
+              "after": "Recorded fatal holdout error and zero observations",
+              "reason": "The held-out run failed, so no mapping is verified by execution; this is recorded explicitly."
+            }
+          ],
+          "semantic_risks": [
+            "Holdout validation failed (fatal error, 0 observations); the revised config is not verified by execution and must be re-run.",
+            "ABN and ACN may belong to an individual rather than a business; mapping them as entity identifiers may misattribute identity.",
+            "Licensee Name is predominantly personal names; using it as entity.legal_name would misstate registered legal names.",
+            "Licensee Business Address may be residential or c/- mailing address and is not parsed into locality, state, or postcode.",
+            "Rows are per licence, so the same licensee yields duplicate observations unless deduplicated downstream.",
+            "Resource modification time is a publication proxy; observed_at is left null rather than inferred from it.",
+            "The 'abn' and 'acn' transforms are assumed to validate checksums and reject invalid values; this behaviour is unverified because the run failed."
+          ],
+          "requires_human_review": true
+        },
+        "caller": {
+          "type": "direct"
+        }
+      }
+    ],
+    "container": null,
+    "stop_reason": "tool_use",
+    "stop_sequence": null,
+    "stop_details": null,
+    "usage": {
+      "input_tokens": 11701,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "cache_creation": {
+        "ephemeral_5m_input_tokens": 0,
+        "ephemeral_1h_input_tokens": 0
+      },
+      "output_tokens": 2043,
+      "output_tokens_details": {
+        "thinking_tokens": 0
+      },
+      "service_tier": "standard",
+      "inference_geo": "global",
+      "speed": "standard"
+    },
+    "diagnostics": null
+  },
+  "choices": [
+    {
+      "message": {
+        "content": "{\"config\": {\"parser\": {\"format\": \"json\", \"record_path\": \"result.records\", \"encoding\": \"utf-8-sig\"}, \"observed_at_field\": null, \"entity_role\": \"licensee\", \"minimum_field_confidence\": 0.8, \"mappings\": [{\"source_field\": \"ABN\", \"canonical_field\": \"entity.abn\", \"transforms\": [\"strip\", \"digits\", \"abn\"], \"confidence\": 0.85, \"rationale\": \"Held-out profile shows 11-digit ABN strings with spaces (e.g. '59 283 578 741'); the abn transform validates checksum and formatting. Ownership is not established by the source (may be individual's ABN), so confidence is kept below the prior 0.9 and flagged. Not a buyer or agency identifier. Rows with failing checksums should be rejected, not coerced.\"}, {\"source_field\": \"ACN\", \"canonical_field\": \"entity.acn\", \"transforms\": [\"strip\", \"digits\", \"acn\"], \"confidence\": 0.8, \"rationale\": \"Held-out values are 9-digit ACN strings with spaces (e.g. '105 317 682'); acn transform validates checksum. Sparse (36 of 3000 non-empty), so coverage is poor; retained at threshold only with checksum validation. Not derived from ABN.\"}, {\"source_field\": \"Licensee Business Address\", \"canonical_field\": \"address.full\", \"transforms\": [\"strip\"], \"confidence\": 0.85, \"rationale\": \"Single-line free-text address labelled as business address; maps to full address only. Locality, state and postcode are embedded and not split, to avoid unreliable parsing. Address may be residential or c/- mailing address.\"}], \"unmapped_fields\": [{\"source_field\": \"Licensee Name\", \"reason\": \"Previous mapping to entity.legal_name at confidence 0.6 is below the 0.8 minimum and is not supported as a registered legal name: most rows are individual persons (Licence Type DESC = Individual). Removed from mappings; no defensible legal_name evidence. Could be considered for a person-level entity role in future.\"}, {\"source_field\": \"_id\", \"reason\": \"Row index/system identifier, not an entity attribute.\"}, {\"source_field\": \"id\", \"reason\": \"Row identifier, not an entity attribute.\"}, {\"source_field\": \"Licence Number\", \"reason\": \"QBCC regulator licence identifier; no canonical target.\"}, {\"source_field\": \"Financial Category CODE\", \"reason\": \"Regulatory financial category; no canonical target.\"}, {\"source_field\": \"Financial Category DESC\", \"reason\": \"Regulatory financial category; no canonical target.\"}, {\"source_field\": \"Licence Type CODE\", \"reason\": \"Licence type, not legal entity type; no defensible enum mapping.\"}, {\"source_field\": \"Licence Type DESC\", \"reason\": \"Individual/Company licence type is ambiguous for entity_type; defaults to unknown, so not mapped.\"}, {\"source_field\": \"Licence Grade\", \"reason\": \"Describes licence class held, not industry_code or status.\"}, {\"source_field\": \"Licence Class Type\", \"reason\": \"Licence class description, not an ANZSIC code.\"}], \"warnings\": [\"Holdout validation failed with fatal error \\\"'str' object has no attribute 'get'\\\" and produced 0 observations; the mapping was not executed successfully and remains unverified against execution results.\", \"observed_at_field is null; the resource modification time is a publication proxy only, not a source statement time.\", \"Rows are per licence, so the same licensee appears multiple times; no deduplication at ingest.\", \"Source has no trading_name, website, status, date_registered, nzbn, or industry_code fields.\"]}, \"changes\": [{\"field\": \"entity.legal_name (Licensee Name)\", \"before\": \"Mapped with strip, confidence 0.6\", \"after\": \"Removed from mappings; moved to unmapped_fields\", \"reason\": \"Confidence below 0.8 minimum; the field is mostly individual person names, so it is not defensible as a registered legal name.\"}, {\"field\": \"entity.abn (ABN)\", \"before\": \"transforms [strip, abn], confidence 0.9\", \"after\": \"transforms [strip, digits, abn], confidence 0.85\", \"reason\": \"Added digits to remove any residual non-digit characters before checksum validation; confidence reduced because ownership of the identifier (individual vs business) is not established.\"}, {\"field\": \"entity.acn (ACN)\", \"before\": \"transforms [strip, acn], confidence 0.9\", \"after\": \"transforms [strip, digits, acn], confidence 0.8\", \"reason\": \"Added digits for normalisation; confidence reduced because coverage is very sparse (36/3000 held-out) and no execution evidence supports 0.9.\"}, {\"field\": \"address.full (Licensee Business Address)\", \"before\": \"transforms [strip], confidence 0.85\", \"after\": \"transforms [strip], confidence 0.85\", \"reason\": \"Retained. Source is a consistent single-line address; no split performed.\"}, {\"field\": \"config.entity_role / warnings\", \"before\": \"Prior proposal had no holdout execution evidence\", \"after\": \"Recorded fatal holdout error and zero observations\", \"reason\": \"The held-out run failed, so no mapping is verified by execution; this is recorded explicitly.\"}], \"semantic_risks\": [\"Holdout validation failed (fatal error, 0 observations); the revised config is not verified by execution and must be re-run.\", \"ABN and ACN may belong to an individual rather than a business; mapping them as entity identifiers may misattribute identity.\", \"Licensee Name is predominantly personal names; using it as entity.legal_name would misstate registered legal names.\", \"Licensee Business Address may be residential or c/- mailing address and is not parsed into locality, state, or postcode.\", \"Rows are per licence, so the same licensee yields duplicate observations unless deduplicated downstream.\", \"Resource modification time is a publication proxy; observed_at is left null rather than inferred from it.\", \"The 'abn' and 'acn' transforms are assumed to validate checksums and reject invalid values; this behaviour is unverified because the run failed.\"], \"requires_human_review\": true}"
+      },
+      "finish_reason": "stop"
+    }
+  ]
+}

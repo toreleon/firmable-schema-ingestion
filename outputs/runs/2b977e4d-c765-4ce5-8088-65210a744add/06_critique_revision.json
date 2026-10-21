@@ -1,0 +1,208 @@
+{
+  "config": {
+    "parser": {
+      "format": "csv",
+      "delimiter": ",",
+      "header_row": 1,
+      "encoding": "utf-8-sig"
+    },
+    "observed_at_field": null,
+    "entity_role": "supplier",
+    "mappings": [
+      {
+        "source_field": "Supplier ABN",
+        "canonical_field": "entity.abn",
+        "transforms": [
+          {
+            "op": "split",
+            "delimiter": ";"
+          },
+          "abn"
+        ],
+        "confidence": 0.9,
+        "rationale": "Explicitly labelled supplier ABN column. Semicolon-separated lists are split into individual ABNs, each validated by the abn transform (normalises spaces, enforces checksum, rejects invalid values). Held-out validation shows 55 valid emissions and 2 checksum failures on the raw value '631 566 697', which is a 9-digit (truncated) value and is correctly rejected. Emitted as identifier-only supplier claims with separate_entities:true; no names or addresses attached.",
+        "separate_entities": true
+      }
+    ],
+    "unmapped_fields": [
+      {
+        "source_field": "Agency (Dept or Stat Body)",
+        "reason": "Buyer/agency identifier, not a supplier attribute. Must not be mapped as supplier identifier."
+      },
+      {
+        "source_field": "Agency address",
+        "reason": "Buyer/agency address; must not be mapped to supplier address."
+      },
+      {
+        "source_field": "Award contract date",
+        "reason": "Contract award date; not a registration date or observation time."
+      },
+      {
+        "source_field": "Commence date",
+        "reason": "Contract commencement date; not a supplier registration date."
+      },
+      {
+        "source_field": "Contract category group",
+        "reason": "Procurement category, not an ANZSIC industry code; not mapped."
+      },
+      {
+        "source_field": "Contract description/name",
+        "reason": "Contract description, not a supplier trading name."
+      },
+      {
+        "source_field": "Contract milestones",
+        "reason": "Contract administration field; empty in held-out data; out of scope."
+      },
+      {
+        "source_field": "Contract performance management",
+        "reason": "Contract administration field; out of scope. Contains SOA/contract-like codes, not supplier identifiers."
+      },
+      {
+        "source_field": "Contract reference number",
+        "reason": "Contract reference, not a supplier identifier."
+      },
+      {
+        "source_field": "Contract value",
+        "reason": "Contract value; must not be mapped to business identity or address."
+      },
+      {
+        "source_field": "Deliverables",
+        "reason": "Contract scope text; out of scope."
+      },
+      {
+        "source_field": "Evaluation criteria and weightings",
+        "reason": "Procurement evaluation text; out of scope."
+      },
+      {
+        "source_field": "Finish date",
+        "reason": "Contract finish date; not a registration date."
+      },
+      {
+        "source_field": "Form of contract",
+        "reason": "Contract form; not an entity attribute."
+      },
+      {
+        "source_field": "Justification (if limited tender)",
+        "reason": "Procurement justification; out of scope."
+      },
+      {
+        "source_field": "Number of offers sought",
+        "reason": "Procurement metric; out of scope."
+      },
+      {
+        "source_field": "Parent contract number/SOA",
+        "reason": "Contract/SOA reference; not a supplier identifier."
+      },
+      {
+        "source_field": "Procurement method",
+        "reason": "Procurement method; out of scope."
+      },
+      {
+        "source_field": "Specific confidentiality provision used",
+        "reason": "Procurement disclosure flag; out of scope."
+      },
+      {
+        "source_field": "Supplier address",
+        "reason": "Multi-supplier semicolon-separated addresses cannot be safely paired with ABNs by index; held-out sample shows 9 non-empty values with inconsistent formatting and no explicit per-supplier pairing. Left unmapped."
+      },
+      {
+        "source_field": "Supplier name",
+        "reason": "Business trading/supplier name is not established as a registered legal name (procurement register, not a registry); multi-supplier cells cannot be paired safely. Left unmapped for conservative ingest."
+      },
+      {
+        "source_field": "Variation to contract (Yes/No)",
+        "reason": "Procurement flag; out of scope."
+      },
+      {
+        "source_field": "_id",
+        "reason": "Internal row identifier of the source file, not an entity identifier."
+      }
+    ],
+    "minimum_field_confidence": 0.8,
+    "warnings": [
+      "observed_at_field set to null: the only available timestamp (observed_at / resource_last_modified_proxy) is a publication proxy, not a verified source statement time.",
+      "Supplier ABN checksum validation only; ABNs not verified against the ABR.",
+      "No ACN mapping: held-out and training profiles show 2 ACN-checksum-valid values in held-out data (and 0 in training), but ACN is never inferred from ABN and the column is labelled as ABN; no ACN mapping proposed.",
+      "Held-out checksum_valid_acn count of 2 likely reflects 9-digit values in the Supplier ABN column that are invalid ABNs; they are not treated as ACNs.",
+      "Supplier name is the strongest candidate for entity.legal_name but is left unmapped; it is a trading/supplier name rather than verified registered legal name, and multi-supplier cells cannot be paired safely."
+    ],
+    "semantic_risks": [
+      "Supplier ABN cells may contain multi-supplier lists; the split-then-validate path with separate_entities:true emits identifier-only claims that are not linked to names or addresses.",
+      "Held-out values '631 566 697' (9 digits) are truncated/invalid ABNs and are rejected; source may contain data-entry errors.",
+      "ABN validity is checksum-only; ABN-to-entity linkage is unverified and the source is a procurement register, not an ABR extract.",
+      "Supplier names are not mapped; downstream consumers cannot attach a legal name to identifiers from this source.",
+      "Supplier address is not mapped; addresses are not attributable to a single party in multi-supplier rows.",
+      "Observation timestamp is a publication proxy; observed_at_field is null so observed_at will not be derived from the proxy.",
+      "Some ABN-labelled rows in the held-out sample show the same ABN across many contract rows; deduplication is required downstream to avoid overcounting."
+    ],
+    "requires_human_review": true,
+    "source_id": "2b977e4d-c765-4ce5-8088-65210a744add",
+    "ontology_sha256": "f4b6b4941ec61dcc3fb07c6ee19edab927862aaaa8ae3df30b3023e047c9f9cd",
+    "generated_by": {
+      "kind": "multi_step_runtime_agent",
+      "model": "claude-haiku-5-5",
+      "run_identity": "c763174f1d4217827e2dd803ed84fcea357784369b5a20baa9a320b6dfa31db6"
+    },
+    "review": {
+      "status": "pending",
+      "reviewer": null,
+      "approved_config_sha256": null
+    }
+  },
+  "changes": [
+    {
+      "field": "Supplier ABN -> entity.abn",
+      "before": {
+        "transforms": [
+          {
+            "op": "split",
+            "delimiter": ";"
+          },
+          "abn"
+        ],
+        "separate_entities": true,
+        "confidence": 0.9
+      },
+      "after": {
+        "transforms": [
+          {
+            "op": "split",
+            "delimiter": ";"
+          },
+          "abn"
+        ],
+        "separate_entities": true,
+        "confidence": 0.9
+      },
+      "reason": "No change to transforms. Held-out validation confirms the split-then-abn pipeline works: 55 valid emissions, 2 errors on a 9-digit value '631 566 697' that correctly fails checksum. Mapping retained with defensible evidence."
+    },
+    {
+      "field": "config.entity_role",
+      "before": "supplier",
+      "after": "supplier",
+      "reason": "Retained; Supplier ABN is a supplier identifier field. Buyer/agency identifiers remain unmapped."
+    },
+    {
+      "field": "config.observed_at_field",
+      "before": null,
+      "after": null,
+      "reason": "Retained null; the only timestamp is a publication proxy, not a verified statement time."
+    },
+    {
+      "field": "Supplier name / Supplier address",
+      "before": "unmapped",
+      "after": "unmapped",
+      "reason": "Retained unmapped. Multi-supplier cells cannot be paired safely, and the procurement register does not establish registered legal names or per-supplier address attribution."
+    }
+  ],
+  "requires_human_review": true,
+  "semantic_risks": [
+    "Supplier ABN cells may contain multi-supplier lists; split-then-validate with separate_entities:true emits identifier-only claims not linked to names or addresses.",
+    "Held-out value '631 566 697' (9 digits) is invalid and rejected; likely a data-entry error in the source.",
+    "ABN validity is checksum-only; ABN-to-entity linkage is unverified (not checked against the ABR).",
+    "Supplier names are unmapped, so no legal name can be attached to identifiers from this source.",
+    "Supplier address is unmapped; addresses cannot be attributed to a single party in multi-supplier rows.",
+    "Observation timestamp is a publication proxy; observed_at_field is null.",
+    "The same ABN recurs across many contract rows; downstream deduplication is needed to avoid overcounting."
+  ]
+}

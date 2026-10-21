@@ -1,0 +1,366 @@
+{
+  "training": {
+    "record_count": 30,
+    "fields": {
+      "Agency (Dept or Stat Body)": {
+        "nonempty": 30,
+        "types": {
+          "str": 30
+        },
+        "examples": [
+          "Queensland Health"
+        ]
+      },
+      "Agency address": {
+        "nonempty": 30,
+        "types": {
+          "str": 30
+        },
+        "examples": [
+          "41 O'Connell Terrace, Bowen Hills QLD 4006"
+        ]
+      },
+      "Award contract date": {
+        "nonempty": 30,
+        "types": {
+          "str": 30
+        },
+        "examples": [
+          "2024-02-08T00:00:00",
+          "2023-10-05T00:00:00",
+          "2024-02-29T00:00:00"
+        ]
+      },
+      "Commence date": {
+        "nonempty": 30,
+        "types": {
+          "str": 30
+        },
+        "examples": [
+          "2024-02-19T00:00:00",
+          "2023-10-16T00:00:00",
+          "2024-02-29T00:00:00"
+        ]
+      },
+      "Contract category group": {
+        "nonempty": 0,
+        "types": {
+          "str": 30
+        },
+        "examples": []
+      },
+      "Contract description/name": {
+        "nonempty": 30,
+        "types": {
+          "str": 30
+        },
+        "examples": [
+          "ICT Contingency Labour"
+        ]
+      },
+      "Contract milestones": {
+        "nonempty": 0,
+        "types": {
+          "str": 30
+        },
+        "examples": []
+      },
+      "Contract performance management": {
+        "nonempty": 0,
+        "types": {
+          "str": 30
+        },
+        "examples": []
+      },
+      "Contract reference number": {
+        "nonempty": 30,
+        "types": {
+          "str": 30
+        },
+        "examples": [
+          "CSD124017-1",
+          "CSD124017-2",
+          "0"
+        ]
+      },
+      "Contract value": {
+        "nonempty": 30,
+        "types": {
+          "str": 30
+        },
+        "examples": [
+          "327,623.66",
+          "491,123.62",
+          "16,511.00"
+        ]
+      },
+      "Deliverables": {
+        "nonempty": 0,
+        "types": {
+          "str": 30
+        },
+        "examples": []
+      },
+      "Description": {
+        "nonempty": 0,
+        "types": {
+          "str": 30
+        },
+        "examples": []
+      },
+      "Evaluation criteria and weightings": {
+        "nonempty": 0,
+        "types": {
+          "str": 30
+        },
+        "examples": []
+      },
+      "Finish date": {
+        "nonempty": 30,
+        "types": {
+          "str": 30
+        },
+        "examples": [
+          "2024-12-31T00:00:00",
+          "2024-10-31T00:00:00",
+          "2024-04-05T00:00:00"
+        ]
+      },
+      "Form of contract": {
+        "nonempty": 0,
+        "types": {
+          "str": 30
+        },
+        "examples": []
+      },
+      "Number of offers sought": {
+        "nonempty": 0,
+        "types": {
+          "str": 30
+        },
+        "examples": []
+      },
+      "Parent contract number/SOA": {
+        "nonempty": 30,
+        "types": {
+          "str": 30
+        },
+        "examples": [
+          "GGS0060"
+        ]
+      },
+      "Procurement method": {
+        "nonempty": 22,
+        "types": {
+          "str": 30
+        },
+        "examples": [
+          "Open"
+        ]
+      },
+      "Reason for use of limited tendering": {
+        "nonempty": 0,
+        "types": {
+          "str": 30
+        },
+        "examples": []
+      },
+      "Specific confidentiality provision used": {
+        "nonempty": 30,
+        "types": {
+          "str": 30
+        },
+        "examples": [
+          "No"
+        ]
+      },
+      "Supplier ABN": {
+        "nonempty": 30,
+        "types": {
+          "str": 30
+        },
+        "examples": [
+          "42072957923",
+          "88060295356",
+          "92122998743"
+        ]
+      },
+      "Supplier address": {
+        "nonempty": 30,
+        "types": {
+          "str": 30
+        },
+        "examples": [
+          "L9, 10 Market Street, Brisbane QLD 4000",
+          "L8, 127 Creek Street, Brisbane QLD",
+          "L43, 264-278 George Street, Sydney NSW 2000"
+        ]
+      },
+      "Supplier name": {
+        "nonempty": 30,
+        "types": {
+          "str": 30
+        },
+        "examples": [
+          "Eden Ritchie Recruitment",
+          "Hoban Recruitment",
+          "Jigsaw Talent Management"
+        ]
+      },
+      "Variation comments": {
+        "nonempty": 22,
+        "types": {
+          "str": 30
+        },
+        "examples": [
+          "Extension of duration\nIncrease contract value"
+        ]
+      },
+      "Variation to contract (Yes/No)": {
+        "nonempty": 30,
+        "types": {
+          "str": 30
+        },
+        "examples": [
+          "No",
+          "Yes"
+        ]
+      },
+      "_id": {
+        "nonempty": 30,
+        "types": {
+          "str": 30
+        },
+        "examples": [
+          "1",
+          "2",
+          "3"
+        ]
+      }
+    },
+    "sample": [
+      {
+        "_id": "1",
+        "Description": "",
+        "Agency (Dept or Stat Body)": "Queensland Health",
+        "Agency address": "41 O'Connell Terrace, Bowen Hills QLD 4006",
+        "Contract description/name": "ICT Contingency Labour",
+        "Award contract date": "2024-02-08T00:00:00",
+        "Contract value": "327,623.66",
+        "Supplier name": "Eden Ritchie Recruitment",
+        "Supplier address": "L9, 10 Market Street, Brisbane QLD 4000",
+        "Variation to contract (Yes/No)": "No",
+        "Specific confidentiality provision used": "No",
+        "Procurement method": "",
+        "Reason for use of limited tendering": "",
+        "Form of contract": "",
+        "Number of offers sought": "",
+        "Evaluation criteria and weightings": "",
+        "Deliverables": "",
+        "Contract milestones": "",
+        "Contract performance management": "",
+        "Contract reference number": "CSD124017-1",
+        "Contract category group": "",
+        "Parent contract number/SOA": "GGS0060",
+        "Variation comments": "",
+        "Commence date": "2024-02-19T00:00:00",
+        "Supplier ABN": "42072957923",
+        "Finish date": "2024-12-31T00:00:00"
+      },
+      {
+        "_id": "2",
+        "Description": "",
+        "Agency (Dept or Stat Body)": "Queensland Health",
+        "Agency address": "41 O'Connell Terrace, Bowen Hills QLD 4006",
+        "Contract description/name": "ICT Contingency Labour",
+        "Award contract date": "2023-10-05T00:00:00",
+        "Contract value": "491,123.62",
+        "Supplier name": "Eden Ritchie Recruitment",
+        "Supplier address": "L9, 10 Market Street, Brisbane QLD 4000",
+        "Variation to contract (Yes/No)": "No",
+        "Specific confidentiality provision used": "No",
+        "Procurement method": "",
+        "Reason for use of limited tendering": "",
+        "Form of contract": "",
+        "Number of offers sought": "",
+        "Evaluation criteria and weightings": "",
+        "Deliverables": "",
+        "Contract milestones": "",
+        "Contract performance management": "",
+        "Contract reference number": "CSD124017-2",
+        "Contract category group": "",
+        "Parent contract number/SOA": "GGS0060",
+        "Variation comments": "",
+        "Commence date": "2023-10-16T00:00:00",
+        "Supplier ABN": "42072957923",
+        "Finish date": "2024-10-31T00:00:00"
+      },
+      {
+        "_id": "3",
+        "Description": "",
+        "Agency (Dept or Stat Body)": "Queensland Health",
+        "Agency address": "41 O'Connell Terrace, Bowen Hills QLD 4006",
+        "Contract description/name": "ICT Contingency Labour",
+        "Award contract date": "2024-02-29T00:00:00",
+        "Contract value": "16,511.00",
+        "Supplier name": "Hoban Recruitment",
+        "Supplier address": "L8, 127 Creek Street, Brisbane QLD",
+        "Variation to contract (Yes/No)": "No",
+        "Specific confidentiality provision used": "No",
+        "Procurement method": "",
+        "Reason for use of limited tendering": "",
+        "Form of contract": "",
+        "Number of offers sought": "",
+        "Evaluation criteria and weightings": "",
+        "Deliverables": "",
+        "Contract milestones": "",
+        "Contract performance management": "",
+        "Contract reference number": "0",
+        "Contract category group": "",
+        "Parent contract number/SOA": "GGS0060",
+        "Variation comments": "",
+        "Commence date": "2024-02-29T00:00:00",
+        "Supplier ABN": "88060295356",
+        "Finish date": "2024-04-05T00:00:00"
+      },
+      {
+        "_id": "4",
+        "Description": "",
+        "Agency (Dept or Stat Body)": "Queensland Health",
+        "Agency address": "41 O'Connell Terrace, Bowen Hills QLD 4006",
+        "Contract description/name": "ICT Contingency Labour",
+        "Award contract date": "2023-11-27T00:00:00",
+        "Contract value": "82,126.64",
+        "Supplier name": "Jigsaw Talent Management",
+        "Supplier address": "L43, 264-278 George Street, Sydney NSW 2000",
+        "Variation to contract (Yes/No)": "No",
+        "Specific confidentiality provision used": "No",
+        "Procurement method": "",
+        "Reason for use of limited tendering": "",
+        "Form of contract": "",
+        "Number of offers sought": "",
+        "Evaluation criteria and weightings": "",
+        "Deliverables": "",
+        "Contract milestones": "",
+        "Contract performance management": "",
+        "Contract reference number": "0",
+        "Contract category group": "",
+        "Parent contract number/SOA": "GGS0060",
+        "Variation comments": "",
+        "Commence date": "2023-11-27T00:00:00",
+        "Supplier ABN": "92122998743",
+        "Finish date": "2024-05-17T00:00:00"
+      }
+    ]
+  },
+  "holdout_count": 14,
+  "split": "first 70% training, final 30% holdout; document-head inspection only",
+  "training_rows": [
+    1,
+    30
+  ],
+  "holdout_rows": [
+    31,
+    44
+  ]
+}

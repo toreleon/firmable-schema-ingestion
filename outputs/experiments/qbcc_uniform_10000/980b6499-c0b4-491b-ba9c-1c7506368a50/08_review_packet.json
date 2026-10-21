@@ -1,0 +1,583 @@
+{
+  "source": {
+    "source_id": "980b6499-c0b4-491b-ba9c-1c7506368a50",
+    "dataset_id": "980b6499-c0b4-491b-ba9c-1c7506368a50",
+    "title": "QBCC Licensed Contractors Register",
+    "resource_id": "25608781-b28c-44f8-8545-0ab18d84082f",
+    "resource_url": "https://www.data.qld.gov.au/api/3/action/datastore_search_sql?sql=SELECT+%2A+FROM+%2225608781-b28c-44f8-8545-0ab18d84082f%22+ORDER+BY+md5%28_id%3A%3Atext%29+LIMIT+10000",
+    "original_resource_url": "https://www.data.qld.gov.au/dataset/980b6499-c0b4-491b-ba9c-1c7506368a50/resource/25608781-b28c-44f8-8545-0ab18d84082f/download/active_licensees.csv",
+    "acquisition_representation": "json_sample",
+    "original_format": "CSV",
+    "resource_sha256": "3cbe0f0eff4ffb9cac4ad566638d766084a89289f42071ac5668f19bdbf4fe41",
+    "local_path": "data/raw/980b6499-c0b4-491b-ba9c-1c7506368a50",
+    "snapshot_path": "data/snapshots/980b6499-c0b4-491b-ba9c-1c7506368a50.gz",
+    "downloaded_at": "2026-10-21T08:11:35.909004+00:00",
+    "observed_at": "2026-10-20T21:00:25.932039",
+    "observed_at_basis": "resource_last_modified_proxy",
+    "licence": "Creative Commons Attribution 4.0",
+    "licence_url": "https://creativecommons.org/licenses/by/4.0/",
+    "publisher": "Queensland Building and Construction Commission",
+    "source_reliability": 0.8,
+    "source_reliability_basis": "Uncalibrated government-source prior; uniform, not claimed measured",
+    "description": "Register of licensed builders, trade contractors, designers, nominees, site supervisors and occupational licence holders maintained by the Queensland Building and Construction Commission (QBCC).\r\n\r\nAll resources are refreshed daily.\r\n\r\nRegister of licensed builders and contractors = all non-cancelled QBCC Act licences, including both active and suspended. Current-state snapshot.\r\nSuspended Licences = licences suspended at any point during the current financial year to date. Event list, includes licences since reinstated.\r\nCancelled Licences = licences cancelled at any point during the current financial year to date. Event list.\r\n\r\nFor up-to-date information on an individual licensee, refer to the QBCC's licence search.",
+    "temporal_warning": "Resource/catalogue modification time is a publication proxy, not a verified record statement time",
+    "licence_warning": false
+  },
+  "config": {
+    "parser": {
+      "format": "json",
+      "record_path": "result.records",
+      "encoding": "utf-8-sig"
+    },
+    "observed_at_field": null,
+    "mappings": [
+      {
+        "source_field": "ABN",
+        "canonical_field": "entity.abn",
+        "transforms": [
+          "strip",
+          "digits",
+          "abn"
+        ],
+        "confidence": 0.95,
+        "rationale": "Explicitly labelled ABN column. Training: 3851/3886 nonempty pass ABN checksum, 0 pass ACN checksum. Held-out: 1602/1615 valid; 13 failures are invalid ABN checksums on source values, which the abn transform correctly rejects. Mapping is correct; the invalid values are source data-quality issues and are rejected, not coerced.",
+        "separate_entities": false
+      },
+      {
+        "source_field": "ACN",
+        "canonical_field": "entity.acn",
+        "transforms": [
+          "strip",
+          "digits",
+          "acn"
+        ],
+        "confidence": 0.95,
+        "rationale": "Explicitly labelled ACN column. Training: 1658/1667 pass ACN checksum, 0 pass ABN checksum. Held-out: 700/702 valid; 2 failures are invalid ACN checksums, rejected by the acn transform. ACN is not derived from ABN suffix.",
+        "separate_entities": false
+      },
+      {
+        "source_field": "Licensee Business Address",
+        "canonical_field": "address.full",
+        "transforms": [
+          "strip"
+        ],
+        "confidence": 0.85,
+        "rationale": "Labelled business address, single string per row. Held-out 3000/3000 emitted. Maps to address.full only; locality, state and postcode are embedded and not separated here. Address is a licensee business address and may relate to an individual, so it is not confirmed as a registered address."
+      }
+    ],
+    "unmapped_fields": [
+      {
+        "source_field": "_id",
+        "reason": "Internal row identifier of the export; not a supplier identifier. Candidate for source_record_id provenance only."
+      },
+      {
+        "source_field": "id",
+        "reason": "Duplicate of _id; internal record key."
+      },
+      {
+        "source_field": "_full_text",
+        "reason": "Search index artefact derived from other fields; not a source statement."
+      },
+      {
+        "source_field": "Licensee Name",
+        "reason": "Mixes personal names (individual licensees) and company names with no reliable separation. Not verifiable as a registered legal name; held-out validation only shows emission, not semantic correctness. Removed from legal_name mapping for conservative handling; trading_name also not supported. Requires human review, possibly a split by Licence Type DESC or a validated company-name rule."
+      },
+      {
+        "source_field": "Licence Number",
+        "reason": "QBCC licence identifier; no ontology field."
+      },
+      {
+        "source_field": "Licence Type CODE",
+        "reason": "Licence category code, not entity_type."
+      },
+      {
+        "source_field": "Licence Type DESC",
+        "reason": "Licence category (Individual/Company), not a validated legal entity type; entity_type not guessed."
+      },
+      {
+        "source_field": "Financial Category CODE",
+        "reason": "Regulatory financial category; no ontology field."
+      },
+      {
+        "source_field": "Financial Category DESC",
+        "reason": "Regulatory financial category; no ontology field."
+      },
+      {
+        "source_field": "Licence Grade",
+        "reason": "Licence grade/role; no entity field."
+      },
+      {
+        "source_field": "Licence Class Type",
+        "reason": "Licence trade class; not ANZSIC, so industry_code not mapped."
+      }
+    ],
+    "minimum_field_confidence": 0.8,
+    "warnings": [
+      "observed_at_field is null: only a resource_last_modified_proxy is available; do not use as observed_at.",
+      "Status is not mapped; the register is current-state but includes suspended licences, so status remains unknown.",
+      "Source is a json_sample of a 7000-row training set and a 3000-row held-out set; full-file behaviour not verified.",
+      "Held-out errors (13 ABN, 2 ACN checksum failures) are rejected by validation and are not emitted."
+    ],
+    "entity_role": "supplier",
+    "source_id": "980b6499-c0b4-491b-ba9c-1c7506368a50",
+    "ontology_sha256": "f4b6b4941ec61dcc3fb07c6ee19edab927862aaaa8ae3df30b3023e047c9f9cd",
+    "generated_by": {
+      "kind": "multi_step_runtime_agent",
+      "model": "claude-haiku-5-5",
+      "run_identity": "c7af3c1425b5363542c479e0eba1c1652e4fab82aa23503336fcd8fcd107aa6d"
+    },
+    "review": {
+      "status": "pending",
+      "reviewer": null,
+      "approved_config_sha256": null
+    }
+  },
+  "validation": {
+    "records": 10000,
+    "observation_count": 17811,
+    "emitted_by_field": {
+      "address.full": 10000,
+      "entity.acn": 2358,
+      "entity.abn": 5453
+    },
+    "error_count": 59,
+    "errors": [
+      {
+        "source_record_id": "3cbe0f0eff4ffb9c:139:574e2b2de63de84f",
+        "source_field": "ABN",
+        "canonical_field": "entity.abn",
+        "raw_value": "69 984 324 569",
+        "reason": "Invalid ABN checksum"
+      },
+      {
+        "source_record_id": "3cbe0f0eff4ffb9c:352:0632f6fbbe0f9002",
+        "source_field": "ABN",
+        "canonical_field": "entity.abn",
+        "raw_value": "50 611 707 314",
+        "reason": "Invalid ABN checksum"
+      },
+      {
+        "source_record_id": "3cbe0f0eff4ffb9c:407:5c9c1bba78a599a1",
+        "source_field": "ABN",
+        "canonical_field": "entity.abn",
+        "raw_value": "99 674 094 972",
+        "reason": "Invalid ABN checksum"
+      },
+      {
+        "source_record_id": "3cbe0f0eff4ffb9c:627:a7b97daf647f26ff",
+        "source_field": "ACN",
+        "canonical_field": "entity.acn",
+        "raw_value": "116 501 957",
+        "reason": "Invalid ACN checksum"
+      },
+      {
+        "source_record_id": "3cbe0f0eff4ffb9c:716:dd37cf5ec2b9dd34",
+        "source_field": "ACN",
+        "canonical_field": "entity.acn",
+        "raw_value": "678 541 697",
+        "reason": "Invalid ACN checksum"
+      },
+      {
+        "source_record_id": "3cbe0f0eff4ffb9c:729:3fc5ab23d6c1786f",
+        "source_field": "ABN",
+        "canonical_field": "entity.abn",
+        "raw_value": "25 659 151 716",
+        "reason": "Invalid ABN checksum"
+      },
+      {
+        "source_record_id": "3cbe0f0eff4ffb9c:910:b8e0571cb44ff76b",
+        "source_field": "ABN",
+        "canonical_field": "entity.abn",
+        "raw_value": "40 451 368 063",
+        "reason": "Invalid ABN checksum"
+      },
+      {
+        "source_record_id": "3cbe0f0eff4ffb9c:966:e03be02cc413cea4",
+        "source_field": "ABN",
+        "canonical_field": "entity.abn",
+        "raw_value": "50 613 187 824",
+        "reason": "Invalid ABN checksum"
+      },
+      {
+        "source_record_id": "3cbe0f0eff4ffb9c:979:2ea40ae254f85082",
+        "source_field": "ABN",
+        "canonical_field": "entity.abn",
+        "raw_value": "48 566 064 589",
+        "reason": "Invalid ABN checksum"
+      },
+      {
+        "source_record_id": "3cbe0f0eff4ffb9c:1416:4c863cd4c4aa4518",
+        "source_field": "ABN",
+        "canonical_field": "entity.abn",
+        "raw_value": "26 635 039 093",
+        "reason": "Invalid ABN checksum"
+      },
+      {
+        "source_record_id": "3cbe0f0eff4ffb9c:1592:7285425a5b1447f0",
+        "source_field": "ABN",
+        "canonical_field": "entity.abn",
+        "raw_value": "67 671 515 665",
+        "reason": "Invalid ABN checksum"
+      },
+      {
+        "source_record_id": "3cbe0f0eff4ffb9c:1592:7285425a5b1447f0",
+        "source_field": "ACN",
+        "canonical_field": "entity.acn",
+        "raw_value": "761 515 665",
+        "reason": "Invalid ACN checksum"
+      },
+      {
+        "source_record_id": "3cbe0f0eff4ffb9c:1946:8d8ea76b59b74c98",
+        "source_field": "ABN",
+        "canonical_field": "entity.abn",
+        "raw_value": "30 586 985 658",
+        "reason": "Invalid ABN checksum"
+      },
+      {
+        "source_record_id": "3cbe0f0eff4ffb9c:1976:0c56b8169cc7f6fc",
+        "source_field": "ABN",
+        "canonical_field": "entity.abn",
+        "raw_value": "16 680 916 681",
+        "reason": "Invalid ABN checksum"
+      },
+      {
+        "source_record_id": "3cbe0f0eff4ffb9c:1976:0c56b8169cc7f6fc",
+        "source_field": "ACN",
+        "canonical_field": "entity.acn",
+        "raw_value": "680 916 681",
+        "reason": "Invalid ACN checksum"
+      },
+      {
+        "source_record_id": "3cbe0f0eff4ffb9c:2362:a914c464f361d427",
+        "source_field": "ABN",
+        "canonical_field": "entity.abn",
+        "raw_value": "81 160 506 189",
+        "reason": "Invalid ABN checksum"
+      },
+      {
+        "source_record_id": "3cbe0f0eff4ffb9c:2666:9159a2bff26fe8d1",
+        "source_field": "ABN",
+        "canonical_field": "entity.abn",
+        "raw_value": "51 680 182 554",
+        "reason": "Invalid ABN checksum"
+      },
+      {
+        "source_record_id": "3cbe0f0eff4ffb9c:2749:c5b8cdb74da98a8b",
+        "source_field": "ABN",
+        "canonical_field": "entity.abn",
+        "raw_value": "54 679 452 509",
+        "reason": "Invalid ABN checksum"
+      },
+      {
+        "source_record_id": "3cbe0f0eff4ffb9c:2749:c5b8cdb74da98a8b",
+        "source_field": "ACN",
+        "canonical_field": "entity.acn",
+        "raw_value": "679 452 509",
+        "reason": "Invalid ACN checksum"
+      },
+      {
+        "source_record_id": "3cbe0f0eff4ffb9c:3402:2a30232a013d1fef",
+        "source_field": "ABN",
+        "canonical_field": "entity.abn",
+        "raw_value": "97 123 952 779",
+        "reason": "Invalid ABN checksum"
+      }
+    ],
+    "per_field_validation": [
+      {
+        "source_field": "ABN",
+        "canonical_field": "entity.abn",
+        "valid_emissions": 5453,
+        "errors": 48,
+        "error_examples": [
+          {
+            "source_record_id": "3cbe0f0eff4ffb9c:139:574e2b2de63de84f",
+            "source_field": "ABN",
+            "canonical_field": "entity.abn",
+            "raw_value": "69 984 324 569",
+            "reason": "Invalid ABN checksum"
+          },
+          {
+            "source_record_id": "3cbe0f0eff4ffb9c:352:0632f6fbbe0f9002",
+            "source_field": "ABN",
+            "canonical_field": "entity.abn",
+            "raw_value": "50 611 707 314",
+            "reason": "Invalid ABN checksum"
+          }
+        ]
+      },
+      {
+        "source_field": "ACN",
+        "canonical_field": "entity.acn",
+        "valid_emissions": 2358,
+        "errors": 11,
+        "error_examples": [
+          {
+            "source_record_id": "3cbe0f0eff4ffb9c:627:a7b97daf647f26ff",
+            "source_field": "ACN",
+            "canonical_field": "entity.acn",
+            "raw_value": "116 501 957",
+            "reason": "Invalid ACN checksum"
+          },
+          {
+            "source_record_id": "3cbe0f0eff4ffb9c:716:dd37cf5ec2b9dd34",
+            "source_field": "ACN",
+            "canonical_field": "entity.acn",
+            "raw_value": "678 541 697",
+            "reason": "Invalid ACN checksum"
+          }
+        ]
+      },
+      {
+        "source_field": "Licensee Business Address",
+        "canonical_field": "address.full",
+        "valid_emissions": 10000,
+        "errors": 0,
+        "error_examples": []
+      }
+    ],
+    "error_reasons": {
+      "Invalid ABN checksum": 48,
+      "Invalid ACN checksum": 11
+    },
+    "example_observations": [
+      {
+        "source_id": "980b6499-c0b4-491b-ba9c-1c7506368a50",
+        "source_record_id": "3cbe0f0eff4ffb9c:1:7c6d473a3998eacf",
+        "observed_at": "2026-10-20T21:00:25.932039",
+        "ingested_at": "2026-10-21T08:11:35.909004+00:00",
+        "licence": "Creative Commons Attribution 4.0",
+        "extractor_version": "0.1.0:2ddcf1e44c155872fef6c628487f56ca9b293dfad7fdaa92ae0d467773619f55",
+        "observed_at_basis": "resource_last_modified_proxy",
+        "provenance": {
+          "resource_url": "https://www.data.qld.gov.au/api/3/action/datastore_search_sql?sql=SELECT+%2A+FROM+%2225608781-b28c-44f8-8545-0ab18d84082f%22+ORDER+BY+md5%28_id%3A%3Atext%29+LIMIT+10000",
+          "resource_sha256": "3cbe0f0eff4ffb9cac4ad566638d766084a89289f42071ac5668f19bdbf4fe41",
+          "raw_record_sha256": "7c6d473a3998eacf9b6f533e016f1c67ac1a57bae09c677fc74f84ea9a715dc9",
+          "row_number": 1,
+          "config_sha256": "2ddcf1e44c155872fef6c628487f56ca9b293dfad7fdaa92ae0d467773619f55",
+          "source_field": "Licensee Business Address"
+        },
+        "canonical_field": "address.full",
+        "address": {
+          "full": "18 BARRA COURT Mount Louisa QLD 4814"
+        },
+        "raw_value": "18 BARRA COURT Mount Louisa QLD 4814",
+        "confidence": {
+          "source_reliability": 0.8,
+          "field_confidence": 0.85
+        },
+        "derivation_level": "L1",
+        "observation_id": "a07b3e66b22a2f5a18edc17248a14903a774bba560871b0806e1a97b4b762086"
+      },
+      {
+        "source_id": "980b6499-c0b4-491b-ba9c-1c7506368a50",
+        "source_record_id": "3cbe0f0eff4ffb9c:2:9cb2357b4b1936dd",
+        "observed_at": "2026-10-20T21:00:25.932039",
+        "ingested_at": "2026-10-21T08:11:35.909004+00:00",
+        "licence": "Creative Commons Attribution 4.0",
+        "extractor_version": "0.1.0:2ddcf1e44c155872fef6c628487f56ca9b293dfad7fdaa92ae0d467773619f55",
+        "observed_at_basis": "resource_last_modified_proxy",
+        "provenance": {
+          "resource_url": "https://www.data.qld.gov.au/api/3/action/datastore_search_sql?sql=SELECT+%2A+FROM+%2225608781-b28c-44f8-8545-0ab18d84082f%22+ORDER+BY+md5%28_id%3A%3Atext%29+LIMIT+10000",
+          "resource_sha256": "3cbe0f0eff4ffb9cac4ad566638d766084a89289f42071ac5668f19bdbf4fe41",
+          "raw_record_sha256": "9cb2357b4b1936dd94d1faf5c202c42cade383e0f159c0faadac4c3f494fd75b",
+          "row_number": 2,
+          "config_sha256": "2ddcf1e44c155872fef6c628487f56ca9b293dfad7fdaa92ae0d467773619f55",
+          "source_field": "ACN"
+        },
+        "canonical_field": "entity.acn",
+        "entity": {
+          "acn": "600264391"
+        },
+        "raw_value": "600 264 391",
+        "confidence": {
+          "source_reliability": 0.8,
+          "field_confidence": 0.95
+        },
+        "derivation_level": "L1",
+        "observation_id": "ab8048c6c115d6540aa87cd6be05d04d1f0d6ad9dbb6204f1b598cf78acce2f9"
+      },
+      {
+        "source_id": "980b6499-c0b4-491b-ba9c-1c7506368a50",
+        "source_record_id": "3cbe0f0eff4ffb9c:2:9cb2357b4b1936dd",
+        "observed_at": "2026-10-20T21:00:25.932039",
+        "ingested_at": "2026-10-21T08:11:35.909004+00:00",
+        "licence": "Creative Commons Attribution 4.0",
+        "extractor_version": "0.1.0:2ddcf1e44c155872fef6c628487f56ca9b293dfad7fdaa92ae0d467773619f55",
+        "observed_at_basis": "resource_last_modified_proxy",
+        "provenance": {
+          "resource_url": "https://www.data.qld.gov.au/api/3/action/datastore_search_sql?sql=SELECT+%2A+FROM+%2225608781-b28c-44f8-8545-0ab18d84082f%22+ORDER+BY+md5%28_id%3A%3Atext%29+LIMIT+10000",
+          "resource_sha256": "3cbe0f0eff4ffb9cac4ad566638d766084a89289f42071ac5668f19bdbf4fe41",
+          "raw_record_sha256": "9cb2357b4b1936dd94d1faf5c202c42cade383e0f159c0faadac4c3f494fd75b",
+          "row_number": 2,
+          "config_sha256": "2ddcf1e44c155872fef6c628487f56ca9b293dfad7fdaa92ae0d467773619f55",
+          "source_field": "Licensee Business Address"
+        },
+        "canonical_field": "address.full",
+        "address": {
+          "full": "15 Cary Rd Glenvale QLD 4350"
+        },
+        "raw_value": "15 Cary Rd Glenvale QLD 4350",
+        "confidence": {
+          "source_reliability": 0.8,
+          "field_confidence": 0.85
+        },
+        "derivation_level": "L1",
+        "observation_id": "2245daaa7bf1f874e4d75f6a5e3ff137d4c21126577c96ee44ce19bed1932c0e"
+      },
+      {
+        "source_id": "980b6499-c0b4-491b-ba9c-1c7506368a50",
+        "source_record_id": "3cbe0f0eff4ffb9c:3:82ba86727d2c43fc",
+        "observed_at": "2026-10-20T21:00:25.932039",
+        "ingested_at": "2026-10-21T08:11:35.909004+00:00",
+        "licence": "Creative Commons Attribution 4.0",
+        "extractor_version": "0.1.0:2ddcf1e44c155872fef6c628487f56ca9b293dfad7fdaa92ae0d467773619f55",
+        "observed_at_basis": "resource_last_modified_proxy",
+        "provenance": {
+          "resource_url": "https://www.data.qld.gov.au/api/3/action/datastore_search_sql?sql=SELECT+%2A+FROM+%2225608781-b28c-44f8-8545-0ab18d84082f%22+ORDER+BY+md5%28_id%3A%3Atext%29+LIMIT+10000",
+          "resource_sha256": "3cbe0f0eff4ffb9cac4ad566638d766084a89289f42071ac5668f19bdbf4fe41",
+          "raw_record_sha256": "82ba86727d2c43fc754e6727bafda069b35b4848079c9dc712a9c40e37330c22",
+          "row_number": 3,
+          "config_sha256": "2ddcf1e44c155872fef6c628487f56ca9b293dfad7fdaa92ae0d467773619f55",
+          "source_field": "Licensee Business Address"
+        },
+        "canonical_field": "address.full",
+        "address": {
+          "full": "1/44 Roderick street Moffat Beach QLD 4551"
+        },
+        "raw_value": "1/44 Roderick street Moffat Beach QLD 4551",
+        "confidence": {
+          "source_reliability": 0.8,
+          "field_confidence": 0.85
+        },
+        "derivation_level": "L1",
+        "observation_id": "195eb2a278bac3e08ef83da312351b1f7d650490618263526c46813b4b579c2d"
+      },
+      {
+        "source_id": "980b6499-c0b4-491b-ba9c-1c7506368a50",
+        "source_record_id": "3cbe0f0eff4ffb9c:4:2ee81d92b1afcf8b",
+        "observed_at": "2026-10-20T21:00:25.932039",
+        "ingested_at": "2026-10-21T08:11:35.909004+00:00",
+        "licence": "Creative Commons Attribution 4.0",
+        "extractor_version": "0.1.0:2ddcf1e44c155872fef6c628487f56ca9b293dfad7fdaa92ae0d467773619f55",
+        "observed_at_basis": "resource_last_modified_proxy",
+        "provenance": {
+          "resource_url": "https://www.data.qld.gov.au/api/3/action/datastore_search_sql?sql=SELECT+%2A+FROM+%2225608781-b28c-44f8-8545-0ab18d84082f%22+ORDER+BY+md5%28_id%3A%3Atext%29+LIMIT+10000",
+          "resource_sha256": "3cbe0f0eff4ffb9cac4ad566638d766084a89289f42071ac5668f19bdbf4fe41",
+          "raw_record_sha256": "2ee81d92b1afcf8bdcebc8f048b57b3555cfc563ddd515e53064f5a1bbebbaab",
+          "row_number": 4,
+          "config_sha256": "2ddcf1e44c155872fef6c628487f56ca9b293dfad7fdaa92ae0d467773619f55",
+          "source_field": "Licensee Business Address"
+        },
+        "canonical_field": "address.full",
+        "address": {
+          "full": "11-13 Robius Court Stockleigh QLD 4280"
+        },
+        "raw_value": "11-13 Robius Court Stockleigh QLD 4280",
+        "confidence": {
+          "source_reliability": 0.8,
+          "field_confidence": 0.85
+        },
+        "derivation_level": "L1",
+        "observation_id": "289ef0eec82da4e35f3221f2f8795bc35bd122ee78467dd329be529af02d1cbe"
+      },
+      {
+        "source_id": "980b6499-c0b4-491b-ba9c-1c7506368a50",
+        "source_record_id": "3cbe0f0eff4ffb9c:5:8a0f73c00b353dd9",
+        "observed_at": "2026-10-20T21:00:25.932039",
+        "ingested_at": "2026-10-21T08:11:35.909004+00:00",
+        "licence": "Creative Commons Attribution 4.0",
+        "extractor_version": "0.1.0:2ddcf1e44c155872fef6c628487f56ca9b293dfad7fdaa92ae0d467773619f55",
+        "observed_at_basis": "resource_last_modified_proxy",
+        "provenance": {
+          "resource_url": "https://www.data.qld.gov.au/api/3/action/datastore_search_sql?sql=SELECT+%2A+FROM+%2225608781-b28c-44f8-8545-0ab18d84082f%22+ORDER+BY+md5%28_id%3A%3Atext%29+LIMIT+10000",
+          "resource_sha256": "3cbe0f0eff4ffb9cac4ad566638d766084a89289f42071ac5668f19bdbf4fe41",
+          "raw_record_sha256": "8a0f73c00b353dd9e5c0b19c8f96512dfba077334f365c462434520189b5f05b",
+          "row_number": 5,
+          "config_sha256": "2ddcf1e44c155872fef6c628487f56ca9b293dfad7fdaa92ae0d467773619f55",
+          "source_field": "ABN"
+        },
+        "canonical_field": "entity.abn",
+        "entity": {
+          "abn": "40414590761"
+        },
+        "raw_value": "40 414 590 761",
+        "confidence": {
+          "source_reliability": 0.8,
+          "field_confidence": 0.95
+        },
+        "derivation_level": "L1",
+        "observation_id": "944cd22ac6e6807f52bb810892d1dc193a5e210cd0f9713b7d08c86510d4f086"
+      },
+      {
+        "source_id": "980b6499-c0b4-491b-ba9c-1c7506368a50",
+        "source_record_id": "3cbe0f0eff4ffb9c:5:8a0f73c00b353dd9",
+        "observed_at": "2026-10-20T21:00:25.932039",
+        "ingested_at": "2026-10-21T08:11:35.909004+00:00",
+        "licence": "Creative Commons Attribution 4.0",
+        "extractor_version": "0.1.0:2ddcf1e44c155872fef6c628487f56ca9b293dfad7fdaa92ae0d467773619f55",
+        "observed_at_basis": "resource_last_modified_proxy",
+        "provenance": {
+          "resource_url": "https://www.data.qld.gov.au/api/3/action/datastore_search_sql?sql=SELECT+%2A+FROM+%2225608781-b28c-44f8-8545-0ab18d84082f%22+ORDER+BY+md5%28_id%3A%3Atext%29+LIMIT+10000",
+          "resource_sha256": "3cbe0f0eff4ffb9cac4ad566638d766084a89289f42071ac5668f19bdbf4fe41",
+          "raw_record_sha256": "8a0f73c00b353dd9e5c0b19c8f96512dfba077334f365c462434520189b5f05b",
+          "row_number": 5,
+          "config_sha256": "2ddcf1e44c155872fef6c628487f56ca9b293dfad7fdaa92ae0d467773619f55",
+          "source_field": "Licensee Business Address"
+        },
+        "canonical_field": "address.full",
+        "address": {
+          "full": "30 North Beach Pl Mudjimba QLD 4564"
+        },
+        "raw_value": "30 North Beach Pl Mudjimba QLD 4564",
+        "confidence": {
+          "source_reliability": 0.8,
+          "field_confidence": 0.85
+        },
+        "derivation_level": "L1",
+        "observation_id": "3a5d563d53f11c7406b1f4ceb8eeac9101970e79a816b39af1241c7d327d68fc"
+      },
+      {
+        "source_id": "980b6499-c0b4-491b-ba9c-1c7506368a50",
+        "source_record_id": "3cbe0f0eff4ffb9c:6:d6451876bf7a9492",
+        "observed_at": "2026-10-20T21:00:25.932039",
+        "ingested_at": "2026-10-21T08:11:35.909004+00:00",
+        "licence": "Creative Commons Attribution 4.0",
+        "extractor_version": "0.1.0:2ddcf1e44c155872fef6c628487f56ca9b293dfad7fdaa92ae0d467773619f55",
+        "observed_at_basis": "resource_last_modified_proxy",
+        "provenance": {
+          "resource_url": "https://www.data.qld.gov.au/api/3/action/datastore_search_sql?sql=SELECT+%2A+FROM+%2225608781-b28c-44f8-8545-0ab18d84082f%22+ORDER+BY+md5%28_id%3A%3Atext%29+LIMIT+10000",
+          "resource_sha256": "3cbe0f0eff4ffb9cac4ad566638d766084a89289f42071ac5668f19bdbf4fe41",
+          "raw_record_sha256": "d6451876bf7a949253b955d75321f8911b819d4d28b45acf5bdee87c2c1fe868",
+          "row_number": 6,
+          "config_sha256": "2ddcf1e44c155872fef6c628487f56ca9b293dfad7fdaa92ae0d467773619f55",
+          "source_field": "ABN"
+        },
+        "canonical_field": "entity.abn",
+        "entity": {
+          "abn": "50657217439"
+        },
+        "raw_value": "50 657 217 439",
+        "confidence": {
+          "source_reliability": 0.8,
+          "field_confidence": 0.95
+        },
+        "derivation_level": "L1",
+        "observation_id": "3570a1d7c8321613bb36de563c366d73e40ddee5d4dbf734604d5dc536673f47"
+      }
+    ],
+    "note": "Type/checksum validation does not prove semantic correctness; semantic review required."
+  },
+  "warnings": [
+    "Licensee Name removal: legal_name is dropped; supplier name evidence is therefore absent from the output, which may reduce entity linking.",
+    "Licensee Business Address may be an individual's residential or home business address; treating it as a supplier address needs review.",
+    "ABN and ACN are validated by checksum only; checksum validity does not prove the identifier belongs to the named licensee.",
+    "ACN and ABN values are formatted and checksum-checked independently; no ACN is inferred from ABN suffix.",
+    "The 13 invalid ABN and 2 invalid ACN source values are rejected, so those identifiers are absent from output and may be source errors.",
+    "observed_at is not mapped because only a publication proxy exists; temporal validity of records is unknown.",
+    "Status remains unknown despite the register describing suspended licences; no reliable status column.",
+    "Held-out validation confirms emission and checksum behaviour only, not semantic correctness of the address or identifiers."
+  ],
+  "draft": true,
+  "review_instructions": "Inspect roles, source evidence, temporal proxy, field coverage, unmapped fields and samples. Approve the exact config hash or reject with reason."
+}

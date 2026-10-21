@@ -1,0 +1,58 @@
+{
+  "parser": {
+    "format": "json",
+    "record_path": "result.records",
+    "encoding": "utf-8-sig"
+  },
+  "observed_at_field": null,
+  "mappings": "[{\"source_field\": \"Licensee Name\", \"canonical_field\": \"entity.legal_name\", \"transforms\": [\"strip\"], \"confidence\": 0.6, \"rationale\": \"Field holds a person's or business licensee name. Many rows are individuals (Licence Type DESC = Individual), so this is not reliably a registered organisation name. Mapped only as a conservative candidate; assumption that it is a legal name is flagged. Confidence set below the 0.8 minimum, so it should be excluded at the threshold.\", \"}, {\"source_field\": \"ABN\", \"canonical_field\": \"entity.abn\", \"transforms\": [\"strip\", \"abn\"], \"confidence\": 0.9, \"rationale\": \"Field holds 11-digit ABN with spaces in sample values; abn transform validates checksum and strips formatting. Applies to supplier/licensee identity only; no buyer or agency identifiers present.\"}, {\"source_field\": \"ACN\", \"canonical_field\": \"entity.acn\", \"transforms\": [\"strip\", \"acn\"], \"confidence\": 0.9, \"rationale\": \"Field holds 9-digit ACN with spaces in sample values; acn transform validates checksum. Not derived from ABN.\"}, {\"source_field\": \"Licensee Business Address\", \"canonical_field\": \"address.full\", \"transforms\": [\"strip\"], \"confidence\": 0.85, \"rationale\": \"Free-text single-line address labelled as the licensee business address. Maps to full address; locality/state/postcode are embedded and not separately reliable to split at this stage.\"}]",
+  "unmapped_fields": [
+    {
+      "source_field": "_id",
+      "reason": "Row index/system identifier, not an entity attribute."
+    },
+    {
+      "source_field": "id",
+      "reason": "Row identifier, not an entity attribute."
+    },
+    {
+      "source_field": "Licence Number",
+      "reason": "QBCC licence number is a regulator licence identifier, not a canonical entity field; no canonical target exists."
+    },
+    {
+      "source_field": "Financial Category CODE",
+      "reason": "Regulatory financial category; no canonical target."
+    },
+    {
+      "source_field": "Financial Category DESC",
+      "reason": "Regulatory financial category; no canonical target."
+    },
+    {
+      "source_field": "Licence Type CODE",
+      "reason": "Licence type code; not entity_type (licence type is not legal entity type; no explicit enum mapping supported)."
+    },
+    {
+      "source_field": "Licence Type DESC",
+      "reason": "Individual/Company licence type; ambiguous for entity_type and no enum mapping evidenced; defaults to unknown, so left unmapped."
+    },
+    {
+      "source_field": "Licence Grade",
+      "reason": "Licence grade describes the licence class held, not industry_code or status."
+    },
+    {
+      "source_field": "Licence Class Type",
+      "reason": "Licence class description; not an ANZSIC industry code, so industry_code is not mapped."
+    }
+  ],
+  "minimum_field_confidence": 0.8,
+  "warnings": [
+    "observed_at_field is null: the only temporal value is a resource modification proxy (observed_at_basis: resource_last_modified_proxy), not a source statement time.",
+    "Licensee Name is mapped to entity.legal_name only as an assumption; most rows are individuals' names, not registered organisation names. Confidence 0.6 is below minimum 0.8 and should be excluded by threshold.",
+    "Rows are per licence, so the same licensee appears multiple times (one per licence class). Each row yields a separate observation; deduplication is not performed at ingest.",
+    "ABN and ACN are sparsely populated and may belong to the individual or a business; ownership of identifiers is not established by the source.",
+    "Licensee Business Address is a single unparsed string; postcode and state are not split out. The address may be a business or residential address.",
+    "Source is a daily-refreshed current-state snapshot with no per-record statement date; valid_from/valid_to not inferred.",
+    "Multiple QBCC licence rows may describe the same licensee; no trading_name, website, status, date_registered, nzbn, or industry_code source field exists in the sample."
+  ],
+  "entity_role": "licensee"
+}

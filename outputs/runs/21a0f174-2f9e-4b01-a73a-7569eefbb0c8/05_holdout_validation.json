@@ -1,0 +1,382 @@
+{
+  "records": 300,
+  "observation_count": 555,
+  "emitted_by_field": {
+    "entity.legal_name": 300,
+    "address.postcode": 251,
+    "entity.abn": 4
+  },
+  "error_count": 49,
+  "errors": [
+    {
+      "source_record_id": "b7b6d1dd8e8a9850:767:dfec26e80e40067a",
+      "source_field": "Supplier address",
+      "canonical_field": "address.postcode",
+      "raw_value": "â€‹4350",
+      "reason": "Identifier contains non-numeric text"
+    },
+    {
+      "source_record_id": "b7b6d1dd8e8a9850:768:67ab8f6051b0d102",
+      "source_field": "Supplier address",
+      "canonical_field": "address.postcode",
+      "raw_value": "â€‹4670",
+      "reason": "Identifier contains non-numeric text"
+    },
+    {
+      "source_record_id": "b7b6d1dd8e8a9850:769:31cd47ff2fc3be36",
+      "source_field": "Supplier address",
+      "canonical_field": "address.postcode",
+      "raw_value": "â€‹4006",
+      "reason": "Identifier contains non-numeric text"
+    },
+    {
+      "source_record_id": "b7b6d1dd8e8a9850:775:95ba5fdfb7be2221",
+      "source_field": "Supplier address",
+      "canonical_field": "address.postcode",
+      "raw_value": "â€‹4207",
+      "reason": "Identifier contains non-numeric text"
+    },
+    {
+      "source_record_id": "b7b6d1dd8e8a9850:776:bfe4c0da82e77d34",
+      "source_field": "Supplier address",
+      "canonical_field": "address.postcode",
+      "raw_value": "â€‹3207",
+      "reason": "Identifier contains non-numeric text"
+    },
+    {
+      "source_record_id": "b7b6d1dd8e8a9850:796:76c1a03859a1b061",
+      "source_field": "Supplier address",
+      "canonical_field": "address.postcode",
+      "raw_value": "Vari",
+      "reason": "Identifier contains non-numeric text"
+    },
+    {
+      "source_record_id": "b7b6d1dd8e8a9850:893:d806aca9ccf73d1a",
+      "source_field": "Supplier address",
+      "canonical_field": "address.postcode",
+      "raw_value": "â€‹4818",
+      "reason": "Identifier contains non-numeric text"
+    },
+    {
+      "source_record_id": "b7b6d1dd8e8a9850:896:a0cd5cd4bf4e744c",
+      "source_field": "Supplier address",
+      "canonical_field": "address.postcode",
+      "raw_value": "â€‹3000",
+      "reason": "Identifier contains non-numeric text"
+    },
+    {
+      "source_record_id": "b7b6d1dd8e8a9850:897:5190b1881002f84c",
+      "source_field": "Supplier address",
+      "canonical_field": "address.postcode",
+      "raw_value": "â€‹4702",
+      "reason": "Identifier contains non-numeric text"
+    },
+    {
+      "source_record_id": "b7b6d1dd8e8a9850:910:1d3a84e3423455d0",
+      "source_field": "Supplier address",
+      "canonical_field": "address.postcode",
+      "raw_value": "â€‹4207",
+      "reason": "Identifier contains non-numeric text"
+    },
+    {
+      "source_record_id": "b7b6d1dd8e8a9850:912:8667f4c823740328",
+      "source_field": "Supplier address",
+      "canonical_field": "address.postcode",
+      "raw_value": "â€‹4811",
+      "reason": "Identifier contains non-numeric text"
+    },
+    {
+      "source_record_id": "b7b6d1dd8e8a9850:920:3ddf9e8444853191",
+      "source_field": "Supplier address",
+      "canonical_field": "address.postcode",
+      "raw_value": "â€‹4700",
+      "reason": "Identifier contains non-numeric text"
+    },
+    {
+      "source_record_id": "b7b6d1dd8e8a9850:921:ac34ada3a5a90696",
+      "source_field": "Supplier address",
+      "canonical_field": "address.postcode",
+      "raw_value": "â€‹4824",
+      "reason": "Identifier contains non-numeric text"
+    },
+    {
+      "source_record_id": "b7b6d1dd8e8a9850:922:446687c701fa262f",
+      "source_field": "Supplier address",
+      "canonical_field": "address.postcode",
+      "raw_value": "â€‹4000",
+      "reason": "Identifier contains non-numeric text"
+    },
+    {
+      "source_record_id": "b7b6d1dd8e8a9850:930:71704a77f8fd7ccd",
+      "source_field": "Supplier address",
+      "canonical_field": "address.postcode",
+      "raw_value": "â€‹4811",
+      "reason": "Identifier contains non-numeric text"
+    },
+    {
+      "source_record_id": "b7b6d1dd8e8a9850:931:d3a9bfdab1b9ade3",
+      "source_field": "Supplier address",
+      "canonical_field": "address.postcode",
+      "raw_value": "â€‹4350",
+      "reason": "Identifier contains non-numeric text"
+    },
+    {
+      "source_record_id": "b7b6d1dd8e8a9850:936:84ec9181fa165301",
+      "source_field": "Supplier address",
+      "canonical_field": "address.postcode",
+      "raw_value": "â€‹4811",
+      "reason": "Identifier contains non-numeric text"
+    },
+    {
+      "source_record_id": "b7b6d1dd8e8a9850:938:635c5d9613fedae4",
+      "source_field": "Supplier address",
+      "canonical_field": "address.postcode",
+      "raw_value": "â€‹4073",
+      "reason": "Identifier contains non-numeric text"
+    },
+    {
+      "source_record_id": "b7b6d1dd8e8a9850:940:e7c694937cf09b58",
+      "source_field": "Supplier address",
+      "canonical_field": "address.postcode",
+      "raw_value": "â€‹4558",
+      "reason": "Identifier contains non-numeric text"
+    },
+    {
+      "source_record_id": "b7b6d1dd8e8a9850:941:affaaf33c0a10e16",
+      "source_field": "Supplier address",
+      "canonical_field": "address.postcode",
+      "raw_value": "â€‹2460",
+      "reason": "Identifier contains non-numeric text"
+    }
+  ],
+  "error_reasons": {
+    "Identifier contains non-numeric text": 49
+  },
+  "example_observations": [
+    {
+      "source_id": "21a0f174-2f9e-4b01-a73a-7569eefbb0c8",
+      "source_record_id": "b7b6d1dd8e8a9850:701:9b92779c15b7c56e",
+      "observed_at": "2026-09-21T23:26:36.816738",
+      "ingested_at": "2026-10-21T07:50:11.321853+00:00",
+      "licence": "Creative Commons Attribution 4.0",
+      "extractor_version": "0.1.0:ab92204ee91f0a257b0fb673b1ea519264df823d15af67e905b4b92c7e2fd388",
+      "observed_at_basis": "resource_last_modified_proxy",
+      "provenance": {
+        "resource_url": "https://www.data.qld.gov.au/datastore/dump/95313d0f-5f76-46e5-9485-41266fb12bc6?format=csv",
+        "resource_sha256": "b7b6d1dd8e8a9850800ea3002005fa0123fe1aaa3a5756096cd8dfee0a581d16",
+        "raw_record_sha256": "9b92779c15b7c56e5799191af464cb95c687d9cb411278497f00ae340c77ed02",
+        "row_number": 701,
+        "config_sha256": "ab92204ee91f0a257b0fb673b1ea519264df823d15af67e905b4b92c7e2fd388",
+        "source_field": "Supplier name"
+      },
+      "canonical_field": "entity.legal_name",
+      "entity": {
+        "legal_name": "PATENT PRODUCTS AUSTRALIA PTY. LTD."
+      },
+      "raw_value": "PATENT PRODUCTS AUSTRALIA PTY. LTD.",
+      "confidence": {
+        "source_reliability": 0.8,
+        "field_confidence": 0.8
+      },
+      "derivation_level": "L1",
+      "observation_id": "a21042bb7704876a0c7d8a5e66d2d35b4b8cac8c716727d23f1c9a0fa0a8d672"
+    },
+    {
+      "source_id": "21a0f174-2f9e-4b01-a73a-7569eefbb0c8",
+      "source_record_id": "b7b6d1dd8e8a9850:701:9b92779c15b7c56e",
+      "observed_at": "2026-09-21T23:26:36.816738",
+      "ingested_at": "2026-10-21T07:50:11.321853+00:00",
+      "licence": "Creative Commons Attribution 4.0",
+      "extractor_version": "0.1.0:ab92204ee91f0a257b0fb673b1ea519264df823d15af67e905b4b92c7e2fd388",
+      "observed_at_basis": "resource_last_modified_proxy",
+      "provenance": {
+        "resource_url": "https://www.data.qld.gov.au/datastore/dump/95313d0f-5f76-46e5-9485-41266fb12bc6?format=csv",
+        "resource_sha256": "b7b6d1dd8e8a9850800ea3002005fa0123fe1aaa3a5756096cd8dfee0a581d16",
+        "raw_record_sha256": "9b92779c15b7c56e5799191af464cb95c687d9cb411278497f00ae340c77ed02",
+        "row_number": 701,
+        "config_sha256": "ab92204ee91f0a257b0fb673b1ea519264df823d15af67e905b4b92c7e2fd388",
+        "source_field": "Supplier address"
+      },
+      "canonical_field": "address.postcode",
+      "address": {
+        "postcode": "4013"
+      },
+      "raw_value": "4013",
+      "confidence": {
+        "source_reliability": 0.8,
+        "field_confidence": 0.85
+      },
+      "derivation_level": "L1",
+      "observation_id": "923b53a3314589b4ad481992b66cc18dec734a3eec429d804d8129c57dcd15c5"
+    },
+    {
+      "source_id": "21a0f174-2f9e-4b01-a73a-7569eefbb0c8",
+      "source_record_id": "b7b6d1dd8e8a9850:702:1884229697c3117c",
+      "observed_at": "2026-09-21T23:26:36.816738",
+      "ingested_at": "2026-10-21T07:50:11.321853+00:00",
+      "licence": "Creative Commons Attribution 4.0",
+      "extractor_version": "0.1.0:ab92204ee91f0a257b0fb673b1ea519264df823d15af67e905b4b92c7e2fd388",
+      "observed_at_basis": "resource_last_modified_proxy",
+      "provenance": {
+        "resource_url": "https://www.data.qld.gov.au/datastore/dump/95313d0f-5f76-46e5-9485-41266fb12bc6?format=csv",
+        "resource_sha256": "b7b6d1dd8e8a9850800ea3002005fa0123fe1aaa3a5756096cd8dfee0a581d16",
+        "raw_record_sha256": "1884229697c3117c84b806cc226a14076d6363ecbe9f4e0bc440f432ed183a58",
+        "row_number": 702,
+        "config_sha256": "ab92204ee91f0a257b0fb673b1ea519264df823d15af67e905b4b92c7e2fd388",
+        "source_field": "Supplier name"
+      },
+      "canonical_field": "entity.legal_name",
+      "entity": {
+        "legal_name": "GOO'S PLANT HIRE"
+      },
+      "raw_value": "GOO'S PLANT HIRE",
+      "confidence": {
+        "source_reliability": 0.8,
+        "field_confidence": 0.8
+      },
+      "derivation_level": "L1",
+      "observation_id": "f90670bb9a1057c5a59565839e4163f549f14bb17f5b0daf35c3374faf1dc2b8"
+    },
+    {
+      "source_id": "21a0f174-2f9e-4b01-a73a-7569eefbb0c8",
+      "source_record_id": "b7b6d1dd8e8a9850:702:1884229697c3117c",
+      "observed_at": "2026-09-21T23:26:36.816738",
+      "ingested_at": "2026-10-21T07:50:11.321853+00:00",
+      "licence": "Creative Commons Attribution 4.0",
+      "extractor_version": "0.1.0:ab92204ee91f0a257b0fb673b1ea519264df823d15af67e905b4b92c7e2fd388",
+      "observed_at_basis": "resource_last_modified_proxy",
+      "provenance": {
+        "resource_url": "https://www.data.qld.gov.au/datastore/dump/95313d0f-5f76-46e5-9485-41266fb12bc6?format=csv",
+        "resource_sha256": "b7b6d1dd8e8a9850800ea3002005fa0123fe1aaa3a5756096cd8dfee0a581d16",
+        "raw_record_sha256": "1884229697c3117c84b806cc226a14076d6363ecbe9f4e0bc440f432ed183a58",
+        "row_number": 702,
+        "config_sha256": "ab92204ee91f0a257b0fb673b1ea519264df823d15af67e905b4b92c7e2fd388",
+        "source_field": "Supplier address"
+      },
+      "canonical_field": "address.postcode",
+      "address": {
+        "postcode": "4741"
+      },
+      "raw_value": "4741",
+      "confidence": {
+        "source_reliability": 0.8,
+        "field_confidence": 0.85
+      },
+      "derivation_level": "L1",
+      "observation_id": "e4ab1f817f900c03ab295d4d4932c8cae3bff39b4d553614de7815df5d0e21d7"
+    },
+    {
+      "source_id": "21a0f174-2f9e-4b01-a73a-7569eefbb0c8",
+      "source_record_id": "b7b6d1dd8e8a9850:703:e593741df4e3f168",
+      "observed_at": "2026-09-21T23:26:36.816738",
+      "ingested_at": "2026-10-21T07:50:11.321853+00:00",
+      "licence": "Creative Commons Attribution 4.0",
+      "extractor_version": "0.1.0:ab92204ee91f0a257b0fb673b1ea519264df823d15af67e905b4b92c7e2fd388",
+      "observed_at_basis": "resource_last_modified_proxy",
+      "provenance": {
+        "resource_url": "https://www.data.qld.gov.au/datastore/dump/95313d0f-5f76-46e5-9485-41266fb12bc6?format=csv",
+        "resource_sha256": "b7b6d1dd8e8a9850800ea3002005fa0123fe1aaa3a5756096cd8dfee0a581d16",
+        "raw_record_sha256": "e593741df4e3f168783fa4fbbea39b8ed0acf07dc2be8cf7aaf850ed82ba596c",
+        "row_number": 703,
+        "config_sha256": "ab92204ee91f0a257b0fb673b1ea519264df823d15af67e905b4b92c7e2fd388",
+        "source_field": "Supplier name"
+      },
+      "canonical_field": "entity.legal_name",
+      "entity": {
+        "legal_name": "A MARINOV & J.D MARINOV T/A"
+      },
+      "raw_value": "A MARINOV & J.D MARINOV T/A",
+      "confidence": {
+        "source_reliability": 0.8,
+        "field_confidence": 0.8
+      },
+      "derivation_level": "L1",
+      "observation_id": "40a921a69afe26d5149cd098c43700c6d7b63552d870b2ad9f26d1e4c9659157"
+    },
+    {
+      "source_id": "21a0f174-2f9e-4b01-a73a-7569eefbb0c8",
+      "source_record_id": "b7b6d1dd8e8a9850:703:e593741df4e3f168",
+      "observed_at": "2026-09-21T23:26:36.816738",
+      "ingested_at": "2026-10-21T07:50:11.321853+00:00",
+      "licence": "Creative Commons Attribution 4.0",
+      "extractor_version": "0.1.0:ab92204ee91f0a257b0fb673b1ea519264df823d15af67e905b4b92c7e2fd388",
+      "observed_at_basis": "resource_last_modified_proxy",
+      "provenance": {
+        "resource_url": "https://www.data.qld.gov.au/datastore/dump/95313d0f-5f76-46e5-9485-41266fb12bc6?format=csv",
+        "resource_sha256": "b7b6d1dd8e8a9850800ea3002005fa0123fe1aaa3a5756096cd8dfee0a581d16",
+        "raw_record_sha256": "e593741df4e3f168783fa4fbbea39b8ed0acf07dc2be8cf7aaf850ed82ba596c",
+        "row_number": 703,
+        "config_sha256": "ab92204ee91f0a257b0fb673b1ea519264df823d15af67e905b4b92c7e2fd388",
+        "source_field": "Supplier address"
+      },
+      "canonical_field": "address.postcode",
+      "address": {
+        "postcode": "4116"
+      },
+      "raw_value": "4116",
+      "confidence": {
+        "source_reliability": 0.8,
+        "field_confidence": 0.85
+      },
+      "derivation_level": "L1",
+      "observation_id": "64582ae981d9f63531b92d4183c5cd089238b4d96785722025383189c1e257aa"
+    },
+    {
+      "source_id": "21a0f174-2f9e-4b01-a73a-7569eefbb0c8",
+      "source_record_id": "b7b6d1dd8e8a9850:704:4ca356f8d0688966",
+      "observed_at": "2026-09-21T23:26:36.816738",
+      "ingested_at": "2026-10-21T07:50:11.321853+00:00",
+      "licence": "Creative Commons Attribution 4.0",
+      "extractor_version": "0.1.0:ab92204ee91f0a257b0fb673b1ea519264df823d15af67e905b4b92c7e2fd388",
+      "observed_at_basis": "resource_last_modified_proxy",
+      "provenance": {
+        "resource_url": "https://www.data.qld.gov.au/datastore/dump/95313d0f-5f76-46e5-9485-41266fb12bc6?format=csv",
+        "resource_sha256": "b7b6d1dd8e8a9850800ea3002005fa0123fe1aaa3a5756096cd8dfee0a581d16",
+        "raw_record_sha256": "4ca356f8d0688966569d4d3f1e29c00547536e606b8ea0814458ef1ea55985c8",
+        "row_number": 704,
+        "config_sha256": "ab92204ee91f0a257b0fb673b1ea519264df823d15af67e905b4b92c7e2fd388",
+        "source_field": "Supplier name"
+      },
+      "canonical_field": "entity.legal_name",
+      "entity": {
+        "legal_name": "WORKSHOP SOLUTIONS PTY LIMITED"
+      },
+      "raw_value": "WORKSHOP SOLUTIONS PTY LIMITED",
+      "confidence": {
+        "source_reliability": 0.8,
+        "field_confidence": 0.8
+      },
+      "derivation_level": "L1",
+      "observation_id": "53912f6b41a65a28a448aa32ebbee7fb90ec205b7fca7823ae2658250aca49d2"
+    },
+    {
+      "source_id": "21a0f174-2f9e-4b01-a73a-7569eefbb0c8",
+      "source_record_id": "b7b6d1dd8e8a9850:704:4ca356f8d0688966",
+      "observed_at": "2026-09-21T23:26:36.816738",
+      "ingested_at": "2026-10-21T07:50:11.321853+00:00",
+      "licence": "Creative Commons Attribution 4.0",
+      "extractor_version": "0.1.0:ab92204ee91f0a257b0fb673b1ea519264df823d15af67e905b4b92c7e2fd388",
+      "observed_at_basis": "resource_last_modified_proxy",
+      "provenance": {
+        "resource_url": "https://www.data.qld.gov.au/datastore/dump/95313d0f-5f76-46e5-9485-41266fb12bc6?format=csv",
+        "resource_sha256": "b7b6d1dd8e8a9850800ea3002005fa0123fe1aaa3a5756096cd8dfee0a581d16",
+        "raw_record_sha256": "4ca356f8d0688966569d4d3f1e29c00547536e606b8ea0814458ef1ea55985c8",
+        "row_number": 704,
+        "config_sha256": "ab92204ee91f0a257b0fb673b1ea519264df823d15af67e905b4b92c7e2fd388",
+        "source_field": "Supplier address"
+      },
+      "canonical_field": "address.postcode",
+      "address": {
+        "postcode": "2164"
+      },
+      "raw_value": "2164",
+      "confidence": {
+        "source_reliability": 0.8,
+        "field_confidence": 0.85
+      },
+      "derivation_level": "L1",
+      "observation_id": "8ab971fa9bac2fba89b053979cd19c88cf093c510caf46731cb28c6ea1d7bb07"
+    }
+  ],
+  "note": "Type/checksum validation does not prove semantic correctness; semantic review required."
+}

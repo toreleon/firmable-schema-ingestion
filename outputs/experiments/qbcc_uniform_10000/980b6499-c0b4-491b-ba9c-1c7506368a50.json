@@ -1,0 +1,109 @@
+{
+  "parser": {
+    "format": "json",
+    "record_path": "result.records",
+    "encoding": "utf-8-sig"
+  },
+  "observed_at_field": null,
+  "mappings": [
+    {
+      "source_field": "ABN",
+      "canonical_field": "entity.abn",
+      "transforms": [
+        "strip",
+        "digits",
+        "abn"
+      ],
+      "confidence": 0.95,
+      "rationale": "Explicitly labelled ABN column. Training: 3851/3886 nonempty pass ABN checksum, 0 pass ACN checksum. Held-out: 1602/1615 valid; 13 failures are invalid ABN checksums on source values, which the abn transform correctly rejects. Mapping is correct; the invalid values are source data-quality issues and are rejected, not coerced.",
+      "separate_entities": false
+    },
+    {
+      "source_field": "ACN",
+      "canonical_field": "entity.acn",
+      "transforms": [
+        "strip",
+        "digits",
+        "acn"
+      ],
+      "confidence": 0.95,
+      "rationale": "Explicitly labelled ACN column. Training: 1658/1667 pass ACN checksum, 0 pass ABN checksum. Held-out: 700/702 valid; 2 failures are invalid ACN checksums, rejected by the acn transform. ACN is not derived from ABN suffix.",
+      "separate_entities": false
+    },
+    {
+      "source_field": "Licensee Business Address",
+      "canonical_field": "address.full",
+      "transforms": [
+        "strip"
+      ],
+      "confidence": 0.85,
+      "rationale": "Labelled business address, single string per row. Held-out 3000/3000 emitted. Maps to address.full only; locality, state and postcode are embedded and not separated here. Address is a licensee business address and may relate to an individual, so it is not confirmed as a registered address."
+    }
+  ],
+  "unmapped_fields": [
+    {
+      "source_field": "_id",
+      "reason": "Internal row identifier of the export; not a supplier identifier. Candidate for source_record_id provenance only."
+    },
+    {
+      "source_field": "id",
+      "reason": "Duplicate of _id; internal record key."
+    },
+    {
+      "source_field": "_full_text",
+      "reason": "Search index artefact derived from other fields; not a source statement."
+    },
+    {
+      "source_field": "Licensee Name",
+      "reason": "Mixes personal names (individual licensees) and company names with no reliable separation. Not verifiable as a registered legal name; held-out validation only shows emission, not semantic correctness. Removed from legal_name mapping for conservative handling; trading_name also not supported. Requires human review, possibly a split by Licence Type DESC or a validated company-name rule."
+    },
+    {
+      "source_field": "Licence Number",
+      "reason": "QBCC licence identifier; no ontology field."
+    },
+    {
+      "source_field": "Licence Type CODE",
+      "reason": "Licence category code, not entity_type."
+    },
+    {
+      "source_field": "Licence Type DESC",
+      "reason": "Licence category (Individual/Company), not a validated legal entity type; entity_type not guessed."
+    },
+    {
+      "source_field": "Financial Category CODE",
+      "reason": "Regulatory financial category; no ontology field."
+    },
+    {
+      "source_field": "Financial Category DESC",
+      "reason": "Regulatory financial category; no ontology field."
+    },
+    {
+      "source_field": "Licence Grade",
+      "reason": "Licence grade/role; no entity field."
+    },
+    {
+      "source_field": "Licence Class Type",
+      "reason": "Licence trade class; not ANZSIC, so industry_code not mapped."
+    }
+  ],
+  "minimum_field_confidence": 0.8,
+  "warnings": [
+    "observed_at_field is null: only a resource_last_modified_proxy is available; do not use as observed_at.",
+    "Status is not mapped; the register is current-state but includes suspended licences, so status remains unknown.",
+    "Source is a json_sample of a 7000-row training set and a 3000-row held-out set; full-file behaviour not verified.",
+    "Held-out errors (13 ABN, 2 ACN checksum failures) are rejected by validation and are not emitted."
+  ],
+  "entity_role": "supplier",
+  "source_id": "980b6499-c0b4-491b-ba9c-1c7506368a50",
+  "ontology_sha256": "f4b6b4941ec61dcc3fb07c6ee19edab927862aaaa8ae3df30b3023e047c9f9cd",
+  "generated_by": {
+    "kind": "multi_step_runtime_agent",
+    "model": "claude-haiku-5-5",
+    "run_identity": "c7af3c1425b5363542c479e0eba1c1652e4fab82aa23503336fcd8fcd107aa6d"
+  },
+  "review": {
+    "status": "pending",
+    "reviewer": null,
+    "approved_config_sha256": null
+  }
+}

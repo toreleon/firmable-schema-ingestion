@@ -1,0 +1,343 @@
+{
+  "training": {
+    "record_count": 195,
+    "fields": {
+      "Agency (Dept or Stat Body)": {
+        "nonempty": 195,
+        "types": {
+          "str": 195
+        },
+        "examples": [
+          "Queensland Treasury Corporation"
+        ]
+      },
+      "Agency address": {
+        "nonempty": 195,
+        "types": {
+          "str": 195
+        },
+        "examples": [
+          "Level 31, 111 Eagle Street Brisbane QLD 4000"
+        ]
+      },
+      "Award contract date": {
+        "nonempty": 195,
+        "types": {
+          "str": 195
+        },
+        "examples": [
+          "27/08/2004",
+          "8/01/2024",
+          "1/07/2024"
+        ]
+      },
+      "Commence date": {
+        "nonempty": 0,
+        "types": {
+          "str": 195
+        },
+        "examples": []
+      },
+      "Contract category group": {
+        "nonempty": 0,
+        "types": {
+          "str": 195
+        },
+        "examples": []
+      },
+      "Contract description/name": {
+        "nonempty": 195,
+        "types": {
+          "str": 195
+        },
+        "examples": [
+          "Information Communication Technology",
+          "Consultancy",
+          "Information Services"
+        ]
+      },
+      "Contract milestones": {
+        "nonempty": 0,
+        "types": {
+          "str": 195
+        },
+        "examples": []
+      },
+      "Contract performance management": {
+        "nonempty": 0,
+        "types": {
+          "str": 195
+        },
+        "examples": []
+      },
+      "Contract reference number": {
+        "nonempty": 0,
+        "types": {
+          "str": 195
+        },
+        "examples": []
+      },
+      "Contract value": {
+        "nonempty": 195,
+        "types": {
+          "str": 195
+        },
+        "examples": [
+          "5896",
+          "80000",
+          "45477"
+        ]
+      },
+      "Deliverables": {
+        "nonempty": 0,
+        "types": {
+          "str": 195
+        },
+        "examples": []
+      },
+      "Description": {
+        "nonempty": 1,
+        "types": {
+          "str": 195
+        },
+        "examples": [
+          "OCDS name"
+        ]
+      },
+      "Evaluation criteria and weightings": {
+        "nonempty": 0,
+        "types": {
+          "str": 195
+        },
+        "examples": []
+      },
+      "Finish date": {
+        "nonempty": 0,
+        "types": {
+          "str": 195
+        },
+        "examples": []
+      },
+      "Form of contract": {
+        "nonempty": 0,
+        "types": {
+          "str": 195
+        },
+        "examples": []
+      },
+      "Number of offers sought": {
+        "nonempty": 0,
+        "types": {
+          "str": 195
+        },
+        "examples": []
+      },
+      "Parent contract number/SOA": {
+        "nonempty": 0,
+        "types": {
+          "str": 195
+        },
+        "examples": []
+      },
+      "Procurement method": {
+        "nonempty": 5,
+        "types": {
+          "str": 195
+        },
+        "examples": [
+          "Limited"
+        ]
+      },
+      "Reason for use of limited tendering": {
+        "nonempty": 5,
+        "types": {
+          "str": 195
+        },
+        "examples": [
+          "c - (i) Cannot be made for technical reasons such as requirements of interchangeability or interoperability with existing equipment, software, services or installations procured under the initial procurement, or due to conditions under original supplier warranties",
+          "b - (i) The requirement is a work of art which can only be supplied by a particular supplier and no reasonable alternative exists",
+          "c - (ii) Would cause significant inconvenience or substantial duplication of costs for the procuring entity"
+        ]
+      },
+      "Specific confidentiality provision used": {
+        "nonempty": 195,
+        "types": {
+          "str": 195
+        },
+        "examples": [
+          "No"
+        ]
+      },
+      "Supplier ABN": {
+        "nonempty": 0,
+        "types": {
+          "str": 195
+        },
+        "examples": []
+      },
+      "Supplier address": {
+        "nonempty": 195,
+        "types": {
+          "str": 195
+        },
+        "examples": [
+          "C/o Theunissen Trollip Pty Ltd, Level 7 Angel Place, 123 Pitt Street",
+          "Level 27, 1 Bligh Street, Sydney NSW 2000",
+          "Level 10, 1 O'Connell Street, Sydney"
+        ]
+      },
+      "Supplier name": {
+        "nonempty": 195,
+        "types": {
+          "str": 195
+        },
+        "examples": [
+          "Lastpass Australia Pty Ltd",
+          "Bloomberg Australia Pty Ltd",
+          "Moody's Analytics Singapore Pte Ltd"
+        ]
+      },
+      "Variation to contract (Yes/No)": {
+        "nonempty": 195,
+        "types": {
+          "str": 195
+        },
+        "examples": [
+          "Yes",
+          "No"
+        ]
+      },
+      "_id": {
+        "nonempty": 195,
+        "types": {
+          "str": 195
+        },
+        "examples": [
+          "1",
+          "2",
+          "3"
+        ]
+      }
+    },
+    "sample": [
+      {
+        "_id": "1",
+        "Description": "",
+        "Agency (Dept or Stat Body)": "Queensland Treasury Corporation",
+        "Agency address": "Level 31, 111 Eagle Street Brisbane QLD 4000",
+        "Contract description/name": "Information Communication Technology",
+        "Award contract date": "27/08/2004",
+        "Contract value": "5896",
+        "Supplier name": "Lastpass Australia Pty Ltd",
+        "Supplier address": "C/o Theunissen Trollip Pty Ltd, Level 7 Angel Place, 123 Pitt Street",
+        "Variation to contract (Yes/No)": "Yes",
+        "Specific confidentiality provision used": "No",
+        "Procurement method": "",
+        "Reason for use of limited tendering": "",
+        "Form of contract": "",
+        "Number of offers sought": "",
+        "Evaluation criteria and weightings": "",
+        "Deliverables": "",
+        "Contract milestones": "",
+        "Contract performance management": "",
+        "Contract reference number": "",
+        "Contract category group": "",
+        "Parent contract number/SOA": "",
+        "Commence date": "",
+        "Supplier ABN": "",
+        "Finish date": ""
+      },
+      {
+        "_id": "2",
+        "Description": "",
+        "Agency (Dept or Stat Body)": "Queensland Treasury Corporation",
+        "Agency address": "Level 31, 111 Eagle Street Brisbane QLD 4000",
+        "Contract description/name": "Information Communication Technology",
+        "Award contract date": "8/01/2024",
+        "Contract value": "80000",
+        "Supplier name": "Bloomberg Australia Pty Ltd",
+        "Supplier address": "Level 27, 1 Bligh Street, Sydney NSW 2000",
+        "Variation to contract (Yes/No)": "Yes",
+        "Specific confidentiality provision used": "No",
+        "Procurement method": "",
+        "Reason for use of limited tendering": "",
+        "Form of contract": "",
+        "Number of offers sought": "",
+        "Evaluation criteria and weightings": "",
+        "Deliverables": "",
+        "Contract milestones": "",
+        "Contract performance management": "",
+        "Contract reference number": "",
+        "Contract category group": "",
+        "Parent contract number/SOA": "",
+        "Commence date": "",
+        "Supplier ABN": "",
+        "Finish date": ""
+      },
+      {
+        "_id": "3",
+        "Description": "OCDS name",
+        "Agency (Dept or Stat Body)": "Queensland Treasury Corporation",
+        "Agency address": "Level 31, 111 Eagle Street Brisbane QLD 4000",
+        "Contract description/name": "Information Communication Technology",
+        "Award contract date": "1/07/2024",
+        "Contract value": "45477",
+        "Supplier name": "Moody's Analytics Singapore Pte Ltd",
+        "Supplier address": "Level 10, 1 O'Connell Street, Sydney",
+        "Variation to contract (Yes/No)": "No",
+        "Specific confidentiality provision used": "No",
+        "Procurement method": "",
+        "Reason for use of limited tendering": "",
+        "Form of contract": "",
+        "Number of offers sought": "",
+        "Evaluation criteria and weightings": "",
+        "Deliverables": "",
+        "Contract milestones": "",
+        "Contract performance management": "",
+        "Contract reference number": "",
+        "Contract category group": "",
+        "Parent contract number/SOA": "",
+        "Commence date": "",
+        "Supplier ABN": "",
+        "Finish date": ""
+      },
+      {
+        "_id": "4",
+        "Description": "",
+        "Agency (Dept or Stat Body)": "Queensland Treasury Corporation",
+        "Agency address": "Level 31, 111 Eagle Street Brisbane QLD 4000",
+        "Contract description/name": "Information Communication Technology",
+        "Award contract date": "1/07/2024",
+        "Contract value": "27670.83",
+        "Supplier name": "Safetrac Pty Limited",
+        "Supplier address": "Level 6, HWT Tower 40 City Road Southbank VIC 3006",
+        "Variation to contract (Yes/No)": "No",
+        "Specific confidentiality provision used": "No",
+        "Procurement method": "",
+        "Reason for use of limited tendering": "",
+        "Form of contract": "",
+        "Number of offers sought": "",
+        "Evaluation criteria and weightings": "",
+        "Deliverables": "",
+        "Contract milestones": "",
+        "Contract performance management": "",
+        "Contract reference number": "",
+        "Contract category group": "",
+        "Parent contract number/SOA": "",
+        "Commence date": "",
+        "Supplier ABN": "",
+        "Finish date": ""
+      }
+    ]
+  },
+  "holdout_count": 84,
+  "split": "first 70% training, final 30% holdout; document-head inspection only",
+  "training_rows": [
+    1,
+    195
+  ],
+  "holdout_rows": [
+    196,
+    279
+  ]
+}

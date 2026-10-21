@@ -1,0 +1,334 @@
+{
+  "training": {
+    "record_count": 7000,
+    "fields": {
+      "ABN": {
+        "nonempty": 3975,
+        "types": {
+          "NoneType": 3025,
+          "str": 3975
+        },
+        "examples": [
+          "77 341 770 421",
+          "26 025 458 538",
+          "51 562 310 991",
+          "34 324 073 790",
+          "87 003 276 131"
+        ]
+      },
+      "ACN": {
+        "nonempty": 1074,
+        "types": {
+          "NoneType": 5926,
+          "str": 1074
+        },
+        "examples": [
+          "104 844 957",
+          "656 987 325",
+          "630 813 811",
+          "166 544 912",
+          "125 460 835"
+        ]
+      },
+      "Financial Category CODE": {
+        "nonempty": 7000,
+        "types": {
+          "str": 7000
+        },
+        "examples": [
+          "N/A",
+          "SCT1",
+          "SC2",
+          "2",
+          "1"
+        ]
+      },
+      "Financial Category DESC": {
+        "nonempty": 7000,
+        "types": {
+          "str": 7000
+        },
+        "examples": [
+          "No Financials Required",
+          "Self Certification - Trade",
+          "Self Certification - Builder/Trade",
+          "Category 2",
+          "Category 1"
+        ]
+      },
+      "Licence Class Type": {
+        "nonempty": 7000,
+        "types": {
+          "str": 7000
+        },
+        "examples": [
+          "Plumbing and Drainage",
+          "Gasfitting",
+          "Builder Restricted to Kitchen, Bathroom and Laundry Installation",
+          "Builder - Low Rise",
+          "Builder - Medium Rise"
+        ]
+      },
+      "Licence Grade": {
+        "nonempty": 7000,
+        "types": {
+          "str": 7000
+        },
+        "examples": [
+          "Nominee Supervisor",
+          "Site Supervisor",
+          "Trade Contractor Licence",
+          "Builder Licence",
+          "Fire Occupational"
+        ]
+      },
+      "Licence Number": {
+        "nonempty": 7000,
+        "types": {
+          "int": 7000
+        },
+        "examples": [
+          "1043557",
+          "1153146",
+          "1295044",
+          "709750",
+          "1299978"
+        ]
+      },
+      "Licence Type CODE": {
+        "nonempty": 7000,
+        "types": {
+          "str": 7000
+        },
+        "examples": [
+          "I",
+          "C"
+        ]
+      },
+      "Licence Type DESC": {
+        "nonempty": 7000,
+        "types": {
+          "str": 7000
+        },
+        "examples": [
+          "Individual",
+          "Company"
+        ]
+      },
+      "Licensee Business Address": {
+        "nonempty": 7000,
+        "types": {
+          "str": 7000
+        },
+        "examples": [
+          "4 CRESWICK CLOSE MANLY WEST QLD 4179",
+          "2 ROBA PLACE ASHMORE QLD 4214",
+          "12 Sunny St Palmview QLD 4553",
+          "11 Couldrey St Bardon QLD 4065",
+          "G102 417 Creek Rd Mount Gravatt east QLD 4122"
+        ]
+      },
+      "Licensee Name": {
+        "nonempty": 7000,
+        "types": {
+          "str": 7000
+        },
+        "examples": [
+          "SHANE ANTHONY ROLFE",
+          "DAVID GLEN EDWARDS",
+          "NATHAN THOMPSON",
+          "TONY JOHN ROCHE",
+          "MARIO MICHELE SILVESTRI"
+        ]
+      },
+      "_id": {
+        "nonempty": 7000,
+        "types": {
+          "int": 7000
+        },
+        "examples": [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5"
+        ]
+      },
+      "id": {
+        "nonempty": 7000,
+        "types": {
+          "int": 7000
+        },
+        "examples": [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5"
+        ]
+      }
+    },
+    "sample": [
+      {
+        "_id": 1,
+        "id": 1,
+        "Licence Number": 1043557,
+        "Licensee Name": "SHANE ANTHONY ROLFE",
+        "ACN": null,
+        "ABN": null,
+        "Licensee Business Address": "4 CRESWICK CLOSE MANLY WEST QLD 4179",
+        "Licence Type DESC": "Individual",
+        "Licence Type CODE": "I",
+        "Financial Category DESC": "No Financials Required",
+        "Financial Category CODE": "N/A",
+        "Licence Grade": "Nominee Supervisor",
+        "Licence Class Type": "Plumbing and Drainage"
+      },
+      {
+        "_id": 2,
+        "id": 2,
+        "Licence Number": 1043557,
+        "Licensee Name": "SHANE ANTHONY ROLFE",
+        "ACN": null,
+        "ABN": null,
+        "Licensee Business Address": "4 CRESWICK CLOSE MANLY WEST QLD 4179",
+        "Licence Type DESC": "Individual",
+        "Licence Type CODE": "I",
+        "Financial Category DESC": "No Financials Required",
+        "Financial Category CODE": "N/A",
+        "Licence Grade": "Nominee Supervisor",
+        "Licence Class Type": "Gasfitting"
+      },
+      {
+        "_id": 3,
+        "id": 3,
+        "Licence Number": 1043557,
+        "Licensee Name": "SHANE ANTHONY ROLFE",
+        "ACN": null,
+        "ABN": null,
+        "Licensee Business Address": "4 CRESWICK CLOSE MANLY WEST QLD 4179",
+        "Licence Type DESC": "Individual",
+        "Licence Type CODE": "I",
+        "Financial Category DESC": "No Financials Required",
+        "Financial Category CODE": "N/A",
+        "Licence Grade": "Nominee Supervisor",
+        "Licence Class Type": "Builder Restricted to Kitchen, Bathroom and Laundry Installation"
+      },
+      {
+        "_id": 4,
+        "id": 4,
+        "Licence Number": 1153146,
+        "Licensee Name": "DAVID GLEN EDWARDS",
+        "ACN": null,
+        "ABN": null,
+        "Licensee Business Address": "2 ROBA PLACE ASHMORE QLD 4214",
+        "Licence Type DESC": "Individual",
+        "Licence Type CODE": "I",
+        "Financial Category DESC": "No Financials Required",
+        "Financial Category CODE": "N/A",
+        "Licence Grade": "Site Supervisor",
+        "Licence Class Type": "Builder - Low Rise"
+      },
+      {
+        "_id": 5,
+        "id": 5,
+        "Licence Number": 1295044,
+        "Licensee Name": "NATHAN THOMPSON",
+        "ACN": null,
+        "ABN": "77 341 770 421",
+        "Licensee Business Address": "12 Sunny St Palmview QLD 4553",
+        "Licence Type DESC": "Individual",
+        "Licence Type CODE": "I",
+        "Financial Category DESC": "Self Certification - Trade",
+        "Financial Category CODE": "SCT1",
+        "Licence Grade": "Trade Contractor Licence",
+        "Licence Class Type": "Plumbing and Drainage"
+      },
+      {
+        "_id": 6,
+        "id": 6,
+        "Licence Number": 709750,
+        "Licensee Name": "TONY JOHN ROCHE",
+        "ACN": null,
+        "ABN": null,
+        "Licensee Business Address": "11 Couldrey St Bardon QLD 4065",
+        "Licence Type DESC": "Individual",
+        "Licence Type CODE": "I",
+        "Financial Category DESC": "Self Certification - Builder/Trade",
+        "Financial Category CODE": "SC2",
+        "Licence Grade": "Builder Licence",
+        "Licence Class Type": "Builder - Medium Rise"
+      },
+      {
+        "_id": 7,
+        "id": 7,
+        "Licence Number": 1299978,
+        "Licensee Name": "MARIO MICHELE SILVESTRI",
+        "ACN": null,
+        "ABN": "26 025 458 538",
+        "Licensee Business Address": "G102 417 Creek Rd Mount Gravatt east QLD 4122",
+        "Licence Type DESC": "Individual",
+        "Licence Type CODE": "I",
+        "Financial Category DESC": "Self Certification - Trade",
+        "Financial Category CODE": "SCT1",
+        "Licence Grade": "Trade Contractor Licence",
+        "Licence Class Type": "Plumbing and Drainage"
+      },
+      {
+        "_id": 8,
+        "id": 8,
+        "Licence Number": 1299978,
+        "Licensee Name": "MARIO MICHELE SILVESTRI",
+        "ACN": null,
+        "ABN": "26 025 458 538",
+        "Licensee Business Address": "G102 417 Creek Rd Mount Gravatt east QLD 4122",
+        "Licence Type DESC": "Individual",
+        "Licence Type CODE": "I",
+        "Financial Category DESC": "Self Certification - Trade",
+        "Financial Category CODE": "SCT1",
+        "Licence Grade": "Trade Contractor Licence",
+        "Licence Class Type": "Gasfitting"
+      },
+      {
+        "_id": 9,
+        "id": 9,
+        "Licence Number": 1146003,
+        "Licensee Name": "NOEL PAUL GARDNER",
+        "ACN": null,
+        "ABN": null,
+        "Licensee Business Address": "133 MAIN STREET PROSERPINE QLD 4800",
+        "Licence Type DESC": "Individual",
+        "Licence Type CODE": "I",
+        "Financial Category DESC": "No Financials Required",
+        "Financial Category CODE": "N/A",
+        "Licence Grade": "Nominee Supervisor",
+        "Licence Class Type": "Plumbing and Drainage"
+      },
+      {
+        "_id": 10,
+        "id": 10,
+        "Licence Number": 1137910,
+        "Licensee Name": "SHANE DOUGLAS GOULDING",
+        "ACN": null,
+        "ABN": "51 562 310 991",
+        "Licensee Business Address": "25 Hudson St Kalbar QLD 4309",
+        "Licence Type DESC": "Individual",
+        "Licence Type CODE": "I",
+        "Financial Category DESC": "Self Certification - Builder/Trade",
+        "Financial Category CODE": "SC2",
+        "Licence Grade": "Trade Contractor Licence",
+        "Licence Class Type": "Carpentry"
+      }
+    ]
+  },
+  "holdout_count": 3000,
+  "split": "first 70% training, final 30% holdout; document-head inspection only",
+  "training_rows": [
+    1,
+    7000
+  ],
+  "holdout_rows": [
+    7001,
+    10000
+  ]
+}

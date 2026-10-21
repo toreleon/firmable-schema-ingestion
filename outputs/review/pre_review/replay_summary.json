@@ -1,0 +1,47 @@
+{
+  "sources": [
+    {
+      "source_id": "980b6499-c0b4-491b-ba9c-1c7506368a50",
+      "input_records": 30000,
+      "observations": 53428,
+      "field_errors": 208
+    },
+    {
+      "source_id": "21a0f174-2f9e-4b01-a73a-7569eefbb0c8",
+      "input_records": 1000,
+      "observations": 885,
+      "field_errors": 120
+    },
+    {
+      "source_id": "2b977e4d-c765-4ce5-8088-65210a744add",
+      "input_records": 202,
+      "observations": 151,
+      "field_errors": 5
+    },
+    {
+      "source_id": "73b67e91-d9bf-4471-80c3-a62d5afaee2a",
+      "input_records": 44,
+      "observations": 88,
+      "field_errors": 0
+    },
+    {
+      "source_id": "42bad3df-f2e0-4c9c-bef0-0a4328927718",
+      "input_records": 15111,
+      "observations": 23029,
+      "field_errors": 492
+    },
+    {
+      "source_id": "8792a410-dea1-4fc9-b783-b97f0fefc208",
+      "input_records": 279,
+      "observations": 279,
+      "field_errors": 0
+    }
+  ],
+  "total_observations": 77860,
+  "proposed_links": 136,
+  "profiles": 50,
+  "requested_profiles": 50,
+  "draft": true,
+  "profile_target_met": true,
+  "human_audit_status": "pending; not measured precision"
+}

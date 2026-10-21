@@ -1,0 +1,148 @@
+{
+  "config": {
+    "entity_role": "supplier",
+    "parser": {
+      "format": "json",
+      "record_path": "result.records",
+      "encoding": "utf-8-sig"
+    },
+    "observed_at_field": null,
+    "mappings": [
+      {
+        "source_field": "Suppliers",
+        "canonical_field": "entity.abn",
+        "transforms": [
+          {
+            "op": "regex",
+            "pattern": "(?i)ABN:\\s*(\\d{11})\\b",
+            "group": 1,
+            "all": true
+          },
+          "abn"
+        ],
+        "confidence": 0.6,
+        "separate_entities": true,
+        "rationale": "Held-out run shows the regex failed with 'Regex input/pattern limit exceeded' on a long Suppliers cell (0 emissions, 1 error). The ABN-labelled extraction is still the only safe identifier path, so it is retained, but the pattern was not validated on held-out data. Confidence kept at 0.6 because no held-out ABN was successfully emitted and checksum validity is unverified. Requires a shorter-input or pre-split approach before reliance."
+      }
+    ],
+    "unmapped_fields": [
+      {
+        "source_field": "_id",
+        "reason": "Row index, not a supplier or entity identifier; source_record_id should be derived from the raw record, not this field."
+      },
+      {
+        "source_field": "Arrangement Name",
+        "reason": "Procurement arrangement title, not a supplier legal or trading name."
+      },
+      {
+        "source_field": "Arrangement Number",
+        "reason": "Government arrangement identifier; not an ABN, ACN or NZBN."
+      },
+      {
+        "source_field": "Categories",
+        "reason": "Procurement category, not an industry code (ANZSIC)."
+      },
+      {
+        "source_field": "Subcategories",
+        "reason": "Procurement subcategory, not an industry code."
+      },
+      {
+        "source_field": "Product and Service Groups",
+        "reason": "Product/service classification of the arrangement, not an entity industry_code; list-valued and ambiguous."
+      },
+      {
+        "source_field": "Start Date",
+        "reason": "Arrangement start date; not entity date_registered."
+      },
+      {
+        "source_field": "Expiry Date",
+        "reason": "Arrangement expiry date; not an entity status or registration date."
+      },
+      {
+        "source_field": "State",
+        "reason": "Publication state of the directory record, not an address state."
+      },
+      {
+        "source_field": "Status",
+        "reason": "Arrangement status describes the procurement arrangement, not the supplier's entity status."
+      },
+      {
+        "source_field": "Contact Name",
+        "reason": "Government contact person; not supplier data."
+      },
+      {
+        "source_field": "Contact Email",
+        "reason": "Government buyer contact; not a supplier attribute."
+      },
+      {
+        "source_field": "Contact Phone",
+        "reason": "Government buyer contact; not a supplier attribute."
+      },
+      {
+        "source_field": "Department",
+        "reason": "Buying agency; must not be mapped as supplier identity or address."
+      },
+      {
+        "source_field": "Section",
+        "reason": "Buying agency unit; not supplier data."
+      },
+      {
+        "source_field": "Suppliers",
+        "reason": "Compound free text. Only the ABN-labelled identifier path is mapped; names, trading names, addresses, phones and emails cannot be safely attributed by index and remain unmapped."
+      }
+    ],
+    "minimum_field_confidence": 0.8,
+    "warnings": [
+      "Held-out validation emitted 0 observations and 1 error for Suppliers->entity.abn: regex input/pattern limit exceeded on a very long cell (Thomson Geer / UHY-style multi-party list). Zero emissions means no evidence the ABN path works on held-out data.",
+      "The ABN regex is anchored to the 'ABN:' label; rows without a labelled ABN produce no claims (most held-out sample rows have none).",
+      "Held-out sample rows show Suppliers lists with no ABN labels at all, so coverage of this mapping is expected to be very sparse.",
+      "observed_at_field is null; resource_last_modified_proxy is only a publication proxy, not a statement time.",
+      "No ACN mapped; no ACN inferred from ABN.",
+      "Buyer/agency fields (Department, Section, Contact*) must never be used as supplier identifiers.",
+      "Arrangement Number and Arrangement Name are not supplier identifiers or legal names."
+    ],
+    "source_id": "79c8dab7-97b2-4e8f-9a68-d6193abef27b",
+    "ontology_sha256": "f4b6b4941ec61dcc3fb07c6ee19edab927862aaaa8ae3df30b3023e047c9f9cd",
+    "generated_by": {
+      "kind": "multi_step_runtime_agent",
+      "model": "claude-haiku-5-5",
+      "run_identity": "9931b934905d01c296bf8ccbc75fcb8ce7a563a8ab82aa6ddacd0d6d6bf3120e"
+    },
+    "review": {
+      "status": "pending",
+      "reviewer": null,
+      "approved_config_sha256": null
+    }
+  },
+  "changes": [
+    {
+      "field": "Suppliers -> entity.abn",
+      "before": "regex (?i)ABN:\\s*(\\d{11})\\b group 1 all:true, then abn; separate_entities:true; confidence 0.6",
+      "after": "unchanged",
+      "reason": "No validated correction is available from the evidence. The held-out error is a regex input/pattern limit on an oversized cell, not a pattern or transform defect. The ABN-labelled extraction is still the only defensible identifier path. Changing the pattern without a successful held-out run would be unverified."
+    },
+    {
+      "field": "Suppliers -> entity.legal_name / trading_name / address / phone / email",
+      "before": "unmapped",
+      "after": "unmapped",
+      "reason": "Compound multi-party free text with no safe per-party attribution by index. Remains unmapped."
+    },
+    {
+      "field": "config.warnings",
+      "before": "ABN checksum unverified; regex anchored to label",
+      "after": "Added held-out error and zero-emission finding",
+      "reason": "Held-out evidence shows the mapping produced no emissions and one regex limit error."
+    }
+  ],
+  "semantic_risks": [
+    "Held-out run produced 0 ABN emissions and 1 regex input/pattern limit error, so the ABN path is not validated on held-out data.",
+    "Regex limit errors on long Suppliers cells mean some labelled ABNs in large lists may be silently dropped from coverage.",
+    "Held-out Suppliers samples contain no 'ABN:' labels, so coverage is expected to be very sparse.",
+    "Suppliers lists mix supplier names with buying-agency and note text (e.g. 'New SOA- Suppliers', '*Under negotiation'); any extracted ABN must be confirmed as a supplier identifier, not a buyer identifier.",
+    "Checksum validity is unverified (checksum_valid_abn=0 in training and held-out profiles).",
+    "observed_at is null and the only time is a publication proxy, so temporal claims are weak.",
+    "Supplier legal names and trading names remain unmapped; names such as 'Orion Laboratories T/A Perrigo...' show legal/trading ambiguity.",
+    "Source reliability 0.8 is an uncalibrated prior."
+  ],
+  "requires_human_review": true
+}

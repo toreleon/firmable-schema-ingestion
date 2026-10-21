@@ -1,0 +1,310 @@
+{
+  "records": 202,
+  "observation_count": 151,
+  "emitted_by_field": {
+    "entity.abn": 151
+  },
+  "error_count": 5,
+  "errors": [
+    {
+      "source_record_id": "c83e3aa7fdd47d2f:23:4dee1664f64e235b",
+      "source_field": "Supplier ABN",
+      "canonical_field": "entity.abn",
+      "raw_value": "25100844488; 22607002460; 96126888259; 47003817490; 30117449911; 81604095758;32099911449; 97083515235",
+      "reason": "Invalid ABN checksum"
+    },
+    {
+      "source_record_id": "c83e3aa7fdd47d2f:40:f2109141c1e0e08d",
+      "source_field": "Supplier ABN",
+      "canonical_field": "entity.abn",
+      "raw_value": "28864970579; 44001227;890",
+      "reason": "Invalid ABN checksum"
+    },
+    {
+      "source_record_id": "c83e3aa7fdd47d2f:77:8d7e261cf10fdf7e",
+      "source_field": "Supplier ABN",
+      "canonical_field": "entity.abn",
+      "raw_value": "ABN 57 455 100 590; ACN 606 264 082 / ABN 85 606 264 082; ACN 076 530 946 / ABN 72 076 530 946; ACN 002 799 402 / ABN 64 002 799 402; ACN 074 306 255 / ABN 77 074 306 255; ABN 43 623 056 888",
+      "reason": "Identifier contains non-numeric text"
+    },
+    {
+      "source_record_id": "c83e3aa7fdd47d2f:161:520569024df942a1",
+      "source_field": "Supplier ABN",
+      "canonical_field": "entity.abn",
+      "raw_value": "631 566 697",
+      "reason": "Invalid ABN checksum"
+    },
+    {
+      "source_record_id": "c83e3aa7fdd47d2f:177:ecee205ad34ea9f1",
+      "source_field": "Supplier ABN",
+      "canonical_field": "entity.abn",
+      "raw_value": "631 566 697",
+      "reason": "Invalid ABN checksum"
+    }
+  ],
+  "per_field_validation": [
+    {
+      "source_field": "Supplier ABN",
+      "canonical_field": "entity.abn",
+      "valid_emissions": 151,
+      "errors": 5,
+      "error_examples": [
+        {
+          "source_record_id": "c83e3aa7fdd47d2f:23:4dee1664f64e235b",
+          "source_field": "Supplier ABN",
+          "canonical_field": "entity.abn",
+          "raw_value": "25100844488; 22607002460; 96126888259; 47003817490; 30117449911; 81604095758;32099911449; 97083515235",
+          "reason": "Invalid ABN checksum"
+        },
+        {
+          "source_record_id": "c83e3aa7fdd47d2f:40:f2109141c1e0e08d",
+          "source_field": "Supplier ABN",
+          "canonical_field": "entity.abn",
+          "raw_value": "28864970579; 44001227;890",
+          "reason": "Invalid ABN checksum"
+        }
+      ]
+    }
+  ],
+  "error_reasons": {
+    "Invalid ABN checksum": 4,
+    "Identifier contains non-numeric text": 1
+  },
+  "example_observations": [
+    {
+      "source_id": "2b977e4d-c765-4ce5-8088-65210a744add",
+      "source_record_id": "c83e3aa7fdd47d2f:1:301dbc4bff13d249#entity.abn=82005914796",
+      "observed_at": "2025-06-30T03:27:01.598489",
+      "ingested_at": "2026-10-21T07:50:10.524245+00:00",
+      "licence": "Creative Commons Attribution 4.0",
+      "extractor_version": "0.1.0:654d060772cf9ede55e6fd3f0cce457c83e15c2cdebce14b85a9ee429fdace47",
+      "observed_at_basis": "resource_last_modified_proxy",
+      "provenance": {
+        "resource_url": "https://www.data.qld.gov.au/datastore/dump/30026b85-0102-4a55-8c4b-a53de647f1d0?format=csv",
+        "resource_sha256": "c83e3aa7fdd47d2fdab862ca11bc479d7c3eff74eadf8bbedba769a805144a52",
+        "raw_record_sha256": "301dbc4bff13d249ea93842ad5f055cc5bebb192b19f4dcca6de533d0749e1ce",
+        "row_number": 1,
+        "config_sha256": "654d060772cf9ede55e6fd3f0cce457c83e15c2cdebce14b85a9ee429fdace47",
+        "source_field": "Supplier ABN",
+        "parent_source_record_id": "c83e3aa7fdd47d2f:1:301dbc4bff13d249",
+        "entity_scope": "explicit_identifier_only_no_other_fields_assigned"
+      },
+      "canonical_field": "entity.abn",
+      "entity": {
+        "abn": "82005914796"
+      },
+      "raw_value": "82005914796; 40058091973",
+      "confidence": {
+        "source_reliability": 0.8,
+        "field_confidence": 0.9
+      },
+      "derivation_level": "L1",
+      "observation_id": "01e23af98722ce86dd9e883fb13e374937e29f3a50e4d1c97ebca0825b207af3"
+    },
+    {
+      "source_id": "2b977e4d-c765-4ce5-8088-65210a744add",
+      "source_record_id": "c83e3aa7fdd47d2f:1:301dbc4bff13d249#entity.abn=40058091973",
+      "observed_at": "2025-06-30T03:27:01.598489",
+      "ingested_at": "2026-10-21T07:50:10.524245+00:00",
+      "licence": "Creative Commons Attribution 4.0",
+      "extractor_version": "0.1.0:654d060772cf9ede55e6fd3f0cce457c83e15c2cdebce14b85a9ee429fdace47",
+      "observed_at_basis": "resource_last_modified_proxy",
+      "provenance": {
+        "resource_url": "https://www.data.qld.gov.au/datastore/dump/30026b85-0102-4a55-8c4b-a53de647f1d0?format=csv",
+        "resource_sha256": "c83e3aa7fdd47d2fdab862ca11bc479d7c3eff74eadf8bbedba769a805144a52",
+        "raw_record_sha256": "301dbc4bff13d249ea93842ad5f055cc5bebb192b19f4dcca6de533d0749e1ce",
+        "row_number": 1,
+        "config_sha256": "654d060772cf9ede55e6fd3f0cce457c83e15c2cdebce14b85a9ee429fdace47",
+        "source_field": "Supplier ABN",
+        "parent_source_record_id": "c83e3aa7fdd47d2f:1:301dbc4bff13d249",
+        "entity_scope": "explicit_identifier_only_no_other_fields_assigned"
+      },
+      "canonical_field": "entity.abn",
+      "entity": {
+        "abn": "40058091973"
+      },
+      "raw_value": "82005914796; 40058091973",
+      "confidence": {
+        "source_reliability": 0.8,
+        "field_confidence": 0.9
+      },
+      "derivation_level": "L1",
+      "observation_id": "dd0e148bcca0f5713ce63c7b123a1ae91e97c68f6b3aa5954097ab6fd78ff0f8"
+    },
+    {
+      "source_id": "2b977e4d-c765-4ce5-8088-65210a744add",
+      "source_record_id": "c83e3aa7fdd47d2f:2:7638a8a46105a063",
+      "observed_at": "2025-06-30T03:27:01.598489",
+      "ingested_at": "2026-10-21T07:50:10.524245+00:00",
+      "licence": "Creative Commons Attribution 4.0",
+      "extractor_version": "0.1.0:654d060772cf9ede55e6fd3f0cce457c83e15c2cdebce14b85a9ee429fdace47",
+      "observed_at_basis": "resource_last_modified_proxy",
+      "provenance": {
+        "resource_url": "https://www.data.qld.gov.au/datastore/dump/30026b85-0102-4a55-8c4b-a53de647f1d0?format=csv",
+        "resource_sha256": "c83e3aa7fdd47d2fdab862ca11bc479d7c3eff74eadf8bbedba769a805144a52",
+        "raw_record_sha256": "7638a8a46105a06315fa2fbc2e7c399e1853004344478ef159b581391eb03424",
+        "row_number": 2,
+        "config_sha256": "654d060772cf9ede55e6fd3f0cce457c83e15c2cdebce14b85a9ee429fdace47",
+        "source_field": "Supplier ABN"
+      },
+      "canonical_field": "entity.abn",
+      "entity": {
+        "abn": "37246549189"
+      },
+      "raw_value": "37 246 549 189",
+      "confidence": {
+        "source_reliability": 0.8,
+        "field_confidence": 0.9
+      },
+      "derivation_level": "L1",
+      "observation_id": "27104b92ded50e3d2ceae9f8ed901bcfb3a39f73962069c35d779d18cc2938d8"
+    },
+    {
+      "source_id": "2b977e4d-c765-4ce5-8088-65210a744add",
+      "source_record_id": "c83e3aa7fdd47d2f:3:b13c8908ff78fd2e",
+      "observed_at": "2025-06-30T03:27:01.598489",
+      "ingested_at": "2026-10-21T07:50:10.524245+00:00",
+      "licence": "Creative Commons Attribution 4.0",
+      "extractor_version": "0.1.0:654d060772cf9ede55e6fd3f0cce457c83e15c2cdebce14b85a9ee429fdace47",
+      "observed_at_basis": "resource_last_modified_proxy",
+      "provenance": {
+        "resource_url": "https://www.data.qld.gov.au/datastore/dump/30026b85-0102-4a55-8c4b-a53de647f1d0?format=csv",
+        "resource_sha256": "c83e3aa7fdd47d2fdab862ca11bc479d7c3eff74eadf8bbedba769a805144a52",
+        "raw_record_sha256": "b13c8908ff78fd2e699aebec8c5c01049a5fae8a1308391cff83a65b5c73bd27",
+        "row_number": 3,
+        "config_sha256": "654d060772cf9ede55e6fd3f0cce457c83e15c2cdebce14b85a9ee429fdace47",
+        "source_field": "Supplier ABN"
+      },
+      "canonical_field": "entity.abn",
+      "entity": {
+        "abn": "72167940203"
+      },
+      "raw_value": "72167940203",
+      "confidence": {
+        "source_reliability": 0.8,
+        "field_confidence": 0.9
+      },
+      "derivation_level": "L1",
+      "observation_id": "6fdc68477997d0f65d0307bc71a8793d054b44bbb7a073f85621cc4f120cb0a8"
+    },
+    {
+      "source_id": "2b977e4d-c765-4ce5-8088-65210a744add",
+      "source_record_id": "c83e3aa7fdd47d2f:7:d0ee9ee9203b992f",
+      "observed_at": "2025-06-30T03:27:01.598489",
+      "ingested_at": "2026-10-21T07:50:10.524245+00:00",
+      "licence": "Creative Commons Attribution 4.0",
+      "extractor_version": "0.1.0:654d060772cf9ede55e6fd3f0cce457c83e15c2cdebce14b85a9ee429fdace47",
+      "observed_at_basis": "resource_last_modified_proxy",
+      "provenance": {
+        "resource_url": "https://www.data.qld.gov.au/datastore/dump/30026b85-0102-4a55-8c4b-a53de647f1d0?format=csv",
+        "resource_sha256": "c83e3aa7fdd47d2fdab862ca11bc479d7c3eff74eadf8bbedba769a805144a52",
+        "raw_record_sha256": "d0ee9ee9203b992f5c898422de4e631c417daeaade0c18f8b4e064dca01cca0a",
+        "row_number": 7,
+        "config_sha256": "654d060772cf9ede55e6fd3f0cce457c83e15c2cdebce14b85a9ee429fdace47",
+        "source_field": "Supplier ABN"
+      },
+      "canonical_field": "entity.abn",
+      "entity": {
+        "abn": "24610772284"
+      },
+      "raw_value": "24610772284",
+      "confidence": {
+        "source_reliability": 0.8,
+        "field_confidence": 0.9
+      },
+      "derivation_level": "L1",
+      "observation_id": "23ef6956c7f80dd04de86f6f5671aa83639ab41070b8c3602c6ee8a14ff25ba2"
+    },
+    {
+      "source_id": "2b977e4d-c765-4ce5-8088-65210a744add",
+      "source_record_id": "c83e3aa7fdd47d2f:10:785100c604f8f4a2#entity.abn=56002945155",
+      "observed_at": "2025-06-30T03:27:01.598489",
+      "ingested_at": "2026-10-21T07:50:10.524245+00:00",
+      "licence": "Creative Commons Attribution 4.0",
+      "extractor_version": "0.1.0:654d060772cf9ede55e6fd3f0cce457c83e15c2cdebce14b85a9ee429fdace47",
+      "observed_at_basis": "resource_last_modified_proxy",
+      "provenance": {
+        "resource_url": "https://www.data.qld.gov.au/datastore/dump/30026b85-0102-4a55-8c4b-a53de647f1d0?format=csv",
+        "resource_sha256": "c83e3aa7fdd47d2fdab862ca11bc479d7c3eff74eadf8bbedba769a805144a52",
+        "raw_record_sha256": "785100c604f8f4a2fe7c211e4ca5cd142f478a25a2174c5ebdd1d623b1aceb08",
+        "row_number": 10,
+        "config_sha256": "654d060772cf9ede55e6fd3f0cce457c83e15c2cdebce14b85a9ee429fdace47",
+        "source_field": "Supplier ABN",
+        "parent_source_record_id": "c83e3aa7fdd47d2f:10:785100c604f8f4a2",
+        "entity_scope": "explicit_identifier_only_no_other_fields_assigned"
+      },
+      "canonical_field": "entity.abn",
+      "entity": {
+        "abn": "56002945155"
+      },
+      "raw_value": "56002945155; 80067557877; 81140554169",
+      "confidence": {
+        "source_reliability": 0.8,
+        "field_confidence": 0.9
+      },
+      "derivation_level": "L1",
+      "observation_id": "7366bcad676ed3bce62d750205bf51a66afaa4c6119d7f5dd24a97d2da6980e9"
+    },
+    {
+      "source_id": "2b977e4d-c765-4ce5-8088-65210a744add",
+      "source_record_id": "c83e3aa7fdd47d2f:10:785100c604f8f4a2#entity.abn=80067557877",
+      "observed_at": "2025-06-30T03:27:01.598489",
+      "ingested_at": "2026-10-21T07:50:10.524245+00:00",
+      "licence": "Creative Commons Attribution 4.0",
+      "extractor_version": "0.1.0:654d060772cf9ede55e6fd3f0cce457c83e15c2cdebce14b85a9ee429fdace47",
+      "observed_at_basis": "resource_last_modified_proxy",
+      "provenance": {
+        "resource_url": "https://www.data.qld.gov.au/datastore/dump/30026b85-0102-4a55-8c4b-a53de647f1d0?format=csv",
+        "resource_sha256": "c83e3aa7fdd47d2fdab862ca11bc479d7c3eff74eadf8bbedba769a805144a52",
+        "raw_record_sha256": "785100c604f8f4a2fe7c211e4ca5cd142f478a25a2174c5ebdd1d623b1aceb08",
+        "row_number": 10,
+        "config_sha256": "654d060772cf9ede55e6fd3f0cce457c83e15c2cdebce14b85a9ee429fdace47",
+        "source_field": "Supplier ABN",
+        "parent_source_record_id": "c83e3aa7fdd47d2f:10:785100c604f8f4a2",
+        "entity_scope": "explicit_identifier_only_no_other_fields_assigned"
+      },
+      "canonical_field": "entity.abn",
+      "entity": {
+        "abn": "80067557877"
+      },
+      "raw_value": "56002945155; 80067557877; 81140554169",
+      "confidence": {
+        "source_reliability": 0.8,
+        "field_confidence": 0.9
+      },
+      "derivation_level": "L1",
+      "observation_id": "70789d41dda3ec27336a209d972f54238d165badd856f61d2445852bbffe66e5"
+    },
+    {
+      "source_id": "2b977e4d-c765-4ce5-8088-65210a744add",
+      "source_record_id": "c83e3aa7fdd47d2f:10:785100c604f8f4a2#entity.abn=81140554169",
+      "observed_at": "2025-06-30T03:27:01.598489",
+      "ingested_at": "2026-10-21T07:50:10.524245+00:00",
+      "licence": "Creative Commons Attribution 4.0",
+      "extractor_version": "0.1.0:654d060772cf9ede55e6fd3f0cce457c83e15c2cdebce14b85a9ee429fdace47",
+      "observed_at_basis": "resource_last_modified_proxy",
+      "provenance": {
+        "resource_url": "https://www.data.qld.gov.au/datastore/dump/30026b85-0102-4a55-8c4b-a53de647f1d0?format=csv",
+        "resource_sha256": "c83e3aa7fdd47d2fdab862ca11bc479d7c3eff74eadf8bbedba769a805144a52",
+        "raw_record_sha256": "785100c604f8f4a2fe7c211e4ca5cd142f478a25a2174c5ebdd1d623b1aceb08",
+        "row_number": 10,
+        "config_sha256": "654d060772cf9ede55e6fd3f0cce457c83e15c2cdebce14b85a9ee429fdace47",
+        "source_field": "Supplier ABN",
+        "parent_source_record_id": "c83e3aa7fdd47d2f:10:785100c604f8f4a2",
+        "entity_scope": "explicit_identifier_only_no_other_fields_assigned"
+      },
+      "canonical_field": "entity.abn",
+      "entity": {
+        "abn": "81140554169"
+      },
+      "raw_value": "56002945155; 80067557877; 81140554169",
+      "confidence": {
+        "source_reliability": 0.8,
+        "field_confidence": 0.9
+      },
+      "derivation_level": "L1",
+      "observation_id": "57fd90a38d42fd3ce38551164706947f139f531b6a09423e1f9120868e3f6472"
+    }
+  ],
+  "note": "Type/checksum validation does not prove semantic correctness; semantic review required."
+}

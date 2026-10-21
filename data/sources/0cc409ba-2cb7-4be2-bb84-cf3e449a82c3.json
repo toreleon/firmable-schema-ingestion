@@ -1,0 +1,18 @@
+{
+  "source_id": "0cc409ba-2cb7-4be2-bb84-cf3e449a82c3",
+  "dataset_id": "0cc409ba-2cb7-4be2-bb84-cf3e449a82c3",
+  "title": "Check In Qld app - Registered Locations",
+  "resource_id": "a81265bc-b22d-4fdd-8a4a-ef98123b7674",
+  "resource_url": "https://www.data.qld.gov.au/dataset/0cc409ba-2cb7-4be2-bb84-cf3e449a82c3/resource/a81265bc-b22d-4fdd-8a4a-ef98123b7674/download/ciq_opendata_registeredlocations_sa3_date-20220701.csv",
+  "resource_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "local_path": "data/raw/0cc409ba-2cb7-4be2-bb84-cf3e449a82c3",
+  "downloaded_at": "2026-10-21T07:46:29.648528+00:00",
+  "observed_at": "2022-07-01T05:26:11.725321",
+  "observed_at_basis": "resource_last_modified_proxy",
+  "licence": "Creative Commons Attribution 4.0",
+  "licence_url": "https://creativecommons.org/licenses/by/4.0/",
+  "publisher": "Communities, Housing and Digital Economy",
+  "source_reliability": 0.8,
+  "source_reliability_basis": "explicit uncalibrated government-source prior, not a measured probability",
+  "description": "Check In Qld is the Queensland Governments app used to support contract tracing and is available to download for use across a number of businesses to help keep Queenslanders COVID Safe.\r\n\r\nFor more information on the Check In Qld app please visit https://www.covid19.qld.gov.au/check-in-qld\r\n\r\n_Note: From 1am AEST Thursday 30 June 2022, checking in at locations in Queensland is no longer required.  Data from the Qld Check in App will no longer be collected by the Queensland Government and therefore this dataset will no longer be updated._\r\n"
+}

@@ -1,0 +1,13 @@
+{
+  "matcher_version": "exact-identifiers-v1",
+  "git_commit": "6a0abfe7eeb9f05f0fb03d6a9d12fc09a6ac3a2e",
+  "purpose": "Frozen development baseline, not new-version evaluation",
+  "mapping_hashes": {
+    "980b6499-c0b4-491b-ba9c-1c7506368a50": "39284dbbd8f20a5e3614609532c014fcba7d6abb38639d860294423fba17fee4",
+    "42bad3df-f2e0-4c9c-bef0-0a4328927718": "7838252c91a03f6146a9078a4a58a3dc9cabb088dd6e71763d9d9d8d45c0bdb7",
+    "2b977e4d-c765-4ce5-8088-65210a744add": "654d060772cf9ede55e6fd3f0cce457c83e15c2cdebce14b85a9ee429fdace47",
+    "73b67e91-d9bf-4471-80c3-a62d5afaee2a": "dcfc69d9ca871b442214449f824d0ae123f123c929dbc8639c70e9f225abae74",
+    "21a0f174-2f9e-4b01-a73a-7569eefbb0c8": "f8f2373874a3718c767342b844a579c3d2b7b12fcbb080471f53fc3a61638fb0",
+    "8792a410-dea1-4fc9-b783-b97f0fefc208": "6075e958b1baab8ff041e51cf79a4854e52b316badd1f61c4901d00d2ef101e0"
+  }
+}
